@@ -1,0 +1,11 @@
+[
+    {
+        "id": "bahmni.patient.search",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.patient.search",
+                "description": "Bahmni Patients List"
+            }
+        ]
+    }
+]

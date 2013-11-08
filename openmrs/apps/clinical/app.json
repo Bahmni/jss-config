@@ -1,0 +1,11 @@
+[
+    {
+        "id": "bahmni.clinical",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.clinical.consultation.board",
+                "description": "Bahmni Clinical Consultation Page"
+            }
+        ]
+    }
+]
