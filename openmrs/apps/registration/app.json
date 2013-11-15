@@ -1,0 +1,11 @@
+[
+    {
+        "id": "bahmni.registration",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.search.action",
+                "description": "Bahmni Patient Search Action"
+            }
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "id": "bahmni.patient.action.edit",
+        "extensionPointId": "org.bahmni.registration.search.action",
+        "type": "link",
+        "label": "Edit Patient",
+        "url": "#/patient/{{patientUuid}}",
+        "icon": "icon-user-md",
+        "order": 1,
+        "requiredPrivilege": null
+    },
+    {
+        "id": "bahmni.patient.action.startVisit",
+        "extensionPointId": "org.bahmni.registration.search.action",
+        "type": "link",
+        "label": " Go to the visit page",
+        "url": "#/patient/{{patientUuid}}/visit",
+        "icon": "icon-user",
+        "order": 2,
+        "requiredPrivilege": null
+    },
+    {
+        "id": "bahmni.patient.action.print",
+        "extensionPointId": "org.bahmni.registration.search.action",
+        "type": "link",
+        "label": "Print",
+        "url": "#/printPatient",
+        "icon": "icon-user",
+        "order": 3,
+        "requiredPrivilege": null
+    },
+    {
+        "id": "bahmni.patient.action.print",
+        "extensionPointId": "org.bahmni.registration.search.action",
+        "type": "link",
+        "label": "Print Sticker",
+        "url": "#/patient/{{patientUuid}}/printSticker",
+        "icon": "icon-user",
+        "order": 4,
+        "requiredPrivilege": null
+    }
+]
