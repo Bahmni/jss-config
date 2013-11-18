@@ -3,9 +3,17 @@
         "id": "bahmni.registration",
         "extensionPoints": [
             {
-                "id": "org.bahmni.registration.search.action",
-                "description": "Bahmni Patient Search Action"
+                "id": "org.bahmni.registration.patient.search.action",
+                "description": "Bahmni Patient Search Page Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.edit.action",
+                "description": "Bahmni Patient Edit Page Action"
             }
-        ]
+        ],
+        "contextModel": [ 
+            "patientUuid",
+            "activeVisitUuid"
+        ]
     }
 ]
