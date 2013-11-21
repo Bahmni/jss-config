@@ -1,0 +1,14 @@
+[
+    {
+        "id": "bahmni.clinical.patients.patientsToAdmit",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
+            "display":"Patients to be admitted"
+        },
+        "label": "Patients to be admitted",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
+    }
+]

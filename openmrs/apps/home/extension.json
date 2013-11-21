@@ -4,7 +4,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "opd/patients",
+        "url": "opd/patients/#/clinical",
         "icon": "icon-user-md",
         "order": 2,
         "requiredPrivilege": "app:clinical"
@@ -18,5 +18,15 @@
         "icon": "icon-user",
         "order": 1,
         "requiredPrivilege": "app:registration"
+    },
+    {
+        "id": "bahmni.adt",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "ADT",
+        "url": "opd/patients/#/adt",
+        "icon": "icon-user",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
     }
 ]
