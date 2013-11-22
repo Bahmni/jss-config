@@ -5,7 +5,8 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display":"Patients to be admitted"
+            "display":"Patients to be admitted",
+            "forwardUrl":"../adt/#/visit/{{visitUuid}}"
         },
         "label": "Patients to be admitted",
         "order": 1,

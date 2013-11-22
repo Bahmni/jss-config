@@ -5,7 +5,8 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display":"All active patients"
+            "display":"All active patients",
+            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
         "label": "All active patients",
         "order": 1,
@@ -17,7 +18,8 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display":"Patients to be admitted"
+            "display":"Patients to be admitted",
+            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
         "label": "Patients to be admitted",
         "order": 2,
@@ -29,7 +31,8 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display":"All admitted patients"
+            "display":"All admitted patients",
+            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
         "label": "All admitted patients",
         "order": 3,
@@ -41,10 +44,25 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display":"Patients to be discharged"
+            "display":"Patients to be discharged",
+            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
         "label": "Patients to be discharged",
         "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.patientsHasPendingOrders",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsHasPendingOrders",
+            "display":"Patients With Non-Lab Pending Orders",
+            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/radiology"
+
+        },
+        "label": "Patients With Non-Lab Pending Orders",
+        "order": 5,
         "requiredPrivilege": "app:clinical"
     }
 ]

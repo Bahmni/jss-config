@@ -6,6 +6,10 @@
                 "id": "org.bahmni.patient.search",
                 "description": "Bahmni Patients List"
             }
+        ],
+        "contextModel": [
+        	"patientUuid"
+        	"visitUuid"
         ]
     }
 ]
