@@ -1,0 +1,11 @@
+[
+    {
+        "id": "bahmni.adt.admission",
+        "extensionPoints": [
+            {
+                "id": "bahmni.adt.admission.next",
+                "description": "Url to forward to after admission"
+            }
+        ]
+    }
+]

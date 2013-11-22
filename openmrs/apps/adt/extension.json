@@ -1,0 +1,12 @@
+[
+    {
+        "id": "bahmni.adt.admission.next.bed-management",
+        "extensionPointId": "bahmni.adt.admission.next",
+        "type": "link",
+        "label": "Bed Management",
+        "url": "/opd/bed-management/#/patient/{{patientUuid}}",
+        "icon": "icon-user-md",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
+    }   
+]
