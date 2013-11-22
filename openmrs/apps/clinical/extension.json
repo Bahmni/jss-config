@@ -40,16 +40,6 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.consultation.bed-management",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Assign Bed",
-        "url": "bed-management",
-        "icon": "icon-user-md",
-        "order": 5,
-        "requiredPrivilege": "app:clinical"
-    },
-    {
         "id": "bahmni.clinical.consultation.vitals",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
