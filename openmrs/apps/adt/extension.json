@@ -8,5 +8,14 @@
         "icon": "icon-user-md",
         "order": 1,
         "requiredPrivilege": "app:clinical"
+    },{
+        "id": "bahmni.adt.discharge.next.bed-management",
+        "extensionPointId": "bahmni.adt.discharge.next",
+        "type": "link",
+        "label": "Bed Management",
+        "url": "../../opd/patients/#/adt",
+        "icon": "icon-user-md",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
     }   
 ]

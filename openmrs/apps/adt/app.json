@@ -5,6 +5,10 @@
             {
                 "id": "bahmni.adt.admission.next",
                 "description": "Url to forward to after admission"
+            },
+            {
+                "id": "bahmni.adt.discharge.next",
+                "description": "Url to forward to after discharge"
             }
         ]
     }

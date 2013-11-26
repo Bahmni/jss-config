@@ -11,5 +11,18 @@
         "label": "Patients to be admitted",
         "order": 1,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.patientsToDischarge",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
+            "display":"Patients to be discharged",
+            "forwardUrl" : "../adt/#/discharge/visit/{{visitUuid}}"
+        },
+        "label": "Patients to be discharged",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
     }
 ]
