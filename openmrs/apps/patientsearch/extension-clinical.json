@@ -58,7 +58,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsHasPendingOrders",
             "display":"Patients With Non-Lab Pending Orders",
-            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/radiology"
+            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/{{orderTypeUuid}}"
 
         },
         "label": "Patients With Non-Lab Pending Orders",
