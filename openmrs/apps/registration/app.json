@@ -1,6 +1,8 @@
 [
     {
         "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
         "extensionPoints": [
             {
                 "id": "org.bahmni.registration.patient.search.action",
@@ -16,8 +18,11 @@
             }
         ],
         "contextModel": [ 
-            "patientUuid",
-            "activeVisitUuid"
-        ]
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+        "config" : {
+            "autoCompleteFields":["familyName", "caste"]
+        }
     }
 ]
