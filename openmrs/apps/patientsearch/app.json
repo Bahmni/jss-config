@@ -8,7 +8,7 @@
             }
         ],
         "contextModel": [
-        	"patientUuid"
+        	"patientUuid",
         	"visitUuid"
         ]
     }
