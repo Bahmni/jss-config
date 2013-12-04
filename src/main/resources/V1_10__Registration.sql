@@ -7,11 +7,7 @@ INSERT INTO person_attribute_type (name, description, format, searchable, creato
 INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('Health Center', 'Health Center of registered user', 'org.openmrs.Location', '1', 1, curdate(), 0, 7, uuid());
 INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('primaryRelative', 'Primary Relative', 'java.lang.String', '1', 1, curdate(), 0, 8, uuid());
 
-
-INSERT INTO patient_identifier_type (name, description, creator, date_created, required, uuid, location_behavior)
-  VALUES ('JSS', 'New patient identifier type created for use by the Bahmni Registration System', 1, curdate(), 1, uuid(), 'NOT_USED');
-
-SET @patient_identifier := LAST_INSERT_ID();
+SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier
 
 INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
   VALUES (uuid(), 'GAN', 'ID sequence source for patients whose primary health center is Ganiyari', @patient_identifier, 1, curdate());
