@@ -1,6 +1,6 @@
 [
     {
-        "id": "bahmni.clinical.patients.allPatients",
+        "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -13,7 +13,7 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.patients.patientsToAdmit",
+        "id": "bahmni.clinical.patients.search.patientsToAdmit",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -26,7 +26,7 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.patients.patientsAdmitted",
+        "id": "bahmni.clinical.patients.search.patientsAdmitted",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -39,7 +39,7 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.patients.patientsToDischarge",
+        "id": "bahmni.clinical.patients.search.patientsToDischarge",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -52,7 +52,7 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.patients.patientsHasPendingOrders",
+        "id": "bahmni.clinical.patients.search.patientsHasPendingOrders",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {

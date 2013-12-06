@@ -5,7 +5,7 @@
         "type": "link",
         "label": "Edit Patient",
         "url": "/patient/{{patientUuid}}?visitType=REG",
-        "icon": "icon-user-md",
+        "icon": "icon-patient-edit",
         "order": 1,
         "requiredPrivilege": "Edit Patients"
     },
@@ -15,7 +15,7 @@
         "type": "link",
         "label": " Go to the visit page",
         "url": "/patient/{{patientUuid}}/visit",
-        "icon": "icon-user",
+        "icon": "icon-patient-visit",
         "order": 2,
         "requiredPrivilege": "Add Visits"
     },
@@ -25,7 +25,7 @@
         "type": "link",
         "label": "Print",
         "url": "/patient/{{patientUuid}}/print?launch=dialog",
-        "icon": "icon-user",
+        "icon": "icon-patient-print",
         "order": 3,
         "requiredPrivilege": null
     },
@@ -35,7 +35,7 @@
         "type": "link",
         "label": "Print Sticker",
         "url": "/patient/{{patientUuid}}/printSticker",
-        "icon": "icon-user",
+        "icon": "icon-patient-print-sticker",
         "order": 4,
         "requiredPrivilege": null
     },

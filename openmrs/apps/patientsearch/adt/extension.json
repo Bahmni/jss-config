@@ -1,6 +1,6 @@
 [
     {
-        "id": "bahmni.clinical.patients.patientsToAdmit",
+        "id": "bahmni.adt.patients.search.patientsToAdmit",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -13,7 +13,7 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.patients.patientsToDischarge",
+        "id": "bahmni.adt.patients.search.patientsToDischarge",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -22,7 +22,20 @@
             "forwardUrl" : "../adt/#/discharge/visit/{{visitUuid}}"
         },
         "label": "Patients to be discharged",
-        "order": 4,
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.adt.patients.search.patientsAdmitted",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.admittedPatients",
+            "display":"All admitted patients",
+            "forwardUrl" : "../adt/#/transfer/visit/{{visitUuid}}"
+        },
+        "label": "All admitted patients",
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     }
 ]
