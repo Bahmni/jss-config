@@ -44,7 +44,7 @@
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Vitals",
-        "url": "concept-set/vitals",
+        "url": "concept-set/vitals_concept",
         "icon": "icon-user-md",
         "order": 6,
         "requiredPrivilege": "app:clinical"
