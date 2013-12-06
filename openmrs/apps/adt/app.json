@@ -1,15 +1,14 @@
 [
     {
         "id": "bahmni.adt.admission",
-        "extensionPoints": [
-            {
-                "id": "bahmni.adt.admission.next",
-                "description": "Url to forward to after admission"
-            },
-            {
-                "id": "bahmni.adt.discharge.next",
-                "description": "Url to forward to after discharge"
-            }
-        ]
+        "extensionPoints": [],
+        "contextModel": [ 
+            "patientUuid",
+            "encounterUuid"
+        ],
+        "config" : {
+            "onAdmissionForwardTo": "/opd/bed-management/#/patient/{{patientUuid}}/encounter/{{encounterUuid}}",
+            "onDischargeForwardTo": "../../opd/patients/#/adt"
+        }
     }
 ]

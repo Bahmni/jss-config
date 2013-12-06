@@ -32,7 +32,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
             "display":"All admitted patients",
-            "forwardUrl" : "../adt/#/transfer/visit/{{visitUuid}}"
+            "forwardUrl" : "/opd/bed-management/#/patient/{{patientUuid}}"
         },
         "label": "All admitted patients",
         "order": 3,
