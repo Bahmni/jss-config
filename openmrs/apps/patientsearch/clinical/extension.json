@@ -5,10 +5,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display":"All active patients",
+            "display":"Active Patients",
             "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
-        "label": "All active patients",
+        "label": "Active Patients",
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
@@ -18,10 +18,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display":"Patients to be admitted",
+            "display":"To Be Admitted",
             "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
-        "label": "Patients to be admitted",
+        "label": "To Be Admitted",
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
@@ -31,10 +31,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display":"All admitted patients",
+            "display":"Admitted",
             "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
-        "label": "All admitted patients",
+        "label": "Admitted",
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
@@ -44,10 +44,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display":"Patients to be discharged",
+            "display":"To Be Discharged",
             "forwardUrl" : "../consultation/#/visit/{{visitUuid}}"
         },
-        "label": "Patients to be discharged",
+        "label": "To Be Discharged",
         "order": 4,
         "requiredPrivilege": "app:clinical"
     },
@@ -57,11 +57,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsHasPendingOrders",
-            "display":"Patients With Non-Lab Pending Orders",
+            "display":"Pending Non-Lab Orders",
             "forwardUrl" : "../orders/#/patient/{{patientUuid}}/{{orderTypeUuid}}"
-
         },
-        "label": "Patients With Non-Lab Pending Orders",
+        "label": "Pending Non-Lab Orders",
         "order": 5,
         "requiredPrivilege": "app:clinical"
     }
