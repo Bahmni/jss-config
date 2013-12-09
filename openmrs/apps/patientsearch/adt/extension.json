@@ -10,7 +10,7 @@
         },
         "label": "Patients to be admitted",
         "order": 1,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:adt"
     },
     {
         "id": "bahmni.adt.patients.search.patientsToDischarge",
@@ -23,7 +23,7 @@
         },
         "label": "Patients to be discharged",
         "order": 2,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:adt"
     },
     {
         "id": "bahmni.adt.patients.search.patientsAdmitted",
@@ -36,6 +36,6 @@
         },
         "label": "All admitted patients",
         "order": 3,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:adt"
     }
 ]

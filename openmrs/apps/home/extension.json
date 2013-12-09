@@ -27,6 +27,6 @@
         "url": "opd/patients/#/adt",
         "icon": "icon-user",
         "order": 3,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:adt"
     }
 ]
