@@ -9,7 +9,8 @@
         ],
         "contextModel": [
         	"patientUuid",
-        	"visitUuid"
+        	"visitUuid",
+            "redirectUrl"
         ]
     }
 ]
