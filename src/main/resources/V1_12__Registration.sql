@@ -1,1 +1,0 @@
-INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('class', 'Class', 'java.lang.String', '1', 1, curdate(), 0, 2, uuid());

@@ -161,5 +161,15 @@
             <param name="sqlFile">V1_75__MarkVilageAsMandatoryField.sql</param>
         </customChange>
     </changeSet>
+    <changeSet id="JSS-20131210-01" author="Shruthi, Sush">
+        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
+            <param name="sqlFile">V1_76__RemoveHealthCenter.sql</param>
+        </customChange>
+    </changeSet>
+    <changeSet id="JSS-20131210-02" author="Sush, Shruthi">
+        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
+            <param name="sqlFile">V1_77__PatientSearchSqlAllAdmittedPatients.sql</param>
+        </customChange>
+    </changeSet>
 
 </databaseChangeLog>
