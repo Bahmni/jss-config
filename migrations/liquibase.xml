@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        See http://www.liquibase.org/manual/home#available_database_refactorings
+        for a list of supported elements and attributes
+    -->
+
+    <changeSet id="JSS-1" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_10__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-2" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_11__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-3" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_12__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-4" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_13__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-5" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_14__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-6" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_15__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-7" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_16__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-8" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_17__JSSAddressHierarchy.sql"/>
+    </changeSet>
+    <changeSet id="JSS-9" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_19__RegistrationRole.sql"/>
+    </changeSet>
+    <changeSet id="JSS-10" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_21__Registration.sql"/>
+    </changeSet>
+    <changeSet id="JSS-12" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_26__CreateAtomFeedEventsForPatients.sql"/>
+    </changeSet>
+    <changeSet id="JSS-13" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_27__SetAtomFeedChunking.sql"/>
+    </changeSet>
+    <changeSet id="JSS-14" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_28__RegistrationAttributesNameAndDescriptionFix.sql"/>
+    </changeSet>
+    <changeSet id="JSS-15" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_32__MakeClassAttributeAConcept.sql"/>
+    </changeSet>
+    <changeSet id="JSS-16" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_33__MakeEducationDetailsAttributeAConcept.sql"/>
+    </changeSet>
+    <changeSet id="JSS-17" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_34__MakeOccupationAttributeAConcept.sql"/>
+    </changeSet>
+    <changeSet id="JSS-18" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_35__RegistrationAttributesNameAndDescriptionFix.sql"/>
+    </changeSet>
+    <changeSet id="JSS-19" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_36__AddAgricultureConcept.sql"/>
+    </changeSet>
+    <changeSet id="JSS-20" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_38__SetValueAsConceptForPersonAttributes.sql"/>
+    </changeSet>
+    <changeSet id="JSS-22" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_46__AddSecondaryIdentifierToPersonAttributeType.sql"/>
+    </changeSet>
+    <changeSet id="JSS-23" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_47__RegistrationPersonAttributeSortOrderUpdate.sql"/>
+    </changeSet>
+    <changeSet id="JSS-24" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_48__RegistrationPersonAttributeTypeUpdateDescriptionForStaticFields.sql"/>
+    </changeSet>
+    <changeSet id="JSS-25" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_49__UndoRegistrationAttributeDescriptionForStaticFields.sql"/>
+    </changeSet>
+    <changeSet id="JSS-26" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_10__SetupVisitTypes.sql"/>
+    </changeSet>
+    <changeSet id="JSS-27" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_20__CreateVisitTypeForRevisit.sql"/>
+    </changeSet>
+    <changeSet id="JSS-28" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="V1_63__AddEmergencyVisitType.sql"/>
+    </changeSet>
+    <changeSet id="JSS-29" author="tw" context="rel3">
+        <comment>rel3</comment>
+        <sqlFile path="V1_65__ConceptSetForVitals.sql"/>
+    </changeSet>
+    <changeSet id="JSS-31" author="tw" context="rel3">
+        <comment>rel3</comment>
+        <sqlFile path="V1_74__AddGramPanchayatAndHouseNumberStreetAsNewAddressHierarchyLevels.sql"/>
+    </changeSet>
+    <changeSet id="JSS-32" author="tw" context="rel3">
+        <comment>rel3</comment>
+        <sqlFile path="V1_75__MarkVilageAsMandatoryField.sql"/>
+    </changeSet>
+    <changeSet id="JSS-33" author="tw" context="rel3">
+        <comment>rel3</comment>
+        <sqlFile path="V1_76__RemoveHealthCenter.sql"/>
+    </changeSet>
+
+</databaseChangeLog>
