@@ -1,4 +1,4 @@
-insert into global_property ('property', 'property_value', 'description', 'uuid')
+insert into global_property (`property`, `property_value`, `description`, `uuid`)
 values ('layout.address.format', '<org.openmrs.layout.web.address.AddressTemplate>
                                          <nameMappings class="properties">
                                               <property name="postalCode" value="Location.postalCode"/>
