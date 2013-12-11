@@ -140,7 +140,6 @@
             <param name="sqlFile">V1_63__AddEmergencyVisitType.sql</param>
         </customChange>
     </changeSet>
-
     <changeSet id="JSS-20131204-01" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_65__ConceptSetForVitals.sql</param>
