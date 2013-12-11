@@ -6,7 +6,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display":"Active Patients",
-            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}?redirect-url={{redirectUrl}}"
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}?redirect-url={{redirectUrl}}"
         },
         "label": "Active Patients",
         "order": 1,
