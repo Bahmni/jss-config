@@ -1,1 +1,0 @@
-UPDATE address_hierarchy_level set required = true where name = 'Village';

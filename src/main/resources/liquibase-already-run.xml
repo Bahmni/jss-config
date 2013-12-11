@@ -20,42 +20,42 @@
             <param name="sqlFile">V1_11__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-03" author="Sush, Neha">
+    <changeSet id="JSS-20131203-01" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_12__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-04" author="Sush, Neha">
+    <changeSet id="JSS-20131203-02" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_13__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-05" author="Sush, Neha">
+    <changeSet id="JSS-20131203-03" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_14__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-06" author="Sush, Neha">
+    <changeSet id="JSS-20131203-04" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_15__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-07" author="Sush, Neha">
+    <changeSet id="JSS-20131203-05" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_16__Registration.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-08" author="Sush, Neha">
+    <changeSet id="JSS-20131203-06" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_17__JSSAddressHierarchy.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-09" author="Sush, Neha">
+    <changeSet id="JSS-20131203-07" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_19__RegistrationRole.sql</param>
         </customChange>
     </changeSet>
-    <changeSet id="JSS-20131203-10" author="Sush, Neha">
+    <changeSet id="JSS-20131203-09" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_21__Registration.sql</param>
         </customChange>
@@ -123,42 +123,6 @@
     <changeSet id="JSS-20131203-25" author="Sush, Neha">
         <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
             <param name="sqlFile">V1_49__UndoRegistrationAttributeDescriptionForStaticFields.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131203-26" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_10__SetupVisitAndEncounterTypes.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131203-27" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_20__CreateVisitTypeForRevisit.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131203-28" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_63__AddEmergencyVisitType.sql</param>
-        </customChange>
-    </changeSet>
-
-    <changeSet id="JSS-20131204-01" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_65__ConceptSetForVitals.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131204-02" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_71__PatientSearchSql.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131204-03" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_74__AddGramPanchayatAndHouseNumberStreetAsNewAddressHierarchyLevels.sql</param>
-        </customChange>
-    </changeSet>
-    <changeSet id="JSS-20131204-04" author="Sush, Neha">
-        <customChange class="org.openmrs.util.databasechange.SourceMySqldiffFile">
-            <param name="sqlFile">V1_75__MarkVilageAsMandatoryField.sql</param>
         </customChange>
     </changeSet>
 
