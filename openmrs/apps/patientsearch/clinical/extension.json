@@ -19,7 +19,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
             "display":"To Be Admitted",
-            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}?redirect-url={{redirectUrl}}"
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}?redirect-url={{redirectUrl}}"
         },
         "label": "To Be Admitted",
         "order": 2,
@@ -32,7 +32,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
             "display":"Admitted",
-            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}?redirect-url={{redirectUrl}}"
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}?redirect-url={{redirectUrl}}"
         },
         "label": "Admitted",
         "order": 3,
@@ -45,7 +45,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
             "display":"To Be Discharged",
-            "forwardUrl" : "../consultation/#/visit/{{visitUuid}}?redirect-url={{redirectUrl}}"
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}?redirect-url={{redirectUrl}}"
         },
         "label": "To Be Discharged",
         "order": 4,
