@@ -28,5 +28,15 @@
         "icon": "icon-user",
         "order": 3,
         "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.document.upload",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Document Upload",
+        "url": "clinical/document-upload/#/document-upload",
+        "icon": "icon-user",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
     }
 ]
