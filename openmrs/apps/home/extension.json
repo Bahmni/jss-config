@@ -34,7 +34,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Document Upload",
-        "url": "clinical/document-upload/#/document-upload",
+        "url": "clinical/document-upload/",
         "icon": "icon-user",
         "order": 4,
         "requiredPrivilege": "app:clinical"
