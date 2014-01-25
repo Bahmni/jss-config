@@ -132,7 +132,6 @@
         <comment>rel3</comment>
         <sqlFile path="V1_76__RemoveHealthCenter.sql"/>
     </changeSet>
-
     <changeSet id="bahmni-atomfeed-offset-marker" author="tw" context="rel3">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
@@ -150,24 +149,4 @@
         </sql>
     </changeSet>
 
-    <changeSet id="bahmni-35" author="tw" context="rel3">
-        <comment>rel3</comment>
-        <sqlFile path="V1_61__CreatingGlobalPropertyForPatientIdentifierType.sql"/>
-    </changeSet>
-    <changeSet id="JSS-34" author="tw" context="rel3">
-        <comment>Set up person image directory</comment>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM global_property where property = 'emr.personImagesDirectory'
-            </sqlCheck>
-        </preConditions>
-        <sql>
-            insert into global_property (`property`, `property_value`, `description`, `uuid`)
-            values ('emr.personImagesDirectory',
-            '/home/jss/patient_images',
-            'Location of patient images - required by emrapi',
-            uuid()
-            );
-        </sql>
-    </changeSet>
 </databaseChangeLog>
