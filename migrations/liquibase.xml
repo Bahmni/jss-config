@@ -165,4 +165,22 @@
             );
         </sql>
     </changeSet>
+    <changeSet id="JSS-35" author="tw" context="rel3">
+        <comment>Enable registration app for registration clerk</comment>
+        <sql>
+            INSERT INTO role_privilege(role, privilege) VALUES('RegistrationClerk', 'app:registration') ON DUPLICATE KEY UPDATE privilege = 'app:registration';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-36" author="tw" context="rel3">
+        <comment>Add emrgency app role</comment>
+        <sql>
+            INSERT INTO privilege(privilege, description, uuid) VALUES('app:emergency', 'bahmni emergency app access privilege', uuid()) ON DUPLICATE KEY UPDATE privilege = 'app:emergency';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-37" author="tw" context="rel3">
+        <comment>Enable emergency app for registration clerk</comment>
+        <sql>
+            INSERT INTO role_privilege(role, privilege) VALUES('RegistrationClerk', 'app:emergency') ON DUPLICATE KEY UPDATE privilege = 'app:emergency';
+        </sql>
+    </changeSet>
 </databaseChangeLog>

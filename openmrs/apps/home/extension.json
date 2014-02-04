@@ -1,15 +1,5 @@
 [
     {
-        "id": "bahmni.clinical",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Clinical",
-        "url": "clinical/patients/#/clinical",
-        "icon": "icon-user-md",
-        "order": 2,
-        "requiredPrivilege": "app:clinical"
-    },
-    {
         "id": "bahmni.registration",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -20,13 +10,33 @@
         "requiredPrivilege": "app:registration"
     },
     {
+        "id": "bahmni.emergency",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Emergency",
+        "url": "registration/emergency",
+        "icon": "icon-user",
+        "order": 2,
+        "requiredPrivilege": "app:emergency"
+    },
+    {
+        "id": "bahmni.clinical",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Clinical",
+        "url": "clinical/patients/#/clinical",
+        "icon": "icon-user-md",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
         "id": "bahmni.adt",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "ADT",
         "url": "clinical/patients/#/adt",
         "icon": "icon-user",
-        "order": 3,
+        "order": 4,
         "requiredPrivilege": "app:adt"
     },
     {
@@ -36,7 +46,7 @@
         "label": "Document Upload",
         "url": "clinical/document-upload/",
         "icon": "icon-user",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:clinical"
     }
 ]
