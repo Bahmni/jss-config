@@ -183,4 +183,11 @@
             INSERT INTO role_privilege(role, privilege) VALUES('RegistrationClerk', 'app:emergency') ON DUPLICATE KEY UPDATE privilege = 'app:emergency';
         </sql>
     </changeSet>
+    <changeSet id="JSS-38" author="tw" context="rel3">
+        <comment>Rename visit types</comment>
+        <sql>
+            UPDATE visit_type set name = 'OPD - NEW' where name = 'REG';
+            UPDATE visit_type set name = 'OPD - RETURNING' where name = 'REVISIT';
+        </sql>
+    </changeSet>
 </databaseChangeLog>

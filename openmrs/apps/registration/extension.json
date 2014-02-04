@@ -1,10 +1,30 @@
 [
     {
+        "id": "bahmni.registration.navigation.patient.search",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "label": "Search",
+        "url": "/search",
+        "icon": "icon-search",
+        "order": 1,
+        "requiredPrivilege": "View Patients"
+    },
+    {
+        "id": "bahmni.registration.navigation.patient.create",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "label": "Create New",
+        "url": "/patient/new?visitType=OPD - NEW",
+        "icon": "icon-plus",
+        "order": 2,
+        "requiredPrivilege": "Add Patients"
+    },
+    {
         "id": "bahmni.patient.search.action.edit",
         "extensionPointId": "org.bahmni.registration.patient.search.action",
         "type": "link",
         "label": "Edit",
-        "url": "/patient/{{patientUuid}}?visitType=REVISIT",
+        "url": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
         "icon": "icon-patient-edit",
         "order": 1,
         "requiredPrivilege": "Edit Patients"
