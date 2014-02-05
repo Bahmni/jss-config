@@ -22,7 +22,8 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "autoCompleteFields":["familyName", "caste"]
+            "autoCompleteFields":["familyName", "caste"],
+            "defaultIdentifierPrefix": "GAN"
         }
     }
 ]
