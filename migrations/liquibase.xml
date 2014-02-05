@@ -190,4 +190,10 @@
             UPDATE visit_type set name = 'OPD - RETURNING' where name = 'REVISIT';
         </sql>
     </changeSet>
+    <changeSet id="JSS-39" author="tw" context="rel3">
+        <comment>Setup person_name as preferred for all patients</comment>
+        <sql>
+            UPDATE person_name SET preferred = 1 WHERE person_id IN (SELECT patient_id FROM patient);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
