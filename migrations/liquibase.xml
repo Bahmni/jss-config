@@ -227,15 +227,9 @@
         </sql>
     </changeSet>
     <changeSet id="JSS-42" author="tw" context="rel3">
-        <comment>Add emrgency app role</comment>
-        <sql>
-            INSERT INTO privilege(privilege, description, uuid) VALUES('app:document-upload', 'bahmni document upload access privilege', uuid()) ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
-        </sql>
-    </changeSet>
-    <changeSet id="JSS-43" author="tw" context="rel3">
         <comment>Enable document upload app for bahmni-document-uploader</comment>
         <sql>
-            INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:registration';
+            INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
         </sql>
     </changeSet>
 </databaseChangeLog>
