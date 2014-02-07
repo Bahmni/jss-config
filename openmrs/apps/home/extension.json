@@ -47,6 +47,6 @@
         "url": "clinical/document-upload/",
         "icon": "icon-user",
         "order": 5,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:document-upload"
     }
 ]

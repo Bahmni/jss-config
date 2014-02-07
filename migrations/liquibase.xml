@@ -196,4 +196,46 @@
             UPDATE person_name SET preferred = 1 WHERE person_id IN (SELECT patient_id FROM patient);
         </sql>
     </changeSet>
+    <changeSet id="JSS-40" author="tw" context="rel3">
+        <comment>Add role for document upload</comment>
+        <sql>
+            INSERT INTO role (role, description) VALUES ('bahmni-document-uploader', 'bahmni-document-uploader');
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-41" author="tw" context="rel3">
+        <comment>Add privileges for document upload</comment>
+        <sql>
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'add observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Visits');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Concepts');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Global Properties');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Identifier Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Location Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Locations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patient Identifiers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patients');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View People');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Person Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Providers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Users');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visits');
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-42" author="tw" context="rel3">
+        <comment>Add emrgency app role</comment>
+        <sql>
+            INSERT INTO privilege(privilege, description, uuid) VALUES('app:document-upload', 'bahmni document upload access privilege', uuid()) ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-43" author="tw" context="rel3">
+        <comment>Enable document upload app for bahmni-document-uploader</comment>
+        <sql>
+            INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:registration';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
