@@ -28,7 +28,7 @@ end
 
 def install_uuid_extension
   openerp_postgres_conn = PGconn.open(:host => @host_name, :dbname => 'openerp', :user => 'postgres')  
-  openerp_postgres_conn.exec("create extension if not exists 'uuid-ossp';")
+  openerp_postgres_conn.exec("create extension if not exists \"uuid-ossp\";")
 end
 
 
