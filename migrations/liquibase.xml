@@ -232,4 +232,12 @@
             INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
         </sql>
     </changeSet>
+    <changeSet id="JSS-43" author="tw" context="rel3">
+        <comment>Global property to auto close visits next day</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('visits.autoCloseMinimumNumberOfDays', '1', 'Minimum number of days after which visit should be auto closed', uuid())
+            ON DUPLICATE KEY UPDATE property_value = '1';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
