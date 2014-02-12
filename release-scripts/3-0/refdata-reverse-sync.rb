@@ -186,10 +186,12 @@ def convert_test
   res = @openelis_conn.exec("select er.external_id as uuid, t.name as name, 
       t.description as description, ts.uuid as department_id, tos.uuid as sample_id, 
       t.sort_order as sort_order, t.is_active as is_active, t.id as test_id, uom.uuid as test_unit_of_measure_id 
-    from test t, external_reference er, type_of_sample tos, sampletype_test st, 
-      test_section ts, unit_of_measure uom where t.id = er.item_id and er.type = 'Test'and 
-      st.test_id = t.id and st.sample_type_id = tos.id and t.test_section_id = ts.id
-      and t.uom_id = uom.id;")
+        from test t
+        join external_reference er on t.id = er.item_id and er.type = 'Test'
+        join sampletype_test st on st.test_id = t.id
+        join type_of_sample tos on st.sample_type_id = tos.id 
+        join test_section ts on t.test_section_id = ts.id
+        left outer join unit_of_measure uom on t.uom_id = uom.id;")
   res.each do |test|
     sale_price = get_price(test['uuid'])
     result_type = get_result_type(test['test_id'])
