@@ -1,4 +1,4 @@
-drop table sale_order_events_temp;
+drop table if exists sale_order_events_temp;
 
 select concat('{', 
     '"id":"', order_id, '",',
