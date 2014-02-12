@@ -49,10 +49,11 @@ def convert_depts
 end
 
 def convert_sample
-  res = @openelis_conn.exec("select description, is_active, sort_order, uuid from type_of_sample;")
+  res = @openelis_conn.exec("select description, is_active, sort_order, local_abbrev, uuid from type_of_sample;")
   res.each do |sample|
+    active = sample['is_active'] == "t" ? true : false
     output ("insert into sample (id, version, date_created, last_updated, name, short_name, is_active, sort_order)
-      values ('#{sample['uuid']}', 0, now(), now(), '#{sample['description']}', '#{sample['description']}', true, '#{sample['sort_order']}' );")
+      values ('#{sample['uuid']}', 0, now(), now(), '#{sample['description']}', '#{sample['local_abbrev']}', '#{active}', '#{sample['sort_order']}' );")
     create_event_records('sample', sample['uuid'])
   end
 end
@@ -167,10 +168,10 @@ def get_result_type(test_id)
 end
 
 def convert_panel
-  res = @openelis_conn.exec("select er.external_id as uuid, p.name as name, 
+  res = @openelis_conn.exec("select er.external_id as uuid, p.name as name,
     p.description as description, tos.uuid as sample_id, p.sort_order as sort_order
-    from panel p, external_reference er, sampletype_panel sp, type_of_sample tos  
-    where p.id = er.item_id and er.type = 'Panel' and sp.panel_id = p.id and 
+    from panel p, external_reference er, sampletype_panel sp, type_of_sample tos
+    where p.id = er.item_id and er.type = 'Panel' and sp.panel_id = p.id and
     sp.sample_type_id = tos.id;")
   res.each do |panel|
     sale_price = get_price(panel['uuid'])
