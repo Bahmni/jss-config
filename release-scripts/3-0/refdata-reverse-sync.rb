@@ -182,6 +182,11 @@ def convert_panel
   end
 end
 
+def quotify(str)
+  return str.nil? ? "null" : "'#{str}'"
+end
+
+
 def convert_test
   res = @openelis_conn.exec("select er.external_id as uuid, t.name as name, 
       t.description as description, ts.uuid as department_id, tos.uuid as sample_id, 
@@ -201,7 +206,7 @@ def convert_test
       values ('#{test['uuid']}', 0, now(), now(), '#{test['name']}', 
     '#{test['description']}', #{sale_price}, '#{test['department_id']}', 
     '#{test['sample_id']}', #{test['sort_order']}, '#{test['is_active']}', 
-    '#{result_type}', '#{test['test_unit_of_measure_id']}');")
+    '#{result_type}', #{quotify(test['test_unit_of_measure_id'])});")
     create_event_records('test', test['uuid'])
   end
   @refdata_conn.exec("update test set result_type = 'Remark' where result_type = 'R';")
