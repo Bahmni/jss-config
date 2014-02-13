@@ -15,7 +15,7 @@
         "type": "link",
         "label": "Emergency",
         "url": "registration/emergency",
-        "icon": "icon-user",
+        "icon": "icon-ambulance icon-red",
         "order": 2,
         "requiredPrivilege": "app:emergency"
     },
@@ -25,7 +25,7 @@
         "type": "link",
         "label": "Clinical",
         "url": "clinical/patients/#/clinical",
-        "icon": "icon-user-md",
+        "icon": "icon-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
@@ -35,7 +35,7 @@
         "type": "link",
         "label": "ADT",
         "url": "clinical/patients/#/adt",
-        "icon": "icon-user",
+        "icon": "icon-file",
         "order": 4,
         "requiredPrivilege": "app:adt"
     },
@@ -45,7 +45,7 @@
         "type": "link",
         "label": "Document Upload",
         "url": "clinical/document-upload/",
-        "icon": "icon-user",
+        "icon": "icon-camera",
         "order": 5,
         "requiredPrivilege": "app:document-upload"
     }
