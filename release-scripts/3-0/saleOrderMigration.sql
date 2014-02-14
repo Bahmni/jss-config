@@ -3,17 +3,17 @@ insert into event_records(create_uid, create_date, write_date, write_uid, catego
     uuid_generate_v4(), 'sale_order', now(), a.content, '' 
 from (select concat('{', 
     '"id":"', order_id, '",',
-    '"order_date":"', order_date, '",',
-    '"external_id":"', external_id, '",',
-    '"customer_id":"', customer_id, '",',
-    '"sale_order_items":', '[', string_agg(product_info, ','), ']',
+    '"orderDate":"', order_date, '",',
+    '"externalId":"', external_id, '",',
+    '"customerId":"', customer_id, '",',
+    '"saleOrderItems":', '[', string_agg(product_info, ','), ']',
     '}') as content
 from
     (
     select so.id as order_id, so.create_date as order_date, so.external_id as external_id, res_partner.ref as customer_id,
     concat('{',
-        '"product_uuid":"' , p.uuid, '",' ,
-        '"number_of_days":"' , s.product_number_of_days, '",',
+        '"productUuid":"' , p.uuid, '",' ,
+        '"numberOfDays":"' , s.product_number_of_days, '",',
         '"dosage":"', s.product_dosage, '",', 
         '"unit":"', pu.name, '",', 
         '"quantity":"', s.product_uom_qty, '"',
