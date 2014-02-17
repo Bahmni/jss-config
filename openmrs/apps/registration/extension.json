@@ -23,7 +23,7 @@
         "id": "bahmni.patient.search.action.edit",
         "extensionPointId": "org.bahmni.registration.patient.search.action",
         "type": "link",
-        "label": "Edit",
+        "label": "View",
         "url": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
         "icon": "icon-patient-edit",
         "order": 1,
