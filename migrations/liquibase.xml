@@ -5,7 +5,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
-    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
         See http://www.liquibase.org/manual/home#available_database_refactorings
@@ -232,6 +232,41 @@
             INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
             VALUES ('visits.autoCloseMinimumNumberOfDays', '1', 'Minimum number of days after which visit should be auto closed', uuid())
             ON DUPLICATE KEY UPDATE property_value = '1';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-44" author="tw" context="rel3">
+        <comment>Remove unused global property visits.autoCloseMinimumNumberOfDays</comment>
+        <delete tableName="global_property">
+            <where>property = 'visits.autoCloseMinimumNumberOfDays'</where>
+        </delete>
+    </changeSet>
+    <changeSet id="JSS-45" author="tw" context="rel3">
+        <comment>Delete AutoCloseVisitsTask from scheduler_task_config</comment>
+        <delete tableName="scheduler_task_config">
+            <where>schedulable_class = 'org.openmrs.scheduler.tasks.AutoCloseVisitsTask'</where>
+        </delete>
+    </changeSet>
+    <changeSet id="JSS-46" author="tw" context="rel3">
+        <comment>Add CloseStaleVisitsTask</comment>
+        <insert tableName="scheduler_task_config">
+            <column name="name" value="Close Stale Visits Task" />
+            <column name="description" value="Auto close visit task after number of hours specified by emrapi.visitExpireHours" />
+            <column name="schedulable_class" value="org.openmrs.module.emrapi.adt.CloseStaleVisitsTask" />
+            <column name="start_on_startup" valueBoolean="true" />
+            <column name="start_time_pattern" value="MM/dd/yyyy HH:mm:ss" />
+            <column name="start_time" valueDate="2011-11-28T23:59:59" />
+            <column name="repeat_interval" value="86400" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+            <column name="created_by" value="1" />
+            <column name="uuid" value="e087ff42-9792-11e3-b248-425861b86ab6" />
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-47" author="tw" context="rel3">
+        <comment>Add global property to configure visit expire hours</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emrapi.visitExpireHours', '24', 'Number of hours after which visit can be auto closed', uuid())
+            ON DUPLICATE KEY UPDATE property_value = '24';
         </sql>
     </changeSet>
 </databaseChangeLog>
