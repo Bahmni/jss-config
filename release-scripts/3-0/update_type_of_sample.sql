@@ -1,0 +1,13 @@
+update type_of_sample set local_abbrev='Blood' where description='Blood (EDTA)';
+update type_of_sample set local_abbrev='Serum' where description='Serum';
+update type_of_sample set local_abbrev='Urine' where description='Urine';
+update type_of_sample set local_abbrev='Stool' where description='Stool';
+update type_of_sample set local_abbrev='BodyFluid' where description='Body Fluid';
+update type_of_sample set local_abbrev='Sputum' where description='Sputum';
+update type_of_sample set local_abbrev='Montoux' where description='Montoux Test';
+update type_of_sample set local_abbrev='Pus' where description='Pus';
+update type_of_sample set local_abbrev='Semen' where description='Semen';
+update type_of_sample set local_abbrev='SlitSkin' where description='Slit Skin';
+update type_of_sample set local_abbrev='Vaginal' where description='Vaginal';
+update type_of_sample set local_abbrev='Tissue' where description='Tissue';
+update type_of_sample set local_abbrev='Scrap' where description='Scrapping for Fungus';
