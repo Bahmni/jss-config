@@ -1,0 +1,20 @@
+1) In OPENMRS: Identify UUID of the last patient ENTRY event (LAST_ENTRY_UUID) : 
+- select uuid from event_records where category = 'patient' order by id desc LIMIT 1;
+
+2) In OPENMRS: Identity last Feed Number of Patient Category (PATIENT_FEED_NUMBER): 
+- select CEIL(count(*)/5) from event_records where category = 'patient' ; 
+
+3) In OpenERP: Execute the following
+- select id, feed_uri, last_Read_entry_id, feed_uri_for_last_read_entry from markers where feed_uri = 'http://localhost:8080/openmrs/ws/atomfeed/patient/recent';
+
+The above should not return any record since OpenERP patient feed was not in prod for jss 2.* release. 
+if the above SQL does not return any record, follow 3.1, else update using 3.2 which should not happen.  
+In OpenERP:
+
+3.1) INSERT INTO markers (last_read_entry_id, feed_uri_for_last_read_entry, feed_uri, create_uid, create_date, write_uid, write_date)
+values ('tag:atomfeed.ict4h.org:<LAST_ENTRY_UUID>', 'http://localhost:8080/openmrs/ws/atomfeed/patient/<PATIENT_FEED_NUMBER>','http://localhost:8080/openmrs/ws/atomfeed/patient/recent', 1, now(), 1, now() )
+
+3.2) UPDATE markers set last_read_entry_id = 'tag:atomfeed.ict4h.org:<LAST_ENTRY_UUID>', feed_uri_for_last_read_entry = 'http://localhost:8080/openmrs/ws/atomfeed/patient/<PATIENT_FEED_NUMBER>' where feed_uri = 'http://localhost:8080/openmrs/ws/atomfeed/patient/recent'
+
+4) In OpenERP: remove any processing history from failed_events for patients (should not happen on JSS OpenERP db 2.0)
+DELETE FROM failed_events where feed_uri = 'http://localhost:8080/openmrs/ws/atomfeed/patient/recent'
