@@ -320,4 +320,76 @@
             delete from role_privilege where role = 'RegistrationClerk' and privilege = 'app:emergency';
         </sql>
     </changeSet>
+
+    <changeSet id="JSS-201402181517" author="Neha,Banka" context="rel3">
+        <comment>Create new visit type for IPD</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="IPD" />
+            <column name="description" value="Visit for patients being admitted" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201402181524" author="Neha,Banka" context="rel3">
+        <comment>Create new visit type for Sub-center</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="SUB-CENTRE" />
+            <column name="description" value="Visit for patients that have been referred to the Village Centre in Ganiyari from the sub-centres" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201402181532" author="Neha,Banka" context="rel3">
+        <comment>Create new visit type for Chronic diseases</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="CHRONIC" />
+            <column name="description" value="Visit for patients with chronic illnesses such as Tuberculosis, Cancer, Diabetes, Leprosy, HIV, RHD, etc. and come for a repeat check-up" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201402181533" author="Neha,Banka" context="rel3">
+        <comment>Create new visit type ANC for pregnant women</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="ANC" />
+            <column name="description" value="Visit for pregnant women who come for regular check-ups during pregnancy" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="JSS-201402181545" author="Neha,Banka" context="rel3">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from privilege where privilege = 'Sub-center Clerk'</sqlCheck>
+        </preConditions>
+        <insert tableName="privilege">
+            <column name="privilege" value="Sub-center Clerk"/>
+            <column name="description" value="Privilege for Subcenter clerk"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201402181632" author="Neha,Banka" context="rel3">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from role where role = 'jss-subcenter-clerk'</sqlCheck>
+        </preConditions>
+        <comment>Add role for Village Subcenter clerk</comment>
+        <insert tableName="role">
+            <column name="role" value="jss-subcenter-clerk"/>
+            <column name="description" value="JSS Subcenter Clerk role"/>
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201402181634" author="Neha,Banka" context="rel3">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from role_privilege where role = 'jss-subcenter-clerk' and privilege = 'Sub-center Clerk'</sqlCheck>
+        </preConditions>
+        <comment>Add role_privileges for subcenter clerk</comment>
+        <insert tableName="role_privilege">
+            <column name="role" value="jss-subcenter-clerk"/>
+            <column name="privilege" value="Sub-center Clerk"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
