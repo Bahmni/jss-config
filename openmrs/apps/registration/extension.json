@@ -58,8 +58,7 @@
        "type": "config",
         "extensionParams" : {
             "action" : "print",
-            "display": "Save and Print",
-            "forwardUrl" : "/search"
+            "display": "Save and Print"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
