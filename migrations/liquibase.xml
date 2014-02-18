@@ -275,4 +275,49 @@
             UPDATE global_property set property_value = '' where property = 'visits.autoCloseVisitType';
         </sql>
     </changeSet>
+    <changeSet id="JSS-49" author="tw" context="rel3">
+        <comment>Add Role - EmergencyRegistration</comment>
+        <sql>
+            -- Role required to use the emergency application
+            insert into role (role, description) values ('EmergencyRegistration', 'EmergencyRegistration');
+            -- Privileges for EmergencyRegistration
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Add Observations');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Add Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Add Patients');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Add People');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Add Visits');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Edit Encounters');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Edit Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Edit Patients');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Edit People');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Edit Visits');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Manage Address Hierarchy');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Administration Functions');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Concepts');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Encounter Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Encounters');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Global Properties');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Identifier Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Location Attribute Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Locations');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Navigation Menu');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Observations');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Patients');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View People');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Person Attribute Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Providers');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Users');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Visit Attribute Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Visit Types');
+            insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'View Visits');
+            insert into role_privilege (role, privilege) values('EmergencyRegistration', 'app:emergency') ON DUPLICATE KEY UPDATE privilege = 'app:emergency';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-50" author="tw" context="rel3">
+        <comment>Remove emergency privilege for Registration Clerk</comment>
+        <sql>
+            delete from role_privilege where role = 'RegistrationClerk' and privilege = 'app:emergency';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
