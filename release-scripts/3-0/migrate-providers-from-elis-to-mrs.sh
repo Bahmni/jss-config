@@ -5,9 +5,8 @@ psql -Uclinlims clinlims  <<END_SQL
 END_SQL
 
 POSTGRES_UUID_LOOKUP_FILE=/tmp/postgres-uuid-to-login-name.csv
-psql -Uclinlims clinlims > ${POSTGRES_UUID_LOOKUP_FILE} <<EOF
-		select concat(external_id,',',login_name) from system_user;
-EOF
+
+psql -d clinlims -Uclinlims -t -A -F"," -c "select external_id, login_name from system_user" > ${POSTGRES_UUID_LOOKUP_FILE}
 
 IFS=","
 while read f1 f2
