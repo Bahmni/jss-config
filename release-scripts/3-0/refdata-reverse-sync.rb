@@ -40,10 +40,11 @@ def update_product_uuid_in_openerp
 end 
 
 def convert_depts
-  res = @openelis_conn.exec("select uuid, name, description, sort_order from test_section where is_active = 'Y';")
+  res = @openelis_conn.exec("select uuid, name, description, sort_order,is_active from test_section;")
   res.each do |dept|
+    active = dept['is_active'] == "Y" ? true : false
     output ("insert into department (id, version, date_created, last_updated, name, description, is_active, sort_order)
-       values ('#{dept['uuid']}', 0, now(), now(), '#{dept['name']}', '#{dept['description']}', true, '#{dept['sort_order']}');")
+       values ('#{dept['uuid']}', 0, now(), now(), '#{dept['name']}', '#{dept['description']}', '#{active}', '#{dept['sort_order']}');")
     create_event_records('department', dept['uuid'])
   end
 end
