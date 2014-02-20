@@ -5,8 +5,8 @@
         "description": "Bahmni Patient Registration App",
         "extensionPoints": [
             {
-                "id": "org.bahmni.registration.patient.search.action",
-                "description": "Bahmni Patient Search Page Action"
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
             },
             {
                 "id": "org.bahmni.registration.patient.edit.action",
@@ -23,7 +23,8 @@
         ],
         "config" : {
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN"
+            "defaultIdentifierPrefix": "GAN",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING"
         }
     }
 ]

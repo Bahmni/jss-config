@@ -15,6 +15,11 @@
                 "name": "defaultIdentifierPrefix",
                 "description": "Default identifier prefix used in search, create patient. eg. GAN",
                 "defaultValue": null
+            },
+            {
+                "name": "searchByIdForwardUrl",
+                "description": "Url to forward when searched by id",
+                "defaultValue": "/patient/{{patientUuid}}"
             }
         ]
     }

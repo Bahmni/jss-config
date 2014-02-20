@@ -20,8 +20,8 @@
         "requiredPrivilege": "Add Patients"
     },
     {
-        "id": "bahmni.patient.search.action.edit",
-        "extensionPointId": "org.bahmni.registration.patient.search.action",
+        "id": "bahmni.patient.search.result.action.edit",
+        "extensionPointId": "org.bahmni.registration.patient.search.result.action",
         "type": "link",
         "label": "View",
         "url": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
