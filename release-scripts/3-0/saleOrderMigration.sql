@@ -26,5 +26,6 @@ from
     join product_category parent_pc on parent_pc.id = pc.parent_id and parent_pc.name = 'Drug'
     join res_partner on res_partner.id = partner_id
     join product_uom pu on pu.id = s.product_uom 
+    where res_partner.ref is not null
     ) as foo
 group by order_id, order_date, external_id, customer_id) a;
