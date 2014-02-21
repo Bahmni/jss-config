@@ -398,4 +398,13 @@
             insert into role_privilege (role, privilege) values ('EmergencyRegistration', 'Manage Encounter Roles');
         </sql>
     </changeSet>
+    <changeSet id="JSS-201402201344" author="tw" context="rel3">
+        <comment>Remove sub center specific role, privileges, visit type</comment>
+        <sql>
+            DELETE FROM role_privilege WHERE role = 'jss-subcenter-clerk';
+            DELETE FROM role WHERE role = 'jss-subcenter-clerk';
+            DELETE FROM privilege WHERE privilege = 'Sub-center Clerk';
+            DELETE FROM visit_type WHERE name = 'SUB-CENTRE';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
