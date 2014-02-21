@@ -407,4 +407,11 @@
             DELETE FROM visit_type WHERE name = 'SUB-CENTRE';
         </sql>
     </changeSet>
+    <changeSet id="JSS-201402201750" author="tw" context="rel3">
+        <comment>Add missing privileges for document upload</comment>
+        <sql>
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Manage Encounter Roles');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Encounters');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
