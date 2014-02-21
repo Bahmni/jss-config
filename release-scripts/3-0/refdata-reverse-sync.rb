@@ -77,12 +77,13 @@ def convert_product_unit_of_measure_category
 end
 
 def convert_product_unit_of_measure
-  res = @openerp_conn.exec("select pu.uuid as uuid, pu.name as name, pu.factor as ratio, puc.uuid as category_id from product_uom pu, product_uom_categ puc where pu.category_id = puc.id and pu.active = true;")
+  res = @openerp_conn.exec("select pu.uuid as uuid, pu.name as name, pu.factor as factor, puc.uuid as category_id from product_uom pu, product_uom_categ puc where pu.category_id = puc.id and pu.active = true;")
   res.each do |product_uom|
+    ratio = 1.0/product_uom['factor'].to_f
     output ("insert into product_unit_of_measure (id, version, date_created, last_updated, 
       name, category_id, is_active, ratio)
       values('#{product_uom['uuid']}', 0, now(), now(), '#{product_uom['name']}', 
-        '#{product_uom['category_id']}', true, '#{product_uom['ratio']}');")
+        '#{product_uom['category_id']}', true, '#{ratio}');")
     create_event_records('product_unit_of_measure', product_uom['uuid'])
   end
 end
