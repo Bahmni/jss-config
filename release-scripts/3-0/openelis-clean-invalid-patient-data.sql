@@ -37,7 +37,7 @@ delete from person where id in (61912, 67821, 75862, 77410, 61976, 51957, 61988,
 
 
 
-update sample_human set patient_id=173176 where patient_id=174734
+update sample_human set patient_id=173176 where patient_id=174734;
 delete from patient_identity where patient_id in (174454, 174734);
 delete from patient where id in (174454, 174734);
 delete from person_address where person_id in (174474, 174754);
