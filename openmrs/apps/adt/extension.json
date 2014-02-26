@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "id": "bahmni.adt.admit.new.visit",
+        "extensionPointId": "org.bahmni.adt.admit.action",
+        "type": "config",
+        "extensionParams" : {
+            "action":"startVisit"
+        },
+        "order": 1,
+        "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.adt.admit.continue.visit",
+        "extensionPointId": "org.bahmni.adt.admit.action",
+        "type": "config",
+        "extensionParams" : {
+            "display": "Continue Visit",
+            "action":"save"
+        },
+        "order": 2,
+        "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.adt.admit.continue.visit",
+        "extensionPointId": "org.bahmni.adt.admit.action",
+        "type": "config",
+        "extensionParams" : {
+            "display": "Cancel",
+            "action":"cancel"
+        },
+        "order": 3,
+        "requiredPrivilege": "app:adt"
+    }
+]
