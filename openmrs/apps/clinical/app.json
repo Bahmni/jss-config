@@ -15,6 +15,13 @@
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
+            },
+            "conceptSetUI": {
+                "VITALS_CONCEPT": {
+                    "XAnswerable": {
+                        "autocomplete": true
+                    }
+                }
             }
         }
     }
