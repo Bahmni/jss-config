@@ -15,7 +15,8 @@
         "type": "config",
         "extensionParams" : {
             "display": "Continue Visit",
-            "action":"save"
+            "action":"save",
+            "showCondition":"visitExists"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
