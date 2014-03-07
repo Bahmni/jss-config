@@ -58,6 +58,70 @@
         "icon": "icon-user-md",
         "order": 7,
         "requiredPrivilege": "app:radiologyOrders"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display":"Active Patients",
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "Active Patients",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.patientsToAdmit",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
+            "display":"To Be Admitted",
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "To Be Admitted",
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.patientsAdmitted",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.admittedPatients",
+            "display":"Admitted",
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "Admitted",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.patientsToDischarge",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
+            "display":"To Be Discharged",
+            "forwardUrl" : "../consultation/#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "To Be Discharged",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.patientsHasPendingOrders",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsHasPendingOrders",
+            "display":"Pending Non-Lab Orders",
+            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/{{orderTypeUuid}}"
+        },
+        "label": "Pending Non-Lab Orders",
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
     }
-    
 ]

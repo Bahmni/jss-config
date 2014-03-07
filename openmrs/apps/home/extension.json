@@ -24,7 +24,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "clinical/patients/#/clinical",
+        "url": "clinical/consultation/#/patient/search",
         "icon": "icon-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
@@ -34,7 +34,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "ADT",
-        "url": "clinical/patients/#/adt",
+        "url": "clinical/adt/#/patient/search",
         "icon": "icon-file",
         "order": 4,
         "requiredPrivilege": "app:adt"
