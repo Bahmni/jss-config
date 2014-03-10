@@ -24,7 +24,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "clinical/consultation/#/patient/search",
+        "url": "clinical/clinical/#/patient/search",
         "icon": "icon-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
