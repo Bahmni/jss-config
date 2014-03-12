@@ -7,9 +7,9 @@
             "encounterUuid"
         ],
         "config" : {
-            "onAdmissionForwardTo": "/clinical/bed-management/#/patient/{{patientUuid}}/encounter/{{encounterUuid}}",
-            "onTransferForwardTo": "/clinical/bed-management/#/patient/{{patientUuid}}/encounter/{{encounterUuid}}",
-            "onDischargeForwardTo": "../../clinical/patients/#/adt"
+            "onAdmissionForwardTo": "/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
+            "onTransferForwardTo": "/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
+            "onDischargeForwardTo": "/patient/search"
         }
     }
 ]
