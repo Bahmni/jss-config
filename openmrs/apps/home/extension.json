@@ -40,11 +40,11 @@
         "requiredPrivilege": "app:adt"
     },
     {
-        "id": "bahmni.document.upload",
+        "id": "bahmni.radiology.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
-        "label": "Document Upload",
-        "url": "document-upload/",
+        "label": "Radiology Upload",
+        "url": "document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
         "icon": "icon-camera",
         "order": 5,
         "requiredPrivilege": "app:document-upload"
