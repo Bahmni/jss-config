@@ -114,5 +114,17 @@
         "label": "All admitted patients",
         "order": 3,
         "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.adt.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "display":"All patients",
+            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/null/admit"
+        },
+        "label": "All patients",
+        "order": 4,
+        "requiredPrivilege": "app:adt"
     }
 ]

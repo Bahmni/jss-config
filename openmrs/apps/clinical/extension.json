@@ -118,10 +118,22 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsHasPendingOrders",
             "display":"Pending Non-Lab Orders",
-            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/{{orderTypeUuid}}"
+            "forwardUrl" : "../orders/#/patient/{{patientUuid}}/radiologyOrderType"
         },
         "label": "Pending Non-Lab Orders",
         "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "display":"All patients",
+            "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "All patients",
+        "order": 6,
         "requiredPrivilege": "app:clinical"
     }
 ]

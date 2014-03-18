@@ -9,7 +9,15 @@
             {
                 "id": "org.bahmni.clinical.orders",
                 "description": "Bahmni Orders Page"
+            },
+            {
+                "id":"org.bahmni.patient.search",
+                "description": "Bahmni Patient search, lookups Page"  
             }
+        ],
+        "contextModel": [ 
+            "patientUuid",
+            "visitUuid"
         ],
         "config" : {
             "otherInvestigationsMap": {
