@@ -18,7 +18,8 @@
             },
             "conceptSetUI": {
                 "XCodedConcept": {
-                    "autocomplete": true
+                    "autocomplete": true,
+                    "showAbnormalIndicator": true
                 }
             }
         }
