@@ -59,10 +59,21 @@
         "extensionPointId": "org.bahmni.adt.discharge.action",
         "type": "config",
         "extensionParams" : {
-            "display": "Save",
+            "display": "Discharge",
             "action":"discharge"
         },
         "order": 1,
+        "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.adt.discharge.saveAndCloseVisit",
+        "extensionPointId": "org.bahmni.adt.discharge.action",
+        "type": "config",
+        "extensionParams" : {
+            "display": "Discharge And Close Visit",
+            "action":"dischargeAndCloseVisit"
+        },
+        "order": 2,
         "requiredPrivilege": "app:adt"
     },
     {
@@ -73,7 +84,7 @@
             "display": "Cancel",
             "action":"cancel"
         },
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:adt"
     },
     {
