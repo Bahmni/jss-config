@@ -132,7 +132,7 @@
         "type": "config",
         "extensionParams": {
             "display":"All patients",
-            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/null/admit"
+            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
         "label": "All patients",
         "order": 4,

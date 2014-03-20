@@ -44,7 +44,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Radiology Upload",
-        "url": "document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
+        "url": "document-upload?encounterType=RADIOLOGY&topLevelConcept=Radiology",
         "icon": "icon-camera",
         "order": 5,
         "requiredPrivilege": "app:document-upload"
