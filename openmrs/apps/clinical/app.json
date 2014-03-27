@@ -27,7 +27,8 @@
             "conceptSetUI": {
                 "XCodedConcept": {
                     "autocomplete": true,
-                    "showAbnormalIndicator": true
+                    "showAbnormalIndicator": true,
+                    "required": true
                 }
             }
         }
