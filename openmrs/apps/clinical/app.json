@@ -20,13 +20,13 @@
             "visitUuid"
         ],
         "config" : {
-            "obsIgnoreList" : ["XCodedConcept"],
+            "obsIgnoreList" : ["REGISTRATION FEES"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
             "conceptSetUI": {
-                "XCodedConcept": {
+                "Example concept": {
                     "autocomplete": true,
                     "showAbnormalIndicator": true,
                     "required": true
