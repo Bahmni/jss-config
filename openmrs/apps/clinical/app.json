@@ -20,6 +20,7 @@
             "visitUuid"
         ],
         "config" : {
+            "obsIgnoreList" : ["XCodedConcept"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
