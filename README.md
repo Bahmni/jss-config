@@ -1,3 +1,5 @@
+### JSS Hospital specific configuration and data for Bahmni
+
 Deploy
 - under server (apache) www directory
 - alias root (jss-config) to bahmni_config
@@ -10,6 +12,8 @@ Deploy
  Configurations -
  ==============================================================
  1) Clinical app.json: example -  (Details in comments)
+
+```javascript
 
  "config" : {
     "otherInvestigationsMap": {
@@ -29,3 +33,5 @@ Deploy
         }
     }
 }
+
+```
