@@ -40,11 +40,11 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.consultation.vitals",
+        "id": "bahmni.clinical.consultation.observations",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
-        "label": "Vitals",
-        "url": "concept-set/vitals_concept",
+        "label": "Observations",
+        "url": "concept-set-group/observations",
         "icon": "icon-user-md",
         "order": 6,
         "requiredPrivilege": "app:clinical"
@@ -134,6 +134,17 @@
         },
         "label": "All patients",
         "order": 6,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "label": "Vitals",
+        "extensionParams": {
+            "conceptName": "VITALS_CONCEPT"
+        },
+        "order": 1,
         "requiredPrivilege": "app:clinical"
     }
 ]
