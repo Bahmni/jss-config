@@ -24,7 +24,13 @@
         "config" : {
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
-            "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING"
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
+            "conceptSetUI": {
+                "temparature": {
+                    "showAbnormalIndicator": true
+                }
+            },
+            "registrationConceptSet":"RegConceptSet"
         }
     }
 ]
