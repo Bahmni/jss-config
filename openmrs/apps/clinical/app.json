@@ -7,6 +7,10 @@
                 "description": "Bahmni Clinical Consultation Page"
             },
             {
+                "id": "org.bahmni.clinical.conceptSetGroup.*",
+                "description": "Define conceptsets part of a conceptset group"
+            },
+            {
                 "id": "org.bahmni.clinical.orders",
                 "description": "Bahmni Orders Page"
             },
