@@ -35,7 +35,14 @@
                     "showAbnormalIndicator": true,
                     "required": true
                 }
-            }
+            },
+            "patientDashboardSections": [
+                {
+                    "description": "Vitals",
+                    "action": "getCurrentVisitObservationFor",
+                    "conceptSetName": "VITALS_CONCEPT"
+                }
+            ]
         }
     }
 ]
