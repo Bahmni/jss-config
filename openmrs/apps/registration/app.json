@@ -17,7 +17,7 @@
                 "description": "Bahmni Patient Create Page Action"
             }
         ],
-        "contextModel": [ 
+        "contextModel": [
             "patientUuid",
             "activeVisitUuid"
         ],
@@ -30,7 +30,8 @@
                     "showAbnormalIndicator": true
                 }
             },
-            "registrationConceptSet":"RegConceptSet"
+            "registrationConceptSet":"RegConceptSet",
+            "showMiddleName": false
         }
     }
 ]
