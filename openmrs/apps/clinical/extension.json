@@ -141,9 +141,24 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "VITALS_CONCEPT"
+            "conceptName": "VITALS_CONCEPT",
+            "showIf": [ "var visitTypes = [];",
+                         "if(visitTypes.length === 0) return true;",
+                         "var visitTypeName = context.visitType ? context.visitType.name : null;",
+                         "return visitTypes.indexOf(visitTypeName) !== -1;"
+            ]
         },
         "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.intake",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Intake Outtake"
+        },
+        "order": 2,
         "requiredPrivilege": "app:clinical"
     }
 ]
