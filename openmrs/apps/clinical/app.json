@@ -34,6 +34,9 @@
                     "autocomplete": true,
                     "showAbnormalIndicator": true,
                     "required": true
+                },
+                "Chief Complaint": {
+                    "multiselect": true
                 }
             },
             "patientDashboardSections": [
