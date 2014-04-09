@@ -44,9 +44,19 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Radiology Upload",
-        "url": "document-upload?encounterType=RADIOLOGY&topLevelConcept=Radiology",
+        "url": "document-upload?encounterType=RADIOLOGY&topLevelConcept=Radiology&defaultOption=HEAD Skull AP",
         "icon": "icon-camera",
         "order": 5,
+        "requiredPrivilege": "app:document-upload"
+    },
+    {
+        "id": "bahmni.patient.document.upload",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Patient Documents",
+        "url": "document-upload?encounterType=Patient Document&topLevelConcept=Patient Document",
+        "icon": "icon-camera",
+        "order": 6,
         "requiredPrivilege": "app:document-upload"
     }
 ]
