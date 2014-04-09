@@ -16,10 +16,10 @@
             },
             {
                 "id":"org.bahmni.patient.search",
-                "description": "Bahmni Patient search, lookups Page"  
+                "description": "Bahmni Patient search, lookups Page"
             }
         ],
-        "contextModel": [ 
+        "contextModel": [
             "patientUuid",
             "visitUuid"
         ],
@@ -42,8 +42,7 @@
             "patientDashboardSections": [
                 {
                     "description": "Vitals",
-                    "action": "getCurrentVisitObservationFor",
-                    "conceptSetName": "VITALS_CONCEPT"
+                    "name": "vitals"
                 }
             ]
         }
