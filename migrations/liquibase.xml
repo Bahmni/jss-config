@@ -433,4 +433,15 @@
             call add_concept_set_members(@patient_document_concept_id,@patient_file_concept_id,1);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201404101655" author="Gurpreet" context="rel4">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM role_privilege where role = 'RegistrationClerk' and privilege = 'Manage Encounter Roles';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add missing role_privilege - which was originally added into bahmni-core as changeset bahmni-40 </comment>
+        <sql>
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Encounter Roles');
+        </sql>
+    </changeSet>    
 </databaseChangeLog>
