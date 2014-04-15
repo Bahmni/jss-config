@@ -43,6 +43,10 @@
                 {
                     "description": "Vitals",
                     "name": "vitals"
+                },
+                {
+                    "description": "Active Treatments",
+                    "name": "treatment"
                 }
             ]
         }
