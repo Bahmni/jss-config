@@ -160,5 +160,16 @@
         },
         "order": 2,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Discharge Summary",
+            "showIf": [ "return context.visitType.name === 'IPD';"]
+        },
+        "order": 3,
+        "requiredPrivilege": "Discharge Summary"
     }
 ]

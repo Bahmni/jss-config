@@ -444,4 +444,73 @@
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Encounter Roles');
         </sql>
     </changeSet>    
+    <changeSet id="JSS-201404161343" author="d3, arathyjan" context="rel4">
+        <comment>Add concept set patient document and patient file concept as member</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Discharge Summary', 'Discharge Summary', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Discharge', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Summary', 1);
+            set @discharge_summary_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Hospital Course', 'Hospital Course', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Hospital,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Course', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination Notes', 'History and Examination Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, ' Surgeries and Procedures', ' Surgeries and Procedures', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Surgeries,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedures', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,2);
+            set @surgeries_and_procedure_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Date of Operation', 'Date of Operation', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operation', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Operative Procedure', 'Operative Procedure', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operative,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedure', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Follow up Date', 'Follow up Date', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow up', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Lab Investigation Notes', 'Lab Investigation Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Lab', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Investigation', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,4);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Radiology Notes', 'Radiology Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Radiology', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,5);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Other Notes', 'Other Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Other', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,6);
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201404161559" author="deepak,arathyjan" context="rel4">
+        <insert tableName="privilege">
+            <column name="privilege" value="Discharge Summary"/>
+            <column name="description" value="Discharge Summary Privilege"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
