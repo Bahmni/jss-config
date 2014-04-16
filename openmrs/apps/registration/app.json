@@ -30,7 +30,7 @@
                     "showAbnormalIndicator": true
                 }
             },
-            "registrationConceptSet":"RegConceptSet",
+            "registrationConceptSet":"",
             "showMiddleName": false
         }
     }
