@@ -6,11 +6,14 @@ then
     SEARCH_DIR=`pwd`
 fi
 
-echo "$(tput setaf 7)"
-exit_code=0
-
 #http://www.cyberciti.biz/tips/handling-filenames-with-spaces-in-bash.html
-find $SEARCH_DIR -iname "*.json" -print0 | while read -d $'\0' file_name
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+
+exit_code=0
+echo "$(tput setaf 7)************ JSON validation start ************"
+
+for file_name in `find $SEARCH_DIR -name "*.json"`
 do
     python -m json.tool "$file_name" 1> /dev/null 2> temp_json_parser_error.txt
     if [[ $? -eq 0 ]]
@@ -22,8 +25,8 @@ do
             exit_code=1
     fi
 done
-echo "$(tput setaf 7)"
+IFS=$SAVEIFS
+echo "$(tput setaf 7)************ JSON validation end ************"
 
 if [[ -f temp_json_parser_error.txt ]]; then rm temp_json_parser_error.txt; fi
-
 exit $exit_code
