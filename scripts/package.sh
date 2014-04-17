@@ -7,4 +7,11 @@ ROOT_DIR=$BASE_DIR/..
 mkdir -p $ROOT_DIR/target
 rm -rf $ROOT_DIR/target/jss_config.zip
 
-cd $ROOT_DIR && zip -r target/jss_config.zip openmrs/* migrations/*
+$BASE_DIR/validate-json.sh $ROOT_DIR/openmrs
+if [[ $? -eq 0 ]]
+    then
+        cd $ROOT_DIR && zip -r target/jss_config.zip openmrs/* migrations/*
+    else
+        echo "Validation failed. Please fix the errors and try again"
+        exit 1
+fi
