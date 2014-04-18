@@ -130,8 +130,8 @@ WHERE  pt.categ_id IN (SELECT id
        AND pt.uom_po_id = purchase_uom.id
        AND pp.id <> 2998;")
   res.each do |product|
-    name = PGconn.escape_string(product['name'])
-    generic_name = PGconn.escape_string(product['generic_name'])
+    name = PGconn.escape_string(product['name'].strip)
+    generic_name = PGconn.escape_string(product['generic_name'].strip)
 
     output ("insert into drug (id, version, date_created, last_updated, name, 
       generic_name, short_name, form_id, sale_unit_of_measure_id, purchase_unit_of_measure_id, 
