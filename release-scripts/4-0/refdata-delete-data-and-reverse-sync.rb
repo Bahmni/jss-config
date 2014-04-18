@@ -25,7 +25,6 @@ def delete_refdata
   output ("delete from panel_test;")
   output ("delete from panel;")
   output ("delete from test;")
-  output ("delete from drug_form;")
   output ("delete from drug_category;")
   output ("delete from department;")
   output ("delete from product_unit_of_measure;")
@@ -146,17 +145,6 @@ WHERE  pt.categ_id IN (SELECT id
   end
 end
 
-
-def convert_drug_form
-  res = @openerp_conn.exec("SELECT name FROM product_category WHERE parent_id = (SELECT id FROM product_category WHERE name = 'Drug');")
-  res.each do |drug_form|
-    uuid = SecureRandom.uuid
-    output ("insert into drug_form(id, version, date_created, last_updated, name)
-      values ('#{uuid}', 0, now(), now(), '#{drug_form['name']}')")
-    create_event_records('drug_form', uuid)
-  end
-end
-
 def convert_drug_category
   res = @openerp_conn.exec("SELECT uuid, name FROM product_category WHERE parent_id = (SELECT id FROM product_category WHERE name = 'Drug');")
   res.each do |drug_category|
@@ -249,7 +237,6 @@ convert_sample
 convert_product_unit_of_measure_category 
 convert_product_unit_of_measure 
 convert_test_unit_of_measure
-convert_drug_form
 convert_drug_category
 convert_drug
 convert_test
