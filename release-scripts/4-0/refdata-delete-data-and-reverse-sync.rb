@@ -20,6 +20,21 @@ def output(data)
   @refdata_conn.exec(data)
 end
 
+def delete_refdata
+  output ("delete from drug;")
+  output ("delete from panel_test;")
+  output ("delete from panel;")
+  output ("delete from test;")
+  output ("delete from drug_form;")
+  output ("delete from drug_category;")
+  output ("delete from department;")
+  output ("delete from product_unit_of_measure;")
+  output ("delete from product_unit_of_measure_category;")
+  output ("delete from sample;")
+  output ("delete from test_unit_of_measure;")
+end
+
+
 def create_event_records(title, value)
     output ("insert into event_records (id, uuid, title, timestamp, object, category)
     values (nextval('event_records_id_seq'), '#{SecureRandom.uuid}', '#{title}', now(), 
@@ -227,6 +242,7 @@ def convert_test_unit_of_measure
 end
 
 install_uuid_extension
+delete_refdata
 update_product_uuid_in_openerp
 convert_depts
 convert_sample
