@@ -60,6 +60,10 @@
                 {
                     "description": "Active Treatments",
                     "name": "treatment"
+                },
+                {
+                    "description": "Lab Orders",
+                    "name": "labOrders"
                 }
             ]
         }
