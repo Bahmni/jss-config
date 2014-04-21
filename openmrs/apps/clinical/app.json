@@ -50,6 +50,10 @@
             },
             "patientDashboardSections": [
                 {
+                    "description": "Diagnosis",
+                    "name": "diagnosis"
+                },
+                {
                     "description": "Vitals",
                     "name": "vitals"
                 },
