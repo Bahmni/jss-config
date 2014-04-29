@@ -1,6 +1,6 @@
 [
     {
-        "id": "bahmni.clinical.consultation.disposition",
+        "id": "bahmni.clinical.consultation.summary",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Consultation",
