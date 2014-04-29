@@ -1,22 +1,12 @@
 [
     {
-        "id": "bahmni.clinical.consultation.summary",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Consultation",
-        "url": "consultation",
-        "icon": "icon-user-md",
-        "order": 1,
-        "requiredPrivilege": "app:clinical"
-    },
-    {
         "id": "bahmni.clinical.consultation.observations",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Observations",
         "url": "concept-set-group/observations",
         "icon": "icon-user-md",
-        "order": 2,
+        "order": 1,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -26,7 +16,7 @@
         "label": "Diagnosis",
         "url": "diagnosis",
         "icon": "icon-user-md",
-        "order": 3,
+        "order": 2,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -36,7 +26,7 @@
         "label": "Disposition",
         "url": "disposition",
         "icon": "icon-user-md",
-        "order": 4,
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -46,7 +36,7 @@
         "label": "Pending Orders",
         "url": "pendingOrders",
         "icon": "icon-user-md",
-        "order": 5,
+        "order": 4,
         "requiredPrivilege": "app:radiologyOrders"
     },
     {
