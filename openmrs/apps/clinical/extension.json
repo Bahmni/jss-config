@@ -1,12 +1,22 @@
 [
     {
-        "id": "bahmni.clinical.consultation.investigations",
+        "id": "bahmni.clinical.consultation.disposition",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
-        "label": "Investigations",
-        "url": "investigation",
+        "label": "Consultation",
+        "url": "consultation",
         "icon": "icon-user-md",
         "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.consultation.observations",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Observations",
+        "url": "concept-set-group/observations",
+        "icon": "icon-user-md",
+        "order": 2,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -15,16 +25,6 @@
         "type": "link",
         "label": "Diagnosis",
         "url": "diagnosis",
-        "icon": "icon-user-md",
-        "order": 2,
-        "requiredPrivilege": "app:clinical"
-    },
-    {
-        "id": "bahmni.clinical.consultation.treatment",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Treatment",
-        "url": "treatment",
         "icon": "icon-user-md",
         "order": 3,
         "requiredPrivilege": "app:clinical"
@@ -40,23 +40,13 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.consultation.observations",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Observations",
-        "url": "concept-set-group/observations",
-        "icon": "icon-user-md",
-        "order": 6,
-        "requiredPrivilege": "app:clinical"
-    },
-    {
         "id": "bahmni.clinical.orders.pending",
         "extensionPointId": "org.bahmni.clinical.orders",
         "type": "link",
         "label": "Pending Orders",
         "url": "pendingOrders",
         "icon": "icon-user-md",
-        "order": 7,
+        "order": 5,
         "requiredPrivilege": "app:radiologyOrders"
     },
     {
