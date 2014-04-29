@@ -31,8 +31,12 @@
                 }
             },
             "registrationConceptSet":"",
-            "showMiddleName": false,
-            "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html"
+            "showMiddleName": true,
+            "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+            "localNameSearch": true,
+            "localNameLabel": "मरीज़ का नाम",
+            "localNamePlaceholder": "मरीज़ का नाम",
+            "localNameAttributesToDisplay": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
         }
     }
 ]

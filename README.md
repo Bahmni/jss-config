@@ -35,3 +35,26 @@ Deploy
 }
 
 ```
+ 2) Registration app.json: example -  (Details in comments)
+
+```javascript
+
+"config" : {
+  "autoCompleteFields":["familyName", "caste"],
+  "defaultIdentifierPrefix": "GAN",
+  "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
+  "conceptSetUI": {
+      "temparature": {
+          "showAbnormalIndicator": true
+      }
+  },
+  "registrationConceptSet":"",
+  "showMiddleName": false,
+  "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+  "localNameSearch": true,                       // registration search displays parameter for search by local name
+  "localNameLabel": "मरीज़ का नाम",                // label to be diplyed for local name search input
+  "localNamePlaceholder": "मरीज़ का नाम",          // placeholder to be diplyed for local name search input
+  "localNameAttributes": ["givenNameLocal", "familyNameLocal"]  //patient attributes to be search against for local name search
+}
+
+```
