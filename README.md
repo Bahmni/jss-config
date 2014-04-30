@@ -27,7 +27,7 @@ Deploy
         },
         "Text Complaints": {    //name of the concept
             "freeTextAutocomplete": {   //if present, will show a textbox, with autocomplete for concept name.
-                "conceptSetName": "VITALS_CONCEPT",  // autocomplete will search for concepts which are membersOf this conceptSet (Optional)
+                "conceptSetName": "Vitals",  // autocomplete will search for concepts which are membersOf this conceptSet (Optional)
                 "codedConceptName": "Complaints"     // autocomplete will search for concepts which are answersTo this codedConcept (Optional)
             }
         }

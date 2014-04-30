@@ -30,22 +30,11 @@
                 "Endoscopy": "Endoscopy Order"
             },
             "conceptSetUI": {
-                "Hospital Course": {
-                    "required": true
-                },
-                "History and Examination Notes": {
-                    "required": true
-                },
-                "Follow up Date": {
-                    "required": true
-                },
-                "Example concept": {
-                    "autocomplete": true,
-                    "showAbnormalIndicator": true,
+                "Temperature": {
                     "required": true
                 },
                 "Chief Complaint": {
-                    "multiselect": true
+                    "addMultiple": true
                 }
             },
             "patientDashboardSections": [
