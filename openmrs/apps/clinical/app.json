@@ -64,6 +64,10 @@
                 {
                     "description": "Lab Orders",
                     "name": "labOrders"
+                },
+                {
+                    "description": "Radiology",
+                    "name": "radiology"
                 }
             ]
         }
