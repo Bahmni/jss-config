@@ -9,6 +9,16 @@
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
+     {
+        "id": "bahmni.clinical.consultation.summary",
+         "extensionPointId": "org.bahmni.clinical.consultation.board",
+         "type": "link",
+        "label": "Consultation",
+        "url": "consultation",
+         "icon": "icon-user-md",
+         "order": 1.5,
+         "requiredPrivilege": "app:clinical"
+     },
     {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
