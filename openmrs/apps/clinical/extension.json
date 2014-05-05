@@ -167,7 +167,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "history"
+            "conceptName": "History"
         },
         "order": 1,
         "requiredPrivilege": "app:clinical"

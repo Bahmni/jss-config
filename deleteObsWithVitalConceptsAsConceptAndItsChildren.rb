@@ -2,10 +2,12 @@ require 'rubygems'
 require 'mysql'  
 
 # Required Gems : ruby-mysql - sudo gem install ruby-mysql
-if(ARGV.length < 1) 
-	puts('give atleast one concept name as the parameter')
+if(ARGV.length < 2)
+	puts('give ip address of mysql server and atleast one concept name as the parameter')
 else 
-	con = Mysql.new('localhost', 'openmrs-user', 'password', 'openmrs',nil,'/var/lib/mysql/mysql.sock')  
+	con = Mysql.new(ARGV[0], 'openmrs-user', 'password', 'openmrs',nil,'/var/lib/mysql/mysql.sock')
+
+    ARGV.shift;
 
 	ARGV.each do |concept_name|
 		puts "deleting concept_set #{concept_name}"

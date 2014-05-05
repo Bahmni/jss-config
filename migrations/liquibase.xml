@@ -765,4 +765,35 @@
             call add_concept_set_members(@Other_notes_data_id,@concept_id,6);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405041504" author="mujir" context="rel4">
+        <comment>add chief complaint concept set</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History', 'History', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History', 1);
+            set @history_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Data', 'Chief Complaint Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            set @chief_complaint_data_id = @concept_id;
+            call add_concept_set_members(@history_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint', 'Chief Complaint', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Duration', 'Chief Complaint Duration', 'Numeric', 'Duration', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Duration', 1);
+            call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, null, null, null);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

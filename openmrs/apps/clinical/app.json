@@ -33,8 +33,8 @@
                 "Temperature": {
                     "required": true
                 },
-                "Chief Complaint": {
-                    "addMultiple": true
+                "Chief Complaint Data": {
+                    "multiple": 3
                 }
             },
             "patientDashboardSections": [
