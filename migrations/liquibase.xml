@@ -796,4 +796,25 @@
             call add_concept_numeric(@concept_id, null, null, null);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405051646" author="neha, mujir" context="rel4">
+        <comment>add chief complaint concept set</comment>
+        <sql>
+            select concept_id INTO @history_concept_id from concept_name where name='History' and locale_preferred = 1;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Notes Data', 'Chief Complaint Notes Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            set @notes_data_id = @concept_id;
+            call add_concept_set_members(@history_concept_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Notes', 'Chief Complaint Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
+            call add_concept_set_members(@notes_data_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>

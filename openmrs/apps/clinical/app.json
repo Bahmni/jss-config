@@ -35,6 +35,11 @@
                 },
                 "Chief Complaint Data": {
                     "multiple": 3
+                },
+                "Chief Complaint" : {
+                    "autocomplete" : {
+                        "codedConceptName": "Chief Complaint"
+                    }
                 }
             },
             "patientDashboardSections": [
