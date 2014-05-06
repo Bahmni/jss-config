@@ -25,11 +25,6 @@
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
-            "conceptSetUI": {
-                "temparature": {
-                    "showAbnormalIndicator": true
-                }
-            },
             "registrationConceptSet":"",
             "showMiddleName": false,
             "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
