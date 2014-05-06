@@ -822,7 +822,7 @@
             update visit_type set retired = true, retired_by = 1, date_retired = current_date() where name in ('OPD - NEW', 'OPD - RETURNING', 'CHRONIC', 'ANC');
         </sql>
     </changeSet>
-    <changeSet id="JSS-201405061225" author="vinay" context="rel4">
+    <changeSet id="JSS-201405061358" author="vinay" context="rel4">
         <comment>Get rid of Transfer Patient disposition</comment>
         <sql>
             call delete_concept('Transfer Patient');
