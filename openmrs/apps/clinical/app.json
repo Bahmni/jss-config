@@ -48,20 +48,20 @@
                     "name": "diagnosis"
                 },
                 {
-                    "description": "Vitals",
-                    "name": "vitals"
-                },
-                {
                     "description": "Active Treatments",
                     "name": "treatment"
+                },
+                {
+                    "description": "Radiology",
+                    "name": "radiology"
                 },
                 {
                     "description": "Lab Orders",
                     "name": "labOrders"
                 },
                 {
-                    "description": "Radiology",
-                    "name": "radiology"
+                    "description": "Vitals",
+                    "name": "vitals"
                 }
             ]
         }
