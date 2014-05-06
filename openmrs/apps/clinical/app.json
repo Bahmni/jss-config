@@ -29,6 +29,7 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Temperature": {
                     "required": true
@@ -37,9 +38,7 @@
                     "multiple": 3
                 },
                 "Chief Complaint" : {
-                    "autocomplete" : {
-                        "codedConceptName": "Chief Complaint"
-                    }
+                    "autocomplete" : true
                 }
             },
             "patientDashboardSections": [
