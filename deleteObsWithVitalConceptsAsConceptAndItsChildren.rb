@@ -13,7 +13,10 @@ else
 		puts "deleting concept_set #{concept_name}"
 		rs = con.query('delete from concept_set where concept_set in (select concept_id from concept_name where name like \'' + concept_name + '\');')  
 
-		queue = Queue.new
+		puts "deleting obs with value_coded as #{concept_name}"
+		rs = con.query('delete from obs where value_coded in (select concept_id from concept_name where name like \'' + concept_name + '\');')  
+
+		queue = Array.new
 
 		rs = con.query('select * from obs where concept_id in (select concept_id from concept_name where name like \'' + concept_name + '\');')  
 		rs.each_hash { |h| queue << h['obs_id']}  
