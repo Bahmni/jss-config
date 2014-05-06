@@ -816,5 +816,10 @@
             call add_concept_set_members(@notes_data_id, @concept_id, 0);
         </sql>
     </changeSet>
-
+    <changeSet id="JSS-201405061225" author="vinay" context="rel4">
+        <comment>Get rid of OPD-New and OPD-Returning. </comment>
+        <sql>
+            update visit_type set retired = true, retired_by = 1, date_retired = current_date() where name in ('OPD - NEW', 'OPD - RETURNING', 'CHRONIC', 'ANC');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
