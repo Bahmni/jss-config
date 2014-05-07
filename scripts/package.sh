@@ -10,7 +10,7 @@ rm -rf $ROOT_DIR/target/jss_config.zip
 $BASE_DIR/validate-json.sh $ROOT_DIR/openmrs
 if [[ $? -eq 0 ]]
     then
-        cd $ROOT_DIR && zip -r target/jss_config.zip openmrs/* migrations/*
+        cd $ROOT_DIR && zip -r target/jss_config.zip openmrs/* migrations/* openelis/*
     else
         echo "Validation failed. Please fix the errors and try again"
         exit 1
