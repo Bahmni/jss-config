@@ -42,7 +42,7 @@ Deploy
 "config" : {
   "autoCompleteFields":["familyName", "caste"],
   "defaultIdentifierPrefix": "GAN",
-  "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
+  "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD",
   "conceptSetUI": {
       "temparature": {
           "showAbnormalIndicator": true
