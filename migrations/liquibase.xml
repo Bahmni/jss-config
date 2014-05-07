@@ -857,4 +857,14 @@
             call add_concept_set_members(@non_coded_chief_complaint_data_id, @chief_complaint_duration_id, 0);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405071129" author="vinay" context="rel4">
+        <comment>Add OPD visit type</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="OPD" />
+            <column name="description" value="OPD visit" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
 </databaseChangeLog>
