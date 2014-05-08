@@ -55,10 +55,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display":"Active Patients",
+            "display":"Active",
             "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
         },
-        "label": "Active Patients",
+        "label": "Active",
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
@@ -67,10 +67,10 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "display":"All patients",
+            "display":"All",
             "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
         },
-        "label": "All patients",
+        "label": "All",
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
