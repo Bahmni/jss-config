@@ -867,4 +867,95 @@
             <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
         </insert>
     </changeSet>
+    <changeSet id="JSS-201405081500" author="mujir" context="rel4">
+        <comment>fixing concept set data. removing use of data nodes (concepts of class concept details) where its not required.</comment>
+        <sql>
+            call delete_concept('Chief Complaint Notes Data');
+            select concept_id INTO @history_id from concept_name where name='History' and locale_preferred = 1;
+            select concept_id INTO @chief_complaint_notes_id from concept_name where name='Chief Complaint Notes' and locale_preferred = 1;
+            call add_concept_set_members(@history_id, @chief_complaint_notes_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201405081718" author="mujir" context="rel4">
+        <comment>fixing discharge summary concept set. removing use of data nodes (concepts of class concept details) where its not required.</comment>
+        <sql>
+            call delete_concept('Other Notes');
+            call delete_concept('Other Notes Data');
+            call delete_concept('Radiology Notes');
+            call delete_concept('Radiology Notes Data');
+            call delete_concept('Lab Investigation Notes');
+            call delete_concept('Lab Investigation Notes Data');
+            call delete_concept('Follow up Date');
+            call delete_concept('Follow up Date Data');
+            call delete_concept('Operative Procedure');
+            call delete_concept('Operative Procedure Data');
+            call delete_concept('Date of Operation');
+            call delete_concept('Date of Operation Data');
+            call delete_concept('Surgeries and Procedures');
+            call delete_concept('History and Examination Notes');
+            call delete_concept('History and Examination Notes Data');
+            call delete_concept('Hospital Course');
+            call delete_concept('Hospital Course Data');
+            call delete_concept('Discharge Summary');
+
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Discharge Summary', 'Discharge Summary', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Discharge', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Summary', 1);
+            set @discharge_summary_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Hospital Course', 'Hospital Course', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Hospital,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Course', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination Notes', 'History and Examination Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, ' Surgeries and Procedures', ' Surgeries and Procedures', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Surgeries,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedures', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,2);
+            set @surgeries_and_procedure_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Date of Operation', 'Date of Operation', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operation', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Operative Procedure', 'Operative Procedure', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operative,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedure', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Follow up Date', 'Follow up Date', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow up', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Lab Investigation Notes', 'Lab Investigation Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Lab', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Investigation', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,4);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Radiology Notes', 'Radiology Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Radiology', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,5);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Other Notes', 'Other Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Other', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,6);
+
+        </sql>
+    </changeSet>
 </databaseChangeLog>
