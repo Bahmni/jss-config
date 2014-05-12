@@ -958,4 +958,28 @@
 
         </sql>
     </changeSet>
+
+    <changeSet id="JSS-201405121430" author="rohan">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="2">
+                SELECT COUNT(*) FROM concept_name where name in ('Chief Complaint Notes');
+            </sqlCheck>
+        </preConditions>
+        <comment>Change sort weight for Chief Complaint Notes Data.</comment>
+        <sql>
+            update concept_set set sort_weight=2 where concept_id=(select concept_id from concept_name where name='Chief Complaint Notes' limit 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201405121432" author="rohan">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="2">
+                SELECT COUNT(*) FROM concept_name where name in ('Non-Coded Chief Complaint Data');
+            </sqlCheck>
+        </preConditions>
+        <comment>Change sort weight for Non-Coded Chief Complaint Data.</comment>
+        <sql>
+            update concept_set set sort_weight=1 where concept_id=(select concept_id from concept_name where name='Chief Complaint Notes Data' limit 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
