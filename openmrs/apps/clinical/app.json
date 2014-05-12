@@ -41,7 +41,8 @@
                     "multiple": 1
                 },
                 "Chief Complaint" : {
-                    "autocomplete" : true
+                    "autocomplete" : true,
+                     "durationRequired" : true
                 }
             },
             "patientDashboardSections": [
