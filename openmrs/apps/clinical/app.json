@@ -42,7 +42,7 @@
                 },
                 "Chief Complaint" : {
                     "autocomplete" : true,
-                     "durationRequired" : true
+                    "durationRequired" : false
                 }
             },
             "patientDashboardSections": [
