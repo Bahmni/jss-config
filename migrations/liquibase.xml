@@ -982,4 +982,17 @@
             update concept_set set sort_weight=1 where concept_id=(select concept_id from concept_name where name='Chief Complaint Notes Data' limit 1);
         </sql>
     </changeSet>
+
+
+    <changeSet id="JSS-201405131200" author="rohan">
+        <comment>Change Interval time for Scheduler Tasks.</comment>
+        <sql>
+            update scheduler_task_config set repeat_interval=30 where name='OpenElis Patient Atom Feed Task';
+            update scheduler_task_config set repeat_interval=300 where name='OpenElis Patient  Atom Feed Failed Event Task';
+            update scheduler_task_config set repeat_interval=30 where name='OpenERP Feed Task';
+            update scheduler_task_config set repeat_interval=300 where name='OpenERP Failed Feed Task';
+            update scheduler_task_config set repeat_interval=900 where name='Reference Data Task';
+            update scheduler_task_config set repeat_interval=300 where name='Reference Data Failed Event Task';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
