@@ -10,16 +10,6 @@
         "requiredPrivilege": "app:registration"
     },
     {
-        "id": "bahmni.emergency",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Emergency",
-        "url": "registration/emergency",
-        "icon": "icon-ambulance icon-red",
-        "order": 2,
-        "requiredPrivilege": "app:emergency"
-    },
-    {
         "id": "bahmni.clinical",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
