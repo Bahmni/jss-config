@@ -28,7 +28,17 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-            "localNameSearch": false
+            "localNameSearch": false,
+            "visitTypeKeyBoardShortCuts":[
+                {
+                    "visitType":"OPD - NEW",
+                    "keyBoardShortCut":"ctrl+g"
+                },
+                {
+                    "visitType":"IPD",
+                    "keyBoardShortCut":"ctrl+u"
+                }
+            ]
         }
     }
 ]
