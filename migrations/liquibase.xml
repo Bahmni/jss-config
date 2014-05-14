@@ -982,8 +982,6 @@
             update concept_set set sort_weight=1 where concept_id=(select concept_id from concept_name where name='Chief Complaint Notes Data' limit 1);
         </sql>
     </changeSet>
-
-
     <changeSet id="JSS-201405131200" author="rohan">
         <comment>Change Interval time for Scheduler Tasks.</comment>
         <sql>
@@ -993,6 +991,33 @@
             update scheduler_task_config set repeat_interval=300 where name='OpenERP Failed Feed Task';
             update scheduler_task_config set repeat_interval=900 where name='Reference Data Task';
             update scheduler_task_config set repeat_interval=300 where name='Reference Data Failed Event Task';
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201405141259" author="mihir/shruthi">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM concept_name where name in ('Diagnosis Set of Sets')
+            </sqlCheck>
+        </preConditions>
+        <comment>Add diagnosis set of sets concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Diagnosis Set of Sets', 'Diagnosis Set of Sets', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Diagnosis', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Set of Sets', 1);
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201405141113" author="mihir/shruthi">
+        <comment>set emr.concept.diagnosisSetOfSets global property</comment>
+        <sql>
+            select c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
+
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', uuid())
+            ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
         </sql>
     </changeSet>
 </databaseChangeLog>
