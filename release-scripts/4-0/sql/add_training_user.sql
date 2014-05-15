@@ -1,5 +1,4 @@
 DELIMITER $$
-
 CREATE PROCEDURE add_user (username VARCHAR(255))
 BEGIN
 
@@ -7,14 +6,17 @@ BEGIN
   DECLARE _salt VARCHAR(255);
   DECLARE _password VARCHAR(255);
   DECLARE _user_id VARCHAR(255);
+  DECLARE _person_id INT;
 
   select salt, password from users where system_id = 'admin' into _salt, _password;
 
   SELECT uuid() into puuid;
   insert into person(birthdate_estimated, dead, creator, date_created, uuid) values(0, 0, 1, now(), puuid);
+  select max(person_id) from person into _person_id;
+  insert into person_name(person_id, preferred, given_name, creator, date_created) value(_person_id, true, username, 1, now());
 
-  insert into users(system_id, creator, date_created, person_id, uuid, username, password, salt)
-  values (username, 1, now(),(select person_id from person where uuid = puuid) , uuid(), username, _password, _salt);
+  insert into users(system_id, creator, date_created, person_id, uuid, username, password, salt, retired)
+  values (username, 1, now(),(select person_id from person where uuid = puuid) , uuid(), username, _password, _salt, 0);
 
   select max(user_id) from users into _user_id;
 

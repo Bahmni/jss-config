@@ -13,7 +13,7 @@ BEGIN
   delete from user_property where user_id = _user_id;
   delete from user_role where user_id = _user_id;
   delete from users where person_id = _person_id;
+  delete from person_name where person_id = _person_id;
   delete from person where person_id = _person_id;
-  
   
 END
