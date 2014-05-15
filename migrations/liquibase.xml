@@ -1020,4 +1020,11 @@
             ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405161734" author="Neha" context="rel4">
+        <comment>Rename visit types</comment>
+        <sql>
+            UPDATE visit_type set name = 'LAB VISIT' where name = 'LAB_VISIT';
+            UPDATE visit_type set name = 'PHARMACY VISIT' where name = 'PHARMACY_VISIT';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
