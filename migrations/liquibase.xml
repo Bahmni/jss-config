@@ -1027,4 +1027,10 @@
             UPDATE visit_type set name = 'PHARMACY VISIT' where name = 'PHARMACY_VISIT';
         </sql>
     </changeSet>
+    <changeSet>
+        <comment>Migrate High normal value for SPO2</comment>
+        <sql>
+            update concept_numeric set hi_normal=100 where concept_id = (select concept_id from concept_name where name = 'SPO2' and locale_preferred = 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
