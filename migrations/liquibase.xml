@@ -1014,10 +1014,12 @@
         <validCheckSum>3:fdb31c1d95d7168afa2359f24afc1682</validCheckSum>
         <comment>set emr.concept.diagnosisSetOfSets global property</comment>
         <sql>
+            set @concept_uuid = 0;
             select distinct c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
 
+            select uuid() into @concept_uuid;
             INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
-            VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', uuid())
+            VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', @concept_uuid)
             ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
         </sql>
     </changeSet>
@@ -1069,6 +1071,31 @@
             update concept_set set sort_weight=0 where concept_id=(select distinct concept_id from concept_name where name="Systolic Data" limit 1);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405160946" author="vinay" context="rel4">
+        <comment>#2298. Rename History concept set and Chief complaint notes</comment>
+        <sql>
+            set @concept_id = 0;
+            delete from concept_set where concept_set_id in (
+            select concept_id from (
+            select cs.concept_set_id as concept_id from concept_set cs
+            inner join concept_name cn1 on cs.concept_set = cn1.concept_id and cn1.concept_name_type = 'FULLY_SPECIFIED' and cn1.name = 'History'
+            inner join concept_name cn2 on cs.concept_id = cn2.concept_id and cn2.concept_name_type = 'FULLY_SPECIFIED' and cn2.name = 'Chief Complaint Notes') wrapped_select);
+
+            select uuid() into @concept_id;
+            insert into concept_set(concept_id, concept_set, sort_weight, creator, date_created, uuid) (
+            select cn2.concept_id, cn1.concept_id, 3, 1, curdate(), @concept_id from concept_name cn1 inner join concept_name cn2
+            where cn1.concept_name_type = 'FULLY_SPECIFIED' and cn1.name = 'History'
+            and cn2.concept_name_type = 'FULLY_SPECIFIED' and cn2.name = 'History And Examination Notes');
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201405161719" author="vinay" context="rel4">
+        <comment>#2298. Rename History to History and Examination Notes</comment>
+        <sql>
+            update concept_name set name = 'History and Examination' where name = 'History';
+            INSERT INTO concept_word (word, locale, weight, concept_id, concept_name_id)  
+            (select UPPER('Examination'), 'en', 1, concept_id, concept_name_id from concept_name where name = 'History and Examincation' and concept_name_type = 'FULLY_SPECIFIED');
+        </sql>
+    </changeSet>
     <changeSet id="JSS-201405190617" author="d3" context="rel4">
         <comment>Set start on startup for sync jobs</comment>
         <sql>
@@ -1080,5 +1107,35 @@
             'org.bahmni.module.referencedatafeedclient.task.ReferenceDataFeedTask',
             'org.bahmni.module.referencedatafeedclient.task.ReferenceDataFailedEventTask');
         </sql>
+    </changeSet>
+    <changeSet id="JSS-201405161725" author="vinay" context="rel4">
+        <comment>#2298. Rename History to History and Examination Notes</comment>
+        <sql>
+            UPDATE visit
+            SET visit_type_id = (SELECT visit_type_id
+                                 FROM visit_type
+                                 WHERE name IN ('OPD'))
+            WHERE visit_type_id IN (SELECT visit_type_id
+                                     FROM visit_type
+                                     WHERE name IN ('OPD - NEW', 'OPD - RETURNING')); 
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201405161738" author="vinay" context="rel4">
+        <comment>Add new roles</comment>
+        <insert tableName="role">
+            <column name="role" value="Doctor" />
+            <column name="description" value="Role for the JSS doctor" />
+            <column name="uuid" valueComputed="uuid()" />
+        </insert>
+        <insert tableName="role">
+            <column name="role" value="Nurse" />
+            <column name="description" value="Role for the JSS nurse" />
+            <column name="uuid" valueComputed="uuid()" />
+        </insert>
+        <insert tableName="role">
+            <column name="role" value="PatientRecordManager" />
+            <column name="description" value="Role for people other than Doctor and Nurse" />
+            <column name="uuid" valueComputed="uuid()" />
+        </insert>
     </changeSet>
 </databaseChangeLog>
