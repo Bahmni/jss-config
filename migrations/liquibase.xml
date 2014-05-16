@@ -1033,4 +1033,10 @@
             update concept_numeric set hi_normal=100 where concept_id = (select concept_id from concept_name where name = 'SPO2' and locale_preferred = 1);
         </sql>
     </changeSet>
+    <changeSet>
+        <comment>Migrate High normal value for Pulse</comment>
+        <sql>
+            update concept_numeric set hi_normal=80 where concept_id = (select concept_id from concept_name where name = 'Pulse' and locale_preferred = 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
