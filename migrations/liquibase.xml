@@ -1039,4 +1039,10 @@
             update concept_numeric set hi_normal=80 where concept_id = (select concept_id from concept_name where name = 'Pulse' and locale_preferred = 1);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405161750" author="d3" context="rel4">
+        <comment>Update locale.allowed.list to en</comment>
+        <sql>
+            update global_property set property_value='en' where property='locale.allowed.list';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
