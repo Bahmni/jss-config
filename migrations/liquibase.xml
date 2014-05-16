@@ -994,7 +994,7 @@
         </sql>
     </changeSet>
     <changeSet id="JSS-201405141259" author="mihir/shruthi">
-        <preConditions onFail="CONTINUE">
+        <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
                 SELECT COUNT(*) FROM concept_name where name in ('Diagnosis Set of Sets')
             </sqlCheck>
@@ -1027,13 +1027,13 @@
             UPDATE visit_type set name = 'PHARMACY VISIT' where name = 'PHARMACY_VISIT';
         </sql>
     </changeSet>
-    <changeSet>
+    <changeSet id="JSS-201405161500" author="Hemanth" context="rel4">
         <comment>Migrate High normal value for SPO2</comment>
         <sql>
             update concept_numeric set hi_normal=100 where concept_id = (select concept_id from concept_name where name = 'SPO2' and locale_preferred = 1);
         </sql>
     </changeSet>
-    <changeSet>
+    <changeSet id="JSS-201405161501" author="Hemanth" context="rel4">
         <comment>Migrate High normal value for Pulse</comment>
         <sql>
             update concept_numeric set hi_normal=80 where concept_id = (select concept_id from concept_name where name = 'Pulse' and locale_preferred = 1);
