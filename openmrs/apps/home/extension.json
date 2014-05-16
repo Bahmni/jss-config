@@ -44,7 +44,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Patient Documents",
-        "url": "document-upload?encounterType=Patient Document&topLevelConcept=Patient Document",
+        "url": "document-upload?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
         "icon": "icon-camera",
         "order": 6,
         "requiredPrivilege": "app:document-upload"
