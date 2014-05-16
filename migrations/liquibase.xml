@@ -1013,7 +1013,7 @@
     <changeSet id="JSS-201405141113" author="mihir/shruthi">
         <comment>set emr.concept.diagnosisSetOfSets global property</comment>
         <sql>
-            select c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
+            select distinct c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
 
             INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
             VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', uuid())
