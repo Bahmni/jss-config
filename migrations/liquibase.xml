@@ -1045,4 +1045,20 @@
             update global_property set property_value='en' where property='locale.allowed.list';
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405180557" author="Hemanth" context="rel4">
+        <comment>Create BMI Status concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            set @concept_source_id = 0;
+            set @concept_map_type_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI STATUS', 'BMI STATUS', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
+            call add_concept_word(@concept_id, @concept_name_full_id, 'STATUS', 1);
+            call add_concept_set_members((select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS'),@concept_id, 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
