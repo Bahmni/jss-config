@@ -27,7 +27,8 @@
         "config" : {
             "onAdmissionForwardTo": "/adt/#/patient/search",
             "onTransferForwardTo": "/adt/#/patient/search",
-            "onDischargeForwardTo": "/adt/#/patient/search"
+            "onDischargeForwardTo": "/adt/#/patient/search",
+            "defaultVisitType": "IPD"
         }
     }
 ]
