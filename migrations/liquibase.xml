@@ -1069,4 +1069,16 @@
             update concept_set set sort_weight=0 where concept_id=(select distinct concept_id from concept_name where name="Systolic Data" limit 1);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405190617" author="d3" context="rel4">
+        <comment>Set start on startup for sync jobs</comment>
+        <sql>
+            UPDATE scheduler_task_config SET start_on_startup = 1 
+            WHERE schedulable_class IN ('org.bahmni.module.elisatomfeedclient.api.task.OpenElisPatientFeedTask', 
+            'org.bahmni.module.elisatomfeedclient.api.task.OpenElisPatientFeedFailedEventsTask',
+            'org.bahmni.module.openerpatomfeedclient.api.task.OpenERPSaleOrderFeedTask',
+            'org.bahmni.module.openerpatomfeedclient.api.task.OpenERPSaleOrderFailedFeedTask',
+            'org.bahmni.module.referencedatafeedclient.task.ReferenceDataFeedTask',
+            'org.bahmni.module.referencedatafeedclient.task.ReferenceDataFailedEventTask');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
