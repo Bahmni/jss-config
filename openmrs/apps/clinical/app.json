@@ -34,6 +34,15 @@
                 "Temperature": {
                     "required": true
                 },
+                "Pulse": {
+                    "required": true
+                },
+                "Systolic": {
+                    "required": true
+                },
+                "Diastolic": {
+                    "required": true
+                },
                 "Chief Complaint Data": {
                     "multiple": 3
                 },

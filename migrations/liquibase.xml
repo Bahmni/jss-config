@@ -1061,4 +1061,11 @@
             call add_concept_set_members((select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS'),@concept_id, 1);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405190709" author="Mihir" context="rel4">
+        <comment>Changing sort weights of Diastolic Data and Systolic Data</comment>
+        <sql>
+            update concept_set set sort_weight=1 where concept_id=(select distinct concept_id from concept_name where name="Diastolic Data" limit 1);
+            update concept_set set sort_weight=0 where concept_id=(select distinct concept_id from concept_name where name="Systolic Data" limit 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
