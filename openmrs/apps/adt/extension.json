@@ -10,18 +10,6 @@
         "requiredPrivilege": "app:adt"
     },
     {
-        "id": "bahmni.adt.admit.continue.visit",
-        "extensionPointId": "org.bahmni.adt.admit.action",
-        "type": "config",
-        "extensionParams" : {
-            "displayFunction": "getDisplayForContinuingVisit",
-            "action":"admit",
-            "showCondition":"visitExists"
-        },
-        "order": 2,
-        "requiredPrivilege": "app:adt"
-    },
-    {
         "id": "bahmni.adt.admit.cancel",
         "extensionPointId": "org.bahmni.adt.admit.action",
         "type": "config",
@@ -101,19 +89,6 @@
         "requiredPrivilege": "app:adt"
     },
     {
-        "id": "bahmni.adt.patients.search.patientsToDischarge",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display":"To Discharge",
-            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
-        },
-        "label": "To Discharge",
-        "order": 2,
-        "requiredPrivilege": "app:adt"
-    },
-    {
         "id": "bahmni.adt.patients.search.patientsAdmitted",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -123,6 +98,19 @@
             "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer"
         },
         "label": "Admitted",
+        "order": 2,
+        "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.adt.patients.search.patientsToDischarge",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
+            "display":"To Discharge",
+            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
+        },
+        "label": "To Discharge",
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
