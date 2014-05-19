@@ -1011,7 +1011,7 @@
         </sql>
     </changeSet>
     <changeSet id="JSS-201405141113" author="mihir/shruthi">
-        <validCheckSum><comment>Fixing sql - adding distinct</comment>3:cc4c514c0ca0c25e7aa48c273d071aef</validCheckSum>
+        <validCheckSum>3:fdb31c1d95d7168afa2359f24afc1682</validCheckSum>
         <comment>set emr.concept.diagnosisSetOfSets global property</comment>
         <sql>
             select distinct c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
