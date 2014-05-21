@@ -1138,4 +1138,37 @@
             <column name="uuid" valueComputed="uuid()" />
         </insert>
     </changeSet>
+    <changeSet id="JSS-201405211623" author="vinay" context="rel4">
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:history"/>
+            <column name="description" value="JSS observation history view and edit"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
+    <changeSet id="JSS-201405211625" author="vinay" context="rel4">
+        <comment>Add roles</comment>
+        <sqlFile path="V1_77__AddPrivileges.sql"/>
+    </changeSet>
+    <changeSet id="JSS-201405211713" author="vinay" context="rel4">
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:diagnosisTab"/>
+            <column name="description" value="View and Edit Diagnosis tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:dispositionTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:observationTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:consultationTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
