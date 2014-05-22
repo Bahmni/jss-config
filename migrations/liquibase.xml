@@ -1012,6 +1012,7 @@
     </changeSet>
     <changeSet id="JSS-201405141113" author="mihir/shruthi">
         <validCheckSum>3:fdb31c1d95d7168afa2359f24afc1682</validCheckSum>
+        <validCheckSum>3:0e435346d02030b84e72e1b04748231c</validCheckSum>
         <comment>set emr.concept.diagnosisSetOfSets global property</comment>
         <sql>
             set @concept_uuid = 0;
@@ -1170,5 +1171,11 @@
     <changeSet id="JSS-201405211625" author="vinay" context="rel4">
         <comment>Add roles</comment>
         <sqlFile path="V1_77__AddPrivileges.sql"/>
+    </changeSet>
+    <changeSet id="JSS-201405221039" author="d3" context="rel4">
+        <comment>Set bahmni.cacheHeadersFilter.expiresDuration to 4 hrs</comment>
+        <sql>
+            UPDATE global_property set property_value = '240' where property = 'bahmni.cacheHeadersFilter.expiresDuration';
+        </sql>
     </changeSet>
 </databaseChangeLog>
