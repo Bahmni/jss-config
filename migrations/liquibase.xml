@@ -1172,6 +1172,34 @@
         <comment>Add roles</comment>
         <sqlFile path="V1_77__AddPrivileges.sql"/>
     </changeSet>
+    <changeSet id="JSS-201405221032" author="Mujir, Neha" context="rel4">
+        <comment>Add Second Vitals Concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Second Vitals', 'Second Vitals', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'VITALS', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'CONCEPT', 1);
+            set @second_vitals_concept_id = @concept_id;
+
+            select concept_id INTO @concept_id from concept_name where name='Pulse Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='Blood Pressure' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='Temperature Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='RR Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='SPO2 Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
     <changeSet id="JSS-201405221039" author="d3" context="rel4">
         <comment>Set bahmni.cacheHeadersFilter.expiresDuration to 4 hrs</comment>
         <sql>
