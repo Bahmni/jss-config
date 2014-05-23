@@ -106,7 +106,7 @@
                 "return visitTypes.indexOf(visitTypeName) !== -1;"
             ]
         },
-        "order": 1,
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -117,7 +117,7 @@
             "conceptName": "Discharge Summary",
             "showIf": [ "return context.visitType.name === 'IPD';"]
         },
-        "order": 3,
+        "order": 4,
         "requiredPrivilege": "Discharge Summary"
     }
 ]
