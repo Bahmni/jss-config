@@ -31,9 +31,6 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Temperature": {
-                    "required": true
-                },
                 "Pulse": {
                     "required": true
                 },
