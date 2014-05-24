@@ -41,7 +41,7 @@
                     "autocomplete" : true,
                     "durationRequired" : false
                 },
-                "posture" : {
+                "Posture" : {
                     "autocomplete" : true
                 }
             },

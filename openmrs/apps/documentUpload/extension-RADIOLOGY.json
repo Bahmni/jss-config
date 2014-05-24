@@ -1,4 +1,17 @@
 [
+    {
+        "id": "bahmni.docUpload.patients.search.activePatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display":"Active Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/document"
+        },
+        "label": "Active Patients",
+        "order": 1,
+        "requiredPrivilege": "app:document-upload"
+    },
 	{
         "id": "bahmni.docUpload.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
