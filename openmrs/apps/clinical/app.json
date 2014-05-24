@@ -40,6 +40,9 @@
                 "Chief Complaint" : {
                     "autocomplete" : true,
                     "durationRequired" : false
+                },
+                "posture" : {
+                    "autocomplete" : true
                 }
             },
             "patientDashboardSections": [
