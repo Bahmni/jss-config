@@ -1,12 +1,14 @@
 [
     {
-        "id": "bahmni.adt.admit.new.visit",
+        "id": "bahmni.adt.admit.continue.visit",
         "extensionPointId": "org.bahmni.adt.admit.action",
         "type": "config",
         "extensionParams" : {
-            "action":"startVisit"
+            "displayFunction": "getDisplayForContinuingVisit",
+            "action":"admit",
+            "showCondition":"visitExists"
         },
-        "order": 1,
+        "order": 2,
         "requiredPrivilege": "app:adt"
     },
     {
