@@ -44,7 +44,7 @@
                     "multiple": 3
                 },
                 "Non-Coded Chief Complaint Data": {
-                    "multiple": 1
+                    "multiple": 3
                 },
                 "Chief Complaint" : {
                     "autocomplete" : true,
