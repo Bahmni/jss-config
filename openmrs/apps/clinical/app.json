@@ -31,15 +31,6 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Pulse": {
-                    "required": true
-                },
-                "Systolic": {
-                    "required": true
-                },
-                "Diastolic": {
-                    "required": true
-                },
                 "Chief Complaint Data": {
                     "multiple": 3
                 },
