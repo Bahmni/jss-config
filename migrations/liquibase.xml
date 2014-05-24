@@ -415,6 +415,11 @@
         </sql>
     </changeSet>
     <changeSet id="JSS-201404091506" author="sushmitharaos, arathyjan" context="rel4">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM concept_name where name = 'Patient File' and locale_preferred = 1;
+            </sqlCheck>
+        </preConditions>
         <comment>Add concept set patient document and patient file concept as member</comment>
         <sql>
             set @concept_id = 0;
