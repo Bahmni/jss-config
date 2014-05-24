@@ -1206,4 +1206,18 @@
             UPDATE global_property set property_value = '240' where property = 'bahmni.cacheHeadersFilter.expiresDuration';
         </sql>
     </changeSet>
+    <changeSet id="JSS-201405241244" author="d3" context="rel4">
+        <comment>Remove unwanted privileges for Doctors and Nurses</comment>
+        <sql>
+            DELETE from role_privilege where role = 'Doctor' and privilege = 'app:registration';
+            DELETE from role_privilege where role = 'Doctor' and privilege = 'app:emergency';
+            DELETE from role_privilege where role = 'Doctor' and privilege = 'app:document-upload';
+            DELETE from role_privilege where role = 'Doctor' and privilege = 'app:radiologyOrders';
+            DELETE from role_privilege where role = 'Doctor' and privilege = 'app:adt';
+            DELETE from role_privilege where role = 'Nurse' and privilege = 'app:registration';
+            DELETE from role_privilege where role = 'Nurse' and privilege = 'app:emergency';
+            DELETE from role_privilege where role = 'Nurse' and privilege = 'app:document-upload';
+            DELETE from role_privilege where role = 'Nurse' and privilege = 'app:radiologyOrders';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
