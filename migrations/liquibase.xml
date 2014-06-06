@@ -1250,12 +1250,6 @@
     </changeSet>
     <changeSet id="JSS-201406061545" author="indraneel" context="rel4">
         <comment>Add non coded chief complaint concept to chief complaint data concept set</comment>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                select count(*) from concept_set where concept_set in (select concept_id from concept_name where name='Chief complaint data')
-                and concept_id in (select concept_id from concept_name where name = 'Non-Coded Chief Complaint');
-            </sqlCheck>
-        </preConditions>
         <sql>
             set @non_coded_concept_id = 0;
             set @chief_complaint_data_concept_id = 0;
