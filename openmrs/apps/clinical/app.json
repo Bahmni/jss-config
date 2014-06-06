@@ -34,15 +34,16 @@
                 "Chief Complaint Data": {
                     "multiple": 3
                 },
-                "Non-Coded Chief Complaint Data": {
-                    "multiple": 3
-                },
                 "Chief Complaint" : {
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
                 "Posture" : {
                     "autocomplete" : true
+                },
+                "Non-Coded Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
                 }
             },
             "patientDashboardSections": [
