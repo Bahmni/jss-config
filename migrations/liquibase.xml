@@ -1225,4 +1225,20 @@
             DELETE from role_privilege where role = 'Nurse' and privilege = 'app:radiologyOrders';
         </sql>
     </changeSet>
+    <changeSet id="JSS-201406061056" author="d3" context="rel4">
+        <comment>Add Additional advice on discharge concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id INTO @discharge_summary_id from concept_name where name='Discharge Summary' and locale_preferred = 1;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Additional Advice on Discharge', 'Additional Advice on Discharge', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Additional', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Advice', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Discharge', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,7);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
