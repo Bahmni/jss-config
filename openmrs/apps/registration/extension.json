@@ -5,6 +5,7 @@
         "type": "link",
         "label": "Search",
         "url": "/search",
+        "shortcutKey": "f",
         "icon": "icon-search",
         "order": 1,
         "requiredPrivilege": "View Patients"
@@ -16,6 +17,7 @@
         "label": "Create New",
         "url": "/patient/new",
         "icon": "icon-plus",
+        "shortcutKey": "n",
         "order": 2,
         "requiredPrivilege": "Add Patients"
     },
