@@ -1241,4 +1241,23 @@
             call add_concept_set_members(@discharge_summary_id,@concept_id,7);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201406061530" author="indraneel" context="rel4">
+        <comment>Remove non-coded chief complaint data from History and Examination concept set.</comment>
+        <sql>
+            delete from concept_set where concept_set in (select concept_id from concept_name where name='History and examination')
+            and concept_id in (select concept_id from concept_name where name = 'Non-Coded Chief Complaint Data');
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201406061545" author="indraneel" context="rel4">
+        <comment>Add non coded chief complaint concept to chief complaint data concept set</comment>
+        <sql>
+            set @non_coded_concept_id = 0;
+            set @chief_complaint_data_concept_id = 0;
+
+            select concept_id INTO @non_coded_concept_id from concept_name where name='Non-Coded Chief Complaint' and locale_preferred = 1;
+            select concept_id INTO @chief_complaint_data_concept_id from concept_name where name='Chief Complaint Data' and locale_preferred = 1;
+
+            call add_concept_set_members(@chief_complaint_data_concept_id,@non_coded_concept_id,2);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
