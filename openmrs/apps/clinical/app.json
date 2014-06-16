@@ -55,7 +55,7 @@
                     "description": "Treatments",
                     "name": "treatment",
                     "options": {
-                        "numberOfVisitsForPastTreatments": 2
+                        "numberOfVisitsForPastTreatments": 1
                     }
                 },
                 {
