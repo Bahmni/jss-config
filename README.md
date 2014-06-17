@@ -58,8 +58,10 @@ Deploy
 }
 
 ```
-*Production environment*
 
+Production environment
+======================
+*Folder structure*
 /root/bahmni-environment -> Running deployment scripts
 
 /root/release-backups -> Create subfolders in this directory for backing up previous build, configs etc. The folder can be named as r<release-number>.ddmmyyyy. Eg: r4.0.06062014
@@ -71,3 +73,28 @@ Deploy
 /root/jss-reports -> Deploying reports on slave 
 
 /backup -> The backup scripts in bahmni-environment create db backups in this folder. During release if you create db backups, please delete other backups older than month or so.
+
+*Key steps*
+
+1) On Slave
+Stop tomcat, nagios
+
+2) On master
+Stop tomcat, openerp, nrpe
+Backup mysql and pgsql databases
+Backup folder - /packages/build, .OpenMRS, tomcat/webapps, httpd conf
+Download or copy build
+Post Deploy
+
+3) On master
+deploy-jss
+
+4) On Slave
+deploy-module.sh bahmni-jasperreports
+
+5) On Slave
+Start tomcat, nagios
+
+6) On master
+Start tomcat, openerp, nrpe
+Tag the bahmni-environment with release date
