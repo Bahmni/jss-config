@@ -81,10 +81,9 @@ Production environment
 
 2) On master
 - Stop tomcat, openerp, nrpe
-- Backup mysql and pgsql databases
+- Backup mysql and pgsql databases ./scripts/backup-all-dbs.sh
 - Backup folder - /packages/build, .OpenMRS, tomcat/webapps, httpd conf
 - Download or copy build
-- Post Deploy
 
 3) On master
 - deploy-jss
