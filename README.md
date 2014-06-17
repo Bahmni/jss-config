@@ -97,3 +97,6 @@ Production environment
 6) On master
 - Start tomcat, openerp, nrpe
 - Tag the bahmni-environment with release date
+
+*Testing in PreProd*
+- For deleting cache -> rm -rf /var/cache/mod_proxy/*
