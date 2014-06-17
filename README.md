@@ -77,24 +77,24 @@ Production environment
 *Key steps*
 
 1) On Slave
-Stop tomcat, nagios
+- Stop tomcat, nagios
 
 2) On master
-Stop tomcat, openerp, nrpe
-Backup mysql and pgsql databases
-Backup folder - /packages/build, .OpenMRS, tomcat/webapps, httpd conf
-Download or copy build
-Post Deploy
+- Stop tomcat, openerp, nrpe
+- Backup mysql and pgsql databases
+- Backup folder - /packages/build, .OpenMRS, tomcat/webapps, httpd conf
+- Download or copy build
+- Post Deploy
 
 3) On master
-deploy-jss
+- deploy-jss
 
 4) On Slave
-deploy-module.sh bahmni-jasperreports
+- deploy-module.sh bahmni-jasperreports
 
 5) On Slave
-Start tomcat, nagios
+- Start tomcat, nagios
 
 6) On master
-Start tomcat, openerp, nrpe
-Tag the bahmni-environment with release date
+- Start tomcat, openerp, nrpe
+- Tag the bahmni-environment with release date
