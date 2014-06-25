@@ -1,5 +1,5 @@
 [
-	    {
+    {
         "id": "bahmni.docUpload.patients.search.activePatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -13,6 +13,20 @@
         "requiredPrivilege": "app:document-upload"
     },
     {
+        "id": "bahmni.docUpload.patients.search.myPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/document",
+            "searchParams":["provider_uuid"]
+        },
+        "label": "My Patients",
+        "order": 2,
+        "requiredPrivilege": "app:document-upload"
+    },
+    {
         "id": "bahmni.docUpload.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -21,7 +35,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/document"
         },
         "label": "All patients",
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:document-upload"
     }
 ]

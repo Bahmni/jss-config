@@ -67,6 +67,20 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard",
+            "searchParams":["provider_uuid"]
+        },
+        "label": "Active",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
             "display":"All",
             "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
         },

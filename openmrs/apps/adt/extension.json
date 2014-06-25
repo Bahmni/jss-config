@@ -106,6 +106,20 @@
         "requiredPrivilege": "app:adt"
     },
     {
+        "id": "bahmni.adt.patients.search.myPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
+            "searchParams":["provider_uuid"]
+        },
+        "label": "My Patients",
+        "order": 4,
+        "requiredPrivilege": "app:adt"
+    },
+    {
         "id": "bahmni.adt.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -114,7 +128,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
         "label": "All",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:adt"
     }
 ]
