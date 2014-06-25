@@ -1279,7 +1279,7 @@
             order by en.encounter_datetime desc','Sql query to get list of active patients by provider uuid',uuid())
         </sql>
     </changeSet>
-    <changeSet id="JSS-201406251400" author="indraneel">
+    <changeSet id="JSS-201406251410" author="indraneel">
         <comment>sql to search patients seen by the given provider today</comment>
         <sql>
             insert into global_property	(property,property_value,description,uuid) values ('emrapi.sqlSearch.todaysPatientsByProvider','select distinct concat(pn.given_name," ", pn.family_name) as name, pi.identifier as identifier, concat("",p.uuid) as uuid,
