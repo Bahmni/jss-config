@@ -1298,4 +1298,15 @@
             order by en.encounter_datetime desc','Sql query to get list of active patients by provider uuid',uuid());
         </sql>
     </changeSet>
+    <changeSet id="JSS-201406261644" author="arathy/mujir">
+        <comment>fixing migration id 'JSS-201405141113'</comment>
+        <sql>
+            set @concept_uuid = 0;
+            select distinct c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
+
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', uuid())
+            ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
+        </sql>
+    </changeSet>
 </databaseChangeLog>
