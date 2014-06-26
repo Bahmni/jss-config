@@ -1260,15 +1260,4 @@
             call add_concept_set_members(@chief_complaint_data_concept_id,@non_coded_concept_id,2);
         </sql>
     </changeSet>
-    <changeSet id="JSS-201406261644" author="arathy/mujir">
-        <comment>fixing migration id 'JSS-201405141113'</comment>
-        <sql>
-            set @concept_uuid = 0;
-            select distinct c.uuid from concept c inner join concept_name cn on c.concept_id = cn.concept_id where name in ('Diagnosis Set of Sets') into @concept_uuid;
-
-            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
-            VALUES ('emr.concept.diagnosisSetOfSets', @concept_uuid, 'Diagnosis Set of Sets', uuid())
-            ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
-        </sql>
-    </changeSet>
 </databaseChangeLog>
