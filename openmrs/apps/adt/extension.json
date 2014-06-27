@@ -112,7 +112,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display":"My Patients",
-            "forwardUrl" : "/adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
+            "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
             "searchParams":["provider_uuid"]
         },
         "label": "My Patients",
