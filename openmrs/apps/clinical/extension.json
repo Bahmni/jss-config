@@ -69,8 +69,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display":"My Patients",
-            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
-            "searchParams":["provider_uuid"]
+            "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
         },
         "label": "Active",
         "order": 1,
