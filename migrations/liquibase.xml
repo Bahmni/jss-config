@@ -1309,4 +1309,20 @@
             ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
         </sql>
     </changeSet>
+    <changeSet id="JSS-201406271749" author="shruthi/mujir">
+        <comment>moving chief complaint answers to a new concept 'Chief Complaint Answers'. Clinical can now preload answers for a concept.</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            set @chief_complaint_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Answers', 'Chief Complaint Answers', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief Complaint Answers', 1);
+            set @chief_complaint_answers_id = @concept_id;
+
+            select concept_id from concept_name where name ='Chief Complaint' and concept_name_type='SHORT' into @chief_complaint_id;
+            update concept_answer set concept_id=@chief_complaint_answers_id where concept_id=@chief_complaint_id;
+        </sql>
+    </changeSet>
 </databaseChangeLog>

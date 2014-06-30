@@ -35,15 +35,20 @@
                     "multiple": 3
                 },
                 "Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Non-Coded Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
                 "Posture" : {
                     "autocomplete" : true
                 },
-                "Non-Coded Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Uterus" : {
+                    "grid" : true
                 }
             },
             "patientDashboardSections": [
