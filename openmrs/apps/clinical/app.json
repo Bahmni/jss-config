@@ -24,7 +24,7 @@
             "visitUuid"
         ],
         "config" : {
-            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
+            "obsIgnoreList" : ["Fee Information", "Patient file"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
