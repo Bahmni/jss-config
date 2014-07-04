@@ -44,12 +44,52 @@
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
-                "Posture" : {
-                    "autocomplete" : true
+                "Posture:" : {
+                    "grid" : true
                 },
-                "Uterus" : {
+                "M/C Days:" : {
+                    "grid" : true
+                },
+                "M/C Interval:" : {
+                    "grid" : true
+                },
+                "M/C Amount:" : {
+                    "grid" : true
+                },
+                "Bad Obs History:" : {
+                    "grid" : true
+                },
+                "P/A Presenting Part:" : {
+                    "grid" : true
+                },
+                "FHS:" : {
+                    "grid" : true
+                },
+                "Amount of Liquor:" : {
+                    "grid" : true
+                },
+                "Contractions:" : {
+                    "grid" : true
+                },
+                "P/V Presenting Part:" : {
+                    "grid" : true
+                },
+                "OS:" : {
+                    "grid" : true
+                },
+                "Membrane:" : {
+                    "grid" : true
+                },
+                "Liquor:" : {
+                    "grid" : true
+                },
+                "P/S (per speculum) - Cervix" : {
+                    "grid" : true
+                },
+                "P/V (per vaginal) - Uterus" : {
                     "grid" : true
                 }
+
             },
             "patientDashboardSections": [
                 {

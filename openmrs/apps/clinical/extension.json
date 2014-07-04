@@ -98,13 +98,23 @@
         "requiredPrivilege": "app:clinical:history"
     },
     {
+        "id": "bahmni.clinical.conceptSetGroup.observations.investigations",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Investigations"
+        },
+        "order": 2,
+        "requiredPrivilege": "app:clinical:history"
+    },
+    {
         "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
             "conceptName": "Vitals"
         },
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -119,7 +129,37 @@
                 "return visitTypes.indexOf(visitTypeName) !== -1;"
             ]
         },
-        "order": 3,
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.ob/gyn",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "OBS/GYN"
+        },
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Obstetrics"
+        },
+        "order": 6,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Gynaecology"
+        },
+        "order": 7,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -129,7 +169,7 @@
         "extensionParams": {
             "conceptName": "Discharge Summary"
         },
-        "order": 4,
+        "order": 8,
         "requiredPrivilege": "Discharge Summary"
     }
 ]
