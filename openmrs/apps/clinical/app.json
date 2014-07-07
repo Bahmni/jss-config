@@ -44,8 +44,8 @@
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
-                "Posture:" : {
-                    "grid" : true
+                "Posture" : {
+                    "buttonSelect" : true
                 },
                 "M/C Days:" : {
                     "grid" : true
