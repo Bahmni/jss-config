@@ -1379,4 +1379,11 @@
             delete from concept_set where concept_id = @comment_concept_id and concept_set = @registration_concept_id;
         </sql>
     </changeSet>
+    <changeSet id="JSS-201407141248" author="vinay">
+        <comment>Add caresettings to all roles</comment>
+        <sql>
+            insert into role_privilege (role, privilege) values ('Doctor', 'Get Care Settings');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Get Care Settings');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
