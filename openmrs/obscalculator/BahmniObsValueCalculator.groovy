@@ -42,8 +42,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             Double height = heightObservation != null && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
             Double weight = weightObservation != null && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
 
-            println "magic:height" + height
-            println "magic:weight" + weight
             if (height == null || weight == null) {
                 voidBmiObs(bmiObservation, bmiStatusObservation)
                 return
