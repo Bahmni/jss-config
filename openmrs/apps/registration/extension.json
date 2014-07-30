@@ -83,7 +83,8 @@
         "type": "config",
         "extensionParams": {
             "conceptName": "Nutritional Levels",
-            "required":true
+            "required":true,
+            "showLatest": true
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
