@@ -47,54 +47,78 @@
                 "Posture" : {
                     "buttonSelect" : true
                 },
-                "M/C Days:" : {
-                    "grid" : true
+                "M/C Days" : {
+                    "buttonSelect" : true
                 },
-                "M/C Interval:" : {
-                    "grid" : true
+                "M/C Interval" : {
+                    "buttonSelect" : true
                 },
-                "M/C Amount:" : {
-                    "grid" : true
+                "M/C Amount" : {
+                    "buttonSelect" : true
                 },
-                "Bad Obs History:" : {
-                    "grid" : true
+                "Bad Obs History" : {
+                    "buttonSelect" : true
                 },
-                "P/A Presenting Part:" : {
-                    "grid" : true
+                "P/A Presenting Part" : {
+                    "buttonSelect" : true
                 },
-                "FHS:" : {
-                    "grid" : true
+                "FHS" : {
+                    "buttonSelect" : true
                 },
-                "Amount of Liquor:" : {
-                    "grid" : true
+                "Amount of Liquor" : {
+                    "buttonSelect" : true
                 },
-                "Contractions:" : {
-                    "grid" : true
+                "Contractions" : {
+                    "buttonSelect" : true
                 },
-                "P/V Presenting Part:" : {
-                    "grid" : true
+                "P/V Presenting Part" : {
+                    "buttonSelect" : true
                 },
-                "OS:" : {
-                    "grid" : true
+                "OS" : {
+                    "buttonSelect" : true
                 },
-                "Membrane:" : {
-                    "grid" : true
+                "Membrane" : {
+                    "buttonSelect" : true
                 },
-                "Liquor:" : {
-                    "grid" : true
+                "Liquor" : {
+                    "buttonSelect" : true
                 },
                 "P/S (per speculum) - Cervix" : {
                     "grid" : true
                 },
                 "P/V (per vaginal) - Uterus" : {
                     "grid" : true
-                }
-
+                },
+        "Images": {
+            "multiple": 3
+        }
             },
-            "patientDashboardSections": [
+ "patientDashboardSections": [
                 {
                     "title": "Diagnosis",
                     "name": "diagnosis"
+                },
+                {
+                    "title": "Lab Orders",
+                    "name": "labOrders"
+                },
+                {
+                    "title": "Chief Complaints",
+                    "name": "vitals",
+                    "conceptNames": ["Chief Complaint Data"],
+                    "numberOfVisits":2 ,
+                    "isObservation": true
+                },
+                {
+                    "title": "Radiology",
+                    "name": "radiology"
+                },
+                {
+                    "title": "Nutritional Values",
+                    "name": "vitals",
+                    "conceptNames": ["BMI", "BMI STATUS", "HEIGHT", "WEIGHT"],
+                    "numberOfVisits":2,
+                    "isObservation": true
                 },
                 {
                     "title": "Treatments",
@@ -102,25 +126,10 @@
                     "numberOfVisits": 1
                 },
                 {
-                    "title": "Radiology",
-                    "name": "radiology"
-                },
-                {
-                    "title": "Lab Orders",
-                    "name": "labOrders"
-                },
-                {
                     "title": "Vitals",
                     "name": "vitals",
-                    "conceptNames": ["Vitals"],
+                    "conceptNames": ["Vitals", "Second Vitals"],
                     "numberOfVisits": 2,
-                    "isObservation": true   
-                },
-                {
-                    "title": "Nutritional Levels",
-                    "name": "nutritionallevels",
-                    "conceptNames": ["HEIGHT", "WEIGHT", "BMI", "BMI STATUS"],
-                    "scope": "latest",
                     "isObservation": true
                 }
             ]
