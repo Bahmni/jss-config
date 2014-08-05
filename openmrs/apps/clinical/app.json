@@ -116,7 +116,7 @@
                 {
                     "title": "Nutritional Values",
                     "name": "vitals",
-                    "conceptNames": ["HEIGHT", "WEIGHT", "BMI", "BMI STATUS"],
+                    "conceptNames": ["Nutritional Values"],
                     "scope": "latest",
                     "isObservation": true
                 },
