@@ -118,7 +118,6 @@
                     "name": "vitals",
                     "conceptNames": ["HEIGHT", "WEIGHT", "BMI", "BMI STATUS"],
                     "scope": "latest",
-                    "numberOfVisits":2,
                     "isObservation": true
                 },
                 {
