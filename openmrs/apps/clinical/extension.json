@@ -93,7 +93,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "History and Examination"
+            "conceptName": "History and Examination",
+	        "default":"true"
         },
         "order": 1,
         "requiredPrivilege": "app:clinical:history"
@@ -124,7 +125,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Vitals"
+            "conceptName": "Vitals",
+	        "default":"true"
         },
         "order": 4,
         "requiredPrivilege": "app:clinical"
@@ -149,7 +151,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "OBS/GYN Common"
+            "conceptName": "OBS/GYN Common",
+	        "default":"true"
         },
         "order": 6,
         "requiredPrivilege": "app:clinical"
@@ -159,7 +162,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Obstetrics"
+            "conceptName": "Obstetrics",
+	        "default":"true"
         },
         "order": 7,
         "requiredPrivilege": "app:clinical"
@@ -169,7 +173,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Gynaecology"
+            "conceptName": "Gynaecology",
+	        "default":"true"
         },
         "order": 8,
         "requiredPrivilege": "app:clinical"
