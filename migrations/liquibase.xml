@@ -1420,4 +1420,37 @@
             call add_concept_set_members (@set_concept_id,@concept_id,9);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201408141700" author="Indraneel">
+        <comment>Correcting the concept set members in all observation templates</comment>
+        <sql>
+            select concept_id from concept_name where name = 'All Observation Templates' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            set @set_concept_id = @concept_id;
+
+            delete from concept_set where concept_set=@set_concept_id;
+
+            select concept_id from concept_name where name = 'History and Examination' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,1);
+
+            select concept_id from concept_name where name = 'Consultation Image' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,2);
+
+            select concept_id from concept_name where name = 'Vitals' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,4);
+
+            select concept_id from concept_name where name = 'Second Vitals' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,5);
+
+            select concept_id from concept_name where name = 'OBS/GYN' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,6);
+
+            select concept_id from concept_name where name = 'Obstetrics' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,7);
+
+            select concept_id from concept_name where name = 'Gynaecology' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,8);
+
+            select concept_id from concept_name where name = 'Discharge Summary' and concept_name_type = 'FULLY_SPECIFIED' into @concept_id;
+            call add_concept_set_members (@set_concept_id,@concept_id,9);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
