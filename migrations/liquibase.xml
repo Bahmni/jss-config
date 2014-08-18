@@ -1453,4 +1453,16 @@
             call add_concept_set_members (@set_concept_id,@concept_id,9);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201408180936" author="Mujir">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) FROM global_property where property = 'uploaded.files.directory'
+            </sqlCheck>
+        </preConditions>
+        <comment>Add directory for imported files</comment>
+        <sql>
+            update global_property set property_value='/home/jss/uploaded-files/mrs/' where property='uploaded.files.directory';
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
