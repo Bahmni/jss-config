@@ -5,9 +5,9 @@ import org.openmrs.Patient
 
 public class JSSPatientMatchingAlgorithm extends PatientMatchingAlgorithm {
     @Override
-    Patient run(List<Patient> patientList, List<KeyValue> patientAttributes) {
-        String genderFromCSV = valueFor("Gender", patientAttributes);
-        String nameFromCSV = valueFor("Name", patientAttributes);
+    Patient run(List<Patient> patientList, List<KeyValue> patientAttributesFromCSV) {
+        String genderFromCSV = valueFor("Gender", patientAttributesFromCSV);
+        String nameFromCSV = valueFor("Name", patientAttributesFromCSV);
 
         List<Patient> matchingPatients = new ArrayList<Patient>();
         if (patientList == null || patientList.size() < 1) {
@@ -32,9 +32,14 @@ public class JSSPatientMatchingAlgorithm extends PatientMatchingAlgorithm {
                 doesAnyNamePartMatch(patient, nameFromCSV);
     }
 
-    private boolean doesAnyNamePartMatch(Patient patient, String uploadedPatientName) {
-        def nameParts = uploadedPatientName.split(" ");
-        return nameParts.any { it.equalsIgnoreCase(patient.getGivenName()) } ||
-               nameParts.any { it.equalsIgnoreCase(patient.getFamilyName()) }
+    private boolean doesAnyNamePartMatch(Patient patient, String patientNameFromCSV) {
+        return doNamePartsMatch(patient.getGivenName(), patientNameFromCSV) ||
+                doNamePartsMatch(patient.getFamilyName(), patientNameFromCSV)
+    }
+
+    boolean doNamePartsMatch(String patientGivenName, String patientNameFromCSV) {
+        def givenNameParts = patientGivenName.toLowerCase().split(" ").toList();
+        def patientNameFromCSVParts = patientNameFromCSV.toLowerCase().split(" ").toList();
+        return givenNameParts.intersect(patientNameFromCSVParts);
     }
 }
