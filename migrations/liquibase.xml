@@ -1465,4 +1465,18 @@
         </sql>
     </changeSet>
 
+    <changeSet id="JSS-201408201152" author="Banka">
+        <comment>Change datatype of TSH</comment>
+        <sql>
+            update concept join concept_name on concept_name.concept_id = concept.concept_id set datatype_id=(select concept_datatype_id from concept_datatype where name = 'Text') where concept_name.name = 'TSH';
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201408201208" author="Banka">
+        <comment>Migrate Numeric value to Text for TSH</comment>
+        <sql>
+            update obs set value_text = value_numeric, value_numeric = null where value_numeric is not null and concept_id = (select concept_id from concept_name where name = 'TSH')
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
