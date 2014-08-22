@@ -1,11 +1,12 @@
 [
     {
-        "id": "bahmni.homepage",
+        "id": "bahmni.admin",
         "extensionPoints": [
             {
                 "id": "org.bahmni.dashboard",
-                "description": "Bahmni Home Page"
+                "description": "Bahmni Admin Page"
             }
         ]
+
     }
 ]
