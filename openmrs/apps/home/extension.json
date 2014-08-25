@@ -1,7 +1,7 @@
 [
     {
         "id": "bahmni.registration",
-        "extensionPointId": "org.bahmni.home.dashboard",
+        "extensionPointId": "org.bahmni.dashboard",
         "type": "link",
         "label": "Registration",
         "url": "../registration/",
@@ -11,7 +11,7 @@
     },
     {
         "id": "bahmni.clinical",
-        "extensionPointId": "org.bahmni.home.dashboard",
+        "extensionPointId": "org.bahmni.dashboard",
         "type": "link",
         "label": "Clinical",
         "url": "../clinical/",
@@ -21,7 +21,7 @@
     },
     {
         "id": "bahmni.adt",
-        "extensionPointId": "org.bahmni.home.dashboard",
+        "extensionPointId": "org.bahmni.dashboard",
         "type": "link",
         "label": "Admission and Discharge",
         "url": "../adt/",
@@ -31,7 +31,7 @@
     },
     {
         "id": "bahmni.radiology.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
+        "extensionPointId": "org.bahmni.dashboard",
         "type": "link",
         "label": "Radiology Upload",
         "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
@@ -41,12 +41,22 @@
     },
     {
         "id": "bahmni.patient.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
+        "extensionPointId": "org.bahmni.dashboard",
         "type": "link",
         "label": "Patient Documents",
         "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
         "icon": "icon-camera",
         "order": 6,
         "requiredPrivilege": "app:document-upload"
+    },
+    {
+        "id": "bahmni.admin",
+        "extensionPointId": "org.bahmni.dashboard",
+        "type": "link",
+        "label": "Admin",
+        "url": "../admin/#/dashboard/home",
+        "icon": "icon-user",
+        "order": 7,
+        "requiredPrivilege": "app:admin"
     }
 ]
