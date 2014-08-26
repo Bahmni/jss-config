@@ -1,7 +1,7 @@
 [
     {
         "id": "bahmni.admin.csv",
-        "extensionPointId": "org.bahmni.dashboard",
+        "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
         "extensionParams": {
             "patientMatchingAlgorithm": "JSSPatientMatchingAlgorithm.groovy"
