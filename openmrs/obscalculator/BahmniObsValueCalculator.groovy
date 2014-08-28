@@ -53,10 +53,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
         List<Observation> observations = bahmniEncounterTransaction.getObservations()
 
-        Observation heightObservation = find("HEIGHT", observations, null)
-        Observation weightObservation = find("WEIGHT", observations, null)
+        Observation heightObservation = find("Height", observations, null)
+        Observation weightObservation = find("Weight", observations, null)
         Observation bmiObservation = find("BMI", observations, null)
-        Observation bmiStatusObservation = find("BMI STATUS", observations, null)
+        Observation bmiStatusObservation = find("BMI Status", observations, null)
         Observation parent = null;
 
         if(heightObservation) {
@@ -74,8 +74,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            def previousHeightValue = fetchLatestValue("HEIGHT", bahmniEncounterTransaction.getPatientUuid(), heightObservation)
-            def previousWeightValue = fetchLatestValue("WEIGHT", bahmniEncounterTransaction.getPatientUuid(), weightObservation)
+            def previousHeightValue = fetchLatestValue("Height", bahmniEncounterTransaction.getPatientUuid(), heightObservation)
+            def previousWeightValue = fetchLatestValue("Weight", bahmniEncounterTransaction.getPatientUuid(), weightObservation)
 
             Double height = heightObservation != null && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
             Double weight = weightObservation != null && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
@@ -91,7 +91,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             bmiObservation.setComment([height: height, weight: weight, bmi: bmi].toString())
 
             def bmiStatus = bmiStatus(bmi, patientAgeInMonths, patient.getGender());
-            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI STATUS", parent, bahmniEncounterTransaction) as Observation;
+            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", parent, bahmniEncounterTransaction) as Observation;
             bmiStatusObservation.setValue(bmiStatus);
             bmiStatusObservation.setComment([height: height, weight: weight, bmi: bmi, bmiStatus: bmiStatus].toString())
         }
