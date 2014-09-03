@@ -24,6 +24,7 @@
         "config" : {
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
+            "identifierPattern": "[0-9]{1,9}",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
