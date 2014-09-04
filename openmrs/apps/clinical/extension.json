@@ -51,7 +51,8 @@
         "requiredPrivilege": "app:clinical:consultationTab",
         "extensionParams": {
             "defaultRoute": "Orally",
-            "defaultDurationUnit": "Days"
+            "defaultDurationUnit": "Days",
+            "defaultInstructions": "As directed"
         }
     },
     {
