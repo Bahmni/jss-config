@@ -8,7 +8,7 @@ import org.openmrs.api.context.Context
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction;
-
+import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation;
 import org.joda.time.LocalDate;
 import org.joda.time.Months;
 
@@ -51,7 +51,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        List<Observation> observations = bahmniEncounterTransaction.getObservations()
+        List<Observation> observations = BahmniObservation.toETObsFromBahmniObs(bahmniEncounterTransaction.getObservations());
 
         Observation heightObservation = find("Height", observations, null)
         Observation weightObservation = find("Weight", observations, null)
