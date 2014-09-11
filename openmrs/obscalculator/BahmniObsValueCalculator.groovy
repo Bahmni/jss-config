@@ -1,3 +1,4 @@
+import org.apache.commons.lang.StringUtils
 import org.hibernate.Query
 import org.hibernate.SessionFactory
 import org.openmrs.Obs
@@ -23,7 +24,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double BMI_SEVERELY_OBESE = 40.0;
     static Map<Observation, Observation> obsParentMap = new HashMap<Observation, Observation>();
 
-    public enum BmiStatus {
+    public static enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
         SEVERELY_UNDERWEIGHT("Severely Underweight"),
         UNDERWEIGHT("Underweight"),
@@ -68,7 +69,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid());
         def patientAgeInMonths = Months.monthsBetween(new LocalDate(patient.getBirthdate()), new LocalDate()).getMonths();
 
-        if (heightObservation || weightObservation) {
+        if (hasValue(heightObservation) || hasValue(weightObservation)) {
             if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
                 voidBmiObs(bmiObservation, bmiStatusObservation)
                 return
@@ -77,8 +78,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             def previousHeightValue = fetchLatestValue("Height", bahmniEncounterTransaction.getPatientUuid(), heightObservation)
             def previousWeightValue = fetchLatestValue("Weight", bahmniEncounterTransaction.getPatientUuid(), weightObservation)
 
-            Double height = heightObservation != null && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
-            Double weight = weightObservation != null && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
+            Double height = hasValue(heightObservation) && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
+            Double weight = hasValue(weightObservation) && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
 
             if (height == null || weight == null) {
                 voidBmiObs(bmiObservation, bmiStatusObservation)
@@ -97,12 +98,15 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         }
     }
 
-    private
-    static void voidBmiObs(Observation bmiObservation, Observation bmiStatusObservation) {
-        if (bmiObservation) {
+    private static boolean hasValue(Observation observation) {
+        return observation != null && !StringUtils.isEmpty(observation.getValue());
+    }
+
+    private static void voidBmiObs(Observation bmiObservation, Observation bmiStatusObservation) {
+        if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
         }
-        if (bmiStatusObservation) {
+        if (hasValue(bmiStatusObservation)) {
             bmiStatusObservation.voided = true
         }
     }
