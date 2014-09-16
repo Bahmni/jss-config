@@ -1479,4 +1479,31 @@
         </sql>
     </changeSet>
 
+    <changeSet id="JSS-201409151643" author="Rohan, Hemanth">
+        <comment>Migrate Duration Units as Days for previous Drug Orders</comment>
+        <sql>
+            update drug_order set duration_units=(select concept_id from concept_name where name='Days' and concept_name_type='FULLY_SPECIFIED') where dosing_type='org.openmrs.FreeTextDosingInstructions';
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201409151650" author="Rohan, Hemanth">
+        <comment>Calculate Duration for previous Drug Orders from date_activated and auto_expire_date and migrate the same</comment>
+        <sql>
+            update drug_order d set d.duration = (select datediff(o.auto_expire_date, o.date_activated) from orders o where o.order_id = d.order_id) where d.dosing_type='org.openmrs.FreeTextDosingInstructions';
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201409151748" author="Rohan, Hemanth">
+        <comment>Migrate Dosing Instructions to JSON for previous Drug Orders</comment>
+        <sql>
+            update drug_order set dosing_instructions=CONCAT(CONCAT(CONCAT('{"dose":"',SUBSTRING_INDEX(dosing_instructions,' ',1)), CONCAT('", "doseUnits":"',SUBSTRING_INDEX(dosing_instructions,' ',-1))), '"}') where dosing_type='org.openmrs.FreeTextDosingInstructions';
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201409151749" author="Rohan, Hemanth">
+        <comment>Migrate Dosing Instructions Type to Flexible for previous Drug Orders</comment>
+        <sql>
+            update drug_order set dosing_type='org.openmrs.module.bahmniemrapi.drugorder.dosinginstructions.FlexibleDosingInstructions' where dosing_type='org.openmrs.FreeTextDosingInstructions';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
