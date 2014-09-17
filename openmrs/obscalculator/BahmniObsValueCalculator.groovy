@@ -3,7 +3,7 @@ import org.hibernate.Query
 import org.hibernate.SessionFactory
 import org.openmrs.Obs
 import org.openmrs.Patient
-import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction.Observation;
+import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.util.OpenmrsUtil;
 import org.openmrs.api.context.Context
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
@@ -22,7 +22,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double BMI_OVERWEIGHT = 30.0;
     static Double BMI_OBESE = 35.0;
     static Double BMI_SEVERELY_OBESE = 40.0;
-    static Map<Observation, Observation> obsParentMap = new HashMap<Observation, Observation>();
+    static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
 
     public static enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
@@ -52,13 +52,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        List<Observation> observations = bahmniEncounterTransaction.getObservations()
+        List<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
 
-        Observation heightObservation = find("Height", observations, null)
-        Observation weightObservation = find("Weight", observations, null)
-        Observation bmiObservation = find("BMI", observations, null)
-        Observation bmiStatusObservation = find("BMI Status", observations, null)
-        Observation parent = null;
+        BahmniObservation heightObservation = find("Height", observations, null)
+        BahmniObservation weightObservation = find("Weight", observations, null)
+        BahmniObservation bmiObservation = find("BMI", observations, null)
+        BahmniObservation bmiStatusObservation = find("BMI Status", observations, null)
+        BahmniObservation parent = null;
 
         if(heightObservation) {
             parent = obsParentMap.get(heightObservation)
@@ -87,22 +87,22 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             }
 
             def bmi = bmi(height, weight)
-            bmiObservation = bmiObservation ?: createObs("BMI", parent, bahmniEncounterTransaction) as Observation;
+            bmiObservation = bmiObservation ?: createObs("BMI", parent, bahmniEncounterTransaction) as BahmniObservation;
             bmiObservation.setValue(bmi);
             bmiObservation.setComment([height: height, weight: weight, bmi: bmi].toString())
 
             def bmiStatus = bmiStatus(bmi, patientAgeInMonths, patient.getGender());
-            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", parent, bahmniEncounterTransaction) as Observation;
+            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", parent, bahmniEncounterTransaction) as BahmniObservation;
             bmiStatusObservation.setValue(bmiStatus);
             bmiStatusObservation.setComment([height: height, weight: weight, bmi: bmi, bmiStatus: bmiStatus].toString())
         }
     }
 
-    private static boolean hasValue(Observation observation) {
-        return observation != null && !StringUtils.isEmpty(observation.getValue());
+    private static boolean hasValue(BahmniObservation observation) {
+        return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
 
-    private static void voidBmiObs(Observation bmiObservation, Observation bmiStatusObservation) {
+    private static void voidBmiObs(BahmniObservation bmiObservation, BahmniObservation bmiStatusObservation) {
         if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
         }
@@ -111,9 +111,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         }
     }
 
-    static Observation createObs(String conceptName, Observation parent, BahmniEncounterTransaction encounterTransaction) {
+    static BahmniObservation createObs(String conceptName, BahmniObservation parent, BahmniEncounterTransaction encounterTransaction) {
         def concept = Context.getConceptService().getConceptByName(conceptName)
-        Observation newObservation = new Observation()
+        BahmniObservation newObservation = new BahmniObservation()
         newObservation.setConcept(new EncounterTransaction.Concept(concept.getUuid(), conceptName))
         parent == null ? encounterTransaction.addObservation(newObservation) : parent.addGroupMember(newObservation)
         return newObservation
@@ -159,7 +159,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     };
 
-    static Double fetchLatestValue(String conceptName, String patientUuid, Observation excludeObs) {
+    static Double fetchLatestValue(String conceptName, String patientUuid, BahmniObservation excludeObs) {
         SessionFactory sessionFactory = Context.getRegisteredComponents(SessionFactory.class).get(0)
         def excludedObsIsSaved = excludeObs != null && excludeObs.uuid != null
         String excludeObsClause = excludedObsIsSaved ? " and obs.uuid != :excludeObsUuid" : ""
@@ -184,13 +184,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     }
 
-    static Observation find(def conceptName, List<Observation> observations, Observation parent) {
-        for (Observation observation : observations) {
-            if (conceptName.equals(observation.getConcept().getName())) {
+    static BahmniObservation find(String conceptName, List<BahmniObservation> observations, BahmniObservation parent) {
+        for (BahmniObservation observation : observations) {
+            if (conceptName.equalsIgnoreCase(observation.getConcept().getName())) {
                 obsParentMap.put(observation, parent);
                 return observation;
             }
-            Observation matchingObservation = find(conceptName, observation.getGroupMembers(), observation)
+            BahmniObservation matchingObservation = find(conceptName, observation.getGroupMembers(), observation)
             if (matchingObservation) return matchingObservation;
         }
         return null
