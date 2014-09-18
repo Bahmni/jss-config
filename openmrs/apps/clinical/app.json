@@ -44,45 +44,6 @@
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
-                "Posture" : {
-                    "buttonSelect" : true
-                },
-                "M/C Days" : {
-                    "buttonSelect" : true
-                },
-                "M/C Interval" : {
-                    "buttonSelect" : true
-                },
-                "M/C Amount" : {
-                    "buttonSelect" : true
-                },
-                "Bad Obs History" : {
-                    "buttonSelect" : true
-                },
-                "P/A Presenting Part" : {
-                    "buttonSelect" : true
-                },
-                "FHS" : {
-                    "buttonSelect" : true
-                },
-                "Amount of Liquor" : {
-                    "buttonSelect" : true
-                },
-                "Contractions" : {
-                    "buttonSelect" : true
-                },
-                "P/V Presenting Part" : {
-                    "buttonSelect" : true
-                },
-                "OS" : {
-                    "buttonSelect" : true
-                },
-                "Membrane" : {
-                    "buttonSelect" : true
-                },
-                "Liquor" : {
-                    "buttonSelect" : true
-                },
                 "P/S (per speculum) - Cervix" : {
                     "grid" : true
                 },
