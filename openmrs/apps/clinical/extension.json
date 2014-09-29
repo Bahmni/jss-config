@@ -52,6 +52,7 @@
         "extensionParams": {
             "defaultRoute": "Orally",
             "defaultDurationUnit": "Days",
+            "defaultDoseUnit": "Tablet(s)",
             "defaultInstructions": "As directed"
         }
     },
