@@ -51,7 +51,7 @@
         "requiredPrivilege": "app:clinical:consultationTab",
         "extensionParams": {
             "defaultRoute": "Orally",
-            "defaultDurationUnit": "Days",
+            "defaultDurationUnit": "Day(s)",
             "defaultDoseUnit": "Tablet(s)",
             "defaultInstructions": "As directed"
         }
