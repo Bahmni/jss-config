@@ -1506,4 +1506,15 @@
             update drug_order set dosing_type='org.openmrs.module.bahmniemrapi.drugorder.dosinginstructions.FlexibleDosingInstructions' where dosing_type='org.openmrs.FreeTextDosingInstructions';
         </sql>
     </changeSet>
+    <changeSet id="JSS-201409061050" author="Rohan, Mihir">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) FROM global_property where property = 'locale.allowed.list'
+            </sqlCheck>
+        </preConditions>
+        <comment>Add en_GB as allowed locales</comment>
+        <sql>
+            update global_property set property_value='en,en_GB' where property='locale.allowed.list';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
