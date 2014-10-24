@@ -50,6 +50,42 @@
                 "P/V (per vaginal) - Uterus" : {
                     "grid" : true
                 },
+		"Anaemia, Stopped Since When" : {
+                        "conciseText" : true
+                },
+                "Arthritis, Stopped Since When" : {
+                        "conciseText" : true
+                },
+                "Hyperthyroidism, Stopped Since When" : {
+                        "conciseText" : true
+                },
+                "Diabetes, Current Status" : {
+                        "conciseText" : true
+                },
+                "Epilepsy, Current Status" : {
+                        "conciseText" : true
+                },
+                "Leprosy, Disability" : {
+                        "conciseText" : true
+                },
+                "Leprosy, Deformity" : {
+                        "conciseText" : true
+                },
+                "Leprosy, Smear Positive in Diagnosis" : {
+                        "conciseText" : true
+                },
+                "Neurological Disorder, Other Addictions" : {
+                        "conciseText" : true
+                },
+                "Undernutrition, Stopped Since When" : {
+                        "conciseText" : true
+                },
+                "Neurological Disorder, Addiction" : {
+                        "multiSelect" : true
+                },
+                "Tuberculosis, Extrapulmonary Details" : {
+                        "multiSelect" : true
+                },
         "Images": {
             "multiple": 3
         }
