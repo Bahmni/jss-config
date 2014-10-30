@@ -57,6 +57,22 @@
         }
     },
     {
+        "id": "bahmni.clinical.billing.treatment",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Treatment",
+        "url": "treatment",
+        "icon": "icon-user-md",
+        "order": 10,
+        "requiredPrivilege": "app:billing",
+        "extensionParams": {
+            "defaultRoute": "Orally",
+            "defaultDurationUnit": "Day(s)",
+            "defaultDoseUnit": "Tablet(s)",
+            "defaultInstructions": "As directed"
+        }
+    },
+    {
         "id": "bahmni.clinical.orders.pending",
         "extensionPointId": "org.bahmni.clinical.orders",
         "type": "link",
@@ -80,6 +96,19 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.billing.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display":"Active",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "Active",
+        "order": 1,
+        "requiredPrivilege": "app:billing"
+    },
+    {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -93,6 +122,19 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.billing.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "Active",
+        "order": 1,
+        "requiredPrivilege": "app:billing"
+    },
+    {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -104,6 +146,18 @@
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
+    {
+        "id": "bahmni.billing.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "display":"All",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "All",
+        "order": 2,
+        "requiredPrivilege": "app:billing"
+    },		
     {
         "id": "bahmni.clinical.conceptSetGroup.observations.history",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
