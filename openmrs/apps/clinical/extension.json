@@ -50,7 +50,7 @@
         "order": 6,
         "requiredPrivilege": "app:clinical:consultationTab",
         "extensionParams": {
-            "defaultRoute": "Orally",
+            "defaultRoute": "Oral",
             "defaultDurationUnit": "Day(s)",
             "defaultDoseUnit": "Tablet(s)",
             "defaultInstructions": "As directed"
