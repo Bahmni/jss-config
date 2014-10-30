@@ -83,6 +83,7 @@
         "type": "config",
         "extensionParams": {
             "conceptName": "Nutritional Values",
+			"conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
             "required":true,
             "showLatest": true
         },
