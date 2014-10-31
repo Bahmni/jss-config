@@ -1509,7 +1509,7 @@
     <changeSet id="JSS-201410311249" author="Chethan, Vinay">
         <comment>Days as implemented in JSS-201409151643 was changed to Day(s). This is to fix based on new concept</comment>
         <sql>
-            update drug_order set duration_units=(select concept_id from concept_name where name='Day(s)' and concept_name_type='FULLY_SPECIFIED') where dosing_type='org.openmrs.FreeTextDosingInstructions' and duration_units is null;
+            update drug_order set duration_units=(select concept_id from concept_name where name='Day(s)' and concept_name_type='FULLY_SPECIFIED') where dosing_type='org.openmrs.module.bahmniemrapi.drugorder.dosinginstructions.FlexibleDosingInstructions' and duration_units is null;
         </sql>
     </changeSet>
 </databaseChangeLog>
