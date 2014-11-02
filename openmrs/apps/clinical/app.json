@@ -86,7 +86,7 @@
                 "Tuberculosis, Extrapulmonary Details" : {
                         "multiSelect" : true
                 },
-        "Images": {
+        "Image": {
             "multiple": 3
         }
             },
