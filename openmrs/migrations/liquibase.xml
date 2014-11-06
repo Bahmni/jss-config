@@ -1512,4 +1512,16 @@
             update drug_order set duration_units=(select concept_id from concept_name where name='Day(s)' and concept_name_type='FULLY_SPECIFIED') where dosing_type='org.openmrs.module.bahmniemrapi.drugorder.dosinginstructions.FlexibleDosingInstructions' and duration_units is null;
         </sql>
     </changeSet>
+    <changeSet id="JSS-201411051207" author="Rohan">
+        <comment>Change all Lab Test concept classes from Test to LabTest</comment>
+        <sql>
+            update concept set class_id=(select concept_class_id from concept_class where name='LabTest') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='All_Tests_and_Panels' and concept_name_type='FULLY_SPECIFIED'));
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201411051212" author="Rohan">
+        <comment>Change all Radiology concept classes from Test to Radiology</comment>
+        <sql>
+            update concept set class_id=(select concept_class_id from concept_class where name='Radiology') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='Radiology' and concept_name_type='FULLY_SPECIFIED'));
+        </sql>
+    </changeSet>
 </databaseChangeLog>
