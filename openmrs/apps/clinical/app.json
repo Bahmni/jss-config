@@ -50,7 +50,7 @@
                 "P/V (per vaginal) - Uterus" : {
                     "grid" : true
                 },
-		"Anaemia, Stopped Since When" : {
+		        "Anaemia, Stopped Since When" : {
                         "conciseText" : true
                 },
                 "Arthritis, Stopped Since When" : {
@@ -86,11 +86,11 @@
                 "Tuberculosis, Extrapulmonary Details" : {
                         "multiSelect" : true
                 },
-        "Image": {
-            "multiple": 3
-        }
+                "Image": {
+                    "multiple": 3
+                }
             },
- "patientDashboardSections": [
+            "patientDashboardSections": [
                 {
                     "title": "Diagnosis",
                     "name": "diagnosis"
@@ -129,7 +129,30 @@
                     "numberOfVisits": 2,
                     "isObservation": true
                 }
-            ]
+            ],
+            "drugOrder": {
+                "defaultRoute": "Oral",
+                "defaultDurationUnit": "Day(s)",
+                "defaultDoseUnit": "Tablet(s)",
+                "defaultInstructions": "As directed",
+                "drugFormDefaults" : {
+                    "Ayurvedic" : {
+                        "doseUnits": "Teaspoon",
+                        "route": "Oral"    
+                    },
+                    "Capsule" : {
+                        "doseUnits": "Capsule(s)",
+                        "route": "Oral"    
+                    },
+                    "Powder" : {
+                        "route": "Intrathecal"    
+                    },
+                    "Injection" : {
+                        "doseUnits": "mg",
+                        "route": "Intravenous"    
+                    }
+                }
+            }
         }
     }
 ]

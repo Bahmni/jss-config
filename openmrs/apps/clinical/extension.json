@@ -48,13 +48,7 @@
         "url": "treatment",
         "icon": "icon-user-md",
         "order": 6,
-        "requiredPrivilege": "app:clinical:consultationTab",
-        "extensionParams": {
-            "defaultRoute": "Oral",
-            "defaultDurationUnit": "Day(s)",
-            "defaultDoseUnit": "Tablet(s)",
-            "defaultInstructions": "As directed"
-        }
+        "requiredPrivilege": "app:clinical:consultationTab"
     },
     {
         "id": "bahmni.clinical.billing.treatment",
