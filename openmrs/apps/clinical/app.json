@@ -135,21 +135,75 @@
                 "defaultDurationUnit": "Day(s)",
                 "defaultDoseUnit": "Tablet(s)",
                 "defaultInstructions": "As directed",
-                "drugFormDefaults" : {
-                    "Ayurvedic" : {
+                "drugFormDefaults": {
+                    "Ayurvedic": {
                         "doseUnits": "Teaspoon",
-                        "route": "Oral"    
+                        "route": "Oral"
                     },
-                    "Capsule" : {
+                    "Capsule": {
                         "doseUnits": "Capsule(s)",
-                        "route": "Oral"    
+                        "route": "Oral"
                     },
-                    "Powder" : {
-                        "route": "Intrathecal"    
+                    "Cream": {
+                        "route": "Topical"
                     },
-                    "Injection" : {
+                    "Drops": {
+                        "doseUnits": "Drop",
+                        "route": "Topical"
+                    },
+                    "Food Supplement": {
+                        "route": "Oral"
+                    },
+                    "Gel": {
+                        "route": "Topical"
+                    },
+                    "Granule": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Oral"
+                    },
+                    "Inhaler": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Inhalation"
+                    },
+                    "Injection": {
                         "doseUnits": "mg",
-                        "route": "Intravenous"    
+                        "route": "Intravenous"
+                    },
+                    "Jelly": {
+                        "route": "Topical"
+                    },
+                    "Liquid": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Lotion": {
+                        "route": "Topical"
+                    },
+                    "Ointment": {
+                        "route": "Topical"
+                    },
+                    "Pessary": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Per Vaginal"
+                    },
+                    "Powder": {
+                        "route": "Topical"
+                    },
+                    "Solution": {
+                        "doseUnits": "ml",
+                        "route": "Topical"
+                    },
+                    "Spray": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Nasal"
+                    },
+                    "Syrup": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Tablet": {
+                        "doseUnits": "Tablet(s)",
+                        "route": "Oral"
                     }
                 }
             }
