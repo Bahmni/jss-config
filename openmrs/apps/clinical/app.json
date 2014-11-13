@@ -131,9 +131,7 @@
                 }
             ],
             "drugOrder": {
-                "defaultRoute": "Oral",
                 "defaultDurationUnit": "Day(s)",
-                "defaultDoseUnit": "Tablet(s)",
                 "defaultInstructions": "As directed",
                 "drugFormDefaults": {
                     "Ayurvedic": {
