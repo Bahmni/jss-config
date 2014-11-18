@@ -88,6 +88,53 @@
                 },
                 "Image": {
                     "multiple": 3
+                },
+                "Hypertension, Intake, Chief Complaint Data": {
+                    "multiple": 3
+                },
+                "Hypertension, Intake, Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Hypertension, Intake, Chief Complaint Non Coded" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Hypertension, Hypertensive Emergency Cause" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Intake, Risk Factors" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Intake, Secondary Hypertension" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Current Home Medications" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Progress, Chief Complaint Data": {
+                    "multiple": 3
+                },
+                "Hypertension, Progress, Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Hypertension, Progress, Chief Complaint Non Coded" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Hypertension, Progress, Risk Factors" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Progress, Secondary Hypertension" : {
+                        "multiSelect" : true
+                },
+                "Hypertension, Symptoms of Complication" : {
+                        "multiSelect" : true
                 }
             },
             "patientDashboardSections": [
