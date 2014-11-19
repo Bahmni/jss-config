@@ -3,9 +3,9 @@
         "id": "bahmni.registration.navigation.patient.search",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
-        "label": "S<u>e</u>arch",
+        "label": "<u>S</u>earch",
         "url": "/search",
-        "shortcutKey": "e",
+        "shortcutKey": "s",
         "icon": "icon-search",
         "order": 1,
         "requiredPrivilege": "View Patients"
@@ -49,8 +49,7 @@
         "type": "config",
         "extensionParams" : {
             "action" : "enterVisitDetails",
-            "display": "Enter <u>V</u>isit Details",
-            "shortcutKey": "v"
+            "display": "Enter Visit Details"
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
@@ -61,8 +60,7 @@
        "type": "config",
         "extensionParams" : {
             "action" : "save",
-            "display": "<u>S</u>ave",
-            "shortcutKey": "s"
+            "display": "Save"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
