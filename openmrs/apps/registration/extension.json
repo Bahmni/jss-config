@@ -55,12 +55,12 @@
         "requiredPrivilege": "Edit Visits"
     },
     {
-        "id": "bahmni.patient.edit.action.save",
+        "id": "bahmni.patient.edit.action.print",
         "extensionPointId": "org.bahmni.registration.patient.edit.action",
        "type": "config",
         "extensionParams" : {
-            "action" : "save",
-            "display": "Save"
+            "action" : "print",
+            "display": "Save and Print"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
