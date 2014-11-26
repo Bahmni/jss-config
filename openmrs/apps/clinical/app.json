@@ -177,6 +177,17 @@
                     "isObservation": true
                 }
             ],
+            "treatmentSection": {
+                    "active": {
+                            "displayName": "Active Prescription",
+                            "orders": null,
+                            "isNeeded":false
+                        },
+                    "past": {
+                            "displayName": "Last Prescription",
+                            "orders": null
+                        }
+            },
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
