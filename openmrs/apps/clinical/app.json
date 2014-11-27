@@ -167,7 +167,8 @@
                 {
                     "title": "Treatments",
                     "name": "treatment",
-                    "numberOfVisits": 1
+                    "numberOfVisits": 1,
+                    "active":false
                 },
                 {
                     "title": "Vitals",
@@ -177,17 +178,6 @@
                     "isObservation": true
                 }
             ],
-            "treatmentSection": {
-                    "active": {
-                            "displayName": "Active Prescription",
-                            "orders": null,
-                            "isNeeded":false
-                        },
-                    "past": {
-                            "displayName": "Last Prescription",
-                            "orders": null
-                        }
-            },
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
