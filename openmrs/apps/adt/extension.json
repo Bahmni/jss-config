@@ -4,9 +4,8 @@
         "extensionPointId": "org.bahmni.adt.admit.action",
         "type": "config",
         "extensionParams" : {
-            "displayFunction": "getDisplayForContinuingVisit",
-            "action":"admit",
-            "showCondition":"visitExists"
+            "display": "Admit",
+            "action":"admit"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
