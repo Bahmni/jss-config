@@ -178,14 +178,14 @@
                     "isObservation": true
                 }
             ],
-            "diseaseTemplateSections": [
+            "templateSections": [
                 {
-                    "diseaseName": "Breast Cancer",
-                    "showOnly": ["Imaging"]
+                    "templateName": "Breast_cancer",
+                    "showOnly": ["Breast_cancer, Imaging"]
                 },
                 {
-                    "diseaseName": "Anaemia",
-                    "showOnly": ["On treatment", "Anaemia, Intake"]
+                    "templateName": "Anaemia Template",
+                    "showOnly": ["Anaemia, On Treatment", "Anaemia, Intake"]
                 }
             ],
             "drugOrder": {
