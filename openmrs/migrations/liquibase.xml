@@ -1524,4 +1524,41 @@
             update concept set class_id=(select concept_class_id from concept_class where name='Radiology') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='Radiology' and concept_name_type='FULLY_SPECIFIED'));
         </sql>
     </changeSet>
+    <changeSet id="JSS-201412051048" author="Chethan, Vikash">
+        <comment>Add concept Cluster</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Semariya', 'Semariya', 'N/A', 'Text', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Semariya', 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Shivtarai', 'Shivtarai', 'N/A', 'Text', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Shivtarai', 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Achanakmar', 'Achanakmar', 'N/A', 'Text', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Achanakmar', 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Bamhani', 'Bamhani', 'N/A', 'Text', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Bamhani', 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'cluster', 'cluster', 'N/A', 'Text', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'cluster', 1);
+
+
+
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-2014481646" author="Chethan, Vikash">
+        <comment>Additional Patient attributes Cluster</comment>
+        <sql>
+            <preConditions onFail="MARK_RAN">
+                <sqlCheck expectedResult="1">
+                    SELECT COUNT(*) FROM person_attribute_type where name = 'cluster';
+                </sqlCheck>
+            </preConditions>
+            insert into person_attribute_type (name, description, format, foreign_key, searchable, creator, date_created, uuid) values ('cluster', 'cluster', 'org.openmrs.Concept', (select concept_id from concept_name where name='Cluster' and concept_name_type='FULLY_SPECIFIED'),1, 1, '2014-12-02 12:54:42', uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>

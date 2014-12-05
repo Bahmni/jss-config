@@ -47,7 +47,14 @@
                     "required": true,
                     "label": "Fee"
                 }
-            }
+            },
+            "additionalPatientInformation": [
+                {"name":"Cluster","display": true},
+                {"name":"distanceInKm","display": false},
+                {"name":"Land Holding","display": true},
+                {"name":"RationCard","display": true},
+                {"name":"Rural","display": true}
+            ]
         }
     }
 ]
