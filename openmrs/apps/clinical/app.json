@@ -29,6 +29,15 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "pivotTable":{
+                "Diabetes":{
+                    "numberOfVisits": "3",
+                    "comment" : "number of visits should be by default = all",
+                    "obsConcepts": ["Vitals","Height", "Weight", "Pathology"],
+                    "drugConcepts": "",
+                    "labConcepts":""
+                }
+            },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Chief Complaint Data": {
