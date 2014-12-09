@@ -1524,4 +1524,93 @@
             update concept set class_id=(select concept_class_id from concept_class where name='Radiology') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='Radiology' and concept_name_type='FULLY_SPECIFIED'));
         </sql>
     </changeSet>
+
+
+    <changeSet id="JSS-2014120817024" author="Mujir, Vikash">
+        <comment>Adding Template to concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Cluster', 'Cluster', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Cluster', 1);
+            set @cluster_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Bamhani', 'Bamhani', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Bamhani', 1);
+            call add_concept_answer(@cluster_id, @concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Achanakmar', 'Achanakmar', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Achanakmar', 1);
+            call add_concept_answer(@cluster_id, @concept_id,2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Shivtarai', 'Shivtarai', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Shivtarai', 1);
+            call add_concept_answer(@cluster_id, @concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Semariya', 'Semariya', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Semariya', 1);
+            call add_concept_answer(@cluster_id, @concept_id,4);
+
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('cluster', 'Cluster', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), @cluster_id);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Ration Card', 'Ration Card', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Ration', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Card ', 1);
+            set @rationCard_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'APL', 'AP', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'APL', 1);
+            call add_concept_answer(@rationCard_id, @concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BPL', 'BPL', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BPL', 1);
+            call add_concept_answer(@rationCard_id, @concept_id,2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Antyodaya', 'Antyodaya', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Antyodaya', 1);
+            call add_concept_answer(@rationCard_id, @concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'None', 'None', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'None', 1);
+            call add_concept_answer(@rationCard_id, @concept_id,4);
+
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('rationCard', 'Ration Card ', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), @rationCard_id);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Family Income', 'Family Income', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Family', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Income ', 1);
+            set @familyIncome_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '>=36017', '>=36017', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '18000-36016', '18000-36016', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '13495-17999', '13495-17999', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '8999-13494', '8999-13494', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,4);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '5387-8998', '5387-8998', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,5);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '1803-5386', '1803-5386', 'N/A', 'Misc', true);
+            call add_concept_answer(@familyIncome_id, @concept_id,6);
+
+
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('familyIncome', 'Family Income (per month in Rs) ', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), @familyIncome_id);
+
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('isRural', 'Urban/Rural', 'java.lang.Boolean', '1', 1, curdate(), 0, 10, uuid());
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('distanceForCenter', 'Distance from centre (in km) ', 'java.lang.Float', '1', 1, curdate(), 0, 11, uuid());
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('depts', 'Debts (in Rs)', 'java.lang.Integer', '1', 1, curdate(), 0, 12, uuid());
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('landHolding', 'Land Holding (in Acre)', 'java.lang.String', '1', 1, curdate(), 0, 13, uuid());
+
+        </sql>
+    </changeSet>
+
+
 </databaseChangeLog>

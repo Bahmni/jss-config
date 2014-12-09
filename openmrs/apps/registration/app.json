@@ -22,6 +22,15 @@
             "activeVisitUuid"
         ],
         "config" : {
+            "additionalPatientInformation" : [
+                { "name":"familyIncome", "display":true },
+                { "name":"rationCard", "display":true },
+                { "name":"cluster", "display":true },
+                { "name":"landHolding", "display":true },
+                { "name":"depts", "display":true },
+                { "name":"distanceForCenter", "display":true },
+                { "name":"isRural", "display":true}
+            ],
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "identifierPattern": "[0-9]{1,9}",
