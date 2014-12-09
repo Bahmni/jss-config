@@ -27,9 +27,9 @@
                 { "name":"rationCard", "display":true },
                 { "name":"cluster", "display":true },
                 { "name":"landHolding", "display":true },
-                { "name":"depts", "display":true },
+                { "name":"debts", "display":true },
                 { "name":"distanceForCenter", "display":true },
-                { "name":"isRural", "display":true}
+                { "name":"isUrban", "display":true}
             ],
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
