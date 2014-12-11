@@ -1524,21 +1524,4 @@
             update concept set class_id=(select concept_class_id from concept_class where name='Radiology') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='Radiology' and concept_name_type='FULLY_SPECIFIED'));
         </sql>
     </changeSet>
-
-
-    <changeSet id="JSS-2014121011024" author="Mujir, Vikash">
-        <comment>Adding Template to person attribute</comment>
-        <sql>
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('rationCard', 'Ration Card', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), (select concept_id from concept_name where name='Ration Card' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0 limit 1));
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('cluster', 'Cluster', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), (select concept_id from concept_name where name='Cluster' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0 limit 1));
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('familyIncome', 'Family Income (per month in Rs)', 'org.openmrs.Concept', '1', 1, curdate(), 0, 14, uuid(), (select concept_id from concept_name where name='Family Income' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0 limit 1));
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('isUrban', 'Is Urban?', 'java.lang.Boolean', '1', 1, curdate(), 0, 10, uuid());
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('distanceForCenter', 'Distance from centre (in km)', 'java.lang.Float', '1', 1, curdate(), 0, 11, uuid());
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('debts', 'Debts (in Rs)', 'java.lang.Integer', '1', 1, curdate(), 0, 12, uuid());
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('landHolding', 'Land Holding (in Acre)', 'java.lang.Integer', '1', 1, curdate(), 0, 13, uuid());
-
-        </sql>
-    </changeSet>
-
-
 </databaseChangeLog>
