@@ -1,0 +1,18 @@
+name,class,shortname,datatype,referenceTermRelationship,referenceTermSource,referenceTermCode,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7
+Semariya,Misc,,N/A,,,,,,,,,,,
+Shivtarai,Misc,,N/A,,,,,,,,,,,
+Achanakmar,Misc,,N/A,,,,,,,,,,,
+Bamhani,Misc,,N/A,,,,,,,,,,,
+APL,Misc,,N/A,,,,,,,,,,,
+BPL,Misc,,N/A,,,,,,,,,,,
+Antyodaya,Misc,,N/A,,,,,,,,,,,
+>=36017,Misc,,N/A,,,,,,,,,,,
+18000-36016,Misc,,N/A,,,,,,,,,,,
+13495-17999,Misc,,N/A,,,,,,,,,,,
+8999-13494,Misc,,N/A,,,,,,,,,,,
+5387-8998,Misc,,N/A,,,,,,,,,,,
+1803-5386,Misc,,N/A,,,,,,,,,,,
+<=1802,Misc,,N/A,,,,,,,,,,,
+Cluster,Misc,,Coded,,,,,Semariya,Shivtarai,Achanakmar,Bamhani,,,
+Ration Card,Misc,,Coded,,,,,APL,BPL,Antyodaya,None,,,
+Family Income (per Month in Rs),Misc,,Coded,,,,,>=36017,18000-36016,13495-17999,8999-13494,5387-8998,1803-5386,<=1802
