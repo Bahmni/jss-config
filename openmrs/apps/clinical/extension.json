@@ -246,5 +246,14 @@
         },
         "order": 9,
         "requiredPrivilege": "Discharge Summary"
+    },
+    {
+        "id": "bahmni.clinical.treatment.links",
+        "extensionPointId": "org.bahmni.clinical.treatment.links",
+        "type": "link",
+        "label": "Open <u>Q</u>uotation",
+        "url": "http://localhost:8069/quotations/latest?patient_ref={{patient_ref}}",
+        "shortcutKey": "q",
+        "requiredPrivilege": "app:billing"
     }
 ]
