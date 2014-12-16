@@ -13,7 +13,7 @@ import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncou
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 
-public class ComputedSet extends EncounterModifier {
+public class SampleDrugOrderGenerator extends EncounterModifier {
 
     public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
 
