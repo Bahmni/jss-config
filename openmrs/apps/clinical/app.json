@@ -155,6 +155,11 @@
             },
             "patientDashboardSections": [
                 {
+                    "title" : "Patient Information",
+                    "name" : "patientInformation",
+                    "patientAttributes" : ["caste", "class", "education", "occupation"]
+                },
+                {
                     "title": "Diagnosis",
                     "name": "diagnosis"
                 },
