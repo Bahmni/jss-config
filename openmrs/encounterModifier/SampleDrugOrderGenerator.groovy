@@ -55,7 +55,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
             drugOrders.add(createUniformDrugOrder("Flurouracil 10ml", "Injection", flurouracilDose, "mg", "Intravenous", "Immediately", flurouracilDose, "Unit(s)", 4, "Hour(s)", "with Dextrox 5% (Injection)"));
             drugOrders.add(createUniformDrugOrder("Dextrox 5%", "Injection", 500.0, "ml", "Intravenous", "Immediately", 0, "Unit(s)", 1, "Day(s)", "diluent"));
             drugOrders.add(createVariableDrugOrder("Ondan Setron 4mg", "Tablet", 1, 0, 1, "Tablet(s)", "Oral", null, 6, "Tablet(s)", 3, "Day(s)", null));
-            drugOrders.add(createVariableDrugOrder("Chlorpromazine 50mg", "Tablet", 0.5, 0, 0.5, "Tablet(s)", "Oral", null, 5, "Tablet(s)", 10, "Day(s)", null));
+            drugOrders.add(createVariableDrugOrder("Chlorpromazine 50mg", "Tablet", 0.5, 0, 0.5, "Tablet(s)", "Oral", null, 5, "Tablet(s)", 5, "Day(s)", null));
             drugOrders.add(createUniformDrugOrder("Tamoxifen 10mg", "Tablet", 2, "Tablet(s)", "Oral", "Once a day", 120, "Tablet(s)", 2, "Month(s)", null));
             drugOrders.add(createUniformDrugOrder("B-Complex", "Tablet", 1, "Tablet(s)", "Oral", "Once a day", 30, "Tablet(s)", 1, "Month(s)", null));
             drugOrders.add(createUniformDrugOrder("Ferrous Sulphate with Folic Acid Large", "Tablet", 1, "Tablet(s)", "Oral", "Once a day", 30, "Tablet(s)", 1, "Month(s)", null));
