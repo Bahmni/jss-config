@@ -20,6 +20,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     public static final String HEIGHT_CONCEPT_NAME = "Height"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
 
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+
     public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
 
         Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid());
@@ -30,9 +32,6 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
         def weight = fetchLatestValue(WEIGHT_CONCEPT_NAME, bahmniEncounterTransaction.getPatientUuid());
         def bsa = calculateBSA(height, weight, patientAgeInYears);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        bahmniEncounterTransaction = objectMapper.convertValue(bahmniEncounterTransaction, new TypeReference<BahmniEncounterTransaction>() {
-        });
         List<BahmniObservation> bahmniObservations = bahmniEncounterTransaction.getObservations();
 
         BahmniObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
@@ -62,6 +61,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
             drugOrders.add(createUniformDrugOrder("Ferrous Sulphate with Folic Acid Large", "Tablet", 1, "Tablet(s)", "Oral", "Once a day", 30, "Tablet(s)", 1, "Month(s)", null));
         }
         bahmniEncounterTransaction.setDrugOrders(drugOrders);
+
         return bahmniEncounterTransaction;
     }
 
@@ -83,6 +83,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     }
 
     private BahmniObservation findObservation(String conceptName, List<BahmniObservation> bahmniObservations) {
+
         for (BahmniObservation bahmniObservation : bahmniObservations) {
             if (conceptName.equals(bahmniObservation.getConcept().getName())) {
                 return bahmniObservation;
@@ -131,8 +132,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
         drugOrder.dosingInstructions.dose = dose;
         if(additionalInstructions != null){
             def instructions = ["additionalInstructions" : additionalInstructions]
-            ObjectMapper om = new ObjectMapper();
-            def administrationInstructions = om.writeValueAsString(instructions);
+            def administrationInstructions = convertToJSON(instructions);
             drugOrder.dosingInstructions.setAdministrationInstructions(administrationInstructions);
         }
         return drugOrder;
@@ -148,10 +148,13 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
         if(additionalInstructions != null){
             doses.put("additionalInstructions", additionalInstructions);
         }
-        ObjectMapper om = new ObjectMapper();
-        def administrationInstructions = om.writeValueAsString(doses);
+        def administrationInstructions = convertToJSON(doses);
         drugOrder.dosingInstructions.setAdministrationInstructions(administrationInstructions);
         return drugOrder;
+    }
+
+    private static String convertToJSON(LinkedHashMap<String, Double> doses) {
+        objectMapper.writeValueAsString(doses)
     }
 
     private
