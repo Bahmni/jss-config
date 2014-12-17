@@ -1,7 +1,6 @@
 import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.codehaus.jackson.map.ObjectMapper
-import org.codehaus.jackson.type.TypeReference
 import org.hibernate.Query
 import org.hibernate.SessionFactory
 import org.joda.time.LocalDate
@@ -30,8 +29,12 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
 
         def height = fetchLatestValue(HEIGHT_CONCEPT_NAME, bahmniEncounterTransaction.getPatientUuid());
         def weight = fetchLatestValue(WEIGHT_CONCEPT_NAME, bahmniEncounterTransaction.getPatientUuid());
-        def bsa = calculateBSA(height, weight, patientAgeInYears);
 
+        if (height == null || weight == null) {
+            throw new RuntimeException("No height or weight set for this patient");
+        }
+
+        def bsa = calculateBSA(height, weight, patientAgeInYears);
         List<BahmniObservation> bahmniObservations = bahmniEncounterTransaction.getObservations();
 
         BahmniObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
@@ -78,7 +81,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     }
 
     static double calculateDose(double referenceDose, double bsa, BahmniObservation percentageAmputatedObservation) {
-        double percentageAmputated = percentageAmputatedObservation != null && percentageAmputatedObservation.getValue() != null ? (Double.parseDouble((String)percentageAmputatedObservation.getValue())) : 0;
+        double percentageAmputated = percentageAmputatedObservation != null && percentageAmputatedObservation.getValue() != null ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
         return Math.round(referenceDose * bsa * (100 - percentageAmputated) / 100);
     }
 
@@ -130,8 +133,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
                                                                  String quantityUnit, Integer duration, String durationUnits, String additionalInstructions) {
         def drugOrder = createDrugOrder(drugName, drugForm, doseUnits, route, frequency, quantity, quantityUnit, duration, durationUnits, additionalInstructions)
         drugOrder.dosingInstructions.dose = dose;
-        if(additionalInstructions != null){
-            def instructions = ["additionalInstructions" : additionalInstructions]
+        if (additionalInstructions != null) {
+            def instructions = ["additionalInstructions": additionalInstructions]
             def administrationInstructions = convertToJSON(instructions);
             drugOrder.dosingInstructions.setAdministrationInstructions(administrationInstructions);
         }
@@ -144,8 +147,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
                                                                   String doseUnits, String route, String frequency, Double quantity, String quantityUnit,
                                                                   Integer duration, String durationUnits, String additionalInstructions) {
         def drugOrder = createDrugOrder(drugName, drugForm, doseUnits, route, frequency, quantity, quantityUnit, duration, durationUnits, additionalInstructions)
-        def doses = ["morningDose" : morningDose, "afternoonDose" : afternoonDose, "eveningDose" : eveningDose];
-        if(additionalInstructions != null){
+        def doses = ["morningDose": morningDose, "afternoonDose": afternoonDose, "eveningDose": eveningDose];
+        if (additionalInstructions != null) {
             doses.put("additionalInstructions", additionalInstructions);
         }
         def administrationInstructions = convertToJSON(doses);
