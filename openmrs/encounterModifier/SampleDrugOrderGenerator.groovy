@@ -1,3 +1,4 @@
+import org.apache.commons.lang.StringUtils
 import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.codehaus.jackson.map.ObjectMapper
@@ -81,7 +82,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     }
 
     static double calculateDose(double referenceDose, double bsa, BahmniObservation percentageAmputatedObservation) {
-        double percentageAmputated = percentageAmputatedObservation != null && percentageAmputatedObservation.getValue() != null ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
+        double percentageAmputated = percentageAmputatedObservation != null && StringUtils.isNotBlank(percentageAmputatedObservation.getValue()) ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
         return Math.round(referenceDose * bsa * (100 - percentageAmputated) / 100);
     }
 
