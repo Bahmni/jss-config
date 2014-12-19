@@ -82,7 +82,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     }
 
     static double calculateDose(double referenceDose, double bsa, BahmniObservation percentageAmputatedObservation) {
-        double percentageAmputated = percentageAmputatedObservation != null && StringUtils.isNotBlank(percentageAmputatedObservation.getValue()) ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
+        double percentageAmputated = percentageAmputatedObservation != null && StringUtils.isNotBlank((String)percentageAmputatedObservation.getValue()) ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
         return Math.round(referenceDose * bsa * (100 - percentageAmputated) / 100);
     }
 
