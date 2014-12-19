@@ -40,6 +40,9 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
+                "Cancer Regimen": {
+                    "computeDrugs" : true
+                },
                 "Chief Complaint Data": {
                     "multiple": 3
                 },
@@ -52,6 +55,10 @@
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
+                },
+                "Surgical Procedure" : {
+                    "answersConceptName" : "Surgical Procedures",
+                    "freeTextAutocomplete" : true
                 },
                 "P/S (per speculum) - Cervix" : {
                     "grid" : true
