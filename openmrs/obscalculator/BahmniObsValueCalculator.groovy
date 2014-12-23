@@ -48,10 +48,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        setBMI(bahmniEncounterTransaction);
+        calculateAndAdd(bahmniEncounterTransaction);
     }
 
-    static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
+    static def calculateAndAdd(BahmniEncounterTransaction bahmniEncounterTransaction) {
         List<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
@@ -97,16 +97,18 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             return
         }
 
-        def waistCircumferenceObservation = find("Waist Circumference", observations, null)
-        def hipCircumferenceObservation = find("Hip Circumference", observations, null)
+        BahmniObservation waistCircumferenceObservation = find("Waist Circumference", observations, null)
+        BahmniObservation hipCircumferenceObservation = find("Hip Circumference", observations, null)
         if (hasValue(waistCircumferenceObservation) && hasValue(hipCircumferenceObservation)) {
             def calculatedConceptName = "Waist/Hip Ratio"
-            def calculatedObs = find(calculatedConceptName, observations, null)
+            BahmniObservation calculatedObs = find(calculatedConceptName, observations, null)
             parent = obsParent(waistCircumferenceObservation, null)
 
             Date obsDatetime = getDate(waistCircumferenceObservation)
-            def waistByHipRatio = waistCircumferenceObservation.getValue()/hipCircumferenceObservation/getValue()
-            if (calculatedObs != null)
+            Double waist = waistCircumferenceObservation.getValue() as Double
+            Double hip = hipCircumferenceObservation.getValue() as Double
+            def waistByHipRatio = waist / hip
+            if (calculatedObs == null)
                 calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
 
             calculatedObs.setValue(waistByHipRatio)
