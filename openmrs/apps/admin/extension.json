@@ -4,7 +4,6 @@
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
         "extensionParams": {
-            "patientMatchingAlgorithm": "JSSPatientMatchingAlgorithm.groovy"
         },
         "label": "CSV Upload",
         "url": "#/csv",
@@ -17,7 +16,6 @@
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
         "extensionParams": {
-            "patientMatchingAlgorithm": "JSSPatientMatchingAlgorithm.groovy"
         },
         "label": "CSV Export",
         "url": "#/csvExport",
