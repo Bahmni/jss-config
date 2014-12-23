@@ -168,12 +168,7 @@
                     "name": "labOrders",
                     "dashboardParams": {
                         "title": null,
-                        "showInvestigationChart": false,
-                        "showInvestigationTable": true,
-                        "showNormalValues": true,
-                        "numberOfVisits": 1,
-                        "showCommentsExpanded": true,
-                        "showLabManagerNotes": true
+                        "showChart": false
                     },
                     "summaryPageParams": {
                         "numberOfVisits": 3
