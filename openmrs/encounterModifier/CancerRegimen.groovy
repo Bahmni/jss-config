@@ -1,7 +1,7 @@
-import org.apache.commons.lang.StringUtils
 import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.codehaus.jackson.map.ObjectMapper
+import org.codehaus.jackson.type.TypeReference
 import org.hibernate.Query
 import org.hibernate.SessionFactory
 import org.joda.time.LocalDate
@@ -13,9 +13,9 @@ import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncou
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 
-public class SampleDrugOrderGenerator extends EncounterModifier {
+public class CancerRegimen extends EncounterModifier {
 
-    public static final String REGIMEN_CONCEPT_NAME = "Breast Cancer Regimen 2"
+    public static final String REGIMEN_CONCEPT_NAME = "Cancer Regimen Name"
     public static final String PERCENTAGE_AMPUTATED_CONCEPT_NAME = "Percentage Amputated"
     public static final String HEIGHT_CONCEPT_NAME = "Height"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
@@ -30,12 +30,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
 
         def height = fetchLatestValue(HEIGHT_CONCEPT_NAME, bahmniEncounterTransaction.getPatientUuid());
         def weight = fetchLatestValue(WEIGHT_CONCEPT_NAME, bahmniEncounterTransaction.getPatientUuid());
-
-        if (height == null || weight == null) {
-            throw new RuntimeException("No height or weight set for this patient");
-        }
-
         def bsa = calculateBSA(height, weight, patientAgeInYears);
+
         List<BahmniObservation> bahmniObservations = bahmniEncounterTransaction.getObservations();
 
         BahmniObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
@@ -47,7 +43,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
         BahmniObservation percentageAmputatedObservation = findObservation(PERCENTAGE_AMPUTATED_CONCEPT_NAME, bahmniObservations);
 
         List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
-        if ("CAF (6 cycles)".equals(getCodedObsValue(regimenObservation.getValue()))) {
+        if ("Cancer Regimen, CAF".equals(getCodedObsValue(regimenObservation.getValue()))) {
             drugOrders.add(createUniformDrugOrder("DNS", "Injection", 1000.0, "ml", "Intravenous", "Immediately", 2.0, "Unit(s)", 4, "Hour(s)", null));
             drugOrders.add(createUniformDrugOrder("Dexamethasone 8mg/2ml", "Injection", 2.0, "ml", "Intravenous", "Immediately", 1.0, "Unit(s)", 1, "Minute(s)", null));
             drugOrders.add(createUniformDrugOrder("Ondansetron 8mg/4ml", "Injection", 2.0, "ml", "Intravenous", "Immediately", 1.0, "Unit(s)", 1, "Minute(s)", null));
@@ -59,7 +55,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
             drugOrders.add(createUniformDrugOrder("Flurouracil 10ml", "Injection", flurouracilDose, "mg", "Intravenous", "Immediately", flurouracilDose, "Unit(s)", 4, "Hour(s)", "with Dextrox 5% (Injection)"));
             drugOrders.add(createUniformDrugOrder("Dextrox 5%", "Injection", 500.0, "ml", "Intravenous", "Immediately", 0, "Unit(s)", 1, "Day(s)", "diluent"));
             drugOrders.add(createVariableDrugOrder("Ondan Setron 4mg", "Tablet", 1, 0, 1, "Tablet(s)", "Oral", null, 6, "Tablet(s)", 3, "Day(s)", null));
-            drugOrders.add(createVariableDrugOrder("Chlorpromazine 50mg", "Tablet", 0.5, 0, 0.5, "Tablet(s)", "Oral", null, 5, "Tablet(s)", 5, "Day(s)", null));
+            drugOrders.add(createVariableDrugOrder("Chlorpromazine 50mg", "Tablet", 0.5, 0, 0.5, "Tablet(s)", "Oral", null, 5, "Tablet(s)", 10, "Day(s)", null));
             drugOrders.add(createUniformDrugOrder("Tamoxifen 10mg", "Tablet", 2, "Tablet(s)", "Oral", "Once a day", 120, "Tablet(s)", 2, "Month(s)", null));
             drugOrders.add(createUniformDrugOrder("B-Complex", "Tablet", 1, "Tablet(s)", "Oral", "Once a day", 30, "Tablet(s)", 1, "Month(s)", null));
             drugOrders.add(createUniformDrugOrder("Ferrous Sulphate with Folic Acid Large", "Tablet", 1, "Tablet(s)", "Oral", "Once a day", 30, "Tablet(s)", 1, "Month(s)", null));
@@ -82,7 +78,7 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
     }
 
     static double calculateDose(double referenceDose, double bsa, BahmniObservation percentageAmputatedObservation) {
-        double percentageAmputated = percentageAmputatedObservation != null && StringUtils.isNotBlank((String)percentageAmputatedObservation.getValue()) ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
+        double percentageAmputated = percentageAmputatedObservation != null && percentageAmputatedObservation.getValue() != null ? (Double.parseDouble((String)percentageAmputatedObservation.getValue())) : 0;
         return Math.round(referenceDose * bsa * (100 - percentageAmputated) / 100);
     }
 
@@ -134,8 +130,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
                                                                  String quantityUnit, Integer duration, String durationUnits, String additionalInstructions) {
         def drugOrder = createDrugOrder(drugName, drugForm, doseUnits, route, frequency, quantity, quantityUnit, duration, durationUnits, additionalInstructions)
         drugOrder.dosingInstructions.dose = dose;
-        if (additionalInstructions != null) {
-            def instructions = ["additionalInstructions": additionalInstructions]
+        if(additionalInstructions != null){
+            def instructions = ["additionalInstructions" : additionalInstructions]
             def administrationInstructions = convertToJSON(instructions);
             drugOrder.dosingInstructions.setAdministrationInstructions(administrationInstructions);
         }
@@ -148,8 +144,8 @@ public class SampleDrugOrderGenerator extends EncounterModifier {
                                                                   String doseUnits, String route, String frequency, Double quantity, String quantityUnit,
                                                                   Integer duration, String durationUnits, String additionalInstructions) {
         def drugOrder = createDrugOrder(drugName, drugForm, doseUnits, route, frequency, quantity, quantityUnit, duration, durationUnits, additionalInstructions)
-        def doses = ["morningDose": morningDose, "afternoonDose": afternoonDose, "eveningDose": eveningDose];
-        if (additionalInstructions != null) {
+        def doses = ["morningDose" : morningDose, "afternoonDose" : afternoonDose, "eveningDose" : eveningDose];
+        if(additionalInstructions != null){
             doses.put("additionalInstructions", additionalInstructions);
         }
         def administrationInstructions = convertToJSON(doses);
