@@ -192,6 +192,11 @@
                 {
                     "title": "Radiology",
                     "name": "radiology"
+                },
+                {
+                    "title" : "Patient Information",
+                    "name" : "patientInformation",
+                    "patientAttributes" : ["caste", "class", "education", "occupation"]
                 }
             ],
             "templateSections": [
