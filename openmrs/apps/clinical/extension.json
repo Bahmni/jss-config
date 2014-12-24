@@ -48,7 +48,7 @@
         "url": "treatment",
         "icon": "icon-user-md",
         "order": 6,
-        "requiredPrivilege": "app:clinical:consultationTab"
+        "requiredPrivilege": "app:clinical:treatment"
     },
     {
         "id": "bahmni.clinical.billing.treatment",
