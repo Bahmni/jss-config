@@ -43,6 +43,9 @@
                 "Cancer Regimen": {
                     "computeDrugs" : true
                 },
+                "Diabetes Template": {
+                    "computeDrugs" : true
+                },
                 "Chief Complaint Data": {
                     "multiple": 3
                 },
