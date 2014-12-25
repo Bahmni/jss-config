@@ -204,12 +204,14 @@
             ],
             "templateSections": [
                 {
-                    "templateName": "Breast_cancer",
-                    "showOnly": ["Breast_cancer, Imaging"]
-                },
-                {
-                    "templateName": "Anaemia Template",
-                    "showOnly": ["Anaemia, On Treatment", "Anaemia, Intake"]
+                  "templateName": "Diabetes Templates",
+                  "showOnly": [],
+                  "pivotTable" : {
+                    "numberOfVisits": "2",
+                    "obsConcepts": ["Diabetes Template"],
+                    "drugConcepts":[],
+                    "labConcepts":[]
+                  }
                 }
             ],
             "drugOrder": {
