@@ -48,10 +48,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        setBMI(bahmniEncounterTransaction);
+        calculate(bahmniEncounterTransaction);
     }
 
-    static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
+    static def calculate(BahmniEncounterTransaction bahmniEncounterTransaction) {
         List<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
@@ -69,7 +69,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             parent = obsParent(weightObservation, parent)
 
             if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiObservation)
+                voidObs(bmiStatusObservation)
                 return
             }
 
@@ -81,7 +82,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             Date obsDatetime = getDate(weightObservation) != null ? getDate(weightObservation) : getDate(heightObservation)
 
             if (height == null || weight == null) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiObservation, bmiStatusObservation)
                 return
             }
 
@@ -106,11 +107,31 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
             Date obsDatetime = getDate(waistCircumferenceObservation)
             def waistByHipRatio = waistCircumferenceObservation.getValue()/hipCircumferenceObservation/getValue()
-            if (calculatedObs != null)
+            if (calculatedObs == null)
                 calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
 
             calculatedObs.setValue(waistByHipRatio)
             return
+        }
+
+        BahmniObservation lmpObservation = find("Obstetrics, Last Menstrual Period", observations, null)
+        def calculatedConceptName = "Estimated Date of Delivery"
+        if (hasValue(lmpObservation)) {
+            parent = obsParent(lmpObservation, null)
+            def calculatedObs = find(calculatedConceptName, observations, null)
+
+            Date obsDatetime = getDate(lmpObservation)
+
+            LocalDate edd = new LocalDate(lmpObservation.getValue()).plusMonths(9).plusWeeks(1)
+            if (calculatedObs == null)
+                calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            calculatedObs.setValue(edd)
+            return
+        } else {
+            def calculatedObs = find(calculatedConceptName, observations, null)
+            if (hasValue(calculatedObs)) {
+                voidObs(calculatedObs)
+            }
         }
     }
 
@@ -130,12 +151,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
 
-    private static void voidBmiObs(BahmniObservation bmiObservation, BahmniObservation bmiStatusObservation) {
-        if (hasValue(bmiObservation)) {
-            bmiObservation.voided = true
-        }
-        if (hasValue(bmiStatusObservation)) {
-            bmiStatusObservation.voided = true
+    private static void voidObs(BahmniObservation observation) {
+        if (hasValue(observation)) {
+            observation.voided = true
         }
     }
 

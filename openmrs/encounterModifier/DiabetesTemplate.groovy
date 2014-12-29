@@ -21,12 +21,11 @@ public class DiabetesTemplate extends EncounterModifier {
     static private String INSULIN_30_70_CARTIGES = "Insulin 30/70 Cartiges"
     static private String BIPHASIC_ISOPHANE_INSULIN_30_70 = "Biphasic Isophane Insulin 30/70"
     static private String BIPHASIC_ISOPHANE_INSULIN_50_50 = "Biphasic Isophane Insulin 50/50"
-    static private String INSULIN_PLAIN = "Insulin, plain"
+    static private String INSULIN_PLAIN = "Insulin Injectin IP Soluble Insulin, Neutral"
     static private String PIOGLITAZONE = "Pioglitazone 15mg"
     static private String GLIPIZIDE = "Glipizide 5mg"
     static private String METFORMIN = "Metformin 500mg (SR)"
     static private String GLIBENCLAMIDE = "Glibenclamide 5mg"
-    static private String GLIMEPIRIDE = "Glimepiride"
 
     public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
         Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
@@ -39,7 +38,7 @@ public class DiabetesTemplate extends EncounterModifier {
                         drugOrder(INSULIN_30_70_CARTIGES, ROUTE.SUBCUTANEOUS),
                         drugOrder(BIPHASIC_ISOPHANE_INSULIN_30_70, ROUTE.SUBCUTANEOUS),
                         drugOrder(BIPHASIC_ISOPHANE_INSULIN_50_50, ROUTE.SUBCUTANEOUS),
-//                        drugOrder(INSULIN_PLAIN, ROUTE.SUBCUTANEOUS)
+                        drugOrder(INSULIN_PLAIN, ROUTE.SUBCUTANEOUS)
                 )
                 break
             case TYPE2:
@@ -53,10 +52,10 @@ public class DiabetesTemplate extends EncounterModifier {
                 break
             case KETOACIDOSIS:
                 drugOrders.addAll(
-//                        drugOrder(INSULIN_PLAIN, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.THRICE_A_DAY, null, "Unit(s)", null, null, "Before meals"),
+                        drugOrder(INSULIN_PLAIN, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.THRICE_A_DAY, null, "Unit(s)", null, null, "Before meals"),
                         drugOrder(BIPHASIC_ISOPHANE_INSULIN_50_50, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, "Unit(s)", 1, DURATION.MONTHS, null),
                         drugOrder(GLIBENCLAMIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, null),
-//                        drugOrder(GLIMEPIRIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "With breakfast or lunch"),
+                        drugOrder(GLIPIZIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "With breakfast or lunch"),
                 )
                 break
             case GESTATIONAL:

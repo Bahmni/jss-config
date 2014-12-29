@@ -29,15 +29,6 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
-            "pivotTable":{
-                "Diabetes":{
-                    "numberOfVisits": "3",
-                    "comment" : "number of visits should be by default = all",
-                    "obsConcepts": ["Vitals","Height", "Weight", "Pathology"],
-                    "drugConcepts": "",
-                    "labConcepts":""
-                }
-            },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Cancer Regimen": {
@@ -200,12 +191,12 @@
             "templateSections": [
                 {
                   "templateName": "Diabetes Templates",
-                  "showOnly": [],
+                  "showOnly": ["Diabetes Template"],
                   "pivotTable" : {
-                    "numberOfVisits": "2",
-                    "obsConcepts": ["Diabetes Template"],
-                    "drugConcepts":[],
-                    "labConcepts":[]
+                    "numberOfVisits": "15",
+                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                    "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide"],
+                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
                   }
                 }
             ],
@@ -214,8 +205,8 @@
                 "defaultInstructions": "As directed",
                 "frequencyDefaultDurationUnitsMap": [
                     {"minFrequency":5, "maxFrequency": null, "defaultDurationUnit": "Hour(s)"},
-                    {"minFrequency":"1/7", "maxFrequency": 5, "defaultDurationUnit": "Day(s)"},
-                    {"minFrequency":"1/30", "maxFrequency": "1/7", "defaultDurationUnit": "Week(s)"},
+                    {"minFrequency":"3/7", "maxFrequency": 5, "defaultDurationUnit": "Day(s)"},
+                    {"minFrequency":"1/30", "maxFrequency": "3/7", "defaultDurationUnit": "Week(s)"},
                     {"minFrequency":null, "maxFrequency": "1/30", "defaultDurationUnit": "Month(s)"}
                 ],
                 "drugFormDefaults": {
