@@ -191,7 +191,7 @@
             "templateSections": [
                 {
                   "templateName": "Diabetes Templates",
-                  "showOnly": ["Diabetes Template"],
+                  "showOnly": ["Diabetes Intake Template", "Diabetes Followup Template", "Diabetes Counselling Template"],
                   "pivotTable" : {
                     "numberOfVisits": "15",
                     "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],

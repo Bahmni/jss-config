@@ -18,7 +18,7 @@ public class DiabetesTemplate extends EncounterModifier {
     static private String GESTATIONAL = 'Diabetes, Gestational'
     static private diabetesDiagnosis = [TYPE1, TYPE2, UNSPECIFIED, KETOACIDOSIS, GESTATIONAL]
 
-    static private String INSULIN_30_70_CARTIGES = "Insulin 30/70 Cartiges"
+    static private String INSULIN_30_70_CARTIGES = "Insulin 30/70 Cartriges"
     static private String BIPHASIC_ISOPHANE_INSULIN_30_70 = "Biphasic Isophane Insulin 30/70"
     static private String BIPHASIC_ISOPHANE_INSULIN_50_50 = "Biphasic Isophane Insulin 50/50"
     static private String INSULIN_PLAIN = "Insulin Injectin IP Soluble Insulin, Neutral"
