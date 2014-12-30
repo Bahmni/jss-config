@@ -38,6 +38,14 @@
                     "labConcepts":""
                 }
             },
+            "printConfig": {
+                "visitSummaryPrint": {
+                    "showChart": false
+                },
+                "opdSummaryPrint": {
+                    "showChart": false
+                }
+            },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Cancer Regimen": {
