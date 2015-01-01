@@ -51,7 +51,10 @@
                 "Cancer Regimen": {
                     "computeDrugs" : true
                 },
-                "Diabetes Template": {
+                "Diabetes Intake Template": {
+                    "computeDrugs" : true
+                },
+                "Diabetes Followup Template": {
                     "computeDrugs" : true
                 },
                 "Chief Complaint Data": {
@@ -68,8 +71,14 @@
                     "durationRequired" : false
                 },
                 "Surgical Procedure" : {
-                    "answersConceptName" : "Surgical Procedures",
-                    "freeTextAutocomplete" : true
+                    "answersConceptName" : "Surgical Procedure Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Surgical Procedure Non Coded" : {
+                    "answersConceptName" : "Surgical Procedure Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
                 },
                 "P/S (per speculum) - Cervix" : {
                     "grid" : true
@@ -162,6 +171,12 @@
                 },
                 "Hypertension, Symptoms of Complication" : {
                         "multiSelect" : true
+                },
+                "Diabetes, Complications" : {
+                  "multiSelect" : true
+                },
+                "Diabetes, Complaint" : {
+                  "multiSelect" : true
                 }
             },
             "patientDashboardSections": [
@@ -215,10 +230,10 @@
                   "templateName": "Diabetes Templates",
                   "showOnly": [],
                   "pivotTable" : {
-                    "numberOfVisits": "2",
-                    "obsConcepts": ["Diabetes Template"],
-                    "drugConcepts":[],
-                    "labConcepts":[]
+                    "numberOfVisits": "15",
+                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                    "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
+                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
                   }
                 }
             ],
