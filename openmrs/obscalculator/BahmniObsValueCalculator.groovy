@@ -106,9 +106,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             parent = obsParent(waistCircumferenceObservation, null)
 
             Date obsDatetime = getDate(waistCircumferenceObservation)
-            Double waist = waistCircumferenceObservation.getValue() as Double
-            Double hip = hipCircumferenceObservation.getValue() as Double
-            def waistByHipRatio = waist / hip
+            def waistCircumference = waistCircumferenceObservation.getValue() as Double
+            def hipCircumference = hipCircumferenceObservation.getValue() as Double
+            def waistByHipRatio = waistCircumference/hipCircumference
             if (calculatedObs == null)
                 calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
 
