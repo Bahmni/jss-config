@@ -193,6 +193,9 @@
                 "Incision" : {
                   "conciseText" : true
                 },
+                "Obstetrics, Fundal Height" : {
+                  "conciseText" : true
+                },
                 "Operative Drains" : {
                   "conciseText" : true
                 },
