@@ -178,14 +178,14 @@
                 "Diabetes, Complaint" : {
                   "multiSelect" : true
                 },
-                "Operating Surgeon" : {
-                  "conciseText" : true
+                "Coded Operating Surgeon" : {
+                  "multiSelect" : true
                 },
-                "Operating Assistant Surgeon" : {
-                  "conciseText" : true
+                "Coded Operating Assistant Surgeon" : {
+                  "multiSelect" : true
                 },
-                "Operation Anesthetist" : {
-                  "conciseText" : true
+                "Coded Operation Anesthetist" : {
+                  "multiSelect" : true
                 },
                 "Scrub Nurse" : {
                   "conciseText" : true
