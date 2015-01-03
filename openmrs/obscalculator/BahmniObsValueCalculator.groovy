@@ -81,7 +81,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             Date obsDatetime = getDate(weightObservation) != null ? getDate(weightObservation) : getDate(heightObservation)
 
             if (height == null || weight == null) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiObservation)
+                voidObs(bmiStatusObservation)
                 return
             }
 
