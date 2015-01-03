@@ -177,6 +177,27 @@
                 },
                 "Diabetes, Complaint" : {
                   "multiSelect" : true
+                },
+                "Operating Surgeon" : {
+                  "conciseText" : true
+                },
+                "Operating Assistant Surgeon" : {
+                  "conciseText" : true
+                },
+                "Operation Anesthetist" : {
+                  "conciseText" : true
+                },
+                "Scrub Nurse" : {
+                  "conciseText" : true
+                },
+                "Incision" : {
+                  "conciseText" : true
+                },
+                "Operative Drains" : {
+                  "conciseText" : true
+                },
+                "Anesthesia Administered" : {
+                  "multiSelect" : true
                 }
             },
             "patientDashboardSections": [
