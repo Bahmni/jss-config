@@ -247,6 +247,14 @@
                     "title" : "Patient Information",
                     "name" : "patientInformation",
                     "patientAttributes" : ["caste", "class", "education", "occupation"]
+                },
+                {
+                    "title" : "Visits",
+                    "name" : "visits",
+                    "dashboardParams": {
+                        "title": null,
+                        "maximumNoOfVisits": 3
+                    }
                 }
             ],
             "templateSections": [
