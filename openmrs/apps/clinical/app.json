@@ -199,7 +199,7 @@
                 "Operative Drains" : {
                   "conciseText" : true
                 },
-                "Anesthesia Administered" : {
+                "Posture" : {
                   "multiSelect" : true
                 }
             },
@@ -255,7 +255,7 @@
                   "showOnly": [],
                   "pivotTable" : {
                     "numberOfVisits": "15",
-                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam","Diabetes, Complications"],
                     "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
                     "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
                   }

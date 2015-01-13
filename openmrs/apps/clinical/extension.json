@@ -77,7 +77,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display":"Active",
-            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": "10"
         },
         "label": "Active",
         "order": 1,
@@ -90,7 +91,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display":"Active",
-            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment",
+            "refreshTime": "10"
         },
         "label": "Active",
         "order": 1,
@@ -103,7 +105,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display":"My Patients",
-            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": "10"
         },
         "label": "Active",
         "order": 1,
@@ -116,7 +119,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display":"My Patients",
-            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment",
+            "refreshTime": "10"
         },
         "label": "Active",
         "order": 1,
