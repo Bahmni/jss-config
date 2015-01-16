@@ -236,8 +236,22 @@
                 {
                     "title": "Treatments",
                     "name": "treatment",
-                    "numberOfVisits": 1,
-                    "active":false
+                    "dashboardParams": {
+                        "title": null,
+                        "showChart": false,
+                        "showTable": true,
+                        "numberOfVisits": 2,
+												"showOtherActive": true,
+                        "showCommentsExpanded": false
+                    },
+                    "summaryPageParams": {
+                      "title": null,
+                      "showChart": false,
+                      "showTable": true,
+                      "numberOfVisits": 1,
+											"showOtherActive": true,
+                      "showCommentsExpanded": false
+                    }
                 },
                 {
                     "title": "Radiology",
