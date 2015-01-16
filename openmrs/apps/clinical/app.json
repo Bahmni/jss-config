@@ -15,7 +15,7 @@
                 "description": "Bahmni Orders Page"
             },
             {
-                "id":"org.bahmni.patient.search",
+                "id": "org.bahmni.patient.search",
                 "description": "Bahmni Patient search, lookups Page"
             }
         ],
@@ -23,19 +23,19 @@
             "patientUuid",
             "visitUuid"
         ],
-        "config" : {
-            "obsIgnoreList" : ["Fee Information", "Patient file"],
+        "config": {
+            "obsIgnoreList": ["Fee Information", "Patient file"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
-            "pivotTable":{
-                "Diabetes":{
+            "pivotTable": {
+                "Diabetes": {
                     "numberOfVisits": "3",
-                    "comment" : "number of visits should be by default = all",
-                    "obsConcepts": ["Vitals","Height", "Weight", "Pathology"],
+                    "comment": "number of visits should be by default = all",
+                    "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
                     "drugConcepts": "",
-                    "labConcepts":""
+                    "labConcepts": ""
                 }
             },
             "printConfig": {
@@ -49,78 +49,78 @@
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Cancer Regimen": {
-                    "computeDrugs" : true
+                    "computeDrugs": true
                 },
                 "Diabetes Intake Template": {
-                    "computeDrugs" : true
+                    "computeDrugs": true
                 },
                 "Diabetes Followup Template": {
-                    "computeDrugs" : true
+                    "computeDrugs": true
                 },
                 "Chief Complaint Data": {
                     "multiple": 3
                 },
-                "Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Chief Complaint": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Non-Coded Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Non-Coded Chief Complaint": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Surgical Procedure" : {
-                    "answersConceptName" : "Surgical Procedure Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Surgical Procedure": {
+                    "answersConceptName": "Surgical Procedure Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Surgical Procedure Non Coded" : {
-                    "answersConceptName" : "Surgical Procedure Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Surgical Procedure Non Coded": {
+                    "answersConceptName": "Surgical Procedure Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "P/S (per speculum) - Cervix" : {
-                    "grid" : true
+                "P/S (per speculum) - Cervix": {
+                    "grid": true
                 },
-                "P/V (per vaginal) - Uterus" : {
-                    "grid" : true
+                "P/V (per vaginal) - Uterus": {
+                    "grid": true
                 },
-		        "Anaemia, Stopped Since When" : {
-                        "conciseText" : true
+                "Anaemia, Stopped Since When": {
+                    "conciseText": true
                 },
-                "Arthritis, Stopped Since When" : {
-                        "conciseText" : true
+                "Arthritis, Stopped Since When": {
+                    "conciseText": true
                 },
-                "Hyperthyroidism, Stopped Since When" : {
-                        "conciseText" : true
+                "Hyperthyroidism, Stopped Since When": {
+                    "conciseText": true
                 },
-                "Diabetes, Current Status" : {
-                        "conciseText" : true
+                "Diabetes, Current Status": {
+                    "conciseText": true
                 },
-                "Epilepsy, Current Status" : {
-                        "conciseText" : true
+                "Epilepsy, Current Status": {
+                    "conciseText": true
                 },
-                "Leprosy, Disability" : {
-                        "conciseText" : true
+                "Leprosy, Disability": {
+                    "conciseText": true
                 },
-                "Leprosy, Deformity" : {
-                        "conciseText" : true
+                "Leprosy, Deformity": {
+                    "conciseText": true
                 },
-                "Leprosy, Smear Positive in Diagnosis" : {
-                        "conciseText" : true
+                "Leprosy, Smear Positive in Diagnosis": {
+                    "conciseText": true
                 },
-                "Neurological Disorder, Other Addictions" : {
-                        "conciseText" : true
+                "Neurological Disorder, Other Addictions": {
+                    "conciseText": true
                 },
-                "Undernutrition, Stopped Since When" : {
-                        "conciseText" : true
+                "Undernutrition, Stopped Since When": {
+                    "conciseText": true
                 },
-                "Neurological Disorder, Addiction" : {
-                        "multiSelect" : true
+                "Neurological Disorder, Addiction": {
+                    "multiSelect": true
                 },
-                "Tuberculosis, Extrapulmonary Details" : {
-                        "multiSelect" : true
+                "Tuberculosis, Extrapulmonary Details": {
+                    "multiSelect": true
                 },
                 "Image": {
                     "multiple": 3
@@ -128,79 +128,79 @@
                 "Hypertension, Intake, Chief Complaint Data": {
                     "multiple": 3
                 },
-                "Hypertension, Intake, Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Hypertension, Intake, Chief Complaint": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Hypertension, Intake, Chief Complaint Non Coded" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Hypertension, Intake, Chief Complaint Non Coded": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Hypertension, Hypertensive Emergency Cause" : {
-                        "multiSelect" : true
+                "Hypertension, Hypertensive Emergency Cause": {
+                    "multiSelect": true
                 },
-                "Hypertension, Intake, Risk Factors" : {
-                        "multiSelect" : true
+                "Hypertension, Intake, Risk Factors": {
+                    "multiSelect": true
                 },
-                "Hypertension, Intake, Secondary Hypertension" : {
-                        "multiSelect" : true
+                "Hypertension, Intake, Secondary Hypertension": {
+                    "multiSelect": true
                 },
-                "Hypertension, Current Home Medications" : {
-                        "multiSelect" : true
+                "Hypertension, Current Home Medications": {
+                    "multiSelect": true
                 },
                 "Hypertension, Progress, Chief Complaint Data": {
                     "multiple": 3
                 },
-                "Hypertension, Progress, Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Hypertension, Progress, Chief Complaint": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Hypertension, Progress, Chief Complaint Non Coded" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Hypertension, Progress, Chief Complaint Non Coded": {
+                    "answersConceptName": "Chief Complaint Answers",
+                    "freeTextAutocomplete": true,
+                    "durationRequired": false
                 },
-                "Hypertension, Progress, Risk Factors" : {
-                        "multiSelect" : true
+                "Hypertension, Progress, Risk Factors": {
+                    "multiSelect": true
                 },
-                "Hypertension, Progress, Secondary Hypertension" : {
-                        "multiSelect" : true
+                "Hypertension, Progress, Secondary Hypertension": {
+                    "multiSelect": true
                 },
-                "Hypertension, Symptoms of Complication" : {
-                        "multiSelect" : true
+                "Hypertension, Symptoms of Complication": {
+                    "multiSelect": true
                 },
-                "Diabetes, Complications" : {
-                  "multiSelect" : true
+                "Diabetes, Complications": {
+                    "multiSelect": true
                 },
-                "Diabetes, Complaint" : {
-                  "multiSelect" : true
+                "Diabetes, Complaint": {
+                    "multiSelect": true
                 },
-                "Coded Operating Surgeon" : {
-                  "multiSelect" : true
+                "Coded Operating Surgeon": {
+                    "multiSelect": true
                 },
-                "Coded Operating Assistant Surgeon" : {
-                  "multiSelect" : true
+                "Coded Operating Assistant Surgeon": {
+                    "multiSelect": true
                 },
-                "Coded Operation Anesthetist" : {
-                  "multiSelect" : true
+                "Coded Operation Anesthetist": {
+                    "multiSelect": true
                 },
-                "Scrub Nurse" : {
-                  "conciseText" : true
+                "Scrub Nurse": {
+                    "conciseText": true
                 },
-                "Incision" : {
-                  "conciseText" : true
+                "Incision": {
+                    "conciseText": true
                 },
-                "Obstetrics, Fundal Height" : {
-                  "conciseText" : true
+                "Obstetrics, Fundal Height": {
+                    "conciseText": true
                 },
-                "Operative Drains" : {
-                  "conciseText" : true
+                "Operative Drains": {
+                    "conciseText": true
                 },
-                "Anesthesia Administered" : {
-                  "multiSelect" : true
+                "Anesthesia Administered": {
+                    "multiSelect": true
                 }
             },
             "patientDashboardSections": [
@@ -227,7 +227,8 @@
                     "name": "labOrders",
                     "dashboardParams": {
                         "title": null,
-                        "showChart": false
+                        "showChart": false,
+                        "showDetailsButton" : true
                     },
                     "summaryPageParams": {
                         "numberOfVisits": 3
@@ -241,16 +242,16 @@
                         "showChart": false,
                         "showTable": true,
                         "numberOfVisits": 2,
-												"showOtherActive": true,
+                        "showOtherActive": true,
                         "showCommentsExpanded": false
                     },
                     "summaryPageParams": {
-                      "title": null,
-                      "showChart": false,
-                      "showTable": true,
-                      "numberOfVisits": 1,
-											"showOtherActive": true,
-                      "showCommentsExpanded": false
+                        "title": null,
+                        "showChart": false,
+                        "showTable": true,
+                        "numberOfVisits": 1,
+                        "showOtherActive": true,
+                        "showCommentsExpanded": false
                     }
                 },
                 {
@@ -258,8 +259,8 @@
                     "name": "radiology"
                 },
                 {
-                    "title" : "Visits",
-                    "name" : "visits",
+                    "title": "Visits",
+                    "name": "visits",
                     "dashboardParams": {
                         "title": null,
                         "maximumNoOfVisits": 3
@@ -268,24 +269,40 @@
             ],
             "templateSections": [
                 {
-                  "templateName": "Diabetes Templates",
-                  "showOnly": [],
-                  "pivotTable" : {
-                    "numberOfVisits": "15",
-                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                    "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
-                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
-                  }
+                    "templateName": "Diabetes Templates",
+                    "showOnly": [],
+                    "pivotTable": {
+                        "numberOfVisits": "15",
+                        "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                        "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
+                    }
                 }
             ],
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
                 "frequencyDefaultDurationUnitsMap": [
-                    {"minFrequency":5, "maxFrequency": null, "defaultDurationUnit": "Hour(s)"},
-                    {"minFrequency":"1/7", "maxFrequency": 5, "defaultDurationUnit": "Day(s)"},
-                    {"minFrequency":"1/30", "maxFrequency": "1/7", "defaultDurationUnit": "Week(s)"},
-                    {"minFrequency":null, "maxFrequency": "1/30", "defaultDurationUnit": "Month(s)"}
+                    {
+                        "minFrequency": 5,
+                        "maxFrequency": null,
+                        "defaultDurationUnit": "Hour(s)"
+                    },
+                    {
+                        "minFrequency": "1/7",
+                        "maxFrequency": 5,
+                        "defaultDurationUnit": "Day(s)"
+                    },
+                    {
+                        "minFrequency": "1/30",
+                        "maxFrequency": "1/7",
+                        "defaultDurationUnit": "Week(s)"
+                    },
+                    {
+                        "minFrequency": null,
+                        "maxFrequency": "1/30",
+                        "defaultDurationUnit": "Month(s)"
+                    }
                 ],
                 "drugFormDefaults": {
                     "Ayurvedic": {
