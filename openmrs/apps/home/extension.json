@@ -55,7 +55,7 @@
         "type": "link",
         "label": "Admin",
         "url": "../admin/#/dashboard/home",
-        "icon": "icon-user",
+        "icon": "icon-cogs",
         "order": 7,
         "requiredPrivilege": "app:admin"
     },
@@ -68,6 +68,16 @@
         "icon": "icon-stethoscope",
         "order": 8,
         "requiredPrivilege": "app:billing"
+    },
+    {
+        "id": "bahmni.dhis",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Dhis",
+        "url": "../dhis/#/dashboard/home",
+        "icon": "icon-book",
+        "order": 9,
+        "requiredPrivilege": "app:dhis"
     }
 
 ]
