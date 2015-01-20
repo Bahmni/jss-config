@@ -42,19 +42,18 @@ public class CancerRegimen extends EncounterModifier {
         List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(getCodedObsValue(regimenObservation.getValue())));
 
-        if ("Cancer Regimen, CAF".equals(getCodedObsValue(regimenObservation.getValue()))) {
+        if ("Cyclophosphamide + Doxorubicin + Fluorouracil".equals(getCodedObsValue(regimenObservation.getValue()))) {
             setDoseAndQuantity(drugOrders, "Cyclophosphamide 500mg", bsa, 600.0, percentageAmputatedObservation)
-            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 50mg", bsa, 600.0, percentageAmputatedObservation)
-            setDoseAndQuantity(drugOrders, "Flurouracil 10ml", bsa, 50, percentageAmputatedObservation)
+            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 50mg", bsa, 50.0, percentageAmputatedObservation)
+            setDoseAndQuantity(drugOrders, "Flurouracil 10ml", bsa, 600, percentageAmputatedObservation)
         }
 
-        if ("Breast Cancer - AC".equals(getCodedObsValue(regimenObservation.getValue()))) {
+        if ("Doxorubicin + Cyclophosphamide".equals(getCodedObsValue(regimenObservation.getValue()))) {
             setDoseAndQuantity(drugOrders, "Cyclophosphamide 500mg", bsa, 600.0, percentageAmputatedObservation)
-            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 50mg", bsa, 600.0, percentageAmputatedObservation)
-            setDoseAndQuantity(drugOrders, "Flurouracil 10ml", bsa, 50, percentageAmputatedObservation)
+            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 50mg", bsa, 50.0, percentageAmputatedObservation)
         }
 
-        if ("Breast Cancer - Paclitaxel".equals(getCodedObsValue(regimenObservation.getValue()))) {
+        if ("Paclitaxel".equals(getCodedObsValue(regimenObservation.getValue()))) {
             setDoseAndQuantity(drugOrders, "Texeleon 260mg", bsa, 175, percentageAmputatedObservation)   
         }
         
