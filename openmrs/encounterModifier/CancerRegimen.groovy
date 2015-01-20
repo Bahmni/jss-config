@@ -50,7 +50,7 @@ public class CancerRegimen extends EncounterModifier {
 
         if ("Doxorubicin + Cyclophosphamide".equals(getCodedObsValue(regimenObservation.getValue()))) {
             setDoseAndQuantity(drugOrders, "Cyclophosphamide 500mg", bsa, 600.0, percentageAmputatedObservation)
-            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 50mg", bsa, 50.0, percentageAmputatedObservation)
+            setDoseAndQuantity(drugOrders, "Doxorubicin Hydrochloride 10mg", bsa, 50.0, percentageAmputatedObservation)
         }
 
         if ("Paclitaxel".equals(getCodedObsValue(regimenObservation.getValue()))) {
