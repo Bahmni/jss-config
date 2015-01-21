@@ -29,6 +29,18 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "visitPage": {
+                "investigationResultParams": {
+                    "title": "This Is Under QA "
+                },
+                "treatmentParams": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton" : true
+                }
+            },
             "pivotTable": {
                 "Diabetes": {
                     "numberOfVisits": "3",
@@ -228,6 +240,7 @@
                     "dashboardParams": {
                         "title": null,
                         "showChart": false,
+                        "showTable": false,
                         "showDetailsButton" : true
                     },
                     "summaryPageParams": {
@@ -238,20 +251,19 @@
                     "title": "Treatments",
                     "name": "treatment",
                     "dashboardParams": {
-                        "title": null,
-                        "showChart": false,
-                        "showTable": true,
-                        "numberOfVisits": 2,
+                        "showFlowSheet": true,
+                        "showListView": true,
+                        "numberOfVisits": 3,
                         "showOtherActive": true,
-                        "showCommentsExpanded": false
+                        "showDetailsButton" : true
                     },
                     "summaryPageParams": {
-                        "title": null,
-                        "showChart": false,
-                        "showTable": true,
-                        "numberOfVisits": 1,
+                        "title": "Treatments",
+                        "showFlowSheet": true,
+                        "showListView": true,
+                        "numberOfVisits": 4,
                         "showOtherActive": true,
-                        "showCommentsExpanded": false
+                        "showDetailsButton" : true
                     }
                 },
                 {
@@ -263,7 +275,7 @@
                     "name": "visits",
                     "dashboardParams": {
                         "title": null,
-                        "maximumNoOfVisits": 3
+                        "maximumNoOfVisits": 4
                     }
                 }
             ],
