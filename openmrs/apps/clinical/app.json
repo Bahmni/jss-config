@@ -281,13 +281,14 @@
             ],
             "templateSections": [
                 {
-                    "templateName": "Diabetes Templates",
+                    "templateName": "Diabetes Template",
                     "showOnly": [],
                     "pivotTable": {
-                        "numberOfVisits": "15",
-                        "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                        "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
-                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
+                        "numberOfVisits": "5",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Weight","Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                        "drugConcepts":["Ipratropium Pressurised", "Garbhpal Rasa"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
                     }
                 }
             ],
