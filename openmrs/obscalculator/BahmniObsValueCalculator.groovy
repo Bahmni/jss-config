@@ -69,7 +69,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             parent = obsParent(weightObservation, parent)
 
             if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiObservation);
+                voidObs(bmiStatusObservation);
                 return
             }
 
@@ -133,12 +134,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
 
-    private static void voidBmiObs(BahmniObservation bmiObservation, BahmniObservation bmiStatusObservation) {
+    private static void voidObs(BahmniObservation bmiObservation) {
         if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
-        }
-        if (hasValue(bmiStatusObservation)) {
-            bmiStatusObservation.voided = true
         }
     }
 
