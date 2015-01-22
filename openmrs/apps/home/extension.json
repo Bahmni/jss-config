@@ -78,6 +78,15 @@
         "icon": "icon-book",
         "order": 9,
         "requiredPrivilege": "app:dhis"
+    },
+    {
+        "id": "bahmni.appointmentscheduling",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Appointments",
+        "url": "/openmrs/appointmentschedulingui/home.page",
+        "icon": "icon-book",
+        "order": 9,
+        "requiredPrivilege": "app:clinical"
     }
-
 ]
