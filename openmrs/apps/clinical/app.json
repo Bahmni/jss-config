@@ -31,7 +31,7 @@
             },
             "visitPage": {
                 "investigationResultParams": {
-                    "title": "This Is Under QA "
+                    "title": "Investigations"
                 },
                 "treatmentParams": {
                     "title": "Treatments",
@@ -43,7 +43,7 @@
             },
             "pivotTable": {
                 "Diabetes": {
-                    "numberOfVisits": "3",
+                    "numberOfVisits": "15",
                     "comment": "number of visits should be by default = all",
                     "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
                     "drugConcepts": "",
@@ -239,9 +239,10 @@
                     "name": "labOrders",
                     "dashboardParams": {
                         "title": null,
+                        "numberOfVisits": 1,
                         "showChart": false,
-                        "showTable": false,
-                        "showDetailsButton" : true
+                        "showTable": true,
+                        "showDetailsButton" : false
                     },
                     "summaryPageParams": {
                         "numberOfVisits": 3
@@ -251,17 +252,17 @@
                     "title": "Treatments",
                     "name": "treatment",
                     "dashboardParams": {
-                        "showFlowSheet": true,
+                        "showFlowSheet": false,
                         "showListView": true,
-                        "numberOfVisits": 3,
+                        "numberOfVisits": 2,
                         "showOtherActive": true,
-                        "showDetailsButton" : true
+                        "showDetailsButton" : false
                     },
                     "summaryPageParams": {
                         "title": "Treatments",
-                        "showFlowSheet": true,
+                        "showFlowSheet": false,
                         "showListView": true,
-                        "numberOfVisits": 4,
+                        "numberOfVisits": 5,
                         "showOtherActive": true,
                         "showDetailsButton" : true
                     }
@@ -284,8 +285,8 @@
                     "templateName": "Diabetes Template",
                     "showOnly": [],
                     "pivotTable": {
-                        "numberOfVisits": "5",
-                        "groupBy": "encounters",
+                        "numberOfVisits": "15",
+                        "groupBy": "visit",
                         "obsConcepts": ["Weight","Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
                         "drugConcepts":["Ipratropium Pressurised", "Garbhpal Rasa"],
                         "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
