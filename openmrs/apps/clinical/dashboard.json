@@ -1,0 +1,82 @@
+[
+    {
+        "name": "General",
+        "default": true,
+        "sections": [
+            {
+                "title": "Nutritional Values",
+                "name": "vitals",
+                "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
+                "scope": "latest",
+                "isObservation": true
+            },
+            {
+                "title": "Diagnosis",
+                "name": "diagnosis"
+            },
+            {
+                "title": "Vitals",
+                "name": "vitals",
+                "conceptNames": ["Vitals", "Second Vitals"],
+                "numberOfVisits": 2,
+                "isObservation": true
+            },
+            {
+                "title": "Lab Results",
+                "name": "labOrders",
+                "dashboardParams": {
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                },
+                "summaryPageParams": {
+                    "numberOfVisits": 3
+                }
+            },
+            {
+                "title": "Treatments",
+                "name": "treatment",
+                "dashboardParams": {
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "numberOfVisits": 2,
+                    "showOtherActive": true,
+                    "showDetailsButton": false
+                },
+                "summaryPageParams": {
+                    "title": "Treatments",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "numberOfVisits": 5,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                }
+            },
+            {
+                "title": "Radiology",
+                "name": "radiology"
+            },
+            {
+                "title": "Visits",
+                "name": "visits",
+                "dashboardParams": {
+                    "title": null,
+                    "maximumNoOfVisits": 4
+                }
+            },
+            {
+                "templateName": "Diabetes Template",
+                "showOnly": [],
+                "pivotTable": {
+                    "numberOfVisits": "15",
+                    "groupBy": "visit",
+                    "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                    "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
+                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                }
+            }
+        ]
+    }
+]
