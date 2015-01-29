@@ -67,7 +67,8 @@
                 }
             },
             {
-                "templateName": "Diabetes Templates",
+                "title": "Diabetes",
+                "templateName": "Diabetes Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
                 "pivotTable": {
