@@ -32,13 +32,6 @@
             "visitPage": {
                 "investigationResultParams": {
                     "title": "Investigations"
-                },
-                "treatmentParams": {
-                    "title": "Treatments",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
                 }
             },
             "pivotTable": {
