@@ -53,9 +53,6 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Cancer Regimen": {
-                    "computeDrugs": true
-                },
                 "Discharge Summary": {
                     "showRecentButton": true
                 },
@@ -96,7 +93,16 @@
                     "showRecentButton": true
                 },
                 "Undernutrition, Intake": {
-                    "showRecentButton": true
+                  "showRecentButton": true
+                },
+                "Breast Cancer Intake Template": {
+                    "computeDrugs" : true
+                },
+                "Breast Cancer, Receptor Status" : {
+                    "grid" : true
+                },
+                "Breast Cancer, TNM Pathologic Staging" : {
+                    "grid" : true
                 },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
@@ -128,100 +134,20 @@
                     "freeTextAutocomplete": true,
                     "durationRequired": false
                 },
-                "P/S (per speculum) - Cervix": {
-                    "grid": true
+                "Gynaecology, P/S (per speculum) - Cervix" : {
+                    "grid" : true
                 },
-                "P/V (per vaginal) - Uterus": {
-                    "grid": true
+                "Gynaecology, P/V (per vaginal) - Uterus" : {
+                    "grid" : true
                 },
-                "Anaemia, Stopped Since When": {
-                    "conciseText": true
-                },
-                "Arthritis, Stopped Since When": {
-                    "conciseText": true
-                },
-                "Hyperthyroidism, Stopped Since When": {
-                    "conciseText": true
-                },
-                "Diabetes, Current Status": {
-                    "conciseText": true
-                },
-                "Epilepsy, Current Status": {
-                    "conciseText": true
-                },
-                "Leprosy, Disability": {
-                    "conciseText": true
-                },
-                "Leprosy, Deformity": {
-                    "conciseText": true
-                },
-                "Leprosy, Smear Positive in Diagnosis": {
-                    "conciseText": true
-                },
-                "Neurological Disorder, Other Addictions": {
-                    "conciseText": true
-                },
-                "Undernutrition, Stopped Since When": {
-                    "conciseText": true
-                },
-                "Neurological Disorder, Addiction": {
-                    "multiSelect": true
-                },
-                "Tuberculosis, Extrapulmonary Details": {
-                    "multiSelect": true
+                "Diabetes, Current Status" : {
+                        "conciseText" : true
                 },
                 "Image": {
                     "multiple": 3
                 },
-                "Hypertension, Intake, Chief Complaint Data": {
-                    "multiple": 3
-                },
-                "Hypertension, Intake, Chief Complaint": {
-                    "answersConceptName": "Chief Complaint Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
-                },
-                "Hypertension, Intake, Chief Complaint Non Coded": {
-                    "answersConceptName": "Chief Complaint Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
-                },
-                "Hypertension, Hypertensive Emergency Cause": {
-                    "multiSelect": true
-                },
-                "Hypertension, Intake, Risk Factors": {
-                    "multiSelect": true
-                },
-                "Hypertension, Intake, Secondary Hypertension": {
-                    "multiSelect": true
-                },
-                "Hypertension, Current Home Medications": {
-                    "multiSelect": true
-                },
-                "Hypertension, Progress, Chief Complaint Data": {
-                    "multiple": 3
-                },
-                "Hypertension, Progress, Chief Complaint": {
-                    "answersConceptName": "Chief Complaint Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
-                },
-                "Hypertension, Progress, Chief Complaint Non Coded": {
-                    "answersConceptName": "Chief Complaint Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
-                },
-                "Hypertension, Progress, Risk Factors": {
-                    "multiSelect": true
-                },
-                "Hypertension, Progress, Secondary Hypertension": {
-                    "multiSelect": true
-                },
-                "Hypertension, Symptoms of Complication": {
-                    "multiSelect": true
-                },
-                "Diabetes, Complications": {
-                    "multiSelect": true
+                "Diabetes, Complications" : {
+                  "multiSelect" : true
                 },
                 "Diabetes, Complaint": {
                     "multiSelect": true
@@ -247,10 +173,93 @@
                 "Operative Drains": {
                     "conciseText": true
                 },
-                "Anesthesia Administered": {
-                    "multiSelect": true
+                "Anesthesia Administered" : {
+                  "multiSelect" : true
+                },
+                "Tuberculosis, Symptoms" : {
+                  "autocomplete" : true,
+                  "multiple": 3
+                },
+                "Tuberculosis, X-Ray Findings" : {
+                    "grid" : true
+                },
+                "Tuberculosis, Basis of Diagnosis" : {
+                    "multiSelect" : true
+                },
+                "Tuberculosis, Adverse Effects" : {
+                    "multiSelect" : true
+                },
+                "Tuberculosis, Family Member Name" : {
+                    "conciseText" : true
+                },
+                "Tuberculosis, Under 5 Year Name" : {
+                    "conciseText" : true
+                },
+                "Tuberculosis, Family Member Relation" : {
+                    "conciseText" : true
                 }
             },
+            "patientDashboardSections": [
+                {
+                    "title": "Nutritional Values",
+                    "name": "vitals",
+                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
+                    "scope": "latest",
+                    "isObservation": true
+                },
+                {
+                    "title": "Diagnosis",
+                    "name": "diagnosis"
+                },
+                {
+                    "title": "Vitals",
+                    "name": "vitals",
+                    "conceptNames": ["Vitals", "Second Vitals"],
+                    "numberOfVisits": 2,
+                    "isObservation": true
+                },
+                {
+                    "title": "Lab Results",
+                    "name": "labOrders",
+                    "dashboardParams": {
+                        "title": null,
+                        "showChart": false
+                    },
+                    "summaryPageParams": {
+                        "numberOfVisits": 3
+                    }
+                },
+                {
+                    "title": "Treatments",
+                    "name": "treatment",
+                    "numberOfVisits": 1,
+                    "active":false
+                },
+                {
+                    "title": "Radiology",
+                    "name": "radiology"
+                }
+            ],
+            "templateSections": [
+                {
+                  "templateName": "Diabetes Templates",
+                  "showOnly": ["Diabetes Old Data Template", "Diabetes Followup Template", "Diabetes Intake Template", "Diabetes Counselling Template"],
+                  "pivotTable" : {
+                    "numberOfVisits": "15",
+                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                    "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
+                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
+                  },
+                  "templateName": "Tuberculosis Templates",
+                  "showOnly": [],
+                  "pivotTable" : {
+                    "numberOfVisits": "15",
+                    "obsConcepts": ["Weight", "Tuberculosis, Symptoms Relief", "Tuberculosis, Treatment Compliance", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit"],
+                    "drugConcepts": ["Pyrazinamide", "Isoniazid", "Rifampicin", "Ethambutol"],
+                    "labConcepts": ["S. ALT", "GGT", "Creatinine", "S. Albumin", "Haemoglobin", "HIV ELISA (Blood)"]
+                  }
+                }
+            ],
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
