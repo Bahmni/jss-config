@@ -56,8 +56,51 @@
                 "Cancer Regimen": {
                     "computeDrugs": true
                 },
+                "Discharge Summary": {
+                    "showRecentButton": true
+                },
+                "Breast Cancer - Intake": {
+                    "showRecentButton": true
+                },
+                "Anaemia, Intake": {
+                    "showRecentButton": true
+                },
+                "Arthritis, Intake": {
+                    "showRecentButton": true
+                },
+                "Detailed History and Examination, Intake": {
+                    "showRecentButton": true
+                },
+                "Diabetes, Intake": {
+                    "showRecentButton": true
+                },
+                "Hyperthyroidism, Intake": {
+                    "showRecentButton": true
+                },
+                "Hypertension Intake Template": {
+                    "showRecentButton": true
+                },
+                "Leprosy, Intake": {
+                    "showRecentButton": true
+                },
+                "Epilepsy, Intake": {
+                    "showRecentButton": true
+                },
+                "Neurological Disorder, Intake": {
+                    "showRecentButton": true
+                },
+                "Sickle Cell, Intake": {
+                    "showRecentButton": true
+                },
+                "Tuberculosis, Intake": {
+                    "showRecentButton": true
+                },
+                "Undernutrition, Intake": {
+                    "showRecentButton": true
+                },
                 "Diabetes Intake Template": {
-                    "computeDrugs": true
+                    "computeDrugs": true,
+                    "showRecentButton": true
                 },
                 "Diabetes Followup Template": {
                     "computeDrugs": true
