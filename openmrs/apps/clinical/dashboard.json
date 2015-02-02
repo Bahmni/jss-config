@@ -8,7 +8,14 @@
                 "name": "vitals",
                 "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
                 "scope": "latest",
-                "isObservation": true
+                "isObservation": true,
+                "pivotTable": {
+                    "numberOfVisits": "4",
+                    "groupBy": "encounters",
+                    "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
+                    "drugConcepts": "",
+                    "labConcepts": ""
+                }
             },
             {
                 "title": "Diagnosis",
@@ -19,7 +26,14 @@
                 "name": "vitals",
                 "conceptNames": ["Vitals", "Second Vitals"],
                 "numberOfVisits": 2,
-                "isObservation": true
+                "isObservation": true,
+                "pivotTable": {
+                    "numberOfVisits": "4",
+                    "groupBy": "encounters",
+                    "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
+                    "drugConcepts": "",
+                    "labConcepts": ""
+                }
             },
             {
                 "title": "Lab Results",
@@ -78,7 +92,7 @@
                 "showOnly": [],
                 "pivotTable": {
                     "numberOfVisits": "15",
-                    "groupBy": "visit",
+                    "groupBy": "encounters",
                     "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
                     "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
                     "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
