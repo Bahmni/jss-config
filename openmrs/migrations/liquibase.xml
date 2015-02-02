@@ -1524,4 +1524,11 @@
             update concept set class_id=(select concept_class_id from concept_class where name='Radiology') where class_id=1 and concept_id in (select concept_id from concept_set where concept_set=(select concept_id from concept_name where name='Radiology' and concept_name_type='FULLY_SPECIFIED'));
         </sql>
     </changeSet>
+    <changeSet id="JSS-201502021505" author="Chethan, Sravanthi">
+        <comment>Remove the comments for BMI and BMI STATUS</comment>
+        <sql>
+            update obs set comments=NULL where concept_id=(select concept_id from concept_name where name='BMI' and concept_name_type='FULLY_SPECIFIED');
+            update obs set comments=NULL where concept_id=(select concept_id from concept_name where name='BMI Status' and concept_name_type='FULLY_SPECIFIED');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
