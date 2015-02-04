@@ -4,6 +4,11 @@
         "default": true,
         "sections": [
             {
+                "title" : "Patient Information",
+                "name" : "patientInformation",
+                "patientAttributes" : ["caste", "class", "education", "occupation"]
+            },
+            {
                 "title": "Nutritional Values",
                 "name": "vitals",
                 "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
@@ -81,9 +86,9 @@
                 }
             },
             {
-                    "title": "Disposition",
-                    "name":"disposition",
-                    "numberOfVisits": 2
+                "title": "Disposition",
+                "name":"disposition",
+                "numberOfVisits": 2
             },
             {
                 "title": "Diabetes",
