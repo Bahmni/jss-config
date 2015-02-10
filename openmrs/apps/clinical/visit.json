@@ -1,24 +1,7 @@
 [
     {
-        "title":"visit",
         "default":true,
-        "investigationResultParams": {
-            "title": "Lab Investigations",
-            "showChart": false,
-            "showTable": true,
-            "showNormalLabResults": true,
-            "showCommentsExpanded": true,
-            "showAccessionNotes": true,
-            "numberOfVisits": 10
-        },
-        "treatmentParams": {
-            "title": "Treatments",
-            "showFlowSheet": false,
-            "showListView": true,
-            "showOtherActive": true,
-            "showDetailsButton" : true
-        },
-         "pivotTable": [
+        "pivotTable": [
             {
                 "title":"Pivot table",
                 "groupBy":"encounters",
@@ -27,37 +10,5 @@
                 "labConcepts": ""
             }
         ]
-
-    },
-    {
-        "title":"visit123",
-      
-        "hideSections" :[ "consultationNotes","treatment","observation"],
-        "investigationResultParams": {
-            "title": "Lab Investigations",
-            "showChart": true,
-            "showTable": false,
-            "showNormalLabResults": true,
-            "showCommentsExpanded": true,
-            "showAccessionNotes": true,
-            "numberOfVisits": 10
-        },
-        "treatmentParams": {
-            "title": "Treatments",
-            "showFlowSheet": true,
-            "showListView": false,
-            "showOtherActive": true,
-            "showDetailsButton" : true
-        },
-         "pivotTable": [
-            {
-                "title":"Pivot table",
-                "groupBy":"encounters",
-                "obsConcepts": ["Vitals", "Height", "WEIGHT", "M/C Days"],
-                "drugConcepts": ["Gamma Benzene Hexachloride"],
-                "labConcepts": ""
-            }
-        ]
-
     }
 ]
