@@ -11,15 +11,22 @@
             {
                 "title": "Nutritional Values",
                 "name": "vitals",
-                "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
-                "scope": "latest",
                 "isObservation": true,
-                "pivotTable": {
-                    "numberOfVisits": "4",
-                    "groupBy": "encounters",
-                    "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
-                    "drugConcepts": "",
-                    "labConcepts": ""
+                "dashboardParams":{
+                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails":{
+                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
+                    "numberOfVisits": 2,
+                    "scope": "latest",
+                    "pivotTable": {
+                        "numberOfVisits": "4",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
                 }
             },
             {
@@ -29,15 +36,21 @@
             {
                 "title": "Vitals",
                 "name": "vitals",
-                "conceptNames": ["Vitals", "Second Vitals"],
-                "numberOfVisits": 2,
                 "isObservation": true,
-                "pivotTable": {
-                    "numberOfVisits": "4",
-                    "groupBy": "encounters",
-                    "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
-                    "drugConcepts": "",
-                    "labConcepts": ""
+                "dashboardParams":{
+                    "conceptNames": ["Vitals", "Second Vitals"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails":{
+                    "conceptNames": ["Vitals", "Second Vitals"],
+                    "numberOfVisits": 2,
+                    "pivotTable": {
+                        "numberOfVisits": "4",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
                 }
             },
             {
@@ -50,7 +63,7 @@
                     "showTable": true,
                     "showDetailsButton": false
                 },
-                "summaryPageParams": {
+                "allLabDetails": {
                     "numberOfVisits": 3
                 }
             },
@@ -66,7 +79,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 },
-                "summaryPageParams": {
+                "allTreatmentDetails": {
                     "title": "Treatments",
                     "showFlowSheet": false,
                     "showListView": true,
