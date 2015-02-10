@@ -109,15 +109,25 @@
             },
             {
                 "title": "Diabetes",
-                "templateName": "Diabetes Template",
+                "templateName": "Diabetes Templates",
                 "name": "diseaseTemplate",
-                "showOnly": [],
-                "pivotTable": {
-                    "numberOfVisits": "15",
-                    "groupBy": "encounters",
-                    "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                    "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
-                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                "dashboardParams":
+                {
+                    "showOnly": []
+
+                },
+                "allDiseaseDetails":
+                {
+                    "showDetailsButton":true,
+                    "pivotTable": 
+                    {
+                        "numberOfVisits": "15",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                        "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                    }
+
                 }
             }
         ]
