@@ -40,46 +40,46 @@
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Discharge Summary": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Breast Cancer - Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Anaemia, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Arthritis, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Detailed History and Examination, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Diabetes, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Hyperthyroidism, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Hypertension Intake Template": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Leprosy, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Epilepsy, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Neurological Disorder, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Sickle Cell, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Tuberculosis, Intake": {
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Undernutrition, Intake": {
-                  "showRecentButton": true
+                  "showPreviousButton": true
                 },
                 "Breast Cancer Intake Template": {
                     "computeDrugs" : true
@@ -92,7 +92,7 @@
                 },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
-                    "showRecentButton": true
+                    "showPreviousButton": true
                 },
                 "Diabetes Followup Template": {
                     "computeDrugs": true
