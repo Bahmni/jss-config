@@ -19,16 +19,63 @@
                 "description": "Bahmni patient search, lookup Page"
             }
         ],
-        "contextModel": [ 
+        "contextModel": [
             "patientUuid",
             "encounterUuid",
             "visitUuid"
         ],
-        "config" : {
+        "config": {
             "onAdmissionForwardTo": "#/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
             "onTransferForwardTo": "#/patient/search",
             "onDischargeForwardTo": "#/patient/search",
-            "defaultVisitType": "IPD"
+            "defaultVisitType": "IPD",
+            "dashboard": {
+                "dashboardName": "General",
+                "default": true,
+                "sections": [
+                    {
+                        "title": "Nutritional Values",
+                        "name": "vitals",
+                        "isObservation": true,
+                        "dashboardParams": {
+                            "conceptNames": [
+                                "Height",
+                                "Weight",
+                                "BMI",
+                                "BMI STATUS"
+                            ],
+                            "numberOfVisits": 2
+                        },
+                        "allObservationDetails": {
+                            "conceptNames": [
+                                "Height",
+                                "Weight",
+                                "BMI",
+                                "BMI STATUS"
+                            ],
+                            "numberOfVisits": 2,
+                            "scope": "latest",
+                            "pivotTable": {
+                                "numberOfVisits": "4",
+                                "groupBy": "encounters",
+                                "obsConcepts": [
+                                    "Vitals",
+                                    "Height",
+                                    "Weight",
+                                    "Pathology"
+                                ],
+                                "drugConcepts": "",
+                                "labConcepts": ""
+                            }
+                        }
+                    },
+                    {
+                        "title": "Disposition",
+                        "name": "disposition",
+                        "numberOfVisits": 2
+                    }
+                ]
+            }
         }
     }
 ]
