@@ -92,7 +92,8 @@
                 },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
-                    "showPreviousButton": true
+                    "showPreviousButton": true,
+                    "numberOfVisits":2
                 },
                 "Diabetes Followup Template": {
                     "computeDrugs": true
