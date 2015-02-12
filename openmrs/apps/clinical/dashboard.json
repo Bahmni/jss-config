@@ -31,7 +31,9 @@
             },
             {
                 "title": "Diagnosis",
-                "name": "diagnosis"
+                "name": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true
             },
             {
                 "title": "Vitals",
