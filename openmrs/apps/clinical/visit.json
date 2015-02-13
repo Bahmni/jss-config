@@ -1,6 +1,11 @@
 [
     {
         "default": true,
+        "printing":{
+            "title":"Jan Swasthya Sahyog Community Health Centre",
+            "header":"Visit print",
+            "logo":"../images/jss-icon.png"
+        },
         "pivotTable": [
             {
                 "title": "Pivot table 2",
