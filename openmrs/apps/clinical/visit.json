@@ -1,6 +1,6 @@
 [
     {
-        "title": "Pivot Information",
+        "default": true,
         "pivotTable": [
             {
                 "title": "Pivot table 2",
@@ -15,5 +15,11 @@
                 "labConcepts": ""
             }
         ]
+    },
+    {
+        "title": "Discharge Summary",
+        "observation": {
+            "conceptNames": ["Discharge Summary"]
+        }
     }
 ]
