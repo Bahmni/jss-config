@@ -6,7 +6,9 @@
             {
                 "title" : "Patient Information",
                 "name" : "patientInformation",
-                "patientAttributes" : ["caste", "class", "education", "occupation"]
+                "patientAttributes" : ["caste", "class", "education", "occupation"],
+                "addressFields": ["address2","cityVillage", "address1"]
+
             },
             {
                 "title": "Nutritional Values",
