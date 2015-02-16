@@ -2,9 +2,10 @@
 
 PATH_OF_CURRENT_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $PATH_OF_CURRENT_SCRIPT/vagrant/vagrant_functions.sh
+USER=bahmni
 
 run_in_vagrant -c "sudo rm -rf /var/www/bahmni_config"
-run_in_vagrant -c "sudo ln -s /Project/jss-config /var/www/bahmni_config"
-run_in_vagrant -c "sudo chown -h bahmni:bahmni /var/www/bahmni_config"
-run_in_vagrant -c "sudo ln -s /Project/jss-config/openmrs/patientMatchingAlgorithm /home/bahmni/.OpenMRS/"
-run_in_vagrant -c "sudo ln -s /Project/jss-config/openmrs/obscalculator /home/bahmni/.OpenMRS/"
+run_in_vagrant -c "sudo ln -s /bahmni/jss-config /var/www/bahmni_config"
+run_in_vagrant -c "sudo chown -h ${USER}:${USER} /var/www/bahmni_config"
+run_in_vagrant -c "sudo ln -s /bahmni/jss-config/openmrs/patientMatchingAlgorithm /home/${USER}/.OpenMRS/"
+run_in_vagrant -c "sudo ln -s /bahmni/jss-config/openmrs/obscalculator /home/${USER}/.OpenMRS/"
