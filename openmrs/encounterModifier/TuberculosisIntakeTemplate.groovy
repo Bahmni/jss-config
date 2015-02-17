@@ -13,7 +13,6 @@ import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 public class TuberculosisIntakeTemplate extends EncounterModifier {
 
     public static final String TREATMENT_PLAN_CONCEPT_NAME = "Tuberculosis, Treatment Plan"
-    public static final String FOLLOWUP_VISIT_CONCEPT_NAME = "Tuberculosis, Followup Visit"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
     public BahmniBridge bahmniBridge;
 
@@ -39,8 +38,6 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         if (treatmentPlanObservation == null || treatmentPlanObservation.getValue() == null) {
             return bahmniEncounterTransaction;
         }
-
-        BahmniObservation followupVisitObservation = findObservation(FOLLOWUP_VISIT_CONCEPT_NAME, bahmniObservations);
 
         List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(getCodedObsValue(treatmentPlanObservation.getValue())));
