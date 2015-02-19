@@ -2,7 +2,6 @@ import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierDat
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
-import org.codehaus.jackson.map.ObjectMapper
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 
 public class CancerRegimen extends EncounterModifier {
@@ -12,8 +11,6 @@ public class CancerRegimen extends EncounterModifier {
     public static final String HEIGHT_CONCEPT_NAME = "Height"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
     public BahmniBridge bahmniBridge;
-
-    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public EncounterModifierData run(EncounterModifierData encounterModifierData) {
 

@@ -184,6 +184,12 @@
                 },
                 "Tuberculosis, Family Member Relation" : {
                     "conciseText" : true
+                },
+                "Tuberculosis Intake Template" : {
+                  "computeDrugs" : true
+                },
+                "Tuberculosis Followup Template" : {
+                  "computeDrugs" : true
                 }
             },
             "patientDashboardSections": [

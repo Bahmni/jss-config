@@ -1,28 +1,29 @@
 import org.apache.commons.collections.Predicate
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierData
-import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
-import org.codehaus.jackson.map.ObjectMapper
+import org.openmrs.ConceptAnswer
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
-import org.openmrs.util.OpenmrsUtil
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
+import groovy.lang.GroovyObject
+import groovy.lang.GroovyClassLoader
+import org.openmrs.util.OpenmrsUtil;
 
 import static org.apache.commons.collections.CollectionUtils.filter
 
-public class TuberculosisIntakeTemplate extends EncounterModifier {
-
+public class TuberculosisFollowupTemplate extends EncounterModifier {
     public static final String TREATMENT_PLAN_CONCEPT_NAME = "Tuberculosis, Treatment Plan"
+    public static final String FOLLOWUP_VISIT_CONCEPT_NAME = "Tuberculosis, Followup Visit"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
     public static final String ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY = "/encounterModifier/";
 
     public BahmniBridge bahmniBridge;
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
     private File sourceFile = new File(OpenmrsUtil.getApplicationDataDirectory() + ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY + "TBRegimen.groovy");
     private Class TBRegimen = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile);
 
     public EncounterModifierData run(EncounterModifierData encounterModifierData) {
+
 
         this.bahmniBridge = BahmniBridge
                 .create()
@@ -31,23 +32,57 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         def nowAsOfEncounter = encounterModifierData.getEncounterDateTime() != null ? encounterModifierData.getEncounterDateTime() : new Date();
 
         def weight = fetchLatestValueNumeric(WEIGHT_CONCEPT_NAME);
-        if(weight == null || weight <= 0){
+        if (weight == null) {
             throw new RuntimeException("Patient Weight is not Available");
         }
 
         Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
-        EncounterModifierObservation regimenObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
-        if (regimenObservation == null || regimenObservation.getValue() == null) {
-            throw new RuntimeException("No TB regimen set for this patient");
-        }
-        String regimenName = getCodedObsValue(regimenObservation.getValue());
+
+        String regimenName = getRegimenName(bahmniObservations)
+        String followUp = getFollowUp(bahmniObservations)
 
         List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
-        TBRegimen.generateDrugsForIntake(regimenName, isAdult(nowAsOfEncounter), weight, drugOrders);
+
+        TBRegimen.generateDrugsForFollowup(regimenName, followUp, isAdult(nowAsOfEncounter), weight, drugOrders);
         encounterModifierData.setDrugOrders(drugOrders);
 
         return encounterModifierData;
+    }
+
+    private String getFollowUp(List<EncounterModifierObservation> bahmniObservations) {
+        EncounterModifierObservation followupVisitObservation = findObservation(FOLLOWUP_VISIT_CONCEPT_NAME, bahmniObservations);
+
+        String followUp;
+
+        if (followupVisitObservation.getValue() == null) {
+            throw new RuntimeException("follow up value needs to be set to compute drugs");
+        }
+
+        if (followupVisitObservation.getValue().get("name") instanceof String) {
+            followUp = followupVisitObservation.getValue().get("name");
+        } else {
+            followUp = followupVisitObservation.getValue().get("name").get("name");
+        }
+
+
+        followUp
+    }
+
+    private String getRegimenName(List<EncounterModifierObservation> bahmniObservations) {
+        String regimenName;
+        EncounterModifierObservation regimenObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
+        if (regimenObservation != null && regimenObservation.getValue() != null) {
+            regimenName = getCodedObsValue(regimenObservation.getValue());
+        }
+        if (regimenName == null) {
+            regimenName = fetchLatestValueCoded(TREATMENT_PLAN_CONCEPT_NAME);
+        }
+
+        if (regimenName == null) {
+            throw new RuntimeException("No TB regimen set for this patient");
+        }
+        regimenName
     }
 
     private static String getCodedObsValue(Object codeObsVal) {
@@ -84,4 +119,12 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         def obs = bahmniBridge.latestObs(conceptName)
         return obs ? obs.getValueNumeric() : null
     }
+
+    String fetchLatestValueCoded(String conceptName) {
+        def obs = bahmniBridge.latestObs(conceptName)
+        return obs ? obs.getValueCoded().getName().getName() : null
+    }
+
 }
+
+
