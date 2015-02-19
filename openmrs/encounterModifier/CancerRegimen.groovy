@@ -1,9 +1,8 @@
-import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierData
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
 import org.codehaus.jackson.map.ObjectMapper
-import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
-import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 
 public class CancerRegimen extends EncounterModifier {
@@ -16,30 +15,30 @@ public class CancerRegimen extends EncounterModifier {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
+    public EncounterModifierData run(EncounterModifierData encounterModifierData) {
 
         this.bahmniBridge = BahmniBridge
                 .create()
-                .forPatient(bahmniEncounterTransaction.patientUuid);
+                .forPatient(encounterModifierData.getPatientUuid());
 
-        def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
+        def nowAsOfEncounter = encounterModifierData.getEncounterDateTime() != null ? encounterModifierData.getEncounterDateTime() : new Date();
         def patientAgeInYears = bahmniBridge.ageInYears(nowAsOfEncounter);
 
         def height = fetchLatestValueNumeric(HEIGHT_CONCEPT_NAME);
         def weight = fetchLatestValueNumeric(WEIGHT_CONCEPT_NAME);
         def bsa = calculateBSA(height, weight, patientAgeInYears);
 
-        Collection<BahmniObservation> bahmniObservations = bahmniEncounterTransaction.getObservations();
+        Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getObservations();
 
-        BahmniObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
+        EncounterModifierObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
 
         if (regimenObservation == null || regimenObservation.getValue() == null) {
-            return bahmniEncounterTransaction;
+            return encounterModifierData;
         }
 
-        BahmniObservation percentageAmputatedObservation = findObservation(PERCENTAGE_AMPUTATED_CONCEPT_NAME, bahmniObservations);
+        EncounterModifierObservation percentageAmputatedObservation = findObservation(PERCENTAGE_AMPUTATED_CONCEPT_NAME, bahmniObservations);
 
-        List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
+        List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(getCodedObsValue(regimenObservation.getValue())));
 
         if ("Cyclophosphamide + Doxorubicin + Fluorouracil".equals(getCodedObsValue(regimenObservation.getValue()))) {
@@ -54,15 +53,15 @@ public class CancerRegimen extends EncounterModifier {
         }
 
         if ("Paclitaxel".equals(getCodedObsValue(regimenObservation.getValue()))) {
-            setDoseAndQuantity(drugOrders, "Texeleon 260mg", bsa, 175, percentageAmputatedObservation)   
+            setDoseAndQuantity(drugOrders, "Texeleon 260mg", bsa, 175, percentageAmputatedObservation)
         }
-        
-        bahmniEncounterTransaction.setDrugOrders(drugOrders);
 
-        return bahmniEncounterTransaction;
+        encounterModifierData.setDrugOrders(drugOrders);
+
+        return encounterModifierData;
     }
 
-    private void setDoseAndQuantity(List<EncounterTransaction.DrugOrder> drugOrders, String drugName, double bsa, BigDecimal baseDose, BahmniObservation percentageAmputatedObservation) {
+    private void setDoseAndQuantity(List<EncounterTransaction.DrugOrder> drugOrders, String drugName, double bsa, BigDecimal baseDose, EncounterModifierObservation percentageAmputatedObservation) {
         def cyclophosphamideOrder = getDrugOrder(drugOrders, drugName)
         def cyclophosphamideDose = calculateDose(baseDose, bsa, percentageAmputatedObservation)
         cyclophosphamideOrder.getDosingInstructions().setDose(cyclophosphamideDose)
@@ -89,17 +88,17 @@ public class CancerRegimen extends EncounterModifier {
         return (String) codeObsVal;
     }
 
-    static double calculateDose(double referenceDose, double bsa, BahmniObservation percentageAmputatedObservation) {
+    static double calculateDose(double referenceDose, double bsa, EncounterModifierObservation percentageAmputatedObservation) {
         double percentageAmputated = percentageAmputatedObservation != null && percentageAmputatedObservation.getValue() != null ? (Double.parseDouble((String) percentageAmputatedObservation.getValue())) : 0;
         return Math.round(referenceDose * bsa * (100 - percentageAmputated) / 100);
     }
 
-    private BahmniObservation findObservation(String conceptName, Collection<BahmniObservation> bahmniObservations) {
-        for (BahmniObservation bahmniObservation : bahmniObservations) {
+    private EncounterModifierObservation findObservation(String conceptName, Collection<EncounterModifierObservation> bahmniObservations) {
+        for (EncounterModifierObservation bahmniObservation : bahmniObservations) {
             if (conceptName.equals(bahmniObservation.getConcept().getName())) {
                 return bahmniObservation;
             } else if (bahmniObservation.getGroupMembers() != null) {
-                BahmniObservation observation = findObservation(conceptName, bahmniObservation.getGroupMembers());
+                EncounterModifierObservation observation = findObservation(conceptName, bahmniObservation.getGroupMembers());
                 if (observation != null) {
                     return observation;
                 }

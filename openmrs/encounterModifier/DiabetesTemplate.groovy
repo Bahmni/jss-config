@@ -1,10 +1,9 @@
-import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierData
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.codehaus.jackson.map.ObjectMapper
 import org.openmrs.Drug
 import org.openmrs.Patient
 import org.openmrs.api.context.Context
-import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.diagnosis.Diagnosis
 import org.openmrs.module.emrapi.diagnosis.DiagnosisService
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
@@ -28,11 +27,11 @@ public class DiabetesTemplate extends EncounterModifier {
     static private String GLIBENCLAMIDE = "Glibenclamide 5mg"
     static private String GLIMEPIRIDE = "Glimepiride"
 
-    public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
-        Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
-        def diabetesType = whichDiabetes(patient, bahmniEncounterTransaction)
+    public EncounterModifierData run(EncounterModifierData encounterModifierData) {
+        Patient patient = Context.getPatientService().getPatientByUuid(encounterModifierData.getPatientUuid())
+        def diabetesType = whichDiabetes(patient)
 
-        List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
+        List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         switch (diabetesType) {
             case TYPE1:
                 drugOrders.addAll(
@@ -67,9 +66,9 @@ public class DiabetesTemplate extends EncounterModifier {
                         drugOrder(PIOGLITAZONE, ROUTE.ORAL))
                 break
         }
-        bahmniEncounterTransaction.setDrugOrders(drugOrders)
+        encounterModifierData.setDrugOrders(drugOrders)
 
-        return bahmniEncounterTransaction
+        return encounterModifierData
     }
 
     static String form(String name) {
@@ -78,7 +77,7 @@ public class DiabetesTemplate extends EncounterModifier {
         return drug.getDosageForm().getName().getName()
     }
 
-    static String whichDiabetes(Patient patient, BahmniEncounterTransaction bahmniEncounterTransaction) {
+    static String whichDiabetes(Patient patient) {
         DiagnosisService diagnosisService = Context.getService(DiagnosisService.class)
         List<Diagnosis> diagnoses = new ArrayList<Diagnosis>(diagnosisService.getUniqueDiagnoses(patient, null))
         Collections.sort(diagnoses, new DiagnosisComparator())
@@ -91,8 +90,8 @@ public class DiabetesTemplate extends EncounterModifier {
     }
 
     private static EncounterTransaction.DrugOrder drugOrder(String drugName, Double dose,
-                                                                         String doseUnits, String route, String frequency, Double quantity,
-                                                                         String quantityUnit, Integer duration, String durationUnits, String additionalInstructions) {
+                                                            String doseUnits, String route, String frequency, Double quantity,
+                                                            String quantityUnit, Integer duration, String durationUnits, String additionalInstructions) {
         def drugOrder = createDrugOrder(drugName, form(drugName), doseUnits, route, frequency, quantity, quantityUnit, duration, durationUnits)
         drugOrder.dosingInstructions.dose = dose;
         if (additionalInstructions != null) {
