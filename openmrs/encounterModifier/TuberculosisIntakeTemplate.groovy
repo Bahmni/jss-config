@@ -1,14 +1,12 @@
-package org.openmrs.module.bahmnicore.web.v1_0.resource
-
-import static org.apache.commons.collections.CollectionUtils.*;
 import org.apache.commons.collections.Predicate
-import org.bahmni.module.bahmnicore.contract.encounter.data.ConceptData
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierData
+import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
 import org.codehaus.jackson.map.ObjectMapper
-import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
-import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
+
+import static org.apache.commons.collections.CollectionUtils.filter
 
 public class TuberculosisIntakeTemplate extends EncounterModifier {
 
@@ -18,28 +16,28 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public BahmniEncounterTransaction run(BahmniEncounterTransaction bahmniEncounterTransaction, ConceptData conceptSetData) {
+    public EncounterModifierData run(EncounterModifierData encounterModifierData) {
 
         this.bahmniBridge = BahmniBridge
                 .create()
-                .forPatient(bahmniEncounterTransaction.patientUuid);
+                .forPatient(encounterModifierData.getPatientUuid());
 
-        def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
+        def nowAsOfEncounter = encounterModifierData.getEncounterDateTime() != null ? encounterModifierData.getEncounterDateTime() : new Date();
 
         def weight = fetchLatestValueNumeric(WEIGHT_CONCEPT_NAME);
         if(weight == null){
             throw new RuntimeException("Patient Weight is not Available");
         }
 
-        Collection<BahmniObservation> bahmniObservations = bahmniEncounterTransaction.getObservations();
+        Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
 
-        BahmniObservation treatmentPlanObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
+        EncounterModifierObservation treatmentPlanObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
 
         if (treatmentPlanObservation == null || treatmentPlanObservation.getValue() == null) {
-            return bahmniEncounterTransaction;
+            return encounterModifierData;
         }
 
-        List<EncounterTransaction.DrugOrder> drugOrders = bahmniEncounterTransaction.getDrugOrders();
+        List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(getCodedObsValue(treatmentPlanObservation.getValue())));
 
 
@@ -170,9 +168,9 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
                 break;
         }
         filterDrugOrdersWithBaseDoseNotSet(drugOrders)
-        bahmniEncounterTransaction.setDrugOrders(drugOrders);
+        encounterModifierData.setDrugOrders(drugOrders);
 
-        return bahmniEncounterTransaction;
+        return encounterModifierData;
     }
 
     def setDrugDose(List<EncounterTransaction.DrugOrder> drugOrders, String drugName, int totalDrugDose) {
@@ -317,12 +315,12 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         return (String) codeObsVal;
     }
 
-    private BahmniObservation findObservation(String conceptName, Collection<BahmniObservation> bahmniObservations) {
-        for (BahmniObservation bahmniObservation : bahmniObservations) {
+    private EncounterModifierObservation findObservation(String conceptName, Collection<EncounterModifierObservation> bahmniObservations) {
+        for (EncounterModifierObservation bahmniObservation : bahmniObservations) {
             if (conceptName.equals(bahmniObservation.getConcept().getName())) {
                 return bahmniObservation;
             } else if (bahmniObservation.getGroupMembers() != null) {
-                BahmniObservation observation = findObservation(conceptName, bahmniObservation.getGroupMembers());
+                EncounterModifierObservation observation = findObservation(conceptName, bahmniObservation.getGroupMembers());
                 if (observation != null) {
                     return observation;
                 }
