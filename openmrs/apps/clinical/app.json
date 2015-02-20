@@ -40,49 +40,20 @@
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Discharge Summary": {
-                    "showPreviousButton": true
+                    "showPreviousButton": true,
+                    "numberOfVisits":1
                 },
-                "Breast Cancer - Intake": {
+                "Tuberculosis Intake Template": {
+                    "computeDrugs" : true,
                     "showPreviousButton": true
-                },
-                "Anaemia, Intake": {
-                    "showPreviousButton": true
-                },
-                "Arthritis, Intake": {
-                    "showPreviousButton": true
-                },
-                "Detailed History and Examination, Intake": {
-                    "showPreviousButton": true
-                },
-                "Diabetes, Intake": {
-                    "showPreviousButton": true
-                },
-                "Hyperthyroidism, Intake": {
-                    "showPreviousButton": true
-                },
-                "Hypertension Intake Template": {
-                    "showPreviousButton": true
-                },
-                "Leprosy, Intake": {
-                    "showPreviousButton": true
-                },
-                "Epilepsy, Intake": {
-                    "showPreviousButton": true
-                },
-                "Neurological Disorder, Intake": {
-                    "showPreviousButton": true
-                },
-                "Sickle Cell, Intake": {
-                    "showPreviousButton": true
-                },
-                "Tuberculosis, Intake": {
-                    "showPreviousButton": true
-                },
-                "Undernutrition, Intake": {
-                  "showPreviousButton": true
                 },
                 "Breast Cancer Intake Template": {
-                    "computeDrugs" : true
+                    "computeDrugs" : true,
+                    "showPreviousButton": true
+                },
+                "Breast Cancer Followup Template": {
+                    "computeDrugs" : true,
+                    "showPreviousButton": true
                 },
                 "Breast Cancer, Receptor Status" : {
                     "grid" : true
@@ -92,8 +63,7 @@
                 },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
-                    "showPreviousButton": true,
-                    "numberOfVisits":2
+                    "showPreviousButton": true
                 },
                 "Diabetes Followup Template": {
                     "computeDrugs": true
@@ -113,13 +83,11 @@
                 },
                 "Surgical Procedure": {
                     "answersConceptName": "Surgical Procedure Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
+                    "freeTextAutocomplete": true
                 },
                 "Surgical Procedure Non Coded": {
                     "answersConceptName": "Surgical Procedure Answers",
-                    "freeTextAutocomplete": true,
-                    "durationRequired": false
+                    "freeTextAutocomplete": true
                 },
                 "Gynaecology, P/S (per speculum) - Cervix" : {
                     "grid" : true
@@ -131,10 +99,10 @@
                         "conciseText" : true
                 },
                 "Image": {
-                    "multiple": 3
+                    "allowAddMore": true
                 },
                 "Diabetes, Complications" : {
-                  "multiSelect" : true
+                  	"multiSelect" : true
                 },
                 "Diabetes, Complaint": {
                     "multiSelect": true
@@ -161,11 +129,10 @@
                     "conciseText": true
                 },
                 "Anesthesia Administered" : {
-                  "multiSelect" : true
+                  	"multiSelect" : true
                 },
-                "Tuberculosis, Symptoms" : {
-                  "autocomplete" : true,
-                  "multiple": 3
+                "Tuberculosis, Symptoms & Duration" : {
+                  	"allowAddMore" : true
                 },
                 "Tuberculosis, X-Ray Findings" : {
                     "grid" : true
@@ -185,74 +152,16 @@
                 "Tuberculosis, Family Member Relation" : {
                     "conciseText" : true
                 },
-                "Tuberculosis Intake Template" : {
-                  "computeDrugs" : true
+                "Tuberculosis, Sensitivity" : {
+                  "allowAddMore" : true
                 },
-                "Tuberculosis Followup Template" : {
-                  "computeDrugs" : true
+                "Tuberculosis, Contact Screening" : {
+                  "allowAddMore" : true
+                },
+                "Tuberculosis, Under 5 Year Mantoux Screening" : {
+                  "allowAddMore" : true
                 }
             },
-            "patientDashboardSections": [
-                {
-                    "title": "Nutritional Values",
-                    "name": "vitals",
-                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
-                    "scope": "latest",
-                    "isObservation": true
-                },
-                {
-                    "title": "Diagnosis",
-                    "name": "diagnosis"
-                },
-                {
-                    "title": "Vitals",
-                    "name": "vitals",
-                    "conceptNames": ["Vitals", "Second Vitals"],
-                    "numberOfVisits": 2,
-                    "isObservation": true
-                },
-                {
-                    "title": "Lab Results",
-                    "name": "labOrders",
-                    "dashboardParams": {
-                        "title": null,
-                        "showChart": false
-                    },
-                    "summaryPageParams": {
-                        "numberOfVisits": 3
-                    }
-                },
-                {
-                    "title": "Treatments",
-                    "name": "treatment",
-                    "numberOfVisits": 1,
-                    "active":false
-                },
-                {
-                    "title": "Radiology",
-                    "name": "radiology"
-                }
-            ],
-            "templateSections": [
-                {
-                  "templateName": "Diabetes Templates",
-                  "showOnly": ["Diabetes Old Data Template", "Diabetes Followup Template", "Diabetes Intake Template", "Diabetes Counselling Template"],
-                  "pivotTable" : {
-                    "numberOfVisits": "15",
-                    "obsConcepts": ["Weight", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                    "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
-                    "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
-                  },
-                  "templateName": "Tuberculosis Templates",
-                  "showOnly": [],
-                  "pivotTable" : {
-                    "numberOfVisits": "15",
-                    "obsConcepts": ["Weight", "Tuberculosis, Symptoms Relief", "Tuberculosis, Treatment Compliance", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit"],
-                    "drugConcepts": ["Pyrazinamide", "Isoniazid", "Rifampicin", "Ethambutol"],
-                    "labConcepts": ["S. ALT", "GGT", "Creatinine", "S. Albumin", "Haemoglobin", "HIV ELISA (Blood)"]
-                  }
-                }
-            ],
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",

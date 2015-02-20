@@ -1,13 +1,18 @@
 [
     {
-        "dashboardName": "General",
+        "dashboardName": "Dashboard",
         "default": true,
+		"printing":{
+				"title":"Jan Swasthya Sahyog",
+				"header":"Patient Summary",
+				"logo":"../images/jss-icon.png"
+		},
         "sections": [
             {
                 "title" : "Patient Information",
                 "name" : "patientInformation",
-                "patientAttributes" : ["caste", "class", "education", "occupation"],
-                "addressFields": ["address2","cityVillage", "address1"]
+                "patientAttributes" : [],
+                "addressFields": ["address1","cityVillage","address2","address3","countyDistrict", "stateProvince"]
 
             },
             {
@@ -15,25 +20,14 @@
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams":{
-                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails":{
-                    "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
-                    "numberOfVisits": 2,
-                    "scope": "latest",
-                    "pivotTable": {
-                        "numberOfVisits": "4",
-                        "groupBy": "encounters",
-                        "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
-                        "drugConcepts": "",
-                        "labConcepts": ""
-                    }
+                    "conceptNames": ["Height", "Weight", "BMI", "BMI Status"],
+                    "scope": "latest"
                 }
             },
             {
                 "title": "Diagnosis",
                 "name": "diagnosis",
+				"showDetailsButton": false,				
                 "showCertainty": true,
                 "showOrder": true
             },
@@ -49,11 +43,11 @@
                     "conceptNames": ["Vitals", "Second Vitals"],
                     "numberOfVisits": 2,
                     "pivotTable": {
-                        "numberOfVisits": "4",
+                        "numberOfVisits": "10",
                         "groupBy": "encounters",
-                        "obsConcepts": ["Vitals", "Height", "Weight", "Pathology"],
-                        "drugConcepts": "",
-                        "labConcepts": ""
+                        "obsConcepts": ["Weight", "Vitals"],
+                        "drugConcepts": [],
+                        "labConcepts": []
                     }
                 }
             },
@@ -61,7 +55,7 @@
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-                    "title": null,
+					"title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
@@ -79,9 +73,9 @@
                     "showListView": true,
                     "showRoute": false,
                     "showDrugForm": false,
-                    "numberOfVisits": 2,
+                    "numberOfVisits": 1,
                     "showOtherActive": true,
-                    "showDetailsButton": false
+                    "showDetailsButton": true
                 },
                 "allTreatmentDetails": {
                     "title": "Treatments",
@@ -89,9 +83,9 @@
                     "showListView": true,
                     "showRoute": true,
                     "showDrugForm": true,
-                    "numberOfVisits": 5,
+                    "numberOfVisits": 1,
                     "showOtherActive": true,
-                    "showDetailsButton": true
+                    "showDetailsButton": false
                 }
             },
             {
@@ -103,13 +97,13 @@
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
-                    "maximumNoOfVisits": 4
+                    "maximumNoOfVisits": 10
                 }
             },
             {
                 "title": "Disposition",
                 "name":"disposition",
-                "numberOfVisits": 2
+                "numberOfVisits": 1
             },
             {
                 "title": "Diabetes",
@@ -126,10 +120,33 @@
                     "pivotTable": 
                     {
                         "numberOfVisits": "15",
-                        "groupBy": "encounters",
+                        "groupBy": "visits",
                         "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
                         "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
                         "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                    }
+
+                }
+            },
+            {
+                "title": "Tuberculosis",
+                "templateName": "Tuberculosis Templates",
+                "name": "diseaseTemplate",
+                "dashboardParams":
+                {
+                    "showOnly": []
+
+                },
+                "allDiseaseDetails":
+                {
+                    "showDetailsButton":true,
+                    "pivotTable": 
+                    {
+                        "numberOfVisits": "15",
+                        "groupBy": "visits",
+                        "obsConcepts": ["Weight", "Tuberculosis, Symptoms Relief", "Tuberculosis, Treatment Compliance", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit"],
+                        "drugConcepts": ["Pyrazinamide", "Isoniazid", "Rifampicin", "Ethambutol"],
+                        "labConcepts": ["S. ALT", "GGT", "Creatinine", "S. Albumin", "Haemoglobin", "HIV ELISA (Blood)"]
                     }
 
                 }
