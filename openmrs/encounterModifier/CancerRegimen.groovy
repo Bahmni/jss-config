@@ -25,7 +25,7 @@ public class CancerRegimen extends EncounterModifier {
         def weight = fetchLatestValueNumeric(WEIGHT_CONCEPT_NAME);
         def bsa = calculateBSA(height, weight, patientAgeInYears);
 
-        Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getObservations();
+        Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
 
         EncounterModifierObservation regimenObservation = findObservation(REGIMEN_CONCEPT_NAME, bahmniObservations);
 
