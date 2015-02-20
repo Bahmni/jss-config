@@ -3,7 +3,6 @@ import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierDat
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
-import org.codehaus.jackson.map.ObjectMapper
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 import org.openmrs.util.OpenmrsUtil
 
@@ -16,8 +15,6 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
     public static final String ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY = "/encounterModifier/";
 
     public BahmniBridge bahmniBridge;
-
-    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     private File sourceFile = new File(OpenmrsUtil.getApplicationDataDirectory() + ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY + "TBRegimen.groovy");
     private Class TBRegimen = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile);
