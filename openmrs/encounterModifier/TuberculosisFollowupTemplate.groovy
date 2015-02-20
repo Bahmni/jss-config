@@ -56,7 +56,7 @@ public class TuberculosisFollowupTemplate extends EncounterModifier {
         String followUp;
 
         if (followupVisitObservation.getValue() == null) {
-            throw new RuntimeException("follow up value needs to be set to compute drugs");
+            throw new RuntimeException("Please fill in Followup Visit before using the Compute button");
         }
 
         if (followupVisitObservation.getValue().get("name") instanceof String) {
@@ -80,7 +80,7 @@ public class TuberculosisFollowupTemplate extends EncounterModifier {
         }
 
         if (regimenName == null) {
-            throw new RuntimeException("No TB regimen set for this patient");
+            throw new RuntimeException("Please fill in Treatment plan before using the Compute button");
         }
         regimenName
     }

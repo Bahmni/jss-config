@@ -35,7 +35,7 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
         EncounterModifierObservation regimenObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
         if (regimenObservation == null || regimenObservation.getValue() == null) {
-            throw new RuntimeException("No TB regimen set for this patient");
+            throw new RuntimeException("Please fill in Treatment plan before using the Compute button");
         }
         String regimenName = getCodedObsValue(regimenObservation.getValue());
 
