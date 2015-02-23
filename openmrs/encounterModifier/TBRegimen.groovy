@@ -128,9 +128,9 @@ public static class TBRegimen {
                         setDrugDose(drugOrders, "INH", 300);
                     } else if (weight >= 45 && weight < 48) {
                         setDrugDose(drugOrders, "INH", 300);
-                    } else if (weight >= 48 && weight < 55) {
+                    } else if (weight >= 48 && weight < 56) {
                         setDrugDose(drugOrders, "INH", 300);
-                    } else if (weight >= 55) {
+                    } else if (weight >= 56) {
                         setDrugDose(drugOrders, "INH", 150);
                     }
                 } else {
