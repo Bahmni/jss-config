@@ -23,6 +23,9 @@
             	"header":"Discharge Summary",
             	"logo":"../images/jss-icon.png"
         	},
+            "admissionDetails": {
+                "showDetailsButton": true
+            },
             "investigationResult": {
                 "title": "Lab Investigations",
                 "showChart": false,
