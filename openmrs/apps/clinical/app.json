@@ -47,6 +47,9 @@
                     "computeDrugs" : true,
                     "showPreviousButton": true
                 },
+                "Tuberculosis Followup Template": {
+                    "computeDrugs" : true
+                },
                 "Breast Cancer Intake Template": {
                     "computeDrugs" : true,
                     "showPreviousButton": true
@@ -96,13 +99,13 @@
                     "grid" : true
                 },
                 "Diabetes, Current Status" : {
-                        "conciseText" : true
+                    "conciseText" : true
                 },
                 "Image": {
                     "allowAddMore": true
                 },
                 "Diabetes, Complications" : {
-                  	"multiSelect" : true
+                    "multiSelect" : true
                 },
                 "Diabetes, Complaint": {
                     "multiSelect": true
@@ -129,10 +132,10 @@
                     "conciseText": true
                 },
                 "Anesthesia Administered" : {
-                  	"multiSelect" : true
+                    "multiSelect" : true
                 },
                 "Tuberculosis, Symptoms & Duration" : {
-                  	"allowAddMore" : true
+                    "allowAddMore" : true
                 },
                 "Tuberculosis, X-Ray Findings" : {
                     "grid" : true
@@ -153,13 +156,13 @@
                     "conciseText" : true
                 },
                 "Tuberculosis, Sensitivity" : {
-                  "allowAddMore" : true
+                    "allowAddMore" : true
                 },
                 "Tuberculosis, Contact Screening" : {
-                  "allowAddMore" : true
+                    "allowAddMore" : true
                 },
                 "Tuberculosis, Under 5 Year Mantoux Screening" : {
-                  "allowAddMore" : true
+                    "allowAddMore" : true
                 }
             },
             "drugOrder": {
