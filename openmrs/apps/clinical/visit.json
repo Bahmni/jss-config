@@ -1,116 +1,154 @@
-[	
-	{
+[
+    {
         "default": true,
-        "printing":{
-            "title":"Jan Swasthya Sahyog Community Health Centre",
-            "header":"Visit",
-            "logo":"../images/jss-icon.png"
+        "printing": {
+            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "header": "Visit",
+            "logo": "../images/jss-icon.png"
         },
-        "pivotTable": [
+        "sections": [
             {
-                "title": "Flowsheet",
-                "groupBy": "encounters",
-                "obsConcepts": ["Weight", "Vitals"],
-                "drugConcepts": [],
-                "labConcepts": []
+                "type": "pivotTable",
+                "title": "Pivot Table",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Weight",
+                        "Vitals"
+                    ],
+                    "drugConcepts": [],
+                    "labConcepts": []
+                }
             }
         ]
     },
     {
-            "title": "Discharge Summary",
-            "printing":{
-            	"title":"Jan Swasthya Sahyog Community Health Centre",
-            	"header":"Discharge Summary",
-            	"logo":"../images/jss-icon.png"
-        	},
-            "admissionDetails": {
-                "showDetailsButton": true
+        "title": "Discharge Summary",
+        "printing": {
+            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "header": "Discharge Summary",
+            "logo": "../images/jss-icon.png"
+        },
+        "sections": [
+            {
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation"]
+                }
             },
-            "investigationResult": {
-                "title": "Lab Investigations",
-                "showChart": false,
-                "showTable": true,
-                "showNormalLabResults": true,
-                "showCommentsExpanded": true,
-                "showAccessionNotes": true,
-                "numberOfVisits": 1
+            {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": true,
+                    "showOrder": true,
+                    "showDetailsButton": true
+                }
             },
-            "treatment": {
-                "title": "Treatments",
-                "showFlowSheet": false,
-                "showListView": true,
-                "showOtherActive": false,
-                "showDetailsButton": true,
-                "showRoute": false,
-                "showDrugForm": false
+            {
+                "type": "observation",
+                "config": {
+                    "numberOfVisits": 1,
+                    "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid", "Impression"],
+                    "showDetailsButton": true
+                }
             },
-            "disposition": {
-                "numberOfVisits": 1,
-                "showDetailsButton": true
+            {
+                "type": "disposition",
+                "config": {
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true
+                }
             },
-			"patientInformation": {
-                "title": "PatientInformation",
-                "patientAttributes" : [],
-                "addressFields": []
+            {
+                "type": "admissionDetails",
+                "config": {
+                    "showDetailsButton": true
+                }
             },
-            "observation": {
-                "numberOfVisits": 1,
-                "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid"],
-                "conceptNames": ["Discharge Summary"],
-                "showDetailsButton": true
+            {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10
+                }
             },
-            "diagnosis": {
-                "title": "Diagnoses",
-                "showCertainty": true,
-                "showOrder": true,
-                "showDetailsButton": true
+            {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
             }
+        ]
     },
     {
-            "title": "OPD Summary",
-            "printing":{
-            	"title":"Jan Swasthya Sahyog Community Health Centre",
-            	"header":"OPD Summary",
-            	"logo":"../images/jss-icon.png"
-        	},
-            "investigationResult": {
-                "title": "Lab Investigations",
-                "showChart": false,
-                "showTable": true,
-                "showNormalLabResults": true,
-                "showCommentsExpanded": true,
-                "showAccessionNotes": true,
-                "numberOfVisits": 1
+        "title": "OPD Summary",
+        "printing": {
+            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "header": "OPD Summary",
+            "logo": "../images/jss-icon.png"
+        },
+        "sections": [
+            {
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation"]
+                }
             },
-            "treatment": {
-                "title": "Treatments",
-                "showFlowSheet": false,
-                "showListView": true,
-                "showOtherActive": false,
-                "showDetailsButton": true,
-                "showRoute": false,
-                "showDrugForm": false
+            {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": true,
+                    "showOrder": true,
+                    "showDetailsButton": true
+                }
             },
-            "disposition": {
-                "numberOfVisits": 1,
-                "showDetailsButton": true
+            {
+                "type": "observation",
+                "config": {
+                    "numberOfVisits": 1,
+                    "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid", "Impression"],
+                    "showDetailsButton": true
+                }
             },
-			"patientInformation": {
-                "title": "PatientInformation",
-                "patientAttributes" : [],
-                "addressFields": []
+            {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10
+                }
             },
-            "observation": {
-                "numberOfVisits": 1,
-                "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid"],
-                "conceptNames": [],
-                "showDetailsButton": true
-            },
-            "diagnosis": {
-                "title": "Diagnoses",
-                "showCertainty": true,
-                "showOrder": true,
-                "showDetailsButton": true
+            {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
             }
+        ]
     }
 ]
