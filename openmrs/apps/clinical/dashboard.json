@@ -32,7 +32,7 @@
                 "isObservation": true,
                 "dashboardParams":{
                     "conceptNames": ["Vitals", "Second Vitals"],
-                    "numberOfVisits": 2
+                    "numberOfVisits": 1
                 },
                 "allObservationDetails":{
                     "conceptNames": ["Vitals", "Second Vitals"],
