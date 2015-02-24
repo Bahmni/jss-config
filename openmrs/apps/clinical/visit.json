@@ -39,6 +39,20 @@
                 }
             },
             {
+                "type": "admissionDetails",
+                "config": {
+                    "showDetailsButton": true
+                }
+            },
+            {
+                "type": "observation",
+                "title": "Weight",
+                "config": {
+                    "conceptNames": ["Weight"],
+                    "scope": "latest"
+                }
+            },
+            {
                 "type": "diagnosis",
                 "config": {
                     "title": "Diagnoses",
@@ -48,26 +62,26 @@
                 }
             },
             {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            },
+            {
                 "type": "observation",
+                "title": "Discharge Summary",
                 "config": {
-                    "numberOfVisits": 1,
-                    "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid", "Impression"],
-                    "showDetailsButton": true
+                    "title": "Discharge Summary",
+                    "conceptNames": ["Discharge Summary"],
+                    "numberOfVisits": "1"
                 }
-            },
-            {
-                "type": "disposition",
-                "config": {
-                    "numberOfVisits": 1,
-                    "showDetailsButton": true
-                }
-            },
-            {
-                "type": "admissionDetails",
-                "config": {
-                    "showDetailsButton": true
-                }
-            },
+            },     
             {
                 "type": "investigationResult",
                 "config": {
@@ -78,18 +92,6 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
-                }
-            },
-            {
-                "type": "treatment",
-                "config": {
-                    "title": "Treatments",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showOtherActive": false,
-                    "showDetailsButton": true,
-                    "showRoute": true,
-                    "showDrugForm": true
                 }
             }
         ]
