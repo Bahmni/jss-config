@@ -11,7 +11,7 @@
                 "type": "pivotTable",
                 "title": "Pivot Table",
                 "config": {
-                    "groupBy": "encounters",
+                    "groupBy": "time",
                     "obsConcepts": [
                         "Weight",
                         "Vitals"

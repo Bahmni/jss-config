@@ -22,7 +22,7 @@
             {
                 "title": "Diagnosis",
                 "name": "diagnosis",
-		"showDetailsButton": false,				
+                "showDetailsButton": false,
                 "showCertainty": true,
                 "showOrder": true
             },
@@ -39,7 +39,7 @@
                     "numberOfVisits": 2,
                     "pivotTable": {
                         "numberOfVisits": "10",
-                        "groupBy": "encounters",
+                        "groupBy": "time",
                         "obsConcepts": ["Weight", "Vitals"],
                         "drugConcepts": [],
                         "labConcepts": []
@@ -50,7 +50,7 @@
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-					"title": null,
+                    "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
