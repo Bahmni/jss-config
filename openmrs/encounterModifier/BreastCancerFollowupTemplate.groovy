@@ -111,6 +111,13 @@ public class BreastCancerFollowupTemplate extends EncounterModifier {
 
     //Calculation of BSA by Du Bois Formula: http://www.cato.eu/body-surface-area.html
     static Double calculateBSA(Double height, Double weight, Integer patientAgeInYears) {
+        if (weight == null) {
+            throw new RuntimeException("Weight is not captured for patient. Failed to compute drug orders");
+        }
+        if (height == null) {
+            throw new RuntimeException("Height is not captured for patient. Failed to compute drug orders");
+        }
+
         if (patientAgeInYears <= 15 && weight <= 40) {
             return Math.sqrt(weight * height / 3600);
         }
