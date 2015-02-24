@@ -69,6 +69,9 @@ public static class TBRegimen {
                         subRegimen = "H";
                 }
                 break;
+            case "Tuberculosis, Other Treatment Plan":
+                drugOrders.clear();
+                return;
         }
         if (subRegimen == null) {
             throw new RuntimeException("Follow up cycle " + followUp + " not applicable for regimen " + regimenName);
@@ -91,6 +94,9 @@ public static class TBRegimen {
             case "9H":
                 subRegimen = "H"
                 break;
+            case "Tuberculosis, Other Treatment Plan":
+                drugOrders.clear();
+                return;
         }
         generateDrugsForSubRegimen(subRegimen, weight, drugOrders, isAdult);
         filterDrugOrdersWithBaseDoseNotSet(drugOrders);
