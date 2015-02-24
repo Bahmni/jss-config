@@ -23,13 +23,15 @@
         ],
         "config" : {
             "additionalPatientInformation" : [
-                { "name":"familyIncome", "display":true },
-                { "name":"rationCard", "display":true },
-                { "name":"cluster", "display":true },
-                { "name":"landHolding", "display":true },
-                { "name":"debts", "display":true },
-                { "name":"distanceForCenter", "display":true },
-                { "name":"isUrban", "display":true}
+                { "name":"smoking", "display":true },
+                { "name":"alcohol", "display":true },
+                { "name":"tbTreatmentLocation", "display":true },
+                { "name":"foodSecurity", "display":true },
+                { "name":"debtReason", "display":true },
+                { "name":"familySupport", "display":true },
+                { "name":"earningMembers", "display":true},
+                { "name":"migrationHistory", "display":true},
+                { "name":"migrationHistoryDetails", "display":true}
             ],
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
