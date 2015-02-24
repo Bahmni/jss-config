@@ -137,7 +137,7 @@ public static class TBRegimen {
                     } else if (weight >= 48 && weight < 56) {
                         setDrugDose(drugOrders, "INH", 300);
                     } else if (weight >= 56) {
-                        setDrugDose(drugOrders, "INH", 150);
+                        setDrugDose(drugOrders, "INH", 300);
                     }
                 } else {
                     if (weight <= 5) {
@@ -171,10 +171,10 @@ public static class TBRegimen {
                         setDrugDose(drugOrders, "RIF", 450);
                     } else if (weight >= 45 && weight < 48) {
                         setDrugDose(drugOrders, "RIF", 600);
-                    } else if (weight >= 48 && weight < 55) {
+                    } else if (weight >= 48 && weight < 56) {
                         setDrugDose(drugOrders, "RIF", 600);
-                    } else if (weight >= 55) {
-                        setDrugDose(drugOrders, "RIF", 300);
+                    } else if (weight >= 56) {
+                        setDrugDose(drugOrders, "RIF", 600);
                     }
                 } else {
                     if (weight <= 5) {
@@ -210,10 +210,10 @@ public static class TBRegimen {
                         setDrugDose(drugOrders, "PYZ", 1000);
                     } else if (weight >= 45 && weight < 48) {
                         setDrugDose(drugOrders, "PYZ", 1000);
-                    } else if (weight >= 48 && weight < 55) {
+                    } else if (weight >= 48 && weight < 56) {
                         setDrugDose(drugOrders, "PYZ", 1250);
-                    } else if (weight >= 55) {
-                        setDrugDose(drugOrders, "PYZ", 750);
+                    } else if (weight >= 56) {
+                        setDrugDose(drugOrders, "PYZ", 1500);
                     }
                 } else {
                     if (weight <= 5) {
@@ -249,10 +249,10 @@ public static class TBRegimen {
                         setDrugDose(drugOrders, "ETHAM", 800);
                     } else if (weight >= 45 && weight < 48) {
                         setDrugDose(drugOrders, "ETHAM", 800);
-                    } else if (weight >= 48 && weight < 55) {
+                    } else if (weight >= 48 && weight < 56) {
                         setDrugDose(drugOrders, "ETHAM", 800);
-                    } else if (weight >= 55) {
-                        setDrugDose(drugOrders, "ETHAM", 600);
+                    } else if (weight >= 56) {
+                        setDrugDose(drugOrders, "ETHAM", 800);
                     }
                 } else {
                     if (weight <= 5) {
