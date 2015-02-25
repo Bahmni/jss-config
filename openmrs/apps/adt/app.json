@@ -29,7 +29,7 @@
             "onTransferForwardTo": "#/patient/search",
             "onDischargeForwardTo": "#/patient/search",
             "defaultVisitType": "IPD",
-             "dashboard":{
+    "dashboard":{
                 "dashboardName": "General",
                 "sections": [
                 {
@@ -56,9 +56,11 @@
                 "name": "patientInformation",
                 "patientAttributes": ["caste", "class", "education", "occupation"],
                 "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-                 }
-              ]
-            }
-        }
-    }
+                }
+            ]
+   }
+   }
+           
+    
+  }
 ]
