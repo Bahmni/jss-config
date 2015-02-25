@@ -14,7 +14,9 @@ import static org.apache.commons.collections.CollectionUtils.filter
 public class TuberculosisFollowupTemplate extends EncounterModifier {
     public static final String TREATMENT_PLAN_CONCEPT_NAME = "Tuberculosis, Treatment Plan"
     public static final String FOLLOWUP_VISIT_CONCEPT_NAME = "Tuberculosis, Followup Visit"
-    public static final String WEIGHT_CONCEPT_NAME = "Weight"
+    public static final String WEIGHT_CONCEPT_NAME = "Weight";
+    public static final String HEIGHT_CONCEPT_NAME = "Height"
+    public static final String BMI_CONCEPT_NAME = "BMI"
     public static final String ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY = "/encounterModifier/";
 
     public BahmniBridge bahmniBridge;
@@ -39,12 +41,18 @@ public class TuberculosisFollowupTemplate extends EncounterModifier {
         Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
 
         String regimenName = getRegimenName(bahmniObservations)
-        String followUp = getFollowUp(bahmniObservations)
+        String followUp = getFollowUp(bahmniObservations);
+
+        def height = fetchLatestValueNumeric(HEIGHT_CONCEPT_NAME);
+        if(height == null || height <= 0){
+            throw new RuntimeException("Patient Height is not Available");
+        }
+        double bmi = fetchLatestValueNumeric(BMI_CONCEPT_NAME);
 
         List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
 
-        TBRegimen.generateDrugsForFollowup(regimenName, followUp, isAdult(nowAsOfEncounter), weight, drugOrders);
+        TBRegimen.generateDrugsForFollowup(regimenName, followUp, isAdult(nowAsOfEncounter), weight, bmi, drugOrders);
         encounterModifierData.setDrugOrders(drugOrders);
 
         return encounterModifierData;
@@ -64,7 +72,6 @@ public class TuberculosisFollowupTemplate extends EncounterModifier {
         } else {
             followUp = followupVisitObservation.getValue().get("name").get("name");
         }
-
 
         followUp
     }

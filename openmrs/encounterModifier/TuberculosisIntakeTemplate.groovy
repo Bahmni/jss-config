@@ -12,6 +12,8 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
 
     public static final String TREATMENT_PLAN_CONCEPT_NAME = "Tuberculosis, Treatment Plan"
     public static final String WEIGHT_CONCEPT_NAME = "Weight"
+    public static final String HEIGHT_CONCEPT_NAME = "Height"
+    public static final String BMI_CONCEPT_NAME = "BMI"
     public static final String ENCOUNTER_MODIFIER_ALGORITHM_DIRECTORY = "/encounterModifier/";
 
     public BahmniBridge bahmniBridge;
@@ -32,19 +34,31 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
             throw new RuntimeException("Patient Weight is not Available");
         }
 
+
         Collection<EncounterModifierObservation> bahmniObservations = encounterModifierData.getEncounterModifierObservations();
+        String regimenName = getRegimenName(bahmniObservations);
+
+        def height = fetchLatestValueNumeric(HEIGHT_CONCEPT_NAME);
+        if(height == null || height <= 0){
+            throw new RuntimeException("Patient Height is not Available");
+        }
+        double bmi = fetchLatestValueNumeric(BMI_CONCEPT_NAME);
+
+        List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
+        drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
+        TBRegimen.generateDrugsForIntake(regimenName, isAdult(nowAsOfEncounter), weight, bmi, drugOrders);
+        encounterModifierData.setDrugOrders(drugOrders);
+
+        return encounterModifierData;
+    }
+
+    private String getRegimenName(List<EncounterModifierObservation> bahmniObservations) {
         EncounterModifierObservation regimenObservation = findObservation(TREATMENT_PLAN_CONCEPT_NAME, bahmniObservations);
         if (regimenObservation == null || regimenObservation.getValue() == null) {
             throw new RuntimeException("Please fill in Treatment plan before using the Compute button");
         }
         String regimenName = getCodedObsValue(regimenObservation.getValue());
-
-        List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
-        drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
-        TBRegimen.generateDrugsForIntake(regimenName, isAdult(nowAsOfEncounter), weight, drugOrders);
-        encounterModifierData.setDrugOrders(drugOrders);
-
-        return encounterModifierData;
+        regimenName
     }
 
     private static String getCodedObsValue(Object codeObsVal) {

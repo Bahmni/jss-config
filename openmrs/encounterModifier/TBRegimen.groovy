@@ -7,7 +7,7 @@ public static class TBRegimen {
 
 
     public
-    static void generateDrugsForFollowup(String regimenName, String followUp, Boolean isAdult, double weight, List<EncounterTransaction.DrugOrder> drugOrders) {
+    static void generateDrugsForFollowup(String regimenName, String followUp, Boolean isAdult, double weight, double bmi, List<EncounterTransaction.DrugOrder> drugOrders) {
         String subRegimen = null;
         switch (regimenName) {
             case "2HRZE + 4HR":
@@ -76,12 +76,12 @@ public static class TBRegimen {
         if (subRegimen == null) {
             throw new RuntimeException("Follow up cycle " + followUp + " not applicable for regimen " + regimenName);
         }
-        generateDrugsForSubRegimen(subRegimen, weight, drugOrders, isAdult);
+        generateDrugsForSubRegimen(subRegimen, weight, bmi, isAdult, drugOrders);
         filterDrugOrdersWithBaseDoseNotSet(drugOrders);
     }
 
     public
-    static void generateDrugsForIntake(String regimenName, Boolean isAdult, double weight, List<EncounterTransaction.DrugOrder> drugOrders) {
+    static void generateDrugsForIntake(String regimenName, Boolean isAdult, double weight, double bmi, List<EncounterTransaction.DrugOrder> drugOrders) {
         String subRegimen = null;
         switch (regimenName) {
             case "2HRZE + 4HR":
@@ -98,7 +98,7 @@ public static class TBRegimen {
                 drugOrders.clear();
                 return;
         }
-        generateDrugsForSubRegimen(subRegimen, weight, drugOrders, isAdult);
+        generateDrugsForSubRegimen(subRegimen, weight, bmi, isAdult, drugOrders);
         filterDrugOrdersWithBaseDoseNotSet(drugOrders);
     }
 
@@ -113,14 +113,14 @@ public static class TBRegimen {
     }
 
     public
-    static void generateDrugsForSubRegimen(String subRegimen, double weight, List<EncounterTransaction.DrugOrder> drugOrders, Boolean isAdult) {
+    static void generateDrugsForSubRegimen(String subRegimen, double weight, double bmi, Boolean isAdult, List<EncounterTransaction.DrugOrder> drugOrders) {
         for (int i = 0; i < subRegimen.length(); i++) {
-            setDoseFor(subRegimen.charAt(i), isAdult, weight, drugOrders);
+            setDoseFor(subRegimen.charAt(i), isAdult, weight, bmi, drugOrders);
         }
     }
 
     private
-    static void setDoseFor(Character drugPrefix, boolean isAdult, double weight, List<EncounterTransaction.DrugOrder> drugOrders) {
+    static void setDoseFor(Character drugPrefix, boolean isAdult, double weight, double bmi, List<EncounterTransaction.DrugOrder> drugOrders) {
         switch (drugPrefix) {
             case 'H':
                 if (isAdult) {
@@ -157,6 +157,11 @@ public static class TBRegimen {
                     } else if (weight > 30 && weight <= 35) {
                         setDrugDose(drugOrders, "INH", 300);
                     }
+                }
+                if(bmi < 16){
+                    setDrugDose(drugOrders, "Pyridoxine", 25);
+                } else{
+                    setDrugDose(drugOrders, "Pyridoxine", 10);
                 }
                 break;
             case 'R':
@@ -355,6 +360,13 @@ public static class TBRegimen {
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 1.5, 45);
                 } else if (totalDrugDose == 800) {
                     setDoseAndQuantity(drugOrders, "Ethambutal 800mg", 1, 30);
+                }
+                break;
+            case "Pyridoxine":
+                if (totalDrugDose == 10) {
+                    setDoseAndQuantity(drugOrders, "Pyridoxine 10mg", 1, 30);
+                } else if (totalDrugDose == 25){
+                    setDoseAndQuantity(drugOrders, "Pyridoxine 100mg", 0.25, 8);
                 }
                 break;
         }
