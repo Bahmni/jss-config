@@ -35,7 +35,7 @@
                 "config": {
                     "addressFields": ["cityVillage","address2","address3","countyDistrict"],
                     "title": "PatientInformation",
-                    "patientAttributes": ["caste", "class", "education", "occupation"]
+                    "patientAttributes": []
                 }
             },
             {
