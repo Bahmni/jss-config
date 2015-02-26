@@ -26,7 +26,7 @@
         ],
         "config" : {
             "onAdmissionForwardTo": "#/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
-            "onTransferForwardTo": "#/patient/search",
+            "onTransferForwardTo": "#/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
             "onDischargeForwardTo": "#/patient/search",
             "defaultVisitType": "IPD",
     "dashboard":{
