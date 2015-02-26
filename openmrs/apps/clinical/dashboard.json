@@ -97,7 +97,8 @@
             },
             {
                 "title": "Admission Details",
-                "name":"admissionDetails"
+                "name":"admissionDetails",
+                "showDetailsButton": true
             },
             {
                 "title": "Disposition",
