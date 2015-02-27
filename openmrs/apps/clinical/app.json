@@ -137,6 +137,9 @@
                 "Tuberculosis, Symptoms & Duration" : {
                     "allowAddMore" : true
                 },
+                "Tuberculosis, Symptoms Duration": {
+                        "conciseText" : true
+                },
                 "Tuberculosis, X-Ray Findings" : {
                     "grid" : true
                 },
