@@ -29,6 +29,7 @@
             "onTransferForwardTo": "#/patient/{{patientUuid}}/encounter/{{encounterUuid}}/bed",
             "onDischargeForwardTo": "#/patient/search",
             "defaultVisitType": "IPD",
+            "conceptName":"Adt Notes",
             "dashboard":{
                 "dashboardName": "General",
                 "sections": [
