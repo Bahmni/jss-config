@@ -70,7 +70,7 @@
                     "showDrugForm": false,
                     "numberOfVisits": 1,
                     "showOtherActive": true,
-                    "showDetailsButton": true
+                    "showDetailsButton": false
                 },
                 "allTreatmentDetails": {
                     "title": "Treatments",
