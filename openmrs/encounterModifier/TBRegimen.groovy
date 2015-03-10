@@ -38,6 +38,7 @@ public static class TBRegimen {
                     case "9 Month":
                         subRegimen = "HRE";
                 }
+                break;
             case "12RZFqE":
                 switch (followUp) {
                     case "1 Month":

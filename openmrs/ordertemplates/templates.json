@@ -82,7 +82,7 @@
       {"drug": {"name": "Ethambutal 400mg", "form":  "Tablet"}, "dosingInstructions": {"dose":  null, "doseUnits":  "Tablet(s)", "route":  "Oral", "frequency":  "Once a day", "quantity":  null, "quantityUnits":  "Unit(s)"}, "duration": 30, "durationUnits":  "Day(s)", "additionalInstructions":  null},
       {"drug": {"name": "Ethambutal 800mg", "form":  "Tablet"}, "dosingInstructions": {"dose":  null, "doseUnits":  "Tablet(s)", "route":  "Oral", "frequency":  "Once a day", "quantity":  null, "quantityUnits":  "Unit(s)"}, "duration": 30, "durationUnits":  "Day(s)", "additionalInstructions":  null},
       {"drug": {"name": "Pyridoxine 100mg", "form":  "Tablet"}, "dosingInstructions": {"dose":  null, "doseUnits":  "Tablet(s)", "route":  "Oral", "frequency":  "Once a day", "quantity":  null, "quantityUnits":  "Unit(s)"}, "duration": 30, "durationUnits":  "Day(s)", "additionalInstructions":  null},
-      {"drug": {"name": "Ethambutal 10mg", "form":  "Tablet"}, "dosingInstructions": {"dose":  null, "doseUnits":  "Tablet(s)", "route":  "Oral", "frequency":  "Once a day", "quantity":  null, "quantityUnits":  "Unit(s)"}, "duration": 30, "durationUnits":  "Day(s)", "additionalInstructions":  null}
+      {"drug": {"name": "Pyridoxine 10mg", "form":  "Tablet"}, "dosingInstructions": {"dose":  null, "doseUnits":  "Tablet(s)", "route":  "Oral", "frequency":  "Once a day", "quantity":  null, "quantityUnits":  "Unit(s)"}, "duration": 30, "durationUnits":  "Day(s)", "additionalInstructions":  null}
     ]
   },
   {
