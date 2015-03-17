@@ -161,11 +161,44 @@
                 "Tuberculosis, Sensitivity" : {
                     "allowAddMore" : true
                 },
+		"Tuberculosis, Second Line Drugs Resistance Result" : {
+		    "allowAddMore" : true
+		},
+		"Tuberculosis, Drug Resistance Testing" : {
+		    "allowAddMore" : true
+		},
                 "Tuberculosis, Contact Screening" : {
                     "allowAddMore" : true
                 },
                 "Tuberculosis, Under 5 Year Mantoux Screening" : {
                     "allowAddMore" : true
+                },
+                "Psychiatry, Mania Complaints" : {
+                    "multiSelect": true
+                },
+                "Psychiatry, Depression Complaints" : {
+                    "multiSelect" : true
+                },
+                "Psychiatry, Anxiety Complaints" : {
+                    "multiSelect" : true
+                },
+                "Psychiatry, Psychosis Complaints" : {
+                    "multiSelect" : true
+                },
+                "Psychiatry, Physical Complaints" : {
+                    "multiSelect" : true
+                },
+                "Psychiatry, Substance Use" : {
+                    "allowAddMore" : true
+                },
+                "Psychiatry, Substance amount consumed" : {
+                    "conciseText" : true
+                },
+                "Psychiatry, Substance Use Drug Dependence Criteria" : {
+                   "multiSelect" : true
+                },
+                "Psychiatry, Substance Use Complications" : {
+                   "multiSelect" : true
                 }
             },
             "drugOrder": {
