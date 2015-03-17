@@ -6,7 +6,7 @@
             {
                 "title" : "Patient Information",
                 "name" : "patientInformation",
-                "patientAttributes" : [],
+                "patientAttributes" : ["smoking", "alcohol", "landHolding", "rationCard", "familyIncome", "foodSecurity", "debt", "distanceFromCenter"],
                 "addressFields": []
 
             },
@@ -22,7 +22,7 @@
             {
                 "title": "Diagnosis",
                 "name": "diagnosis",
-                "showDetailsButton": false,
+		"showDetailsButton": false,				
                 "showCertainty": true,
                 "showOrder": true
             },
@@ -39,7 +39,7 @@
                     "numberOfVisits": 2,
                     "pivotTable": {
                         "numberOfVisits": "10",
-                        "groupBy": "time",
+                        "groupBy": "encounters",
                         "obsConcepts": ["Weight", "Vitals"],
                         "drugConcepts": [],
                         "labConcepts": []
@@ -50,14 +50,14 @@
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-                    "title": null,
+					"title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false
                 },
                 "allLabDetails": {
-                    "numberOfVisits": 3
+                    "numberOfVisits": 10
                 }
             },
             {
@@ -78,7 +78,7 @@
                     "showListView": true,
                     "showRoute": true,
                     "showDrugForm": true,
-                    "numberOfVisits": 1,
+                    "numberOfVisits": 10,
                     "showOtherActive": true,
                     "showDetailsButton": false
                 }
@@ -97,13 +97,7 @@
             },
             {
                 "title": "Admission Details",
-                "name":"admissionDetails",
-                "showDetailsButton": true
-            },
-            {
-                "title": "Disposition",
-                "name":"disposition",
-                "numberOfVisits": 1
+                "name":"admissionDetails"
             },
             {
                 "title": "General Findings",
@@ -214,8 +208,8 @@
                         "numberOfVisits": "15",
                         "groupBy": "visits",
                         "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                        "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
-                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                        "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
                     }
 
                 }
@@ -224,11 +218,8 @@
                 "title": "Tuberculosis",
                 "templateName": "Tuberculosis Templates",
                 "name": "diseaseTemplate",
-                "dashboardParams":
-                {
-                    "showOnly": []
-
-                },
+                "showOnly": ["Tuberculosis, Type", "Tuberculosis, Patient Category", "Tuberculosis, Basis of Diagnosis", "Tuberculosis, Comorbidity", "Tuberculosis, Treatment Plan", "Tuberculosis, Followup Visit", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit", "Tuberculosis Lab Template"],
+                "dashboardParams": {},
                 "allDiseaseDetails":
                 {
                     "showDetailsButton":true,
