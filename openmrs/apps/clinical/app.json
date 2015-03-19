@@ -58,12 +58,18 @@
                     "computeDrugs" : true,
                     "showPreviousButton": true
                 },
-                "Breast Cancer, Receptor Status" : {
-                    "grid" : true
-                },
                 "Breast Cancer, TNM Pathologic Staging" : {
                     "grid" : true
                 },
+		"Breast Cancer, Imaging Studies" : {
+		   "allowAddMore": true
+		},
+		"Breast Cancer, Treatment Planned" : {
+		   "multiSelect" : true
+		},
+		"Breast Cancer, Breast Examination Details" : {
+		   "allowAddMore": true
+		},
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
                     "showPreviousButton": true
