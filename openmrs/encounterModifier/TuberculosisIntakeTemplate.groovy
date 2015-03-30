@@ -3,6 +3,7 @@ import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierDat
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
+import org.openmrs.module.bahmniemrapi.drugorder.DrugOrderUtil
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 import org.openmrs.util.OpenmrsUtil
 
@@ -27,6 +28,8 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
                 .create()
                 .forPatient(encounterModifierData.getPatientUuid());
 
+        List<EncounterTransaction.DrugOrder> activeDrugOrders = bahmniBridge.activeDrugOrdersForPatient();
+
         def nowAsOfEncounter = encounterModifierData.getEncounterDateTime() != null ? encounterModifierData.getEncounterDateTime() : new Date();
 
         def weight = fetchLatestValueNumeric(WEIGHT_CONCEPT_NAME);
@@ -46,6 +49,13 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
 
         List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
+        for (EncounterTransaction.DrugOrder drugOrder: drugOrders ) {
+            for (EncounterTransaction.DrugOrder activeDrugOrder : activeDrugOrders) {
+                if(activeDrugOrder.getDrug().getName().equals(drugOrder.getDrug().getName()) && activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm())){
+                    drugOrder.setEffectiveStartDate(DrugOrderUtil.aSecondAfter(activeDrugOrder.getEffectiveStopDate()));
+                }
+            }
+        }
         TBRegimen.generateDrugsForIntake(regimenName, isAdult(nowAsOfEncounter), weight, bmi, drugOrders);
         encounterModifierData.setDrugOrders(drugOrders);
 
