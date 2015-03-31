@@ -152,7 +152,7 @@ public static class TBRegimen {
                     } else if (weight > 15 && weight <= 20) {
                         setDrugDose(drugOrders, "INH", 200);
                     } else if (weight > 20 && weight <= 25) {
-                        setDrugDose(drugOrders, "INH", 250);
+                        setDrugDose(drugOrders, "INH", 300);
                     } else if (weight > 25 && weight <= 30) {
                         setDrugDose(drugOrders, "INH", 300);
                     } else if (weight > 30 && weight <= 35) {
@@ -190,13 +190,13 @@ public static class TBRegimen {
                     } else if (weight > 7 && weight <= 10) {
                         setDrugDose(drugOrders, "RIF", 150);
                     } else if (weight > 10 && weight <= 15) {
-                        setDrugDose(drugOrders, "RIF", 300);
+                        setDrugDose(drugOrders, "RIF", 150);
                     } else if (weight > 15 && weight <= 20) {
                         setDrugDose(drugOrders, "RIF", 300);
                     } else if (weight > 20 && weight <= 25) {
-                        setDrugDose(drugOrders, "RIF", 450);
+                        setDrugDose(drugOrders, "RIF", 300);
                     } else if (weight > 25 && weight <= 30) {
-                        setDrugDose(drugOrders, "RIF", 600);
+                        setDrugDose(drugOrders, "RIF", 450);
                     } else if (weight > 30 && weight <= 35) {
                         setDrugDose(drugOrders, "RIF", 600);
                     }
@@ -225,19 +225,19 @@ public static class TBRegimen {
                     if (weight <= 5) {
                         //TODO Compute this
                     } else if (weight > 5 && weight <= 7) {
-                        setDrugDose(drugOrders, "PYZ", 150);
+                        setDrugDose(drugOrders, "PYZ", 180);
                     } else if (weight > 7 && weight <= 10) {
                         setDrugDose(drugOrders, "PYZ", 300);
                     } else if (weight > 10 && weight <= 15) {
-                        setDrugDose(drugOrders, "PYZ", 600);
+                        setDrugDose(drugOrders, "PYZ", 375);
                     } else if (weight > 15 && weight <= 20) {
-                        setDrugDose(drugOrders, "PYZ", 750);
+                        setDrugDose(drugOrders, "PYZ", 625);
                     } else if (weight > 20 && weight <= 25) {
-                        setDrugDose(drugOrders, "PYZ", 1000);
+                        setDrugDose(drugOrders, "PYZ", 750);
                     } else if (weight > 25 && weight <= 30) {
-                        setDrugDose(drugOrders, "PYZ", 1250);
+                        setDrugDose(drugOrders, "PYZ", 1000);
                     } else if (weight > 30 && weight <= 35) {
-                        setDrugDose(drugOrders, "PYZ", 1250);
+                        setDrugDose(drugOrders, "PYZ", 1000);
                     }
 
                 }
@@ -268,7 +268,7 @@ public static class TBRegimen {
                     } else if (weight > 7 && weight <= 10) {
                         setDrugDose(drugOrders, "ETHAM", 200);
                     } else if (weight > 10 && weight <= 15) {
-                        setDrugDose(drugOrders, "ETHAM", 300);
+                        setDrugDose(drugOrders, "ETHAM", 200);
                     } else if (weight > 15 && weight <= 20) {
                         setDrugDose(drugOrders, "ETHAM", 400);
                     } else if (weight > 20 && weight <= 25) {
@@ -299,8 +299,6 @@ public static class TBRegimen {
                     setDoseAndQuantity(drugOrders, "Isoniazid 300mg", 0.5, 15);
                 } else if (totalDrugDose == 200) {
                     setDoseAndQuantity(drugOrders, "Isoniazid 100mg", 2, 60);
-                } else if (totalDrugDose == 250) {
-                    setDoseAndQuantity(drugOrders, "Isoniazid 100mg", 2.5, 75);
                 } else if (totalDrugDose == 300) {
                     setDoseAndQuantity(drugOrders, "Isoniazid 300mg", 1, 30);
                 }
@@ -320,12 +318,12 @@ public static class TBRegimen {
                 }
                 break;
             case "PYZ":
-                if (totalDrugDose == 150) {
-                    setDoseAndQuantity(drugOrders, "Pyrazinamide 300mg", 0.5, 15);
+                if (totalDrugDose == 180) {
+                    setDoseAndQuantity(drugOrders, "Pyrazinamide 750mg", 0.25, 8);
                 } else if (totalDrugDose == 300) {
                     setDoseAndQuantity(drugOrders, "Pyrazinamide 300mg", 1, 30);
-                } else if (totalDrugDose == 600) {
-                    setDoseAndQuantity(drugOrders, "Pyrazinamide 300mg", 2, 60);
+                } else if (totalDrugDose == 375) {
+                    setDoseAndQuantity(drugOrders, "Pyrazinamide 750mg", 0.5, 15);
                 } else if (totalDrugDose == 625) {
                     setDoseAndQuantity(drugOrders, "Pyrazinamide 500mg", 1.25, 38);
                 } else if (totalDrugDose == 750) {
@@ -344,16 +342,12 @@ public static class TBRegimen {
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 0.5, 15);
                 } else if (totalDrugDose == 200) {
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 1, 30);
-                }
-                if (totalDrugDose == 300) {
-                    setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 1.5, 45);
                 } else if (totalDrugDose == 400) {
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 2, 60);
                 } else if (totalDrugDose == 500) {
                     setDoseAndQuantity(drugOrders, "Ethambutal 400mg", 1, 30);
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 0.5, 15);
-                }
-                if (totalDrugDose == 600) {
+                } else if (totalDrugDose == 600) {
                     setDoseAndQuantity(drugOrders, "Ethambutal 400mg", 1, 30);
                     setDoseAndQuantity(drugOrders, "Ethambutal 200mg", 1, 30);
                 } else if (totalDrugDose == 700) {
