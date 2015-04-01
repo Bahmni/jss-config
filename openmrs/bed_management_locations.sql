@@ -13,13 +13,13 @@ insert into bed_type values(1, 'normal', 'normal bed', 'NRM');
 insert into bed_type values(2, 'extra', 'extra bed', 'EXT');
 
 # ICU WARD
-
-insert into location (name, description, creator, retired, date_created, uuid) values('ICU', 'ICU', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('ICU Physical Location', 'ICU Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='ICU Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('ICU', 'ICU', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='ICU');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -37,12 +37,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # WARD 1
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Ward 1', 'Ward 1', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Ward 1 Physical Location', 'Ward 1 Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Ward 1 Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Ward 1', 'Ward 1', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Ward 1');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -63,13 +64,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(12, @location_id, 2, 3, 12);
 
 # WARD 1A
-
-insert into location (name, description, creator, retired, date_created, uuid) values('Ward 1A', 'Ward 1A', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Ward 1A Physical Location', 'Ward 1A Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Ward 1A Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Ward 1A', 'Ward 1A', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Ward 1A');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -87,12 +88,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # WARD 2
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Ward 2', 'Ward 2', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Ward 2 Physical Location', 'Ward 2 Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Ward 2 Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Ward 2', 'Ward 2', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Ward 2');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -140,12 +142,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # WARD 3
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Ward 3', 'Ward 3', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Ward 3 Physical Location', 'Ward 3 Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Ward 3 Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Ward 3', 'Ward 3', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Ward 3');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -166,13 +169,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(44, @location_id, 2, 3, 44);
 
 # New OPD
-
-insert into location (name, description, creator, retired, date_created, uuid) values('New OPD', 'New OPD', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('New OPD Physical Location', 'New OPD Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='New OPD Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('New OPD', 'New OPD', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='New OPD');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -184,12 +187,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # OPD 5
 
-insert into location (name, description, creator, retired, date_created, uuid) values('OPD 5', 'OPD 5', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('OPD 5 Physical Location', 'OPD 5 Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='OPD 5 Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('OPD 5', 'OPD 5', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='OPD 5');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -203,12 +207,14 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # OPD 6
 
-insert into location (name, description, creator, retired, date_created, uuid) values('OPD 6', 'OPD 6', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('OPD 6 Physical Location', 'OPD 6 Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='OPD 6 Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('OPD 6', 'OPD 6', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='OPD 6');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -220,12 +226,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # NICU
 
-insert into location (name, description, creator, retired, date_created, uuid) values('NICU', 'NICU', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('NICU Physical Location', 'NICU Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='NICU Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('NICU', 'NICU', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='NICU');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -241,12 +248,14 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # Paediatric Ward
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Paediatric Ward', 'Paediatric Ward', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Pediatric Physical Location', 'Pediatric Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Pediatric Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Paediatric Ward', 'Paediatric Ward', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Paediatric Ward');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -261,13 +270,14 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(59, @location_id, 1, 4, 59);
 
 # TB Ward
-
-insert into location (name, description, creator, retired, date_created, uuid) values('TB Ward', 'TB Ward', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('TB Ward Physical Location', 'TB Ward Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='TB Ward Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('TB Ward', 'TB Ward', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='TB Ward');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -282,13 +292,14 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(63, @location_id, 1, 4, 63);
 
 # TB Isolation
-
-insert into location (name, description, creator, retired, date_created, uuid) values('TB Isolation', 'TB Isolation', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('TB Isolation Physical Location', 'TB Isolation Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='TB Isolation Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('TB Isolation', 'TB Isolation', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='TB Isolation');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -302,12 +313,14 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # Staff Ward
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Staff Ward', 'Staff Ward', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Staff Ward Physical Location', 'Staff Ward Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Staff Ward Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Staff Ward', 'Staff Ward', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Staff Ward');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -316,13 +329,14 @@ insert into bed (bed_id, bed_number, status, bed_type_id, uuid, creator, date_cr
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(67, @location_id, 1, 1, 67);
 
 # Dharamshala
-
-insert into location (name, description, creator, retired, date_created, uuid) values('Dharamshala', 'Dharamshala', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('Dharamshala Physical Location', 'Dharamshala Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='Dharamshala Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Dharamshala', 'Dharamshala', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='Dharamshala');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -349,13 +363,13 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(77, @location_id, 3, 2, 77);
 
 # ANC
-
-insert into location (name, description, creator, retired, date_created, uuid) values('ANC', 'ANC', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('ANC Physical Location', 'ANC Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='ANC Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('ANC', 'ANC', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='ANC');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
@@ -364,13 +378,13 @@ insert into bed (bed_id, bed_number, status, bed_type_id, uuid, creator, date_cr
 insert into bed_location_map(bed_location_map_id, location_id, row_number, column_number, bed_id) values(78, @location_id, 1, 1, 78);
 
 # OT RR
-
-insert into location (name, description, creator, retired, date_created, uuid) values('OT RR', 'OT RR', 1, 0, NOW(), UUID());
-SET @parent_location_id = (select location_id from location where name='General Ward');
-insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
-SET @location_id = (select location_id from location where name='Physical General Ward');
-
+insert into location (name, description, creator, retired, date_created, uuid) values('OT RR Physical Location', 'OT RR Physical Location', 1, 0, NOW(), UUID());
+SET @parent_location_id = (select location_id from location where name='OT RR Physical Location');
 insert into location_tag_map values( @parent_location_id , @location_tag_id);
+
+insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('OT RR', 'OT RR', 1, 0, NOW(), UUID(), @parent_location_id);
+SET @location_id = (select location_id from location where name='OT RR');
+
 insert into location_tag_map values( @location_id , @location_tag_id);
 
 
