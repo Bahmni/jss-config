@@ -2,6 +2,7 @@ import org.bahmni.module.bahmnicore.encounterModifier.EncounterModifier
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierData
+import org.openmrs.module.bahmniemrapi.drugorder.DrugOrderUtil
 import org.bahmni.module.bahmnicore.contract.encounter.data.EncounterModifierObservation
 
 public class BreastCancerFollowupTemplate extends EncounterModifier {
@@ -37,6 +38,15 @@ public class BreastCancerFollowupTemplate extends EncounterModifier {
 
         List<EncounterTransaction.DrugOrder> drugOrders = encounterModifierData.getDrugOrders();
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(getCodedObsValue(regimenObservation.getValue())));
+
+        List<EncounterTransaction.DrugOrder> activeDrugOrders = bahmniBridge.activeDrugOrdersForPatient();
+        for (EncounterTransaction.DrugOrder drugOrder: drugOrders ) {
+            for (EncounterTransaction.DrugOrder activeDrugOrder : activeDrugOrders) {
+                if(activeDrugOrder.getDrug().getName().equals(drugOrder.getDrug().getName()) && activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm())){
+                    drugOrder.setEffectiveStartDate(DrugOrderUtil.aSecondAfter(activeDrugOrder.getEffectiveStopDate()));
+                }
+            }
+        }
 
         if ("Cyclophosphamide + Doxorubicin + Fluorouracil".equals(getCodedObsValue(regimenObservation.getValue()))) {
             setDoseAndQuantity(drugOrders, "Cyclophosphamide 500mg", bsa, 600.0, percentageAmputatedObservation)
