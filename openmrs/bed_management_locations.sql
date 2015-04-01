@@ -317,7 +317,7 @@ insert into bed_location_map(bed_location_map_id, location_id, row_number, colum
 
 # Dharamshala
 
-insert into location (name, description, creator, retired, date_created, uuid) values('Dharamshala, 'Dharamshala', 1, 0, NOW(), UUID());
+insert into location (name, description, creator, retired, date_created, uuid) values('Dharamshala', 'Dharamshala', 1, 0, NOW(), UUID());
 SET @parent_location_id = (select location_id from location where name='General Ward');
 insert into location (name, description, creator, retired, date_created, uuid, parent_location) values('Physical General Ward', '1st Floor of General Ward', 1, 0, NOW(), UUID(), @parent_location_id);
 SET @location_id = (select location_id from location where name='Physical General Ward');
