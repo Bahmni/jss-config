@@ -24,6 +24,7 @@
     },
     {
         "title": "Discharge Summary",
+	"default": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Discharge Summary",
@@ -62,18 +63,6 @@
                 }
             },
             {
-                "type": "treatment",
-                "config": {
-                    "title": "Treatments",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true,
-                    "showDrugForm": true
-                }
-            },
-            {
                 "type": "observation",
                 "title": "Discharge Summary",
                 "config": {
@@ -87,11 +76,23 @@
                 "config": {
                     "title": "Lab Investigations",
                     "showChart": true,
-                    "showTable": true,
+                    "showTable": false,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
+                }
+            },
+	   {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
                 }
             }
         ]

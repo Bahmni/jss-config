@@ -77,18 +77,17 @@
                 "Diabetes Followup Template": {
                     "computeDrugs": true
                 },
-                "Chief Complaint Data": {
-                    "multiple": 3
-                },
                 "Chief Complaint": {
                     "answersConceptName": "Chief Complaint Answers",
                     "freeTextAutocomplete": true,
-                    "durationRequired": false
+                    "durationRequired": false,
+		    "allowAddMore" : true
                 },
                 "Non-Coded Chief Complaint": {
                     "answersConceptName": "Chief Complaint Answers",
                     "freeTextAutocomplete": true,
-                    "durationRequired": false
+                    "durationRequired": false,
+	            "allowAddMore" : true
                 },
                 "Surgical Procedure": {
                     "answersConceptName": "Surgical Procedure Answers",
@@ -140,11 +139,12 @@
                 "Anesthesia Administered" : {
                     "multiSelect" : true
                 },
-                "Tuberculosis, Symptoms & Duration" : {
-                    "allowAddMore" : true
+                "Tuberculosis, Symptoms" : {
+                    "allowAddMore" : true,
+		    "autocomplete" : true
                 },
                 "Tuberculosis, Symptoms Duration": {
-                        "conciseText" : true
+                        "allowAddMore" : true
                 },
                 "Tuberculosis, X-Ray Findings" : {
                     "grid" : true
