@@ -54,7 +54,9 @@
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
-                    "showDetailsButton": false
+                    "showDetailsButton": false,
+		    "initialAccessionCount": 0,
+ 		    "latestAccessionCount": 1
                 },
                 "allLabDetails": {
                     "numberOfVisits": 10
@@ -172,11 +174,8 @@
                 "title": "Breast Cancer",
                 "templateName": "Breast Cancer Templates",
                 "name": "diseaseTemplate",
-                "dashboardParams":
-                {
-                    "showOnly": []
-
-                },
+		"showOnly": ["Breast Cancer, Treatment Intent","Breast Cancer, Treatment Plan, Plan Summary"],
+                "dashboardParams":{},
                 "allDiseaseDetails":
                 {
                     "showDetailsButton":true,
