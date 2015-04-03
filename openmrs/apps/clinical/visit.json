@@ -24,7 +24,6 @@
     },
     {
         "title": "Discharge Summary",
-	"default": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Discharge Summary",
@@ -87,7 +86,7 @@
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
-                    "showFlowSheet": true,
+                    "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
                     "showDetailsButton": true,
