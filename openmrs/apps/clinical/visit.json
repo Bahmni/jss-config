@@ -122,6 +122,7 @@
             },
             {
                 "type": "observation",
+                "title": "Observations",
                 "config": {
                     "numberOfVisits": 1,
                     "obsIgnoreList": ["Patient file", "Radiology", "Lab Manager Notes", "Accession Uuid", "Impression"],
