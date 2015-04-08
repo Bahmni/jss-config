@@ -66,7 +66,7 @@
                 "title": "Discharge Summary",
                 "config": {
                     "title": "Discharge Summary",
-                    "conceptNames": ["Discharge Summary, Admission Indication","Hospital Course","History and Examination Notes","Date of Operation","Operative Procedure","Lab Investigation Notes","Radiology Notes","Other Notes"],
+                    "conceptNames": ["History and Examination Notes","Discharge Summary, Admission Indication","Hospital Course","Date of Operation","Operative Procedure","Lab Investigation Notes","Radiology Notes","Other Notes"],
                     "scope":"latest",
                     "numberOfVisits": "1"
                 }
@@ -76,11 +76,13 @@
                 "config": {
                     "title": "Lab Investigations",
                     "showChart": true,
-                    "showTable": true,
+                    "showTable": false,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "numberOfVisits": 10
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1
                 }
             },
             {
