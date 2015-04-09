@@ -229,7 +229,7 @@
                     {
                         "numberOfVisits": "15",
                         "groupBy": "visits",
-                        "obsConcepts": ["Weight", "Tuberculosis, Symptoms Relief", "Tuberculosis, Treatment Compliance", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit"],
+                        "obsConcepts": ["Weight", "Tuberculosis, Symptoms Relief", "Tuberculosis, Treatment Compliance", "Tuberculosis, Adverse Effects", "Tuberculosis, Visit Impression", "Tuberculosis, Next Followup Visit","Tuberculosis, Sputum AFB","Tuberculosis, Testing Centre","Tuberculosis, Test Type","Tuberculosis, Sputum Culture","Tuberculosis,CBNAAT Test Result","Tuberculosis, Rifampicin","Tuberculosis, Isoniazid","Tuberculosis, Ethambutol","Tuberculosis, Streptomycin"],
                         "drugConcepts": ["Pyrazinamide", "Isoniazid", "Rifampicin", "Ethambutol"],
                         "labConcepts": ["S. ALT", "GGT", "Creatinine", "S. Albumin", "Haemoglobin", "HIV ELISA (Blood)"]
                     }

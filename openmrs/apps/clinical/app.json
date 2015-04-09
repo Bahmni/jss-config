@@ -167,12 +167,6 @@
                 "Tuberculosis, Sensitivity" : {
                     "allowAddMore" : true
                 },
-		"Tuberculosis, Second Line Drugs Resistance Result" : {
-		    "allowAddMore" : true
-		},
-		"Tuberculosis, Drug Resistance Testing" : {
-		    "allowAddMore" : true
-		},
                 "Tuberculosis, Contact Screening" : {
                     "allowAddMore" : true
                 },
