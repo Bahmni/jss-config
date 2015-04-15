@@ -1,11 +1,13 @@
 [
     {
+        "title": "General",
         "default": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
             "logo": "../images/jss-icon.png"
         },
+        "defaultSections": true,
         "sections": [
             {
                 "type": "pivotTable",
@@ -69,7 +71,7 @@
                     "scope":"latest",
                     "numberOfVisits": "1"
                 }
-            },     
+            },
             {
                 "type": "investigationResult",
                 "config": {
