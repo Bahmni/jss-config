@@ -63,10 +63,9 @@
             },
             {
                 "type": "observation",
-                "title": "Discharge Summary",
+                "title": "Clinical Notes",
                 "config": {
-                    "title": "Discharge Summary",
-                    "conceptNames": ["History and Examination Notes","Discharge Summary, Admission Indication","Hospital Course","Date of Operation","Operative Procedure","Lab Investigation Notes","Radiology Notes","Other Notes"],
+                    "conceptNames": ["History and Examination Notes","Discharge Summary, Admission Indication","Hospital Course","Discharge Summary, Surgical Indication","Date of Operation","Operative Procedure","Lab Investigation Notes","Radiology Notes","Other Notes"],
                     "scope":"latest",
                     "numberOfVisits": "1"
                 }

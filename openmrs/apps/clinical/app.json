@@ -70,6 +70,9 @@
 		"Breast Cancer, Breast Examination Details" : {
 		   "allowAddMore": true
 		},
+		"Breast Cancer, Lymph Nodes" : {
+		   "allowAddMore": true
+		},
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
                     "showPreviousButton": true
@@ -199,7 +202,10 @@
                 },
                 "Psychiatry, Substance Use Complications" : {
                    "multiSelect" : true
-                }
+                },
+		"Psychiatry, Sexual History" : {
+                   "multiSelect" : true
+		}
             },
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",

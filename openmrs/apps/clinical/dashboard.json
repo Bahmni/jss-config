@@ -174,10 +174,9 @@
                 "title": "Breast Cancer",
                 "templateName": "Breast Cancer Templates",
                 "name": "diseaseTemplate",
+		"showOnly": ["Breast Cancer, Confirmed Disease Stage","Breast Cancer, Treatment Plan"],
                 "dashboardParams":
                 {
-                    "showOnly": []
-
                 },
                 "allDiseaseDetails":
                 {
