@@ -2,6 +2,7 @@
     {
         "dashboardName": "Dashboard",
         "default": true,
+        "maxRecentlyViewedPatients": 10,
         "sections": [
             {
                 "title" : "Patient Information",
