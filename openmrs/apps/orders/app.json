@@ -1,0 +1,12 @@
+[
+    {
+        "id": "bahmni.orders",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.orders.search",
+                "description": "Orders Dashboard"
+            }
+        ]
+
+    }
+]

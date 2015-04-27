@@ -78,6 +78,16 @@
         "icon": "icon-book",
         "order": 9,
         "requiredPrivilege": "app:dhis"
+    },
+    {
+        "id": "bahmni.orders",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Orders",
+        "url": "../orders/#/search",
+        "icon": "icon-book",
+        "order": 10,
+        "requiredPrivilege": "app:orders"
     }
 
 ]
