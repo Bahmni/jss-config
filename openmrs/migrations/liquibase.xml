@@ -1558,4 +1558,32 @@
             call add_concept_answer(@disposition_concept_id, @child1_concept_id, 3);
         </sql>
     </changeSet>
+    <changeSet id="JSS-201505051636" author="Charles">
+        <comment>Create BMI Abnormal concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI ABNORMAL', 'BMI ABNORMAL', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ABNORMAL', 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201505051640" author="Charles">
+        <comment>Create BMI Data concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI Data', 'BMI', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'DATA', 1);
+
+            call add_concept_set_members(@concept_id, (select distinct concept_id from concept_name where name = 'BMI'), 1);
+            call add_concept_set_members(@concept_id, (select distinct concept_id from concept_name where name = 'BMI ABNORMAL'), 2);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
