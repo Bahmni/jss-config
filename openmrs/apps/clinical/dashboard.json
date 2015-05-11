@@ -16,7 +16,7 @@
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams":{
-                    "conceptNames": ["Height", "Weight", "BMI", "BMI Status"],
+                    "conceptNames": ["Height", "Weight", "BMI Data", "BMI Status Data"],
                     "scope": "latest"
                 }
             },

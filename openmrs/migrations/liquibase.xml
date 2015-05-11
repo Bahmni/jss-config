@@ -1582,8 +1582,42 @@
             call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
             call add_concept_word(@concept_id, @concept_name_short_id, 'DATA', 1);
 
-            call add_concept_set_members(@concept_id, (select distinct concept_id from concept_name where name = 'BMI'), 1);
-            call add_concept_set_members(@concept_id, (select distinct concept_id from concept_name where name = 'BMI ABNORMAL'), 2);
+            call add_concept_set_members(@concept_id, (select concept_id from concept_name where name = 'BMI' and concept_name_type = 'FULLY_SPECIFIED'), 1);
+            call add_concept_set_members(@concept_id, (select concept_id from concept_name where name = 'BMI ABNORMAL' and concept_name_type = 'FULLY_SPECIFIED'), 2);
         </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201505061650" author="Banka, Charles">
+        <comment>Create BMI Status Abnormal concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI STATUS ABNORMAL', 'BMI STATUS ABNORMAL', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'STATUS', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ABNORMAL', 1);
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201505061705" author="Banka, Charles">
+        <comment>Create BMI Status Data concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI Status Data', 'BMI Status', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'STATUS', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'DATA', 1);
+
+            call add_concept_set_members(@concept_id, (select concept_id from concept_name where name = 'BMI STATUS' and concept_name_type = 'FULLY_SPECIFIED'), 1);
+            call add_concept_set_members(@concept_id, (select concept_id from concept_name where name = 'BMI STATUS ABNORMAL' and concept_name_type = 'FULLY_SPECIFIED'), 2);
+        </sql>
+    </changeSet>
+    <changeSet id="JSS-201505081050" author="Charles, Banka" runOnChange="true">
+        <comment>Migrating BMI and BMI Status Obs to be grouped under BMI Data and BMI Status Data</comment>
+        <sqlFile path="V1_78_AddBMIObsToParentObsGroupForOldPatients.sql" splitStatements="true" endDelimiter=";;"/>
     </changeSet>
 </databaseChangeLog>
