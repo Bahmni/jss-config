@@ -329,5 +329,59 @@
                 }
             }
         ]
+    },
+    {
+        "dashboardName": "Trends",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "sections": [
+            {
+                "title" : "Patient Information",
+                "name" : "patientInformation",
+                "patientAttributes" : [],
+                "addressFields": []
+
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "BP",
+                "config": {
+                    "yAxisConcepts": ["Systolic","Diastolic"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                    
+                   
+                }
+            }
+
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Weight/BMI",
+                "config": {
+                    "yAxisConcepts": ["Weight","BMI"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                    
+                   
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Pulse",
+                "config": {
+                    "yAxisConcepts": ["Pulse"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                    
+                   
+                }
+            }
+
+
+        ]
     }
+
 ]
