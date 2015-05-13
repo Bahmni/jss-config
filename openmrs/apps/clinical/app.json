@@ -15,6 +15,10 @@
                 "description": "Bahmni Orders Page"
             },
             {
+                "id": "org.bahmni.clinical.orders",
+                "description": "Bahmni Orders Page"
+            },
+            {
                 "id": "org.bahmni.patient.search",
                 "description": "Bahmni Patient search, lookups Page"
             }
@@ -24,6 +28,52 @@
             "visitUuid"
         ],
         "config": {
+            "orders": [
+                {
+                    "name":"Lab Orders",
+                    "conceptSet":"Lab Samples",
+                    "tests":[
+                        {
+                            "type": "LabSet",
+                            "title":"Panel"
+                        },
+                        {
+                            "type": "LabTest",
+                            "title":"Tests"
+                        }
+                    ]
+                },
+                {
+                    "name":"Endoscopy Orders",
+                    "conceptSet":"Endoscopy",
+                    "tests":[
+                        {
+                            "type": "Test",
+                            "title":"Tests"
+                        }
+                    ]
+                },
+                {
+                    "name":"Procedure Orders",
+                    "conceptSet":"Advanced Procedure",
+                    "tests":[
+                        {
+                            "type": "Procedure",
+                            "title":"Procedures"
+                        }
+                    ]
+                },
+                {
+                    "name":"Radiology Orders",
+                    "conceptSet":"Radiology",
+                    "tests":[
+                        {
+                            "type": "Radiology",
+                            "title":"Radiology"
+                        }
+                    ]
+                }                
+            ],
             "obsIgnoreList": ["Fee Information", "Patient file"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
@@ -61,18 +111,18 @@
                 "Breast Cancer, TNM Pathologic Staging" : {
                     "grid" : true
                 },
-		"Breast Cancer, Imaging Studies" : {
-		   "allowAddMore": true
-		},
-		"Breast Cancer, Treatment Planned" : {
-		   "multiSelect" : true
-		},
-		"Breast Cancer, Breast Examination Details" : {
-		   "allowAddMore": true
-		},
-		"Breast Cancer, Lymph Nodes" : {
-		   "allowAddMore": true
-		},
+    "Breast Cancer, Imaging Studies" : {
+       "allowAddMore": true
+    },
+    "Breast Cancer, Treatment Planned" : {
+       "multiSelect" : true
+    },
+    "Breast Cancer, Breast Examination Details" : {
+       "allowAddMore": true
+    },
+    "Breast Cancer, Lymph Nodes" : {
+       "allowAddMore": true
+    },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
                     "showPreviousButton": true
@@ -84,13 +134,13 @@
                     "answersConceptName": "Chief Complaint Answers",
                     "freeTextAutocomplete": true,
                     "durationRequired": false,
-		    "allowAddMore" : true
+        "allowAddMore" : true
                 },
                 "Non-Coded Chief Complaint": {
                     "answersConceptName": "Chief Complaint Answers",
                     "freeTextAutocomplete": true,
                     "durationRequired": false,
-	            "allowAddMore" : true
+              "allowAddMore" : true
                 },
                 "Surgical Procedure": {
                     "answersConceptName": "Surgical Procedure Answers",
@@ -144,7 +194,7 @@
                 },
                 "Tuberculosis, Symptoms" : {
                     "allowAddMore" : true,
-		    "autocomplete" : true
+        "autocomplete" : true
                 },
                 "Tuberculosis, Symptoms Duration": {
                         "allowAddMore" : true
@@ -203,9 +253,9 @@
                 "Psychiatry, Substance Use Complications" : {
                    "multiSelect" : true
                 },
-		"Psychiatry, Sexual History" : {
+    "Psychiatry, Sexual History" : {
                    "multiSelect" : true
-		}
+    }
             },
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",

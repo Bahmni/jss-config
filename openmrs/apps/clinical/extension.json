@@ -6,7 +6,7 @@
         "label": "Observations",
         "url": "concept-set-group/observations",
         "default": true,
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 1,
         "requiredPrivilege": "app:clinical:observationTab"
     },
@@ -16,7 +16,7 @@
         "type": "link",
         "label": "Diagnosis",
         "url": "diagnosis",
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 2,
         "requiredPrivilege": "app:clinical:diagnosisTab"
     },
@@ -26,7 +26,7 @@
         "type": "link",
         "label": "Disposition",
         "url": "disposition",
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 3,
         "requiredPrivilege": "app:clinical:dispositionTab"
     },
@@ -36,7 +36,7 @@
         "type": "link",
         "label": "Consultation",
         "url": "consultation",
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 4,
         "requiredPrivilege": "app:clinical:consultationTab"
     },
@@ -46,7 +46,7 @@
         "type": "link",
         "label": "Treatment",
         "url": "treatment",
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 5,
         "requiredPrivilege": "app:clinical:treatment"
     },
@@ -56,7 +56,7 @@
         "type": "link",
         "label": "Treatment",
         "url": "treatment",
-        "icon": "icon-user-md",
+        "icon": "fa-user-md",
         "order": 5,
         "requiredPrivilege": "app:billing"
     },
@@ -161,7 +161,7 @@
         "label": "All",
         "order": 3,
         "requiredPrivilege": "app:billing"
-    },		
+    },      
     {
         "id": "bahmni.clinical.treatment.links",
         "extensionPointId": "org.bahmni.clinical.treatment.links",
@@ -170,5 +170,15 @@
         "url": "http://192.168.0.152:8069/quotations/latest?patient_ref={{patient_ref}}",
         "shortcutKey": "q",
         "requiredPrivilege": "app:billing"
+    },
+    {
+        "id": "bahmni.clinical.consultation.orders",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Orders",
+        "url": "orders",
+        "icon": "fa-user-md",
+        "order": 6,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
     }
 ]
