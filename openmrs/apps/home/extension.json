@@ -78,6 +78,14 @@
         "icon": "icon-book",
         "order": 9,
         "requiredPrivilege": "app:dhis"
+    },
+    {
+        "id": "bahmni.reports",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Reports",
+        "url": "../reports/#/dashboard",
+        "icon": "fa-user",
+        "order": 10
     }
-
 ]

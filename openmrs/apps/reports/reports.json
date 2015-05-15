@@ -1,0 +1,19 @@
+[
+   {
+        "name": "Vitals Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Vitals"
+        }
+    },
+    {
+        "name": "Diabetes Intake Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Diabetes Intake Template"
+        }
+    }
+
+]
