@@ -100,6 +100,23 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.highRiskPatients",
+            "display": "High Risk",
+            "forwardUrl": "#/patient/{{patientUuid}}/dashboard",
+            "additionalParams": {
+                "additionalSearchHandler" : "emrapi.sqlSearch.additionalSearchHandler",
+                "tests": ["HIV (Blood)", "Gram Stain (Sputum)"]
+            }
+        },
+        "label": "High Risk",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
         "id": "bahmni.billing.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -135,7 +152,7 @@
         "label": "All",
         "order": 3,
         "requiredPrivilege": "app:billing"
-    },      
+    },
     {
         "id": "bahmni.clinical.treatment.links",
         "extensionPointId": "org.bahmni.clinical.treatment.links",
