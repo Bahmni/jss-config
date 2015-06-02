@@ -15,10 +15,6 @@
                 "description": "Bahmni Orders Page"
             },
             {
-                "id": "org.bahmni.clinical.orders",
-                "description": "Bahmni Orders Page"
-            },
-            {
                 "id": "org.bahmni.patient.search",
                 "description": "Bahmni Patient search, lookups Page"
             }
@@ -28,52 +24,6 @@
             "visitUuid"
         ],
         "config": {
-            "orders": [
-                {
-                    "name":"Lab Orders",
-                    "conceptSet":"Lab Samples",
-                    "tests":[
-                        {
-                            "type": "LabSet",
-                            "title":"Panel"
-                        },
-                        {
-                            "type": "LabTest",
-                            "title":"Tests"
-                        }
-                    ]
-                },
-                {
-                    "name":"Endoscopy Orders",
-                    "conceptSet":"Endoscopy",
-                    "tests":[
-                        {
-                            "type": "Test",
-                            "title":"Tests"
-                        }
-                    ]
-                },
-                {
-                    "name":"Procedure Orders",
-                    "conceptSet":"Advanced Procedure",
-                    "tests":[
-                        {
-                            "type": "Procedure",
-                            "title":"Procedures"
-                        }
-                    ]
-                },
-                {
-                    "name":"Radiology Orders",
-                    "conceptSet":"Radiology",
-                    "tests":[
-                        {
-                            "type": "Radiology",
-                            "title":"Radiology"
-                        }
-                    ]
-                }                
-            ],
             "obsIgnoreList": ["Fee Information", "Patient file"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",
