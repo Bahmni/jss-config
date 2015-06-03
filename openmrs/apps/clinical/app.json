@@ -61,18 +61,21 @@
                 "Breast Cancer, TNM Pathologic Staging" : {
                     "grid" : true
                 },
-    "Breast Cancer, Imaging Studies" : {
-       "allowAddMore": true
-    },
-    "Breast Cancer, Treatment Planned" : {
-       "multiSelect" : true
-    },
-    "Breast Cancer, Breast Examination Details" : {
-       "allowAddMore": true
-    },
-    "Breast Cancer, Lymph Nodes" : {
-       "allowAddMore": true
-    },
+                "Breast Cancer, Imaging Studies" : {
+                   "allowAddMore": true
+                },
+                "Breast Cancer, Treatment Planned" : {
+                   "multiSelect" : true
+                },
+                "Breast Cancer, Breast Examination Details" : {
+                   "allowAddMore": true
+                },
+                "Breast Cancer, Lymph Nodes" : {
+                   "allowAddMore": true
+                },
+                "Breast Cancer, Chemotherapy Cycle number" : {
+                  "stepper": true
+                },
                 "Diabetes Intake Template": {
                     "computeDrugs": true,
                     "showPreviousButton": true
@@ -135,6 +138,30 @@
                 },
                 "Obstetrics, Fundal Height": {
                     "conciseText": true
+                },
+                "Obstetrics, Gravida" : {
+                    "stepper": true
+                },
+                "Obstetrics, Parity" : {
+                    "stepper": true
+                },
+                "Obstetrics, Live Births" : {
+                    "stepper": true
+                },
+                "Obstetrics, Abortion" : {
+                    "stepper": true
+                },
+                "Gynaecology, Gravida" : {
+                    "stepper": true
+                },
+                "Gynaecology, Parity" : {
+                    "stepper": true
+                },
+                "Gynaecology, Live Births" : {
+                    "stepper": true
+                },
+                "Gynaecology, Abortion" : {
+                    "stepper": true
                 },
                 "Operative Drains": {
                     "conciseText": true

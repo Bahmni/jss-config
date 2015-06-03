@@ -8,12 +8,62 @@
         }
     },
     {
-        "name": "Diabetes Intake Template Report",
+        "name": "Diabetes Intake Data",
         "type": "obsTemplate",
         "config": {
             "type": "obsTemplateReport",
             "templateName": "Diabetes Intake Template"
         }
+    },
+    {
+        "name": "Diabetes Followup Data",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Diabetes Followup Template"
+        }
+    },
+    {
+        "name": "Tuberculosis Intake Data",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Tuberculosis Intake Template"
+        }
+    },
+    {
+        "name": "Tuberculosis Followup Data",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Tuberculosis Followup Template"
+        }
+    },
+    {
+        "name": "Tuberculosis Lab Data",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Tuberculosis Lab Template"
+        }   
+    },
+    {
+        "name": "Operation Notes Data",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Operation Notes"
+        }   
+    },
+    {
+        "name": "Admitted patients",
+        "type": "MRSGeneric",
+        "config": {
+        	"type": "sqlReport",
+        	"sqlPath": "/var/www/bahmni_config/openmrs/reports/admitted_patient.sql"
+	}
     }
+
+
 
 ]
