@@ -90,6 +90,12 @@
                 "title": "Radiology",
                 "name": "radiology"
             },
+             {
+                "title": "Lab Orders Display Control",
+                "name": "ordersControl",
+                "orderType": "Lab Order",
+                "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
+            },
             {
                 "title": "Visits",
                 "name": "visits",
