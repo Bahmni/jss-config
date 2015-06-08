@@ -61,8 +61,17 @@
         "config": {
         	"type": "sqlReport",
         	"sqlPath": "/var/www/bahmni_config/openmrs/reports/admitted_patient.sql"
-	}
+	   }
+    },
+    {
+        "name": "Non coded Diagnoses entered",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
+       }
     }
+
 
 
 
