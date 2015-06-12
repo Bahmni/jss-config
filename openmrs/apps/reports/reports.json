@@ -70,9 +70,14 @@
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
        }
-    }
-
-
-
-
+    },
+    {
+        "name": "Abnormality report for critical tests",
+        "type": "PatientsWithLabtestResults",
+        "config": {
+        "type": "patientsWithLabtestResultsReport",
+        "conceptNames": "'CA-125', 'CA19-9', 'T3', 'T4', 'TSH','Hb Electrophoresis','HbsAg ELISA','HIV ELISA (Blood)','HIV ELISA (Serum)','VDRL ELISA'",
+        "abnormalityTypes": "'abnormal'"
+        }   
+    }  
 ]

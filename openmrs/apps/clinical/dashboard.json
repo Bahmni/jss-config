@@ -378,7 +378,16 @@
                     
                    
                 }
-            }
+            },
+	    {
+		 "type": "observationGraph",
+		 "name": "observationGraph",
+		 "title": "Growth Chart",
+		 "config": {
+		  "referenceData": "growthChartReference.csv",
+  		   "numberOfVisits": 20
+ 	  	}
+	   }
 
 
         ]
