@@ -49,12 +49,20 @@
             },
             {
                 "type": "observation",
-                "title": "Weight",
+                "title": "At Admission",
                 "config": {
-                    "conceptNames": ["Weight"],
-                    "scope": "latest"
+                    "conceptNames": ["Weight", "Height", "BMI"],
+                    "scope": "initial"
                 }
             },
+            {
+                "type": "observation",
+                "title": "At Discharge",
+                "config": {
+                "conceptNames": ["Weight"],
+                "scope": "latest"
+                }
+            },   
             {
                 "type": "diagnosis",
                 "config": {
