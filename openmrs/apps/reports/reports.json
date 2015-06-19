@@ -77,7 +77,16 @@
         "config": {
         "type": "patientsWithLabtestResultsReport",
         "conceptNames": "'CA-125', 'CA19-9', 'T3', 'T4', 'TSH','Hb Electrophoresis','HbsAg ELISA','HIV ELISA (Blood)','HIV ELISA (Serum)','VDRL ELISA'",
-        "abnormalityTypes": "'abnormal'"
+        "testOutcome": "'abnormal'"
         }   
-    }  
+    },
+    {
+	"name": "Patients with Tuberculosis Followups",
+    	"type": "DateConceptValuesPatientsList",
+        "config": {
+            "type": "dateConceptValuesReport",
+            "conceptNames": "'Tuberculosis, Next Followup Visit'",
+            "templateName": "Tuberculosis Followup Template"
+        }
+    } 
 ]
