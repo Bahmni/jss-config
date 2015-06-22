@@ -23,7 +23,7 @@
             {
                 "title": "Diagnosis",
                 "name": "diagnosis",
-		"showDetailsButton": false,				
+		        "showDetailsButton": false,				
                 "showCertainty": true,
                 "showOrder": true
             },
@@ -33,7 +33,7 @@
                 "isObservation": true,
                 "dashboardParams":{
                     "conceptNames": ["Vitals", "Second Vitals"],
-                    "numberOfVisits": 1
+                    "scope": "latest"
                 },
                 "allObservationDetails":{
                     "conceptNames": ["Vitals", "Second Vitals"],
@@ -51,12 +51,12 @@
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-		    "title": null,
+		            "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false,
-		    "initialAccessionCount": 0,
+		            "initialAccessionCount": 0,
                     "latestAccessionCount": 1
                 },
                 "allLabDetails": {
@@ -213,7 +213,6 @@
                         "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
                         "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
                     }
-
                 }
             },
             {
