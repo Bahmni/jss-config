@@ -57,7 +57,7 @@
             },
             {
                 "type": "observation",
-                "title": "At Discharge",
+                "title": "Last Recorded Weight",
                 "config": {
                 "conceptNames": ["Weight"],
                 "scope": "latest"
