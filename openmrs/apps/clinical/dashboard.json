@@ -236,6 +236,26 @@
                 }
             },
             {
+                "title": "Psychiatry",
+                "templateName": "Psychiatry Templates",
+                "name": "diseaseTemplate",
+                "showOnly": ["Psychiatry, Patient Notes"],
+                "dashboardParams":{},
+                "allDiseaseDetails":
+                {
+                    "showDetailsButton":true,
+                    "pivotTable":
+                    {
+                        "numberOfVisits": "15",
+                        "groupBy": "visits",
+                        "obsConcepts": [],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+
+                }
+            },
+            {
                 "title": "Cervical Cancer",
                 "templateName": "Cervical Cancer",
                 "name": "diseaseTemplate",

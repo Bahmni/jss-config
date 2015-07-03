@@ -39,6 +39,9 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
+                "Psychiatry Followup Template" : {
+                  "showPreviousButton": true
+                },
                 "Discharge Summary": {
                     "showPreviousButton": true,
                     "numberOfVisits":1
@@ -48,6 +51,7 @@
                     "showPreviousButton": true
                 },
                 "Tuberculosis Followup Template": {
+		    "showPreviousButton": true,
                     "computeDrugs" : true
                 },
                 "Breast Cancer Intake Template": {
