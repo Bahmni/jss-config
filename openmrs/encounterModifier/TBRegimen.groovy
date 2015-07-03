@@ -103,12 +103,33 @@ public static class TBRegimen {
         filterDrugOrdersWithBaseDoseNotSet(drugOrders);
     }
 
+    public static EncounterTransaction.DrugOrder chanaSupplement(){
+        EncounterTransaction.DrugOrder chanaDrugOrder = new EncounterTransaction.DrugOrder();
+        chanaDrugOrder.setDrug(new EncounterTransaction.Drug());
+        chanaDrugOrder.setDosingInstructions(new EncounterTransaction.DosingInstructions());
+
+        chanaDrugOrder.getDrug().setName("Chana");
+        chanaDrugOrder.getDrug().setForm("Food Supplement");
+        chanaDrugOrder.getDosingInstructions().setAsNeeded(false);
+
+
+        chanaDrugOrder.getDosingInstructions().setFrequency("Twice a day");
+        chanaDrugOrder.getDosingInstructions().setRoute("Oral");
+        chanaDrugOrder.getDosingInstructions().setQuantity(2.0);
+        chanaDrugOrder.getDosingInstructions().setQuantityUnits("Unit(s)");
+
+        chanaDrugOrder.setDuration(30);
+        chanaDrugOrder.setDurationUnits("Day(s)");
+
+        return chanaDrugOrder;
+    }
+
 
     private static filterDrugOrdersWithBaseDoseNotSet(List<EncounterTransaction.DrugOrder> drugOrders) {
         filter(drugOrders, new Predicate() {
             @Override
             boolean evaluate(Object drugOrder) {
-                return drugOrder.getDosingInstructions().getDose() != null
+                return drugOrder.getDosingInstructions().getDose() != null || drugOrder.getDrug().getName().equals("Chana")
             }
         })
     }
