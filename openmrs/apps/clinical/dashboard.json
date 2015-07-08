@@ -212,7 +212,19 @@
                         "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
                         "drugConcepts": ["Plain Insulin", "Lente Insulin", "Pioglitazone", "Glipizide", "Metformin"],
                         "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Cholesterol"]
-                    }
+                    },
+                    "observationGraph":
+                   {
+                        "type": "observationGraph",
+                        "name": "observationGraph",
+                        "title": "RBS/FBS/PP2BS",
+                        "config": {
+                        "yAxisConcepts": ["RBS", "FBS", "PP2BS"],
+                        "xAxisConcept": "observationDateTime",
+                        "numberOfVisits": 15
+                        }
+                   }     
+
                 }
             },
             {
