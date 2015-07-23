@@ -3,7 +3,6 @@
         "name": "Vitals Template Report",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Vitals"
         }
     },
@@ -11,7 +10,6 @@
         "name": "Diabetes Intake Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Diabetes Intake Template"
         }
     },
@@ -19,7 +17,6 @@
         "name": "Diabetes Followup Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Diabetes Followup Template"
         }
     },
@@ -27,7 +24,6 @@
         "name": "Tuberculosis Intake Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Tuberculosis Intake Template"
         }
     },
@@ -35,7 +31,6 @@
         "name": "Tuberculosis Followup Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Tuberculosis Followup Template"
         }
     },
@@ -43,7 +38,6 @@
         "name": "Tuberculosis Lab Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Tuberculosis Lab Template"
         }   
     },
@@ -51,7 +45,6 @@
         "name": "Operation Notes Data",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Operation Notes"
         }   
     },
@@ -59,7 +52,6 @@
         "name": "Admitted patients",
         "type": "MRSGeneric",
         "config": {
-        	"type": "sqlReport",
         	"sqlPath": "/var/www/bahmni_config/openmrs/reports/admitted_patient.sql"
 	   }
     },
@@ -67,7 +59,6 @@
         "name": "Non coded Diagnoses entered",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
        }
     },
@@ -75,17 +66,15 @@
         "name": "Abnormality report for critical tests",
         "type": "PatientsWithLabtestResults",
         "config": {
-        "type": "patientsWithLabtestResultsReport",
-        "conceptNames": "'CA-125', 'CA19-9', 'T3', 'T4', 'TSH','Hb Electrophoresis','HbsAg ELISA','HIV ELISA (Blood)','HIV ELISA (Serum)','VDRL ELISA'",
-        "testOutcome": "'abnormal'"
+        "conceptNames": ["CA-125","CA19-9","T3","T4","TSH","Hb Electrophoresis","HbsAg ELISA","HIV ELISA (Blood)","HIV ELISA (Serum)","VDRL ELISA"],
+        "testOutcome": ["abnormal"]
         }   
     },
     {
 	"name": "Patients with Tuberculosis Followups",
     	"type": "DateConceptValuesPatientsList",
         "config": {
-            "type": "dateConceptValuesReport",
-            "conceptNames": "'Tuberculosis, Next Followup Visit'",
+            "conceptNames": ["Tuberculosis, Next Followup Visit"],
             "templateName": "Tuberculosis Followup Template"
         }
     } 
