@@ -108,8 +108,7 @@
             "display": "High Risk",
             "forwardUrl": "#/patient/{{patientUuid}}/dashboard",
             "additionalParams": {
-                "additionalSearchHandler" : "emrapi.sqlSearch.additionalSearchHandler",
-                "tests": ["HIV ELISA (Blood)", "HIV ELISA (Serum)", "ZN Stain (Sputum)", "HbsAg ELISA"]
+                "tests": "'HIV ELISA (Blood)', 'HIV ELISA (Serum)', 'ZN Stain (Sputum)', 'HbsAg ELISA'"
             }
         },
         "label": "High Risk",
