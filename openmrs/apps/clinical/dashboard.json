@@ -404,13 +404,13 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
-            "patientInformation":{
+            "patientInformation": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": []
             },
-            "bp":{
+            "bp": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "BP",
@@ -423,7 +423,7 @@
                     "numberOfVisits": 10
                 }
             },
-            "weight/Bmi":{
+            "weight/Bmi": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Weight/BMI",
@@ -436,7 +436,7 @@
                     "numberOfVisits": 10
                 }
             },
-            "pulse":{
+            "pulse": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Pulse",
@@ -446,7 +446,7 @@
                     "numberOfVisits": 10
                 }
             },
-            "growthChart":{
+            "growthChart": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Growth Chart",
@@ -455,6 +455,6 @@
                     "numberOfVisits": 20
                 }
             }
-        ]
+        }
     }
 }
