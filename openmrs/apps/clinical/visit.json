@@ -1,5 +1,5 @@
-[
-    {
+{
+    "general": {
         "title": "General",
         "displayByDefault": true,
         "printing": {
@@ -8,8 +8,8 @@
             "logo": "../images/jss-icon.png"
         },
         "defaultSections": true,
-        "sections": [
-            {
+        "sections": {
+            "pivotTable": {
                 "type": "pivotTable",
                 "title": "Pivot Table",
                 "config": {
@@ -22,9 +22,9 @@
                     "labConcepts": []
                 }
             }
-        ]
+        }
     },
-    {
+    "dischargeSummary": {
         "title": "Discharge Summary",
         "displayByDefault": true,
         "printing": {
@@ -32,38 +32,47 @@
             "header": "Discharge Summary",
             "logo": "../images/jss-icon.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patientInformation": {
                 "type": "patientInformation",
                 "config": {
-                    "addressFields": ["cityVillage","address2","address3","countyDistrict"],
+                    "addressFields": [
+                        "cityVillage",
+                        "address2",
+                        "address3",
+                        "countyDistrict"
+                    ],
                     "title": "PatientInformation",
                     "patientAttributes": []
                 }
             },
-            {
+            "admissionDetails": {
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true
                 }
             },
-            {
+            "atAdmission": {
                 "type": "observation",
                 "title": "At Admission",
                 "config": {
-                    "conceptNames": ["Weight", "Height", "BMI"],
+                    "conceptNames": [
+                        "Weight",
+                        "Height",
+                        "BMI"
+                    ],
                     "scope": "initial"
                 }
             },
-            {
+            "lastRecordedWeight": {
                 "type": "observation",
                 "title": "Last Recorded Weight",
                 "config": {
-                "conceptNames": ["Weight"],
-                "scope": "latest"
+                    "conceptNames": ["Weight"],
+                    "scope": "latest"
                 }
-            },   
-            {
+            },
+            "diagnoses": {
                 "type": "diagnosis",
                 "config": {
                     "title": "Diagnoses",
@@ -72,16 +81,26 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "clinicalNotes": {
                 "type": "observation",
                 "title": "Clinical Notes",
                 "config": {
-                    "conceptNames": ["History and Examination Notes","Discharge Summary, Admission Indication","Hospital Course","Discharge Summary, Surgical Indication","Date of Operation","Operative Procedure","Lab Investigation Notes","Radiology Notes","Other Notes"],
-                    "scope":"latest",
+                    "conceptNames": [
+                        "History and Examination Notes",
+                        "Discharge Summary, Admission Indication",
+                        "Hospital Course",
+                        "Discharge Summary, Surgical Indication",
+                        "Date of Operation",
+                        "Operative Procedure",
+                        "Lab Investigation Notes",
+                        "Radiology Notes",
+                        "Other Notes"
+                    ],
+                    "scope": "latest",
                     "numberOfVisits": "1"
                 }
             },
-            {
+            "labInvestigations": {
                 "type": "investigationResult",
                 "config": {
                     "title": "Lab Investigations",
@@ -95,7 +114,7 @@
                     "latestAccessionCount": 1
                 }
             },
-            {
+            "treatments": {
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
@@ -107,14 +126,18 @@
                     "showDrugForm": true
                 }
             },
-            {
+            "adviceOnDischarge": {
                 "type": "observation",
                 "title": "Advice on Discharge",
                 "config": {
-                    "conceptNames": ["Advice on Discharge","Follow up Date","Discharge Summary, Plan for follow up"],
+                    "conceptNames": [
+                        "Advice on Discharge",
+                        "Follow up Date",
+                        "Discharge Summary, Plan for follow up"
+                    ],
                     "scope": "latest"
                 }
             }
-        ]
+        }
     }
-]
+}

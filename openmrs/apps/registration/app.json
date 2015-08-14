@@ -1,65 +1,108 @@
-[
-    {
-        "id": "bahmni.registration",
-        "instanceOf":"bahmni.template.registration",
-        "description": "Bahmni Patient Registration App",
-        "extensionPoints": [
+{
+    "id": "bahmni.registration",
+    "instanceOf": "bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "activeVisitUuid"
+    ],
+    "config": {
+        "additionalPatientInformation": [
             {
-                "id": "org.bahmni.registration.patient.search.result.action",
-                "description": "Bahmni Patient Search Result Action"
+                "name": "smoking",
+                "display": true
             },
             {
-                "id": "org.bahmni.registration.patient.next",
-                "description": "After Bahmni Patient Registration, forward url configuration"
+                "name": "alcohol",
+                "display": true
+            },
+            {
+                "name": "tbTreatmentLocation",
+                "display": true
+            },
+            {
+                "name": "landHolding",
+                "display": true
+            },
+            {
+                "name": "foodSecurity",
+                "display": true
+            },
+            {
+                "name": "rationCard",
+                "display": true
+            },
+            {
+                "name": "familySupport",
+                "display": true
+            },
+            {
+                "name": "familyIncome",
+                "display": true
+            },
+            {
+                "name": "earningMembers",
+                "display": true
+            },
+            {
+                "name": "debt",
+                "display": true
+            },
+            {
+                "name": "debtReason",
+                "display": true
+            },
+            {
+                "name": "migrationHistory",
+                "display": true
+            },
+            {
+                "name": "migrationHistoryDetails",
+                "display": true
+            },
+            {
+                "name": "distanceFromCenter",
+                "display": true
             }
         ],
-        "contextModel": [
-            "patientUuid",
-            "activeVisitUuid"
+        "autoCompleteFields": [
+            "familyName",
+            "caste"
         ],
-        "config" : {
-            "additionalPatientInformation" : [
-                { "name":"smoking", "display":true },
-                { "name":"alcohol", "display":true },
-                { "name":"tbTreatmentLocation", "display":true },
-                { "name":"landHolding", "display":true },
-                { "name":"foodSecurity", "display":true },
-                { "name":"rationCard", "display":true },
-                { "name":"familySupport", "display":true },
-                { "name":"familyIncome", "display":true },
-                { "name":"earningMembers", "display":true},
-                { "name":"debt", "display":true },
-                { "name":"debtReason", "display":true },
-                { "name":"migrationHistory", "display":true},
-                { "name":"migrationHistoryDetails", "display":true},
-                { "name":"distanceFromCenter", "display":true }
-            ],
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
-            "identifierPattern": "[0-9]{1,9}",
-            "defaultVisitType": "OPD",
-            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": false,
-            "showCasteSameAsLastNameCheckbox": true,
-            "localNameSearch": false,
-            "printOptions": [
-                {
-                    "label": "<u>P</u>rint Registration Card",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "label": "P<u>r</u>int Supplemental Paper",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                }
-            ],
-            "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": true,
-                    "label": "Fee"
-                }
+        "defaultIdentifierPrefix": "GAN",
+        "identifierPattern": "[0-9]{1,9}",
+        "defaultVisitType": "OPD",
+        "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+        "showMiddleName": false,
+        "showCasteSameAsLastNameCheckbox": true,
+        "localNameSearch": false,
+        "printOptions": [
+            {
+                "label": "<u>P</u>rint Registration Card",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                "shortcutKey": "p"
+            },
+            {
+                "label": "P<u>r</u>int Supplemental Paper",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                "shortcutKey": "r"
+            }
+        ],
+        "conceptSetUI": {
+            "REGISTRATION FEES": {
+                "required": true,
+                "label": "Fee"
             }
         }
     }
-]
+}

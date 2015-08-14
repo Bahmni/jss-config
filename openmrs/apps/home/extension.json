@@ -1,5 +1,5 @@
-[
-    {
+{
+    "bahmniRegistration": {
         "id": "bahmni.registration",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -9,7 +9,7 @@
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
-    {
+    "bahmniClinical": {
         "id": "bahmni.clinical",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -19,7 +19,7 @@
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
-    {
+    "bahmniAdt": {
         "id": "bahmni.adt",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -29,7 +29,7 @@
         "order": 4,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmniRadiologyDocumentUpload": {
         "id": "bahmni.radiology.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -39,7 +39,7 @@
         "order": 5,
         "requiredPrivilege": "app:document-upload"
     },
-    {
+    "bahmniPatientDocumentUpload": {
         "id": "bahmni.patient.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -49,7 +49,7 @@
         "order": 6,
         "requiredPrivilege": "app:document-upload"
     },
-    {
+    "bahmniAdmin": {
         "id": "bahmni.admin",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -59,8 +59,8 @@
         "order": 7,
         "requiredPrivilege": "app:admin"
     },
-    {
-	    "id": "bahmni.billing",
+    "bahmniBilling": {
+        "id": "bahmni.billing",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Prescription",
@@ -69,7 +69,7 @@
         "order": 8,
         "requiredPrivilege": "app:billing"
     },
-    {
+    "bahmniDhis": {
         "id": "bahmni.dhis",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -79,7 +79,7 @@
         "order": 9,
         "requiredPrivilege": "app:dhis"
     },
-    {
+    "bahmniOrders": {
         "id": "bahmni.orders",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -89,7 +89,7 @@
         "order": 10,
         "requiredPrivilege": "app:orders"
     },
-    {
+    "bahmniReports": {
         "id": "bahmni.reports",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -98,4 +98,4 @@
         "icon": "fa-user",
         "order": 11
     }
-]
+}

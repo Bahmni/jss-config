@@ -1,70 +1,75 @@
-[
-    {
-        "id": "bahmni.registration.navigation.patient.search",
-        "extensionPointId": "org.bahmni.registration.navigation",
-        "type": "link",
-        "label": "Se<u>a</u>rch",
-        "url": "/search",
-        "shortcutKey": "a",
-        "icon": "fa-search",
-        "order": 1,
-        "requiredPrivilege": "View Patients"
+{
+  "search": {
+    "id": "bahmni.registration.navigation.patient.search",
+    "extensionPointId": "org.bahmni.registration.navigation",
+    "type": "link",
+    "label": "Se<u>a</u>rch",
+    "url": "/search",
+    "shortcutKey": "a",
+    "icon": "fa-search",
+    "order": 1,
+    "requiredPrivilege": "View Patients"
+  },
+  "createNew": {
+    "id": "bahmni.registration.navigation.patient.create",
+    "extensionPointId": "org.bahmni.registration.navigation",
+    "type": "link",
+    "label": "Create <u>N</u>ew",
+    "url": "/patient/new",
+    "icon": "fa-plus",
+    "shortcutKey": "n",
+    "order": 2,
+    "requiredPrivilege": "Add Patients"
+  },
+  "view": {
+    "id": "bahmni.patient.search.result.action.edit",
+    "extensionPointId": "org.bahmni.registration.patient.search.result.action",
+    "type": "link",
+    "label": "View",
+    "url": "/patient/{{patientUuid}}",
+    "icon": "fa-patient-edit",
+    "order": 1,
+    "requiredPrivilege": "Edit Patients"
+  },
+  "enterConsultation": {
+    "id": "bahmni.patient.registration.next",
+    "extensionPointId": "org.bahmni.registration.patient.next",
+    "type": "config",
+    "extensionParams": {
+      "display": "Enter <u>C</u>onsultation",
+      "shortcutKey": "c",
+      "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
     },
-    {
-        "id": "bahmni.registration.navigation.patient.create",
-        "extensionPointId": "org.bahmni.registration.navigation",
-        "type": "link",
-        "label": "Create <u>N</u>ew",
-        "url": "/patient/new",
-        "icon": "fa-plus",
-        "shortcutKey": "n",
-        "order": 2,
-        "requiredPrivilege": "Add Patients"
+    "order": 1,
+    "requiredPrivilege": "RegisterAndConsult"
+  },
+  "nutritionalValues": {
+    "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
+    "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Nutritional Values",
+      "conceptNames": [
+        "Height",
+        "Weight",
+        "BMI Data",
+        "BMI Status Data"
+      ],
+      "required": true,
+      "showLatest": true
     },
-    {
-        "id": "bahmni.patient.search.result.action.edit",
-        "extensionPointId": "org.bahmni.registration.patient.search.result.action",
-        "type": "link",
-        "label": "View",
-        "url": "/patient/{{patientUuid}}",
-        "icon": "fa-patient-edit",
-        "order": 1,
-        "requiredPrivilege": "Edit Patients"
+    "order": 1,
+    "requiredPrivilege": "Edit Visits"
+  },
+  "feeInformation": {
+    "id": "bahmni.registration.conceptSetGroup.feeInformation",
+    "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Fee Information",
+      "required": true
     },
-    {
-        "id": "bahmni.patient.registration.next",
-        "extensionPointId": "org.bahmni.registration.patient.next",
-        "type": "config",
-        "extensionParams" : {
-            "display": "Enter <u>C</u>onsultation",
-            "shortcutKey": "c",
-            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
-        },
-        "order": 1,
-        "requiredPrivilege": "RegisterAndConsult"
-    },
-    {
-        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Nutritional Values",
-			"conceptNames": ["Height", "Weight", "BMI Data", "BMI Status Data"],
-            "required":true,
-            "showLatest": true
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    {
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Fee Information",
-            "required":true
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Visits"
-    }
-]
+    "order": 2,
+    "requiredPrivilege": "Edit Visits"
+  }
+}
