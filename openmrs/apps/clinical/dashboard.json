@@ -17,7 +17,8 @@
                     "debt",
                     "distanceFromCenter"
                 ],
-                "addressFields": []
+                "addressFields": [],
+                "displayOrder": 0
             },
             "nutritionalValue": {
                 "title": "Nutritional Values",
@@ -31,14 +32,16 @@
                         "BMI Status Data"
                     ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 1
             },
             "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showDetailsButton": false,
                 "showCertainty": true,
-                "showOrder": true
+                "showOrder": true,
+                "displayOrder": 2
             },
             "vitals": {
                 "title": "Vitals",
@@ -67,7 +70,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 3
             },
             "labResults": {
                 "title": "Lab Results",
@@ -83,7 +87,8 @@
                 },
                 "allLabDetails": {
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 4
             },
             "treatments": {
                 "title": "Treatments",
@@ -106,11 +111,13 @@
                     "numberOfVisits": 10,
                     "showOtherActive": true,
                     "showDetailsButton": false
-                }
+                },
+                "displayOrder": 5
             },
             "radiology": {
                 "title": "Radiology",
-                "name": "radiology"
+                "name": "radiology",
+                "displayOrder": 6
             },
             "visits": {
                 "title": "Visits",
@@ -118,11 +125,13 @@
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 10
-                }
+                },
+                "displayOrder": 7
             },
             "admissionDetails": {
                 "title": "Admission Details",
-                "name": "admissionDetails"
+                "name": "admissionDetails",
+                "displayOrder": 8
             },
             "generalFindings": {
                 "title": "General Findings",
@@ -140,7 +149,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 9
             },
             "obsGynaeFindings": {
                 "title": "Obs/Gynae Findings",
@@ -158,7 +168,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 10
             },
             "surgeriesProcedures": {
                 "title": "Surgeries/Procedures",
@@ -176,7 +187,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 11
             },
             "breastCancer": {
                 "title": "Breast Cancer",
@@ -186,8 +198,7 @@
                     "Breast Cancer, Confirmed Disease Stage",
                     "Breast Cancer, Treatment Plan"
                 ],
-                "dashboardParams": {
-                },
+                "dashboardParams": {},
                 "allDiseaseDetails": {
                     "showDetailsButton": true,
                     "pivotTable": {
@@ -197,7 +208,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 12
             },
             "diabetes": {
                 "title": "Diabetes",
@@ -250,7 +262,8 @@
                             "numberOfVisits": 15
                         }
                     }
-                }
+                },
+                "displayOrder": 13
             },
             "tuberculosis": {
                 "title": "Tuberculosis",
@@ -306,13 +319,16 @@
                             "HIV ELISA (Blood)"
                         ]
                     }
-                }
+                },
+                "displayOrder": 14
             },
             "psychiatry": {
                 "title": "Psychiatry",
                 "templateName": "Psychiatry Templates",
                 "name": "diseaseTemplate",
-                "showOnly": ["Psychiatry, Patient Notes"],
+                "showOnly": [
+                    "Psychiatry, Patient Notes"
+                ],
                 "dashboardParams": {},
                 "allDiseaseDetails": {
                     "showDetailsButton": true,
@@ -323,7 +339,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 15
             },
             "cervicalCancer": {
                 "title": "Cervical Cancer",
@@ -341,7 +358,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 16
             },
             "gastricCancer": {
                 "title": "Gastric Cancer",
@@ -359,7 +377,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 17
             },
             "colonCancer": {
                 "title": "Colon Cancer",
@@ -377,7 +396,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 18
             },
             "oralCancer": {
                 "title": "Oral Cancer",
@@ -395,7 +415,8 @@
                         "drugConcepts": [],
                         "labConcepts": []
                     }
-                }
+                },
+                "displayOrder": 19
             }
         }
     },
@@ -408,7 +429,8 @@
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
-                "addressFields": []
+                "addressFields": [],
+                "displayOrder": 0
             },
             "bp": {
                 "type": "observationGraph",
@@ -421,7 +443,8 @@
                     ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 1
             },
             "weight/Bmi": {
                 "type": "observationGraph",
@@ -434,17 +457,21 @@
                     ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 2
             },
             "pulse": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Pulse",
                 "config": {
-                    "yAxisConcepts": ["Pulse"],
+                    "yAxisConcepts": [
+                        "Pulse"
+                    ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 3
             },
             "growthChart": {
                 "type": "observationGraph",
@@ -453,7 +480,8 @@
                 "config": {
                     "referenceData": "growthChartReference.csv",
                     "numberOfVisits": 20
-                }
+                },
+                "displayOrder": 4
             }
         }
     }

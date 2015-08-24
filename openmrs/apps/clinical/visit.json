@@ -20,7 +20,8 @@
                     ],
                     "drugConcepts": [],
                     "labConcepts": []
-                }
+                },
+                "displayOrder": 0
             }
         }
     },
@@ -44,13 +45,15 @@
                     ],
                     "title": "PatientInformation",
                     "patientAttributes": []
-                }
+                },
+                "displayOrder": 0
             },
             "admissionDetails": {
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             },
             "atAdmission": {
                 "type": "observation",
@@ -62,15 +65,19 @@
                         "BMI"
                     ],
                     "scope": "initial"
-                }
+                },
+                "displayOrder": 2
             },
             "lastRecordedWeight": {
                 "type": "observation",
                 "title": "Last Recorded Weight",
                 "config": {
-                    "conceptNames": ["Weight"],
+                    "conceptNames": [
+                        "Weight"
+                    ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 3
             },
             "diagnoses": {
                 "type": "diagnosis",
@@ -79,7 +86,8 @@
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 4
             },
             "clinicalNotes": {
                 "type": "observation",
@@ -98,7 +106,8 @@
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"
-                }
+                },
+                "displayOrder": 5
             },
             "labInvestigations": {
                 "type": "investigationResult",
@@ -112,7 +121,8 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 1,
                     "latestAccessionCount": 1
-                }
+                },
+                "displayOrder": 6
             },
             "treatments": {
                 "type": "treatment",
@@ -124,7 +134,8 @@
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
-                }
+                },
+                "displayOrder": 7
             },
             "adviceOnDischarge": {
                 "type": "observation",
@@ -136,7 +147,8 @@
                         "Discharge Summary, Plan for follow up"
                     ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 8
             }
         }
     }
