@@ -1650,4 +1650,57 @@
             order by en.encounter_datetime desc','Sql query to get list of active patients by provider uuid',uuid());
         </sql>
     </changeSet>
+
+    <changeSet id="JSS-201508211040" author="JP, Charles">
+        <comment>Add Blood Group concept with answers</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Blood Group Result', 'Blood Group', 'Coded', 'Misc', false);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'A+', 'A+', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 1);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'A-', 'A-', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 2);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'B+', 'B+', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 3);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'B-', 'B-', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 4);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'AB+', 'AB+', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 5);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'AB-', 'AB-', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 6);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'O+', 'O+', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 7);
+
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'O-', 'O-', 'Text', 'Misc', false);
+            call add_concept_answer(@concept_id, @answer_concept_id, 8);
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201508211030" author="JP, Charles">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM person_attribute_type where name = 'bloodGroup';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Blood Group person attribute type</comment>
+        <sql>
+            set @concept_id = 0;
+
+            SELECT concept_id INTO @concept_id FROM concept_name where name = 'Blood Group Result' and concept_name_type='FULLY_SPECIFIED';
+
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid, foreign_key) VALUES ('bloodGroup', 'Blood Group', 'org.openmrs.Concept', '1', 1, now(), 0, 3, uuid(), @concept_id);
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
