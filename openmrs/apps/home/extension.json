@@ -64,7 +64,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Prescription",
-        "url": "../clinical/",
+        "url": "../clinical/#DEFAULT/patient/search",
         "icon": "fa-stethoscope",
         "order": 8,
         "requiredPrivilege": "app:billing"
