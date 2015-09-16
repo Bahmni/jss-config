@@ -6,7 +6,7 @@
 	"extensionParams": {
 	  "searchHandler": "emrapi.sqlSearch.activePatients",
 	  "display": "Lab Order",
-	  "forwardUrl": "../clinical/#/patient/{{patientUuid}}/dashboard",
+	  "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard",
 	  "forwardButtonTitle": "View",
 	  "view": "tabular"
 	},
