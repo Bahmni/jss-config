@@ -88,12 +88,12 @@
         "localNameSearch": false,
         "printOptions": [
             {
-                "label": "<u>P</u>rint Registration Card",
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                 "shortcutKey": "p"
             },
             {
-                "label": "P<u>r</u>int Supplemental Paper",
+                "label": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
                 "shortcutKey": "r"
             }
