@@ -80,7 +80,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "translationKey": "MODULE_LABEL_ACTIVE_KEY",
-      "forwardUrl": "#/patient/{{patientUuid}}/treatment"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
     },
     "label": "Active",
     "order": 1,
