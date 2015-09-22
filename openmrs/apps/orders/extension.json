@@ -5,7 +5,7 @@
 	"type": "config",
 	"extensionParams": {
 	  "searchHandler": "emrapi.sqlSearch.activePatients",
-	  "display": "Lab Order",
+	  "translationKey": "MODULE_LABEL_LAB_ORDER_KEY",
 	  "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard",
 	  "forwardButtonTitle": "View",
 	  "view": "tabular"

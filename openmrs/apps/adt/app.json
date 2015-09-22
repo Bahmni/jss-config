@@ -33,7 +33,7 @@
             "conceptName": "Adt Notes",
             "sections": {
                 "vitals": {
-                    "title": "Vitals",
+                    "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                     "name": "vitals",
                     "isObservation": true,
                     "dashboardParams": {
@@ -53,12 +53,13 @@
                 },
                 "disposition": {
                     "title": "Disposition",
+                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
                     "name": "disposition",
                     "numberOfVisits": 1,
                     "displayOrder": 1
                 },
                 "admissionDetails": {
-                    "title": "Admission Details",
+                    "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                     "name": "admissionDetails",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,

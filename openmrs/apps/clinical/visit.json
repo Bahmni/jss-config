@@ -51,13 +51,14 @@
             "admissionDetails": {
                 "type": "admissionDetails",
                 "config": {
-                    "showDetailsButton": true
+                    "showDetailsButton": true,
+                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
                 },
                 "displayOrder": 1
             },
             "atAdmission": {
                 "type": "observation",
-                "title": "At Admission",
+                "translationKey": "DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
                 "config": {
                     "conceptNames": [
                         "Weight",
@@ -70,7 +71,7 @@
             },
             "lastRecordedWeight": {
                 "type": "observation",
-                "title": "Last Recorded Weight",
+                "translationKey":"DISCHARGE_SUMMARY_LAST_RECORDED_WEIGHT_KEY",
                 "config": {
                     "conceptNames": [
                         "Weight"
@@ -82,7 +83,7 @@
             "diagnoses": {
                 "type": "diagnosis",
                 "config": {
-                    "title": "Diagnoses",
+                    "translationKey":"DISCHARGE_SUMMARY_DIAGNOSES_KEY",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
@@ -139,7 +140,7 @@
             },
             "adviceOnDischarge": {
                 "type": "observation",
-                "title": "Advice on Discharge",
+                "translationKey": "DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
                 "config": {
                     "conceptNames": [
                         "Advice on Discharge",
