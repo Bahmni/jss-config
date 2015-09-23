@@ -1703,4 +1703,28 @@
         </sql>
     </changeSet>
 
+    <changeSet id="JSS-201509232323" author="Swathi, Jaswanth" context="rel0.76">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM person_attribute_type where name = 'Telephone Number';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Telephone Number person attribute type</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('Telephone Number', 'Telephone Number', 'java.lang.String', '0', 1, now(), 0, 3, uuid());
+        </sql>
+    </changeSet>
+
+    <changeSet id="JSS-201509232326" author="Swathi, Jaswanth" context="rel0.76">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM person_attribute_type where name = 'Unknown patient';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Unknown patient person attribute type</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('Unknown patient', 'Unknown Patient', 'java.lang.String', '0', 1, now(), 0, 3, uuid());
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
