@@ -129,6 +129,7 @@
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
+                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
