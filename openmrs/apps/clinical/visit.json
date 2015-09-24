@@ -27,7 +27,6 @@
     },
     "dischargeSummary": {
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
-        "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Discharge Summary",
@@ -92,7 +91,7 @@
             },
             "clinicalNotes": {
                 "type": "observation",
-                "title": "Clinical Notes",
+                "translationKey": "Clinical Notes",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
@@ -113,7 +112,7 @@
             "labInvestigations": {
                 "type": "investigationResult",
                 "config": {
-                    "title": "Lab Investigations",
+                    "translationKey": "Lab Investigations",
                     "showChart": true,
                     "showTable": false,
                     "showNormalLabResults": true,
