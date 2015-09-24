@@ -27,6 +27,7 @@
 
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_TRENDS_KEY": "Trends",
+  "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY": "Discharge Summary",
 
   "LAB_INVESTIGATIONS_KEY":"Lab Investigations",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Pacs Orders Visit Page",

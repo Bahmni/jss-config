@@ -1,6 +1,6 @@
 {
     "general": {
-        "title": "General",
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
@@ -26,7 +26,7 @@
         }
     },
     "dischargeSummary": {
-        "title": "Discharge Summary",
+        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
