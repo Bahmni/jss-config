@@ -6,7 +6,7 @@ import java.util.Locale
 import java.util.Set
 
 public class BloodGroupUpdater implements ElisFeedInterceptor {
-    public static final String BLOOD_GROUP_TEST_NAME = "Blood Group";
+    public static final String BLOOD_GROUP_TEST_NAME = "Patient Blood Group";
     public static final String BLOOD_GROUP_PATIENT_ATTRIBUTE_TYPE = "bloodGroup";
     public BahmniBridge bahmniBridge;
 
