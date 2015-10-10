@@ -1,6 +1,6 @@
 {
     "dashboard": {
-        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "dashboardName": "Dashboard",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
@@ -21,7 +21,7 @@
                 "displayOrder": 0
             },
             "nutritionalValue": {
-                "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+                "title": "Nutritional Values",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -36,7 +36,7 @@
                 "displayOrder": 1
             },
             "diagnosis": {
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "title": "Diagnosis",
                 "name": "diagnosis",
                 "showDetailsButton": false,
                 "showCertainty": true,
@@ -44,7 +44,7 @@
                 "displayOrder": 2
             },
             "vitals": {
-                "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -74,7 +74,7 @@
                 "displayOrder": 3
             },
             "labResults": {
-                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
                     "title": null,
@@ -91,7 +91,7 @@
                 "displayOrder": 4
             },
             "treatments": {
-                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
                     "showFlowSheet": false,
@@ -103,7 +103,7 @@
                     "showDetailsButton": false
                 },
                 "allTreatmentDetails": {
-                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                    "title": "Treatments",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showRoute": true,
@@ -115,12 +115,12 @@
                 "displayOrder": 5
             },
             "radiology": {
-                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "title": "Radiology",
                 "name": "radiology",
                 "displayOrder": 6
             },
             "visits": {
-                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+                "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
@@ -129,7 +129,7 @@
                 "displayOrder": 7
             },
             "admissionDetails": {
-                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                "title": "Admission Details",
                 "name": "admissionDetails",
                 "displayOrder": 8
             },
@@ -421,7 +421,7 @@
         }
     },
     "trends": {
-        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
+        "dashboardName": "Trends",
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {

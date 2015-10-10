@@ -3,7 +3,7 @@
     "id": "bahmni.clinical.consultation.observations",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Observations",
+    "label": "Observations",
     "url": "concept-set-group/observations",
     "default": true,
     "icon": "fa-user-md",
@@ -14,7 +14,7 @@
     "id": "bahmni.clinical.consultation.diagnosis",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Diagnosis",
+    "label": "Diagnosis",
     "url": "diagnosis",
     "icon": "fa-user-md",
     "order": 2,
@@ -24,7 +24,7 @@
     "id": "bahmni.clinical.consultation.disposition",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Disposition",
+    "label": "Disposition",
     "url": "disposition",
     "icon": "fa-user-md",
     "order": 3,
@@ -34,7 +34,7 @@
     "id": "bahmni.clinical.consultation.summary",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Consultation",
+    "label": "Consultation",
     "url": "consultation",
     "icon": "fa-user-md",
     "order": 4,
@@ -44,7 +44,7 @@
     "id": "bahmni.clinical.consultation.treatment",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Treatment",
+    "label": "Treatment",
     "url": "treatment",
     "icon": "fa-user-md",
     "order": 5,
@@ -54,7 +54,7 @@
     "id": "bahmni.clinical.billing.treatment",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Treatment",
+    "label": "Treatment",
     "url": "treatment",
     "icon": "fa-user-md",
     "order": 5,
@@ -66,7 +66,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
+      "display": "Active",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
@@ -79,7 +79,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
+      "display": "Active",
       "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
     },
     "label": "Active",
@@ -94,7 +94,7 @@
       "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
       "display": "My Patients",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-      "translationKey":"MODULE_LABEL_MY_PATIENTS_KEY"
+      "label":"My Patients"
     },
     "label": "Active",
     "order": 2,
@@ -107,7 +107,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.highRiskPatients",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-      "translationKey": "MODULE_LABEL_HIGH_RISK_KEY",
+      "display": "High Risk",
       "additionalParams": {
         "tests": "'HIV ELISA (Blood)', 'HIV ELISA (Serum)', 'ZN Stain (Sputum)', 'HbsAg ELISA'"
       }
@@ -123,7 +123,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
       "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
-      "translationKey":"MODULE_LABEL_MY_PATIENTS_KEY"
+      "display":"My Patients"
     },
     "label": "Active",
     "order": 2,
@@ -134,7 +134,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-    "translationKey": "MODULE_LABEL_ALL_KEY",
+    "display": "All",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
@@ -146,7 +146,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-    "translationKey": "MODULE_LABEL_ALL_KEY",
+    "display": "All",
       "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
     },
     "label": "All",
@@ -157,7 +157,7 @@
     "id": "bahmni.clinical.treatment.links",
     "extensionPointId": "org.bahmni.clinical.treatment.links",
     "type": "link",
-    "translationKey": "Open <u>Q</u>uotation",
+    "label": "Open <u>Q</u>uotation",
     "url": "http://192.168.0.152:8069/quotations/latest?patient_ref={{patient_ref}}",
     "shortcutKey": "q",
     "requiredPrivilege": "app:billing"
@@ -166,7 +166,7 @@
     "id": "bahmni.clinical.consultation.orders",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "translationKey": "Orders",
+    "label": "Orders",
     "url": "orders",
     "icon": "fa-user-md",
     "order": 6,

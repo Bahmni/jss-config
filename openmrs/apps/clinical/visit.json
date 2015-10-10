@@ -1,6 +1,6 @@
 {
     "general": {
-        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "title": "General",
         "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
@@ -26,7 +26,7 @@
         }
     },
     "dischargeSummary": {
-        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
+        "title": "Discharge Summary",
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Discharge Summary",
@@ -50,14 +50,13 @@
             "admissionDetails": {
                 "type": "admissionDetails",
                 "config": {
-                    "showDetailsButton": true,
-                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
+                    "showDetailsButton": true
                 },
                 "displayOrder": 1
             },
             "atAdmission": {
                 "type": "observation",
-                "translationKey": "DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
+                "title": "At Admission",
                 "config": {
                     "conceptNames": [
                         "Weight",
@@ -70,7 +69,7 @@
             },
             "lastRecordedWeight": {
                 "type": "observation",
-                "translationKey":"DISCHARGE_SUMMARY_LAST_RECORDED_WEIGHT_KEY",
+                "title": "Last Recorded Weight",
                 "config": {
                     "conceptNames": [
                         "Weight"
@@ -82,7 +81,7 @@
             "diagnoses": {
                 "type": "diagnosis",
                 "config": {
-                    "translationKey":"DISCHARGE_SUMMARY_DIAGNOSES_KEY",
+                    "title": "Diagnoses",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
@@ -91,7 +90,7 @@
             },
             "clinicalNotes": {
                 "type": "observation",
-                "translationKey": "Clinical Notes",
+                "title": "Clinical Notes",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
@@ -112,7 +111,7 @@
             "labInvestigations": {
                 "type": "investigationResult",
                 "config": {
-                    "translationKey": "Lab Investigations",
+                    "title": "Lab Investigations",
                     "showChart": true,
                     "showTable": false,
                     "showNormalLabResults": true,
@@ -128,7 +127,6 @@
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
-                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -140,7 +138,7 @@
             },
             "adviceOnDischarge": {
                 "type": "observation",
-                "translationKey": "DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
+                "title": "Advice on Discharge",
                 "config": {
                     "conceptNames": [
                         "Advice on Discharge",
