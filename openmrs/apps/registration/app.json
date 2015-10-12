@@ -17,64 +17,27 @@
         "activeVisitUuid"
     ],
     "config": {
-        "additionalPatientInformation": [
-            {
-                "name": "smoking",
-                "display": true
-            },
-            {
-                "name": "alcohol",
-                "display": true
-            },
-            {
-                "name": "tbTreatmentLocation",
-                "display": true
-            },
-            {
-                "name": "landHolding",
-                "display": true
-            },
-            {
-                "name": "foodSecurity",
-                "display": true
-            },
-            {
-                "name": "rationCard",
-                "display": true
-            },
-            {
-                "name": "familySupport",
-                "display": true
-            },
-            {
-                "name": "familyIncome",
-                "display": true
-            },
-            {
-                "name": "earningMembers",
-                "display": true
-            },
-            {
-                "name": "debt",
-                "display": true
-            },
-            {
-                "name": "debtReason",
-                "display": true
-            },
-            {
-                "name": "migrationHistory",
-                "display": true
-            },
-            {
-                "name": "migrationHistoryDetails",
-                "display": true
-            },
-            {
-                "name": "distanceFromCenter",
-                "display": true
+        "patientInformation": {
+            "additionalPatientInformation": {
+                "title": "Additional Patient Information",
+                "attributes": [
+                    "smoking",
+                    "alcohol",
+                    "tbTreatmentLocation",
+                    "landHolding",
+                    "foodSecurity",
+                    "rationCard",
+                    "familySupport",
+                    "familyIncome",
+                    "earningMembers",
+                    "debt",
+                    "debtReason",
+                    "migrationHistory",
+                    "migrationHistoryDetails",
+                    "distanceFromCenter"
+                ]
             }
-        ],
+        },
         "autoCompleteFields": [
             "familyName",
             "caste"
