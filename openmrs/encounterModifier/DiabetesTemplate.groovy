@@ -46,14 +46,14 @@ public class DiabetesTemplate extends EncounterModifier {
                         drugOrder(GLIPIZIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "Before breakfast"),
                         drugOrder(METFORMIN, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "After lunch"),
                         drugOrder(PIOGLITAZONE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "After lunch"),
-                        drugOrder(INSULIN_30_70_CARTIGES, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, DOSAGE.IU, 1, DURATION.MONTHS, "Before breakfast and before dinner"),
-                        drugOrder(BIPHASIC_ISOPHANE_INSULIN_30_70, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, DOSAGE.IU, 1, DURATION.MONTHS, "Before breakfast and before dinner"),
+                        drugOrder(INSULIN_30_70_CARTIGES, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, "Unit(s)", 1, DURATION.MONTHS, "Before breakfast and before dinner"),
+                        drugOrder(BIPHASIC_ISOPHANE_INSULIN_30_70, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, "Unit(s)", 1, DURATION.MONTHS, "Before breakfast and before dinner"),
                 )
                 break
             case KETOACIDOSIS:
                 drugOrders.addAll(
 //                        drugOrder(INSULIN_PLAIN, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.THRICE_A_DAY, null, "Unit(s)", null, null, "Before meals"),
-                        drugOrder(BIPHASIC_ISOPHANE_INSULIN_50_50, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, DOSAGE.IU, 1, DURATION.MONTHS, null),
+                        drugOrder(BIPHASIC_ISOPHANE_INSULIN_50_50, null, DOSAGE.IU, ROUTE.SUBCUTANEOUS, DOSAGE_FREQUENCY.TWICE_A_DAY, null, "Unit(s)", 1, DURATION.MONTHS, null),
                         drugOrder(GLIBENCLAMIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, null),
 //                        drugOrder(GLIMEPIRIDE, 1, DOSAGE.TABLETS, ROUTE.ORAL, DOSAGE_FREQUENCY.ONCE_A_DAY, 30, DOSAGE.TABLETS, 1, DURATION.MONTHS, "With breakfast or lunch"),
                 )
