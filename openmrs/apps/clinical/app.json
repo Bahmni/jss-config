@@ -323,7 +323,7 @@
           "route": "Nasal"
         },
         "Syrup": {
-          "doseUnits": "ml",
+          "doseUnits": "ml (syrup)",
           "route": "Oral"
         },
         "Tablet": {
