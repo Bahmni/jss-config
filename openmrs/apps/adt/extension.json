@@ -87,6 +87,19 @@
     "order": 2,
     "requiredPrivilege": "app:adt"
   },
+  "bahmniAdtPatientsSearchNewAdmissions": {
+    "id": "bahmni.adt.patients.search.patientsNewAdmissions",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.patientsAdmittedToday",
+      "display": "New Admissions",
+      "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer"
+    },
+    "label": "New Admissions",
+    "order": 1,
+    "requiredPrivilege": "app:adt"
+  },
   "bahmniAdtPatientsSearchPatientsToAdmit": {
     "id": "bahmni.adt.patients.search.patientsToAdmit",
     "extensionPointId": "org.bahmni.patient.search",
@@ -97,7 +110,7 @@
       "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
     },
     "label": "To Admit",
-    "order": 1,
+    "order": 2,
     "requiredPrivilege": "app:adt"
   },
   "bahmniAdtPatientsSearchPatientsAdmitted": {
@@ -110,7 +123,7 @@
       "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer"
     },
     "label": "Admitted",
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:adt"
   },
   "bahmniAdtPatientsSearchPatientsToDischarge": {
@@ -123,7 +136,7 @@
       "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
     },
     "label": "To Discharge",
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:adt"
   },
   "bahmniAdtPatientsSearchAllPatients": {
