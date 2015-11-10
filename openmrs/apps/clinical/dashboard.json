@@ -7,6 +7,7 @@
             "patientInformation": {
                 "title": "Patient Information",
                 "name": "patientInformation",
+                "ageLimit": 5,
                 "patientAttributes": [
                     "smoking",
                     "alcohol",
@@ -417,6 +418,29 @@
                     }
                 },
                 "displayOrder": 19
+            },
+            "programs": {
+                "title": "Programs",
+                "name": "programs",
+                "displayOrder": 20
+             },
+            "smartCard": {
+                "title": "Smart Card",
+                "templateName": "Smart Card Templates",
+                "name": "diseaseTemplate",
+                "showOnly": [],
+                "dashboardParams": {},
+                "allDiseaseDetails": {
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "15",
+                        "groupBy": "visits",
+                        "obsConcepts": [],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                },
+                "displayOrder": 21
             }
         }
     },
@@ -481,6 +505,45 @@
                     "numberOfVisits": 20
                 },
                 "displayOrder": 4
+            }
+        }
+    },
+    "Smart Card": {
+        "dashboardName": "Smart Card",
+        "displayByDefault": false,
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "patientInformation": {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": [
+                    "Smart card holder",
+                    "Smart card brought"
+                ],
+                "addressFields": [],
+                "displayOrder": 0
+            },
+            "programs": {
+                "title": "Programs",
+                "name": "programs",
+                "displayOrder": 20
+             },
+            "smartCard": {
+                "title": "Smart Card",
+                "templateName": "Smart Card Templates",
+                "name": "diseaseTemplate",
+                "showOnly": [],
+                "dashboardParams": {},
+                "allDiseaseDetails": {
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "15",
+                        "groupBy": "visits",
+                        "obsConcepts": [],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                }
             }
         }
     }
