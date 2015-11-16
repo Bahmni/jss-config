@@ -1,0 +1,24 @@
+div.cert-header {
+    text-decoration: underline;
+    align-content: center;
+    font-weight: bold;
+    width: 100%;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
+    line-height: 3;
+}
+div.cert-center {
+    align-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.8;
+}
+div.cert-right{
+    align-content: center;
+    text-align: right;
+}
+span.cert-entry{
+    font-weight: bold;
+    text-decoration: underline;
+}
