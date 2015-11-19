@@ -129,7 +129,7 @@ public static class TBRegimen {
         filter(drugOrders, new Predicate() {
             @Override
             boolean evaluate(Object drugOrder) {
-                return drugOrder.getDosingInstructions().getDose() != null || drugOrder.getDrug().getName().equals("Chana")
+                return drugOrder.getDosingInstructions().getDose() != null || areSameDrugNames(drugOrder, "Chana")
             }
         })
     }
@@ -396,12 +396,15 @@ public static class TBRegimen {
 
     private static EncounterTransaction.DrugOrder getDrugOrder(List<EncounterTransaction.DrugOrder> drugOrders, String drugName) {
         for (EncounterTransaction.DrugOrder drugOrder : drugOrders) {
-            if (drugOrder.getDrug().getName().equals(drugName)) {
+            if (areSameDrugOrders(drugOrder, drugName)) {
                 return drugOrder;
             }
         }
         return null;
     }
 
+    private boolean areSameDrugNames(EncounterTransaction.DrugOrder drugOrder, String drugName){
+        return drugOrder.getDrug() ? drugOrder.getDrug().getName().equals(drugName) : drugOrder.getDrugNonCoded().equals(drugName);
+    }
 
 }
