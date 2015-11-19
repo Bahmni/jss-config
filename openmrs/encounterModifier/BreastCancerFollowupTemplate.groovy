@@ -42,7 +42,7 @@ public class BreastCancerFollowupTemplate extends EncounterModifier {
         List<EncounterTransaction.DrugOrder> activeDrugOrders = bahmniBridge.activeDrugOrdersForPatient();
         for (EncounterTransaction.DrugOrder drugOrder: drugOrders ) {
             for (EncounterTransaction.DrugOrder activeDrugOrder : activeDrugOrders) {
-                if(activeDrugOrder.getDrug().getName().equals(drugOrder.getDrug().getName()) && activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm())){
+                if(areSameDrugOrders(drugOrder, activeDrugOrder)){
                     drugOrder.setEffectiveStartDate(DrugOrderUtil.aSecondAfter(activeDrugOrder.getEffectiveStopDate()));
                 }
             }
@@ -77,7 +77,7 @@ public class BreastCancerFollowupTemplate extends EncounterModifier {
 
     private EncounterTransaction.DrugOrder getDrugOrder(List<EncounterTransaction.DrugOrder> drugOrders, String drugName) {
         for (EncounterTransaction.DrugOrder drugOrder : drugOrders) {
-            if (drugOrder.getDrug().getName().equals(drugName)) {
+            if (areSameDrugNames(drugOrder, drugName)) {
                 return drugOrder;
             }
         }
@@ -132,5 +132,16 @@ public class BreastCancerFollowupTemplate extends EncounterModifier {
             return Math.sqrt(weight * height / 3600);
         }
         return Math.pow(weight, 0.425) * Math.pow(height, 0.725) * 0.007184;
+    }
+
+    private boolean areSameDrugOrders(EncounterTransaction.DrugOrder activeDrugOrder, EncounterTransaction.DrugOrder drugOrder){
+        return drugOrder.getDrug() != null &&  activeDrugOrder.getDrug() != null ? drugOrder.getDrug().getName().equals(activeDrugOrder.getDrug().getName())  &&
+                activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm()):
+                drugOrder.getDrugNonCoded().equals(activeDrugOrder.getDrugNonCoded() &&
+                        drugOrder.getDosingInstructions().getDoseUnits().equals(activeDrugOrder.getDosingInstructions().getDoseUnits()))
+    }
+
+    private boolean areSameDrugNames(EncounterTransaction.DrugOrder drugOrder, String drugName){
+        return drugOrder.getDrug() ? drugOrder.getDrug().getName().equals(drugName) : drugOrder.getDrugNonCoded().equals(drugName);
     }
 }
