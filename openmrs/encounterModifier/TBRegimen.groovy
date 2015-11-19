@@ -396,14 +396,14 @@ public static class TBRegimen {
 
     private static EncounterTransaction.DrugOrder getDrugOrder(List<EncounterTransaction.DrugOrder> drugOrders, String drugName) {
         for (EncounterTransaction.DrugOrder drugOrder : drugOrders) {
-            if (areSameDrugOrders(drugOrder, drugName)) {
+            if (areSameDrugNames(drugOrder, drugName)) {
                 return drugOrder;
             }
         }
         return null;
     }
 
-    private boolean areSameDrugNames(EncounterTransaction.DrugOrder drugOrder, String drugName){
+    private static boolean areSameDrugNames(EncounterTransaction.DrugOrder drugOrder, String drugName){
         return drugOrder.getDrug() ? drugOrder.getDrug().getName().equals(drugName) : drugOrder.getDrugNonCoded().equals(drugName);
     }
 
