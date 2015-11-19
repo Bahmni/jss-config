@@ -151,5 +151,40 @@
                 "displayOrder": 8
             }
         }
+    },
+      "deathCertificate": {
+    "title": "Death CERTIFICATE ",
+    "translationKey": "DEATH_CLINICAL_CERTIFICATE",
+    "printing": {
+      "title": "Bahmni",
+      "header": " Death Certificate",
+      "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+      "Death Certificate": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Patient Death Certificate ",
+          "template": "<death-certificate></death-certificate>"
+        }
+      },
+      "DeathNotes": 
+    {
+                "type": "observation",
+                "title": "Death Notes",
+                "displayOrder": 2,
+                "config": {
+                    "conceptNames": ["Death Note" ],
+                    "translationKey":"Death Note",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
+                }
+            }
     }
+  }
 }
