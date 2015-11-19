@@ -67,10 +67,14 @@ public class CancerRegimen extends EncounterModifier {
 
     private EncounterTransaction.DrugOrder getDrugOrder(List<EncounterTransaction.DrugOrder> drugOrders, String drugName) {
         for (EncounterTransaction.DrugOrder drugOrder : drugOrders) {
-            if (drugOrder.getDrug().getName().equals(drugName)) {
+            if (areSameDrugNames(drugOrder, drugName)) {
                 return drugOrder;
             }
         }
+    }
+
+    private boolean areSameDrugNames(EncounterTransaction.DrugOrder drugOrder, String drugName){
+        return drugOrder.getDrug() ? drugOrder.getDrug().getName().equals(drugName) : drugOrder.getDrugNonCoded().equals(drugName);
     }
 
     private static String getCodedObsValue(Object codeObsVal) {

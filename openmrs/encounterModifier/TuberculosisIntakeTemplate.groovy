@@ -51,7 +51,7 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         drugOrders.addAll(bahmniBridge.drugOrdersForRegimen(regimenName));
         for (EncounterTransaction.DrugOrder drugOrder: drugOrders ) {
             for (EncounterTransaction.DrugOrder activeDrugOrder : activeDrugOrders) {
-                if(activeDrugOrder.getDrug().getName().equals(drugOrder.getDrug().getName()) && activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm())){
+                if(areSameDrugOrders(activeDrugOrder, drugOrder)){
                     drugOrder.setEffectiveStartDate(DrugOrderUtil.aSecondAfter(activeDrugOrder.getEffectiveStopDate()));
                 }
             }
@@ -105,4 +105,12 @@ public class TuberculosisIntakeTemplate extends EncounterModifier {
         def obs = bahmniBridge.latestObs(conceptName)
         return obs ? obs.getValueNumeric() : null
     }
+
+    private boolean areSameDrugOrders(EncounterTransaction.DrugOrder activeDrugOrder, EncounterTransaction.DrugOrder drugOrder){
+        return drugOrder.getDrug() != null &&  activeDrugOrder.getDrug() != null ? drugOrder.getDrug().getName().equals(activeDrugOrder.getDrug().getName())  &&
+                activeDrugOrder.getDrug().getForm().equals(drugOrder.getDrug().getForm()):
+                drugOrder.getDrugNonCoded().equals(activeDrugOrder.getDrugNonCoded() &&
+                        drugOrder.getDosingInstructions().getDoseUnits().equals(activeDrugOrder.getDosingInstructions().getDoseUnits()))
+    }
+
 }
