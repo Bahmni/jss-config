@@ -151,6 +151,24 @@
                 "displayOrder": 8
             }
         }
+    },"birthCertificate":{
+     "title": "BIRTH CERTIFICATE ",
+    "translationKey": " BIRTH CERTIFICATE",
+    "printing": {
+      "title": "Bahmni",
+      "header": " Birth Certificate",
+      "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+      "Death Certificate": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Patient Death Certificate ",
+          "template": "<birth-certificate></birth-certificate>"
+        }
+      }
+    }
     },
       "deathCertificate": {
     "title": "Death CERTIFICATE ",

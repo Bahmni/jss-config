@@ -27,7 +27,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                     
 
                 }));
-            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/deathCertificate.html";
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/deathCertificatehindi.html";
             
             spinner.forPromise($q.all([bedService.getAssignedBedForPatient($scope.patient.uuid),visitService.getVisitSummary($scope.visitUuid)]).then(function(results){
                     $scope.bedDetails = results[0];
