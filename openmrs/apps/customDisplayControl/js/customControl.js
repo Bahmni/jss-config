@@ -8,8 +8,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observations = response.data;
             }));
-            
-        };
+        }
 
         return {
             restrict: 'E',
@@ -32,6 +31,8 @@ angular.module('bahmni.common.displaycontrol.custom')
             spinner.forPromise($q.all([bedService.getAssignedBedForPatient($scope.patient.uuid),visitService.getVisitSummary($scope.visitUuid)]).then(function(results){
                     $scope.bedDetails = results[0];
                     $scope.visitSummary = results[1].data;
+                    $scope.patientAddress = [$scope.patient.address.address1, $scope.patient.address.address2, $scope.patient.address.address3,
+                    $scope.patient.address.cityVillage, $scope.patient.address.stateProvince].filter(Boolean).join();
                 }));
                 
         };

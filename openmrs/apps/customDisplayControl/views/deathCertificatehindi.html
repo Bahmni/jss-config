@@ -1,26 +1,26 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-display.css" />
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-print.css" media="print"/>
+<br><br>
 
 
 <center><font size=5> जन स्वास्थ्य सहयोग </font></center><br>
 <center><font size=5> हेल्थ सेंटर  - ग्राम-पोस्ट - गनियारी, जिला - बिलासपुर (छ. ग.) </font></center><br>
-<center><font size=5> मृत्यु रिपोर्ट </font></center><br>
+<center><font size=5> मृत्यु रिपोर्ट </font></center><br><br><br><br>
 <div class="placeholder-text">
 
-<font size=4><span class="fl columns-2">रजिस्ट्रेशन नंबर:{{patient.identifier}}</span></font><br><br>
-<font size=4><span class="fl columns-2">भर्ती होने की तारीख:</span></font><br><br>
-<font size=4><span class="fl columns-2">मृत्यु होने की तारीख:</span></font><font size=4><span class="fr columns-2">समय</span></font><br><br>
+<font size=4><span class="fl columns-2">रजिस्ट्रेशन नंबर: {{patient.identifier}}</span></font><br><br>
+<font size=4><span class="fl columns-2">भर्ती होने की तारीख: {{visitSummary.admissionDetails.date|bahmniDateTime}}</span></font><br><br>
+<font size=4><span class="fl columns-2">मृत्यु होने की तारीख और समय:{{observations.groupMembers[0].valueAsString}}</span></font><br><br>
 <font size=4><span class="fl columns-2">रिपोर्ट देने की तारीख: </font></span><br><br>
-<font size=4><span class="fl columns-2">मरीज का नाम:{{patient.name}}</span></font><br><br>
-<font size=4><span class="fl columns-2">उम्र:{{patient.age}}</span><span class="fr columns-2"> स्त्री/पुरुष: {{patient.gender}}</span></font><br><br>
+<font size=4><span class="fl columns-2">मरीज का नाम: {{patient.name}}</span></font><br><br>
+<font size=4><span class="fl columns-2">उम्र: {{patient.age}}</span><span class="fr columns-2"> स्त्री/पुरुष: <span ng-if="patient.gender == 'M'" >Male</span><span ng-if="patient.gender == 'F'" >Female</span></span></font><br><br>
 <font size=4><span class="fl columns-2">जाति: {{patient.caste.value}}</span></font><br><br>
-<font size=4><span class="fl columns-2">पता: {{patient.address.address1}}{{patient.address.address2}}{{patient.address.address3}}
-										{{patient.address.cityVillage}}{{patient.address.cityVillage}} {{patient.address.stateProvince}}
-										</span></font><br><br>
-<font size=4><span class="fl columns-2">कितने दिन रहा: </span></font><br><br>
-<font size=4><span class="fl columns-2">मृत्यु का कारण: </span>
-             <span class="fr columns-2">डॉक्टर का हस्ताक्षर: </span></font><br><br>
-<font size=4><span class="fl columns-2">दिनांक: </span><span class="fr columns-2"> पंजीयन नं:</span><br><br>
+<font size=4><span class="fl columns-2">पता: {{patientAddress}}<b ng-repeat="address in patientAddress">{{address}}{{$last ? '' : ', '}}</b></span></font><br><br>
+<font size=4><span class="fl columns-2">कितने दिन रहा: {{observations.groupMembers[2].valueAsString}}</span></font><br><br>
+<font size=4><span class="fl columns-2">मृत्यु का कारण: {{observations.groupMembers[1].valueAsString}} </span></font><br><br><br><br>
+<font size=4><span class="fr columns-2">डॉक्टर का हस्ताक्षर</span></font><br><br>
+<font size=4><span class="fl columns-2">दिनांक: </span><span class="fr columns-2"> पंजीयन नं: </span><br><br>
 </div>
 
 <br><br><br><br>
+''
