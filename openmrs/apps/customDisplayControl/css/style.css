@@ -1,0 +1,250 @@
+body{
+    font-family : "Times New Roman", Georgia, Serif;
+    color: #000;
+    font-size: 14px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 1200px;
+
+}
+@media print {
+    body{
+        width: 29.7cm;
+    }
+}
+
+
+.clearfix:before { content:""; display:table; }
+
+.clearfix:after { content:""; display:table; clear:both; }
+
+.rotate {
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+}
+
+
+.no-border-right{
+    border-right:none !important;
+}
+
+.text-center{
+    text-align: center;
+}
+.culture-form-wrapper{
+    overflow: hidden;
+}
+.culture-form-wrapper .heading{
+    margin: 0;
+}
+
+.culture-form-wrapper table{
+    font-size: 14px;
+    width: 100%;
+    table-layout: fixed;
+    padding: 5px;
+}
+.culture-form-wrapper table td, .culture-form-wrapper table th{
+    padding: 7px 10px !important;
+}
+.col-2{
+    width: 49%;
+    float: left;
+    margin:0 .5%
+}
+
+.page-title{
+    text-align: center;
+}
+.page-title .title{
+    display: block;
+}
+
+.page-title .sub-title{
+ display: block;   
+}
+
+.columns-2{
+    width: 50%;
+    float: left;
+}
+.container{
+    border: 1px #000 solid;
+    margin-bottom: 15px;
+}
+
+.heading{
+    text-align: center;
+    padding: 5px 0;
+    display: block;
+    border-bottom: 1px #000 solid; 
+}
+.borderClass{
+    padding: 5px 10px 15px 10px;
+    display: block;
+    border-bottom: 1px #000 solid;
+}
+
+.form-element-container{
+    border-bottom: 1px #000 solid;
+}
+.form-element-container .form-value, .form-element-container .form-label{
+    float: left;
+}
+.patient-info .form-element-container .form-value{
+    padding:10px;
+}
+.patient-info .form-element-container .form-label{
+    border-right: 1px #000 solid; 
+    display: inline-block;
+    width: 200px;
+    padding:10px;
+}
+.patient-info .form-element-container .form-label .form-label{
+    width: 50px
+}
+
+.patient-info .form-element-container.age-container .form-label{
+    padding: 0 10px;
+}
+.patient-info .form-element-container.age-container .form-label .form-label{
+    padding: 12px 0;
+}
+
+.referDetails div{
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 10px 0px 10px;
+}
+
+
+
+.testing-container .form-element-container .form-value{
+    float: left;
+    padding:10px;
+}
+.testing-container .form-element-container .form-label{
+    border-right: 1px #000 solid; 
+    display: inline-block;
+    width: 300px;
+    padding:10px;
+    float: left;
+}
+
+.tb-result table tr{
+ border:none  !important;
+ }
+.tb-result table tr td{
+    padding-bottom: 5px;
+    border:none  !important;
+}
+.tb-result table tr.sign-section{
+    height: 40px;
+    vertical-align: top;
+}
+
+
+
+
+
+.border-bottom{
+    border-bottom:1px #000 solid; 
+}
+
+.lj-liquid-result table{
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.lj-liquid-result table  td{
+	border:none !important;
+    border-right:1px #000 solid !important;
+}
+
+.lj-liquid-result table  td.dateRecived{
+    width: 70px;
+    padding-left: 5px;
+}
+.lj-liquid-result table  td.specimen{
+    width: 25px;
+    position: relative;
+    top: 16px;
+}
+.lj-liquid-result table  td.specimenNO{
+        width: 35px;
+    position: relative;
+    top: 10px;
+}
+
+.lj-liquid-result table  td.custom-width{
+    width: 20px;
+    word-wrap: break-word;
+}
+
+
+.lj-liquid-result .form-element-container{
+    border-bottom: none;
+}
+.lj-liquid-result .form-element-container .form-label{ 
+    width: 80px;
+    border-right: 1px #000 solid !important;
+    padding: 6px 6px;
+    height: 30px
+}
+
+.lj-liquid-result .form-element-container .form-value{ 
+    padding: 6px 6px;
+}
+
+
+.lj-exception table{
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.lj-exception table tr td{
+	border:none !important;
+    border-right: 1px #000 solid !important;
+    text-align: center;
+}
+.lj-exception table tr td.custom-width{
+    width: 80px;
+    text-align: left;
+    padding: 0 6px;
+}
+
+.lj-exception table tr{
+    border-bottom: 1px #000 solid;
+}
+.form-element-container .pmdt{
+	border-bottom: 1px solid black;
+    height: 60px;
+    display: block;
+    width: 266px;
+}
+
+.lj-exception .form-element-container{
+    border-bottom: none;
+}
+.lj-exception .form-element-container .form-label{ 
+    width: 80px;
+    border-right: 1px #000 solid;
+    padding: 6px 6px;
+    
+}
+
+.lj-exception .form-element-container .form-value{ 
+    padding: 6px 6px;
+  
+}
+
+
+

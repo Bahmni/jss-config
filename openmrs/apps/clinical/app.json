@@ -1,336 +1,197 @@
 {
-  "id": "bahmni.clinical",
-  "extensionPoints": [
-    {
-      "id": "org.bahmni.clinical.consultation.board",
-      "description": "Bahmni Clinical Consultation Page"
-    },
-    {
-      "id": "org.bahmni.clinical.conceptSetGroup.*",
-      "description": "Define conceptsets part of a conceptset group"
-    },
-    {
-      "id": "org.bahmni.clinical.orders",
-      "description": "Bahmni Orders Page"
-    },
-    {
-      "id": "org.bahmni.patient.search",
-      "description": "Bahmni Patient search, lookups Page"
-    }
-  ],
-  "contextModel": [
-    "patientUuid",
-    "visitUuid"
-  ],
-  "config": {
-    "obsIgnoreList": [
-      "Fee Information",
-      "Patient file"
-    ],
-    "otherInvestigationsMap": {
-      "Radiology": "Radiology Order",
-      "Endoscopy": "Endoscopy Order"
-    },
-    "printConfig": {
-      "visitSummaryPrint": {
-        "showChart": false
-      },
-      "opdSummaryPrint": {
-        "showChart": false
-      }
-    },
-    "maxConceptSetLevels": 3,
-    "conceptSetUI": {
-      "Psychiatry Followup Template": {
-        "showPreviousButton": true
-      },
-      "Discharge Summary": {
-        "showPreviousButton": true,
-        "numberOfVisits": 1
-      },
-      "Tuberculosis Intake Template": {
-        "computeDrugs": true,
-        "showPreviousButton": true
-      },
-      "Tuberculosis Followup Template": {
-        "showPreviousButton": true,
-        "computeDrugs": true
-      },
-      "Breast Cancer Intake Template": {
-        "computeDrugs": true,
-        "showPreviousButton": true
-      },
-      "Breast Cancer Followup Template": {
-        "computeDrugs": true,
-        "showPreviousButton": true
-      },
-      "Breast Cancer, TNM Pathologic Staging": {
-        "grid": true
-      },
-      "Breast Cancer, Imaging Studies": {
-        "allowAddMore": true
-      },
-      "Breast Cancer, Treatment Planned": {
-        "multiSelect": true
-      },
-      "Breast Cancer, Breast Examination Details": {
-        "allowAddMore": true
-      },
-      "Breast Cancer, Lymph Nodes": {
-        "allowAddMore": true
-      },
-      "Breast Cancer, Chemotherapy Cycle number": {
-        "stepper": true
-      },
-      "Diabetes Intake Template": {
-        "computeDrugs": true,
-        "showPreviousButton": true
-      },
-      "Diabetes Followup Template": {
-        "computeDrugs": true
-      },
-      "Chief Complaint": {
-        "answersConceptName": "Chief Complaint Answers",
-        "freeTextAutocomplete": true,
-        "durationRequired": false,
-        "allowAddMore": true
-      },
-      "Non-Coded Chief Complaint": {
-        "answersConceptName": "Chief Complaint Answers",
-        "freeTextAutocomplete": true,
-        "durationRequired": false,
-        "allowAddMore": true
-      },
-      "Surgical Procedure": {
-        "answersConceptName": "Surgical Procedure Answers",
-        "freeTextAutocomplete": true
-      },
-      "Surgical Procedure Non Coded": {
-        "answersConceptName": "Surgical Procedure Answers",
-        "freeTextAutocomplete": true
-      },
-      "Gynaecology, P/S (per speculum) - Cervix": {
-        "grid": true
-      },
-      "Gynaecology, P/V (per vaginal) - Uterus": {
-        "grid": true
-      },
-      "Diabetes, Current Status": {
-        "conciseText": true
-      },
-      "Image": {
-        "allowAddMore": true
-      },
-      "Diabetes, Complications": {
-        "multiSelect": true
-      },
-      "Diabetes, Complaint": {
-        "multiSelect": true
-      },
-      "Coded Operating Surgeon": {
-        "multiSelect": true
-      },
-      "Coded Operating Assistant Surgeon": {
-        "multiSelect": true
-      },
-      "Coded Operation Anesthetist": {
-        "multiSelect": true
-      },
-      "Scrub Nurse": {
-        "conciseText": true
-      },
-      "Incision": {
-        "conciseText": true
-      },
-      "Obstetrics, Fundal Height": {
-        "conciseText": true
-      },
-      "Obstetrics, Gravida": {
-        "stepper": true
-      },
-      "Obstetrics, Parity": {
-        "stepper": true
-      },
-      "Obstetrics, Live Births": {
-        "stepper": true
-      },
-      "Obstetrics, Abortion": {
-        "stepper": true
-      },
-      "Gynaecology, Gravida": {
-        "stepper": true
-      },
-      "Gynaecology, Parity": {
-        "stepper": true
-      },
-      "Gynaecology, Live Births": {
-        "stepper": true
-      },
-      "Gynaecology, Abortion": {
-        "stepper": true
-      },
-      "Operative Drains": {
-        "conciseText": true
-      },
-      "Anesthesia Administered": {
-        "multiSelect": true
-      },
-      "Tuberculosis, Symptoms": {
-        "allowAddMore": true,
-        "autocomplete": true
-      },
-      "Tuberculosis, Symptoms Duration": {
-        "allowAddMore": true
-      },
-      "Tuberculosis, X-Ray Findings": {
-        "grid": true
-      },
-      "Tuberculosis, Basis of Diagnosis": {
-        "multiSelect": true
-      },
-      "Tuberculosis, Adverse Effects": {
-        "multiSelect": true
-      },
-      "Tuberculosis, Family Member Name": {
-        "conciseText": true
-      },
-      "Tuberculosis, Under 5 Year Name": {
-        "conciseText": true
-      },
-      "Tuberculosis, Family Member Relation": {
-        "conciseText": true
-      },
-      "Tuberculosis, Sensitivity": {
-        "allowAddMore": true
-      },
-      "Tuberculosis, Contact Screening": {
-        "allowAddMore": true
-      },
-      "Tuberculosis, Under 5 Year Mantoux Screening": {
-        "allowAddMore": true
-      },
-      "Psychiatry, Mania Complaints": {
-        "multiSelect": true
-      },
-      "Psychiatry, Depression Complaints": {
-        "multiSelect": true
-      },
-      "Psychiatry, Anxiety Complaints": {
-        "multiSelect": true
-      },
-      "Psychiatry, Psychosis Complaints": {
-        "multiSelect": true
-      },
-      "Psychiatry, Physical Complaints": {
-        "multiSelect": true
-      },
-      "Psychiatry, Substance Use": {
-        "allowAddMore": true
-      },
-      "Psychiatry, Substance amount consumed": {
-        "conciseText": true
-      },
-      "Psychiatry, Substance Use Drug Dependence Criteria": {
-        "multiSelect": true
-      },
-      "Psychiatry, Substance Use Complications": {
-        "multiSelect": true
-      },
-      "Psychiatry, Sexual History": {
-        "multiSelect": true
-      }
-    },
-    "drugOrder": {
-      "defaultDurationUnit": "Day(s)",
-      "defaultInstructions": "As directed",
-      "frequencyDefaultDurationUnitsMap": [
-        {
-          "minFrequency": "1/7",
-          "maxFrequency": 5,
-          "defaultDurationUnit": "Day(s)"
-        },
-        {
-          "minFrequency": "1/30",
-          "maxFrequency": "1/7",
-          "defaultDurationUnit": "Week(s)"
-        },
-        {
-          "minFrequency": null,
-          "maxFrequency": "1/30",
-          "defaultDurationUnit": "Month(s)"
+        "id": "bahmni.clinical",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.clinical.consultation.board",
+                "description": "Bahmni Clinical Consultation Page"
+            },
+            {
+                "id": "org.bahmni.clinical.conceptSetGroup.*",
+                "description": "Define conceptsets part of a conceptset group"
+            },
+            {
+                "id": "org.bahmni.clinical.orders",
+                "description": "Bahmni Orders Page"
+            },
+            {
+                "id":"org.bahmni.patient.search",
+                "description": "Bahmni Patient search, lookups Page"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "visitUuid"
+        ],
+        "config" : {
+            "diagnosisStatus": "Inactive",
+            "program": {
+                "patientInformation": {
+                    "ageLimit":100
+                }
+            },
+            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
+            "otherInvestigationsMap": {
+                "Radiology": "Radiology Order",
+                "Endoscopy": "Endoscopy Order"
+            },
+            "allowConsultationWhenNoOpenVisit": false,
+            "defaultVisitType": "OPD",
+            "visitTypeForRetrospectiveEntries": "Special OPD",
+            "maxConceptSetLevels": 3,
+            "allowOnlyCodedDiagnosis": false,
+            "conceptSetUI": {
+                "Chief Complaint Data": {
+                    "allowAddMore" : true
+                },
+                "Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false,
+                    "allowAddMore" : true
+                },
+                "Posture" : {
+                    "buttonSelect" : true
+                },
+                "Non-Coded Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "P/A Presenting Part" : {
+                    "buttonSelect" : true
+                },
+                "FHS" : {
+                    "buttonSelect" : true
+                },
+                "P/S (Per Speculum) - Cervix" : {
+                    "grid" : true
+                },
+                "Anaemia, Stopped Since When" : {
+                    "conciseText" : true
+                },
+                "Examination Notes" :{
+                    "conciseText" : true
+                },
+                "P/A Presenting Part" : {
+                    "multiSelect" : true
+                },
+                "Tuberculosis Intake Template" : {
+                    "computeDrugs" : true
+                },
+                "Set1" :{
+                    "allowAddMore" :true
+                },
+                "Set2" :{
+                    "allowAddMore" :true
+                },
+                "Coded3" :{
+                    "multiSelect" :true
+                },
+                "Image" :{
+                    "allowAddMore" :true
+                },
+                "Accepted Family Planning methods":{
+                    "multiSelect": true
+                },
+                "People Health Support Group Form, Drugs used in his treatment":{
+                "multiSelect":true
+                },
+                "Tests On the Sample, Susceptibility testing of M. tuberculosis":{
+                "multiSelect":true
+                },
+                "defaults" : {
+                    "Number of living children" : 1,
+                    "Accepted Family Planning methods": ["Condoms", "Pills"],
+                    "Pain management given": true,
+                    "Safe Abortion, Remarks": "Remarks",
+                    "Malaria, Death Date": "2015-12-01"
+                }
+            },
+            "visitPage": {
+                "observationDisplay" : {
+                    "conceptNames": []
+                }
+            },
+            "drugOrder": {
+                "defaultDurationUnit": "Day(s)",
+                "defaultInstructions": "As directed",
+                "frequencyDefaultDurationUnitsMap": [
+                    {"minFrequency":5, "maxFrequency": null, "defaultDurationUnit": "Hour(s)"},
+                    {"minFrequency":"1/7", "maxFrequency": 5, "defaultDurationUnit": "Day(s)"},
+                    {"minFrequency":"1/30", "maxFrequency": "1/7", "defaultDurationUnit": "Week(s)"},
+                    {"minFrequency":null, "maxFrequency": "1/30", "defaultDurationUnit": "Month(s)"}
+                ],
+                "drugFormDefaults": {
+                    "Ayurvedic": {
+                        "doseUnits": "Teaspoon",
+                        "route": "Oral"
+                    },
+                    "Capsule": {
+                        "doseUnits": "Capsule(s)",
+                        "route": "Oral"
+                    },
+                    "Cream": {
+                        "route": "Topical"
+                    },
+                    "Drops": {
+                        "doseUnits": "Drop",
+                        "route": "Topical"
+                    },
+                    "Food Supplement": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Oral"
+                    },
+                    "Gel": {
+                        "route": "Topical"
+                    },
+                    "Granule": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Oral"
+                    },
+                    "Inhaler": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Inhalation"
+                    },
+                    "Injection": {
+                        "doseUnits": "mg",
+                        "route": "Intravenous"
+                    },
+                    "Jelly": {
+                        "route": "Topical"
+                    },
+                    "Liquid": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Lotion": {
+                        "route": "Topical"
+                    },
+                    "Ointment": {
+                        "route": "Topical"
+                    },
+                    "Pessary": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Per Vaginal"
+                    },
+                    "Powder": {
+                        "doseUnits": "mg",
+                        "route": "Topical"
+                    },
+                    "Solution": {
+                        "doseUnits": "ml",
+                        "route": "Topical"
+                    },
+                    "Spray": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Nasal"
+                    },
+                    "Syrup": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Tablet": {
+                        "doseUnits": "Tablet(s)",
+                        "route": "Oral"
+                    }
+                }
+            }
         }
-      ],
-      "drugFormDefaults": {
-        "Ayurvedic": {
-          "doseUnits": "Teaspoon",
-          "route": "Oral"
-        },
-        "Capsule": {
-          "doseUnits": "Capsule(s)",
-          "route": "Oral"
-        },
-        "Cream": {
-          "route": "Topical"
-        },
-        "Drops": {
-          "doseUnits": "Drop",
-          "route": "Topical"
-        },
-        "Food Supplement": {
-          "route": "Oral"
-        },
-        "Gel": {
-          "route": "Topical"
-        },
-        "Granule": {
-          "doseUnits": "Unit(s)",
-          "route": "Oral"
-        },
-        "Inhaler": {
-          "doseUnits": "Puff(s)",
-          "route": "Inhalation"
-        },
-        "Injection": {
-          "doseUnits": "mg",
-          "route": "Intravenous"
-        },
-        "Jelly": {
-          "route": "Topical"
-        },
-        "Liquid": {
-          "doseUnits": "ml",
-          "route": "Oral"
-        },
-        "Lotion": {
-          "route": "Topical"
-        },
-        "Ointment": {
-          "route": "Topical"
-        },
-        "Pessary": {
-          "doseUnits": "Unit(s)",
-          "route": "Per Vaginal"
-        },
-        "Powder": {
-          "route": "Topical"
-        },
-        "Solution": {
-          "doseUnits": "ml",
-          "route": "Topical"
-        },
-        "Spray": {
-          "doseUnits": "Puff(s)",
-          "route": "Nasal"
-        },
-        "Syrup": {
-          "doseUnits": "ml (syrup)",
-          "route": "Oral"
-        },
-        "Tablet": {
-          "doseUnits": "Tablet(s)",
-          "route": "Oral"
-        }
-      }
-    }
-  }
 }

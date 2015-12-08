@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-display.css" />
+</head>
+<body>
+<header class="header-page">
+	<h2>
+		Regional Medical Research Centre for Tribes<br>
+		<span>Dept of Microbiology</span>
+	</h2>
+	<h2 class="caution">CLINICAL INFORMATION FORM FOR TB PATIENTS</h2>
+</header>
+<div class="content">
+	<div class="micrology">
+		<h2>Microbiology test requirement</h2>
+		<ol class="micro">
+			<li>CBNAAT / LJ </li>
+			<li>Sample Type</li>
+		</ol>
+	</div>
+	<p>
+<span>Name of the Microscopy Center: Jan Swasthya Sahyog </span><br>
+<h2>A. IDENTIFICATION OF THE PATIENT</h2><br>
+<span>Name : {{patient.name}}</span><span class="space">Tribes/Non Tribes : ............</span><br>
+<span>Permanent address with land marks : {{patient.address.address1}}{{patient.address.address2}}{{patient.address.address3}}
+									      {{patient.address.cityVillage}}{{patient.address.cityVillage}} {{patient.address.stateProvince}} <br>
+<span>Gender : <input type="checkbox" ng-checked="patient.gender=='M'"> Male <input type="checkbox" ng-checked="patient.gender=='F'"> Female</span>
+<span class="space">	
+<span>Age : {{patient.age}} Years </span>								      
+	</p>								    
+</div>
+
+<h2>Results of First two smears at the MC :</h2><br><br><br>
+
+<table class="result">
+  <tr>
+    <th>Sr.No</th>
+    <th>Lab No</th>		
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>		
+    <td></td>
+  </tr>
+</table><br><br><br>
+
+<div>
+<h2> B. HISTORY GIVEN BY THE PATIENT</h2>
+<span>Previously Treated for TB ? <input type="checkbox" ng-checked="observations.groupMembers[0].valueAsString=='No'"> No 
+                                  <input type="checkbox" ng-checked="observations.groupMembers[0].valueAsString=='Yes'">Yes 
+ </span>  
+ <h2>Standardized History</h2><br>
+ <ul class="unordered">
+ <li>For how long have you been sick ?  {{observations.groupMembers[1].groupMembers[0].valueAsString}}</li>
+ <li>Symptoms:  {{observations.groupMembers[1].groupMembers[1].valueAsString}}</li>
+ <li>Did you have other symptoms of lung disease prior to this episode (<input type="checkbox" ng-checked="observations.groupMembers[1].groupMembers[2].valueAsString=='Haemoptysis'"> haemoptysis, 
+ 																		<input type="checkbox" ng-checked="observations.groupMembers[1].groupMembers[2].valueAsString=='Chest Pain'"> chest pain , 
+ 																		<input type="checkbox" ng-checked="observations.groupMembers[1].groupMembers[2].valueAsString=='Cough'"> cough) ?  
+ 																		{{observations.groupMembers[1].groupMembers[2].valueAsString}}</li>     {{observations.groupMembers[1].groupMembers[2].comment}}<br>
+ 																		
+ <li>Did you have x-ray examinations prior to this episode ?  {{observations.groupMembers[1].groupMembers[3].valueAsString}}     {{observations.groupMembers[1].groupMembers[3].comment}}</li>	
+ <li>Did you have Sputum examinations prior to this episode ?   {{observations.groupMembers[1].groupMembers[4].valueAsString}}</li>
+ <li>Did you ever take tuberculosis drugs for more than one month ?  {{observations.groupMembers[1].groupMembers[5].valueAsString}}</li>																	
+ </ul>
+ 
+ <h2>If treatment taken</h2>
+ <ul class="unordered">
+ <li>Where was the patient treated ?    {{observations.groupMembers[2].groupMembers[0].valueAsString}}</li>
+ <li>When was the patient treated ?  {{observations.groupMembers[2].groupMembers[1].valueAsString}}</li>
+ <li>How many times was the patient treated ?   {{observations.groupMembers[2].groupMembers[2].valueAsString}}</li>
+ <li>If Dots taken : Category  {{observations.groupMembers[2].groupMembers[3].valueAsString}}</li>
+ <li>What were the drugs taken by the patient ?   {{observations.groupMembers[2].groupMembers[4].valueAsString}}  </li>
+ </ul>
+ 
+ </div>
+
+</body><br><br><br>
+</html>
