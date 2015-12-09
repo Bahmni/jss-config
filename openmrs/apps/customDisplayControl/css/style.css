@@ -4,7 +4,7 @@ body{
     font-size: 14px;
     margin: 0 auto;
     box-sizing: border-box;
-    width: 1200px;
+   
 
 }
 @media print {
@@ -134,9 +134,19 @@ body{
 .testing-container .form-element-container .form-label{
     border-right: 1px #000 solid; 
     display: inline-block;
-    width: 300px;
+    width: 55%;
     padding:10px;
     float: left;
+    box-sizing:border-box;
+}
+.testing-container .form-element-container .pmdt-form-label{
+	width: 45%;
+}
+.testing-container .form-element-container .pmdt-form-label div{
+	padding:5px 10px;
+}
+.tb-result ,.lj-liquid-result ,.lj-exception ,.patient-info{
+	width:100%;
 }
 
 .tb-result table tr{
