@@ -41,7 +41,7 @@
         }
     },
     "dischargeSummary":{
-        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
+        "translationKey": "Discharge Summary",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
@@ -155,7 +155,7 @@
         }
     },
     "orders":{
-      "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
+      "translationKey": "DASHBOARD_TAB_ORDER",
       "sections": {
           "Radiology Orders": {
               "type": "order",
@@ -174,8 +174,8 @@
 
     },
     "deathCertificate": {
-    "title": "Death CERTIFICATE ",
-    "translationKey": "DEATH_CLINICAL_CERTIFICATE",
+    "title": "Death CERTIFICATE",
+    "translationKey": "Death Certificate",
     "printing": {
       "title": "Bahmni",
       "header": " Death Certificate",
@@ -194,7 +194,7 @@
   },
   "rntcpform":{
    "title": "RNTCP FORM ",
-    "translationKey": "RNTCP_FORM",
+    "translationKey": "RNTCP",
     "printing": {
       "title": "Bahmni",
       "header": "RNTCP Request for Culture and Drug Sensitivity Test",
@@ -214,7 +214,7 @@
   },
   "clinicalinfotbform":{
    "title": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
-    "translationKey": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
+    "translationKey": "RMRCT",
     "printing": {
       "title": "Bahmni",
       "header": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
@@ -232,9 +232,9 @@
     }
   
   },
-    "pplhlthsptgrp":{
-   "title": "People's Health Support Group ",
-    "translationKey": "People's Health Support Group  ",
+    "hindujaCDSTForm":{
+   "title": "Hinduja CDST Form",
+    "translationKey": "Hinduja CDST",
     "printing": {
       "title": "Bahmni",
       "header": "Jan Swashya Sahyog ",

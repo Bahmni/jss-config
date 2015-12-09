@@ -38,21 +38,23 @@
     "name": "Tuberculosis Lab Data",
     "type": "obsTemplate",
     "config": {
-      "templateName": "Tuberculosis Lab Template"
+      "templateName": "Tuberculosis Lab Template",
+      "applyDateRangeFor": "encounterCreateDate"
+    }
+  },
+  "patientsWithTuberculosisFollowups": {
+    "name": "TB - Patients with appointed Followups",
+    "type": "DateConceptValuesPatientsList",
+    "config": {
+      "conceptNames": ["Tuberculosis, Next Followup Visit"],
+      "templateName": "Tuberculosis Followup Template"
     }
   },
   "operationNotesData": {
     "name": "Operation Notes Data",
     "type": "obsTemplate",
     "config": {
-      "templateName": "Operation Notes"
-    }
-  },
-  "admittedPatients": {
-    "name": "Admitted patients",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/reports/admitted_patient.sql"
+      "templateName": "Operation Notes Template"
     }
   },
   "nonCodedDiagnosesEntered": {
@@ -61,6 +63,97 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
     }
+  },
+  "diagnosisCount": {
+       "name": "Diagnosis Count",
+       "type": "diagnosisCount",
+        "config": {
+           "concept": "Diagnosis Set of Sets"
+       }
+   },
+  "ANCData": {
+    "name": "ANC Data",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "applyDateRangeFor": "encounterCreateDate"
+    }
+  },
+  "patientsWithEDD": {
+    "name": "ANC - Patients with EDD",
+    "type": "DateConceptValuesPatientsList",
+    "config": {
+      "conceptNames": ["ANC, Estimated Date of Delivery"],
+      "templateName": "ANC Template"
+    }
+  },
+  "patientWithANCVisits": {
+    "name": "ANC - EMR IDs",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/patient_with_anc_visit.sql"
+    }
+  },
+  "smartCardData": {
+    "name": "Smart Card Data",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Smart card Template"
+    }
+  },
+    "smartCardTransactionDate": {
+    "name": "Smart Card - Patients with Transaction Date",
+    "type": "DateConceptValuesPatientsList",
+    "config": {
+      "conceptNames": ["Smart card, amount to be transacted on"],
+      "templateName": "Smart card Template"
+    }
+  },
+  "smartCardProgram": {
+    "name": "Smart card - Program Report",
+    "type": "PatientProgramReport",
+    "config": {
+               "programName": "Smart Card"
+    }
+  },
+  "smartCardStateCount": {
+    "name": "Smart card - State count",
+    "type": "programStateCount",
+    "config": {
+               "programName": "Smart Card"
+    }
+  },
+  "ipdPatients": {
+     "name": "IPD Patients Report",
+     "type": "ipdPatients",
+     "config": {
+              "addressAttributes": ["address1", "city_village"],
+              "patientAttributes": ["caste", "education"],
+              "conceptNames": ["Height", "Weight"]
+    }
+  },
+  "visitAggregateCount": {
+    "name": "Visit Aggregate Count Report",
+    "type": "VisitAggregateCount",
+    "config": {
+               "type": "VisitAggregateCountReport",
+               "visitTypes": "'IPD','OPD','EMERGENCY'"
+    }
+ },
+ "ipdOPd": {
+     "name": "OPD/IPD Visit Count",
+     "type": "IpdOpdVisitCount"
+  },
+  "testCount": {
+    "name": "Tests count",
+    "type": "TestCount"
+ },
+ "radiologyCount": {
+       "name": "Radiology(X-Ray) Count",
+       "type": "ObsCountByConceptClass",
+        "config": {
+            "conceptClassNames": ["Radiology"]
+        }
   },
   "abnormalityReportForCriticalTests": {
     "name": "Abnormality report for critical tests",
@@ -80,13 +173,6 @@
       ],
       "testOutcome": ["abnormal"]
     }
-  },
-  "patientsWithTuberculosisFollowups": {
-    "name": "Patients with Tuberculosis Followups",
-    "type": "DateConceptValuesPatientsList",
-    "config": {
-      "conceptNames": ["Tuberculosis, Next Followup Visit"],
-      "templateName": "Tuberculosis Followup Template"
-    }
   }
+
 }
