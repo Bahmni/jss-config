@@ -1,0 +1,115 @@
+.clearfix:before { content:""; display:table; }
+.clearfix:after { content:""; display:table; clear:both; }
+
+.rotate {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+.col-2{
+    width: 49%;
+    float: left;
+    margin:1.5% .5% 0
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+.culture-form-wrapper .page-title .title{
+    display: block;
+}
+
+.culture-form-wrapper .page-title .sub-title{
+ display: block;   
+}
+.culture-form-wrapper .container{
+    margin-bottom: 15px;
+}
+
+
+.culture-form-wrapper table{
+    width: 100%;
+    padding: 5px;
+    border: 1px #000 solid;
+    border-collapse: collapse;
+    font-size:12px;
+}
+
+
+.culture-form-wrapper table td, .culture-form-wrapper table th{
+    padding: 5px 4px !important;
+    border: 1px #000 solid;
+}
+
+.culture-form-wrappers table td, .culture-form-wrappers table th{
+    padding: 10px 10px !important;
+    border: 1px #000 solid;
+}
+
+.culture-form-wrapper .patient-info table{
+	table-layout: fixed;
+}
+
+.culture-form-wrapper .patient-info table td{
+	padding:7px 7px !important;
+}
+
+.culture-form-wrapper .testing-info table{
+  table-layout: fixed;
+}
+.culture-form-wrapper .testing-info table input[type="checkbox"]{
+   margin-right:5px;
+}
+.culture-form-wrapper .testing-info table td ,.testing-info table th{
+	 padding:5px 10px !important;
+}
+
+.culture-form-wrapper .testing-info ul li {
+    padding-bottom: 10px;
+}
+
+
+.culture-form-wrapper .tb-result{
+ 	table-layout: fixed;
+}
+.culture-form-wrapper .tb-result table tr:first-child{
+    border-bottom: 1px #000 solid;
+}
+.culture-form-wrapper .tb-result table td, .culture-form-wrapper .tb-result table th{
+    border: none;
+    padding-bottom:10px;
+}
+
+.culture-form-wrapper  .tb-result tr{
+	border-bottom:none;
+	border:none;
+}
+
+
+.culture-form-wrapper .lj-liquid-result table{
+    padding: 0;
+    border-collapse: collapse;
+}
+
+
+.culture-form-wrapper .lj-liquid-result table  td.dateRecived{
+    width: 70px;
+    padding-left: 5px;
+}
+
+.culture-form-wrapper .lj-liquid-result table  td.custom-width{
+    width: 35px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+
+
+.culture-form-wrapper .lj-exception table  td.custom-width{
+	width: 35px;
+    word-wrap: break-word;
+    text-align: center;
+}

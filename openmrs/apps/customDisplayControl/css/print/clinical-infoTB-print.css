@@ -1,0 +1,8 @@
+.clinical-info-tb print-body{
+    font-size:12px;
+}
+
+
+.clinical-info-tb .clinical-content-left{
+	width:60%; 
+}	

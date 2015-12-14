@@ -200,7 +200,7 @@ display:block;
 .print-body{
  	/* font-family : "Times New Roman", Georgia, Serif;*/
     color: #000;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0 auto;
     box-sizing: border-box;
     line-height: 1.4;
@@ -212,19 +212,12 @@ display:block;
 
 .print-body div{
 	display:block;
-	
 }
 .print-body span{
 	display:block;
 }
 .print-body div.footer-pdhinduja{
  border-top:2px solid;
- border-bottom:2px solid;
- padding:5px 0;
-}
-
-.header-pdhinduja{
-text-align:center;
  border-bottom:2px solid;
  padding:5px 0;
 }

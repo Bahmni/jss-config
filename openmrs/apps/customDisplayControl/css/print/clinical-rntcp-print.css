@@ -1,0 +1,20 @@
+@page {
+	margin: 0 !important;
+}
+
+.print-wrapper{
+	max-width: 100%;
+}
+
+.culture-form-wrapper .page-title .title{
+    font-family: Arial, sans-serif !important;
+}
+
+.culture-form-wrapper .container{
+    margin-bottom: 5px;
+}
+
+
+
+
+	
