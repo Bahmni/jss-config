@@ -1,6 +1,6 @@
 {
     "general":{
-        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "title":"General",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
@@ -31,9 +31,9 @@
                 }
             },
             "pacsOrders":{
+                "title":"Pacs"
                 "type":"pacsOrders",
                 "displayOrder": 1,
-                "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
                 "config":{
                     "orderType": "Radiology Order"
                 }
@@ -41,7 +41,7 @@
         }
     },
     "dischargeSummary":{
-        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
+        "title": "Discharge Summary",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
@@ -61,15 +61,13 @@
                 "type": "admissionDetails",
                 "displayOrder": 1,
                 "config": {
-                    "showDetailsButton": true,
-                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
+                    "showDetailsButton": true
 
                 }
             },
             "weightInitial":{
                 "type": "observation",
                 "displayOrder": 2,
-                "translationKey":"DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "initial"
@@ -78,17 +76,16 @@
             "weightLatest": {
                 "type": "observation",
                 "displayOrder": 3,
-                "translationKey":"DISCHARGE_SUMMARY_AT_DISCHARGE_KEY",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "latest"
                 }
             },
             "diagnoses":{
+                "title":"Diagnosis"
                 "type": "diagnosis",
                 "displayOrder": 4,
                 "config": {
-                    "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
@@ -97,7 +94,7 @@
             "clinicalNotes":{
                 "type": "observation",
                 "displayOrder": 5,
-                "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
+                "title": "Clinical Notes",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
@@ -115,7 +112,6 @@
                 "displayOrder": 6,
                 "config": {
                     "title": "Lab Investigations",
-                    "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": false,
                     "showNormalLabResults": true,
@@ -130,7 +126,7 @@
                 "type": "treatment",
                 "displayOrder": 7,
                 "config": {
-                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
+                    "title":"Treatment",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -142,7 +138,7 @@
             "adviceOnDischarge":{
                 "type": "observation",
                 "displayOrder": 8,
-                "translationKey":"DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
+                "title":"Additional Advice on Discharge",
                 "config": {
                     "conceptNames": [
                         "Additional Advice on Discharge",
@@ -155,14 +151,13 @@
         }
     },
     "orders":{
-      "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
+      "title": "Orders",
       "sections": {
           "Radiology Orders": {
               "type": "order",
               "displayOrder": 0,
-              "translationKey": "Radiology Orders",
+              "title": "Radiology Orders",
               "config": {
-                  "translationKey": "Radiology Orders",
                   "name": "ordersControl",
                   "orderType": "Radiology Order",
                   "conceptNames": [
@@ -175,7 +170,6 @@
     },
     "deathCertificate": {
     "title": "Death CERTIFICATE ",
-    "translationKey": "DEATH_CLINICAL_CERTIFICATE",
     "printing": {
       "title": "Bahmni",
       "header": " Death Certificate",
@@ -194,8 +188,7 @@
   },
   "rntcpform":{
    "title": "RNTCP FORM ",
-    "translationKey": "RNTCP_FORM",
-    "printing": {
+   "printing": {
       "title": "Bahmni",
       "header": "RNTCP Request for Culture and Drug Sensitivity Test",
       "logo": "../images/bahmniLogo.png"
@@ -214,7 +207,6 @@
   },
   "clinicalinfotbform":{
    "title": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
-    "translationKey": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
     "printing": {
       "title": "Bahmni",
       "header": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
@@ -234,7 +226,6 @@
   },
     "pplhlthsptgrp":{
    "title": "People's Health Support Group ",
-    "translationKey": "People's Health Support Group  ",
     "printing": {
       "title": "Bahmni",
       "header": "Jan Swashya Sahyog ",
