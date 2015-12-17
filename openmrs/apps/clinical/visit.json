@@ -1,6 +1,6 @@
 {
     "general":{
-        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "translationKey": "General",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
