@@ -31,6 +31,7 @@
                 }
             },
             "pacsOrders":{
+                "title":"",
                 "type":"pacsOrders",
                 "displayOrder": 1,
                 "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
@@ -41,7 +42,7 @@
         }
     },
     "dischargeSummary":{
-        "translationKey": "Discharge Summary",
+        "title": "Discharge Summary",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
@@ -58,37 +59,39 @@
                 }
             },
             "admissionDetails":{
-                "type": "admissionDetails",
+              "title": "Admission Details",
+              "type": "admissionDetails",
                 "displayOrder": 1,
                 "config": {
-                    "showDetailsButton": true,
-                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
+                    "showDetailsButton": true
 
                 }
             },
             "weightInitial":{
-                "type": "observation",
+              "title": "Weight Initial",
+              "type": "observation",
                 "displayOrder": 2,
-                "translationKey":"DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "initial"
                 }
             },
             "weightLatest": {
+              "title": "Weight Latest",
                 "type": "observation",
                 "displayOrder": 3,
-                "translationKey":"DISCHARGE_SUMMARY_AT_DISCHARGE_KEY",
+                
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "latest"
                 }
             },
             "diagnoses":{
+              "title":"Diagnosis"
                 "type": "diagnosis",
                 "displayOrder": 4,
                 "config": {
-                    "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
+                    
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
@@ -97,7 +100,6 @@
             "clinicalNotes":{
                 "type": "observation",
                 "displayOrder": 5,
-                "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
@@ -111,11 +113,11 @@
                 }
             },
             "labInvestigations":{
+              "title": "Clinical Notes",
                 "type": "investigationResult",
                 "displayOrder": 6,
                 "config": {
                     "title": "Lab Investigations",
-                    "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": false,
                     "showNormalLabResults": true,
@@ -130,7 +132,7 @@
                 "type": "treatment",
                 "displayOrder": 7,
                 "config": {
-                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
+                    "title":""Treatment,
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -155,12 +157,12 @@
         }
     },
     "orders":{
-      "translationKey": "DASHBOARD_TAB_ORDER",
+      
       "sections": {
           "Radiology Orders": {
               "type": "order",
               "displayOrder": 0,
-              "translationKey": "Radiology Orders",
+              "title": "Radiology Orders",
               "config": {
                   "translationKey": "Radiology Orders",
                   "name": "ordersControl",
@@ -175,7 +177,6 @@
     },
     "deathCertificate": {
     "title": "Death CERTIFICATE",
-    "translationKey": "Death Certificate",
     "printing": {
       "title": "Bahmni",
       "header": " Death Certificate",
@@ -194,7 +195,6 @@
   },
   "rntcpform":{
    "title": "RNTCP FORM ",
-    "translationKey": "RNTCP",
     "printing": {
       "title": "Bahmni",
       "header": "RNTCP Request for Culture and Drug Sensitivity Test",
@@ -214,7 +214,6 @@
   },
   "clinicalinfotbform":{
    "title": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
-    "translationKey": "RMRCT",
     "printing": {
       "title": "Bahmni",
       "header": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
@@ -234,7 +233,6 @@
   },
     "hindujaCDSTForm":{
    "title": "Hinduja CDST Form",
-    "translationKey": "Hinduja CDST",
     "printing": {
       "title": "Bahmni",
       "header": "Jan Swashya Sahyog ",
