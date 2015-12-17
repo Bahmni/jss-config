@@ -87,7 +87,7 @@
                 }
             },
             "diagnoses":{
-              "title":"Diagnosis"
+              "title":"Diagnosis",
                 "type": "diagnosis",
                 "displayOrder": 4,
                 "config": {
@@ -132,7 +132,7 @@
                 "type": "treatment",
                 "displayOrder": 7,
                 "config": {
-                    "title":""Treatment,
+                    "title":"Treatment",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
