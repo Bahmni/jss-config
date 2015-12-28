@@ -1,6 +1,6 @@
 {
     "general":{
-        "translationKey": "General",
+        "title": "General",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
@@ -34,7 +34,7 @@
                 "title":"",
                 "type":"pacsOrders",
                 "displayOrder": 1,
-                "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
+                "title": "Pacs",
                 "config":{
                     "orderType": "Radiology Order"
                 }
@@ -144,7 +144,7 @@
             "adviceOnDischarge":{
                 "type": "observation",
                 "displayOrder": 8,
-                "translationKey":"DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
+                "title":"Advice on Discharge",
                 "config": {
                     "conceptNames": [
                         "Additional Advice on Discharge",
@@ -164,7 +164,7 @@
               "displayOrder": 0,
               "title": "Radiology Orders",
               "config": {
-                  "translationKey": "Radiology Orders",
+                  "title": "Radiology Orders",
                   "name": "ordersControl",
                   "orderType": "Radiology Order",
                   "conceptNames": [
