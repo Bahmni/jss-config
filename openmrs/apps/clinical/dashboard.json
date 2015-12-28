@@ -143,16 +143,6 @@
           ]
         }
       },
-      "bacteriologyResults": {
-        "name": "bacteriologyResultsControl",
-        "scope": "All",
-        "orderType": "",
-        "dashboardParams": {
-          "conceptNames": [
-            "BACTERIOLOGY CONCEPT SET"
-          ]
-        }
-      },
       "labResults": {
         "title": "Lab Results",
         "name": "labOrders",
@@ -486,27 +476,6 @@
           }
         },
         "displayOrder": 6
-      }
-    }
-  },
-  "patientSummary": {
-    "maxRecentlyViewedPatients": 10,
-    "sections": {
-      "Bacteriology Concept Set": {
-        "displayType": "Full-Page",
-        "name": "obsToObsFlowSheet",
-        "dashboardParams": {
-          "numberOfVisits": 1,
-          "templateName": "BACTERIOLOGY CONCEPT SET",
-          "groupByConcept": "Specimen Collection Date",
-          "conceptNames": [
-            "Specimen Id"
-          ]
-        },
-        "allDetailsParams": {
-          "templateName": "BACTERIOLOGY CONCEPT SET",
-          "groupByConcept": "Specimen Collection Date"
-        }
       }
     }
   }
