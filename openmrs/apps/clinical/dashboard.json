@@ -1,516 +1,513 @@
 {
-    "general": {
-        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
-        "displayByDefault": true,
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "patientInformation": {
-                "title": "Patient Information",
-                "name": "patientInformation",
-                "displayOrder": 0,
-                "ageLimit":100,
-                "patientAttributes": [],
-                "addressFields": [
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
-                ]
-            },
-            "diagnosis": {
-                "title": "Diagnosis",
-                "name": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "displayOrder": 1
-            },
-
-            "disposition": {
-                "title": "Disposition",
-                "name": "disposition",
-                "numberOfVisits": 1,
-                "displayOrder": 2
-            },
-            "treatments": {
-                "title":"Treatments",
-                "name": "treatment",
-                "displayOrder": 3,
-                "dashboardParams": {
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 5,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                },
-                "allTreatmentDetails": {
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 10,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                }
-            },
-            "radiology": {
-                "title": "Radiology",
-                "name": "radiology",
-                "displayOrder": 4
-            },
-            "programs": {
-                "title":"Programs",
-                "name": "programs",
-                "displayOrder": 5
-            },
-            "navigationLinksControl": {
-                "title":"Navigation Links Control",
-                "name": "navigationLinksControl",
-                "displayOrder": 6,
-                "links": [
-                    {
-                        "translationKey":"HOME_DASHBOARD_KEY",
-                        "url": "../home/#/dashboard"
-                    },
-                    {
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
-                    },
-                    {
-                        "translationKey":"PATIENT_ADT_PAGE_KEY",
-                        "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
-                    },
-                    {
-                        "translationKey":"PATIENT_DASHBOARD_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
-                    },
-                    {
-                        "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
-                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
-                    },
-                    {
-                        "translationKey":"CONSULTATION_PAGE_KEY",
-
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
-                    }
-                ]
-            },
-            "radiologyOrders": {
-                "orderType": "Radiology Order",
-                "title":"Radiology Orders",
-                "name": "ordersControl",
-                "displayOrder": 7,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Summary"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
-            "pacs": {
-                "title":"Pacs",
-                "orderType": "Radiology Order",
-                "name": "pacsOrders",
-                "displayOrder": 8,
-                "dashboardParams": {
-                    "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits": 4
-                }
-            },
-            "labOrdersDisplayControl": {
-                "title":"Lab Orders Display Control",
-                "name": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "displayOrder": 9,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "allOrdersDetails": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                }
-            },
-            "bacteriologyResults":{
-                "name": "bacteriologyResultsControl",
-                "scope": "All",
-                "orderType": "",
-                "dashboardParams": {
-                    "conceptNames": [
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
-
-                }
-            },
-            "labResults": {
-                "title":"Lab Results",
-                "name": "labOrders",
-                "displayOrder": 10,
-                "dashboardParams": {
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false,
-                    "initialAccessionCount": 0,
-                    "latestAccessionCount": 1
-                },
-                "allLabDetails": {
-                    "numberOfVisits": 10
-                }
-            },
-            "nutritionalValues": {
-                "title":"Nutritional Values",
-                "name": "vitals",
-                "isObservation": true,
-                "displayOrder": 11,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2,
-                    "scope": "latest",
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "vitals": {
-                "title":"Vitals",
-                "name": "vitals",
-                "isObservation": true,
-                "displayOrder": 12,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Vitals"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Vitals"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "Weight",
-                            "Vitals"
-                        ],
-                        "drugConcepts": [],
-                        "labConcepts": []
-                    }
-                }
-            },
-            "secondVitals": {
-                "title":"Second Vitals",
-                "name": "second vitals",
-                "isObservation": true,
-                "displayOrder": 13,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "historyAndExaminations": {
-                "title":"History and Examinations",
-                "name": "vitals",
-                "isObservation": true,
-                "displayOrder": 14,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "gynaecology": {
-                 "title":"Gynaecology",
-                "name": "gynaecology",
-                "isObservation": true,
-                "displayOrder": 15,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "obstetrics": {
-                 "title":"Obstetrics",
-                "name": "obstetrics",
-                "isObservation": true,
-                "displayOrder": 16,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "visits": {
-                 "title":"Visits",
-                "name": "visits",
-                "displayOrder": 17,
-                "dashboardParams": {
-                    "title": null,
-                    "maximumNoOfVisits": 8,
-                    "groupByVisits": true
-                }
-            },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes Templates",
-                "name": "diseaseTemplate",
-                "displayOrder": 18,
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "15",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "Weight",
-                            "Height",
-                            "Systolic",
-                            "Diastolic",
-                            "Diabetes, Foot Exam",
-                            "Diabetes, Eye Exam"
-                        ],
-                        "drugConcepts": [
-                            "Ipratropium Pressurised",
-                            "Garbhpal Rasa"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Albumin",
-                            "Polymorph"
-                        ]
-                    }
-                }
-            },
-            "admissionDetails": {
-                "title": "Admission Details",
-                "name": "admissionDetails",
-                "displayOrder": 19
-            }
+  "general": {
+    "dashboardName": "General",
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+      "patientInformation": {
+        "title": "Patient Information",
+        "name": "patientInformation",
+        "displayOrder": 0,
+        "ageLimit": 100,
+        "patientAttributes": [],
+        "addressFields": [
+          "address1",
+          "address2",
+          "cityVillage",
+          "countryDistrict"
+        ]
+      },
+      "diagnosis": {
+        "title": "Diagnosis",
+        "name": "diagnosis",
+        "showCertainty": true,
+        "showOrder": true,
+        "displayOrder": 1
+      },
+      "disposition": {
+        "title": "Disposition",
+        "name": "disposition",
+        "numberOfVisits": 1,
+        "displayOrder": 2
+      },
+      "treatments": {
+        "title": "Treatments",
+        "name": "treatment",
+        "displayOrder": 3,
+        "dashboardParams": {
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 5,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        },
+        "allTreatmentDetails": {
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 10,
+          "showOtherActive": true,
+          "showDetailsButton": true
         }
-    },
-    "trends": {
-        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "patientInformation": {
-                "title": "Patient Information",
-				 "name": "patientInformation",
-                "patientAttributes": [
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation",
-                    "debt",
-                    "distanceFromCenter",
-                    "isUrban",
-                    "cluster",
-                    "RationCard",
-                    "familyIncome"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
-                ],
-                "displayOrder": 0
-            },
-            "growthChart": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Growth Chart",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight"
-                    ],
-                    "referenceData": "growthChartReference.csv",
-                    "numberOfVisits": 20
-                },
-                "displayOrder": 1
-            },
-            "BP": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "BP",
-                "config": {
-                    "yAxisConcepts": [
-                        "Systolic",
-                        "Diastolic"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 2
-            },
-            "weight/BMI": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Weight/BMI",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight",
-                        "BMI"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 3
-            },
-            "diabetes/BloodSugar": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Diabetes/Blood Sugar",
-                "config": {
-                    "yAxisConcepts": [
-                        "Blood Sugar Fasting",
-                        "Blood Sugar P.P"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 4
-            },
-            "observationGraph": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Pulse",
-                "config": {
-                    "yAxisConcepts": [
-                        "Pulse"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 5
-            },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes, Progress",
-                "name": "diseaseTemplate",
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "visits",
-                        "obsConcepts": [
-                            "Diabetes, Blood Pressure",
-                            "Diabetes, A1C",
-                            "Diabetes, LDL",
-                            "Diabetes, Ulcers on Feet",
-                            "Blood Sugar Fasting",
-                            "Blood Sugar PP"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Cholesterol"
-                        ]
-                    }
-                },
-                "displayOrder": 6
-            }
+      },
+      "radiology": {
+        "title": "Radiology",
+        "name": "radiology",
+        "displayOrder": 4
+      },
+      "programs": {
+        "title": "Programs",
+        "name": "programs",
+        "displayOrder": 5
+      },
+      "navigationLinksControl": {
+        "title": "Navigation Links Control",
+        "name": "navigationLinksControl",
+        "displayOrder": 6,
+        "links": [
+          {
+            "title": "Home",
+            "url": "../home/#/dashboard"
+          },
+          {
+            "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
+            "title": "PATIENT_VISIT_PAGE_KEY"
+          },
+          {
+            "title": "Patient ADT Page",
+            "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
+          },
+          {
+            "title": "Patient Dashboard",
+            "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
+          },
+          {
+            "title": "Discharge Summary",
+            "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
+          },
+          {
+            "title": "Program Management Page",
+            "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
+          },
+          {
+            "title": "Consultation",
+            "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+          }
+        ]
+      },
+      "radiologyOrders": {
+        "orderType": "Radiology Order",
+        "title": "Radiology Orders",
+        "name": "ordersControl",
+        "displayOrder": 7,
+        "dashboardParams": {
+          "conceptNames": [
+            "Summary"
+          ],
+          "numberOfVisits": 4
         }
-    },
-    "patientSummary": {
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "Bacteriology Concept Set": {
-                "displayType": "Full-Page",
-                "name": "obsToObsFlowSheet",
-                "dashboardParams": {
-                    "numberOfVisits": 1,
-                    "templateName": "BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept": "Specimen Collection Date",
-                    "conceptNames": [
-                        "Specimen Id"
-                    ]
-                },
-                "allDetailsParams": {
-                    "templateName": "BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept": "Specimen Collection Date"
-                }
-            }
+      },
+      "pacs": {
+        "title": "Pacs",
+        "orderType": "Radiology Order",
+        "name": "pacsOrders",
+        "displayOrder": 8,
+        "dashboardParams": {
+          "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
+          "numberOfVisits": 4
         }
+      },
+      "labOrdersDisplayControl": {
+        "title": "Lab Orders Display Control",
+        "name": "ordersControl",
+        "orderType": "Lab Order",
+        "showDetailsButton": true,
+        "displayOrder": 9,
+        "dashboardParams": {
+          "conceptNames": [
+            "Systolic",
+            "Diastolic",
+            "Posture",
+            "Temperature"
+          ]
+        },
+        "allOrdersDetails": {
+          "conceptNames": [
+            "Systolic",
+            "Diastolic",
+            "Posture",
+            "Temperature"
+          ]
+        }
+      },
+      "bacteriologyResults": {
+        "name": "bacteriologyResultsControl",
+        "scope": "All",
+        "orderType": "",
+        "dashboardParams": {
+          "conceptNames": [
+            "BACTERIOLOGY CONCEPT SET"
+          ]
+        }
+      },
+      "labResults": {
+        "title": "Lab Results",
+        "name": "labOrders",
+        "displayOrder": 10,
+        "dashboardParams": {
+          "title": null,
+          "numberOfVisits": 1,
+          "showChart": false,
+          "showTable": true,
+          "showDetailsButton": false,
+          "initialAccessionCount": 0,
+          "latestAccessionCount": 1
+        },
+        "allLabDetails": {
+          "numberOfVisits": 10
+        }
+      },
+      "nutritionalValues": {
+        "title": "Nutritional Values",
+        "name": "vitals",
+        "isObservation": true,
+        "displayOrder": 11,
+        "dashboardParams": {
+          "conceptNames": [
+            "HEIGHT",
+            "Weight",
+            "BMI",
+            "BMI STATUS"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "HEIGHT",
+            "Weight",
+            "BMI",
+            "BMI STATUS"
+          ],
+          "numberOfVisits": 2,
+          "scope": "latest",
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "vitals": {
+        "title": "Vitals",
+        "name": "vitals",
+        "isObservation": true,
+        "displayOrder": 12,
+        "dashboardParams": {
+          "conceptNames": [
+            "Vitals"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Vitals"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {
+            "numberOfVisits": "10",
+            "groupBy": "encounters",
+            "obsConcepts": [
+              "Weight",
+              "Vitals"
+            ],
+            "drugConcepts": [],
+            "labConcepts": []
+          }
+        }
+      },
+      "secondVitals": {
+        "title": "Second Vitals",
+        "name": "second vitals",
+        "isObservation": true,
+        "displayOrder": 13,
+        "dashboardParams": {
+          "conceptNames": [
+            "Second Vitals"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Second Vitals"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "historyAndExaminations": {
+        "title": "History and Examinations",
+        "name": "vitals",
+        "isObservation": true,
+        "displayOrder": 14,
+        "dashboardParams": {
+          "conceptNames": [
+            "History and Examination"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "History and Examination"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "gynaecology": {
+        "title": "Gynaecology",
+        "name": "gynaecology",
+        "isObservation": true,
+        "displayOrder": 15,
+        "dashboardParams": {
+          "conceptNames": [
+            "Gynaecology"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Gynaecology"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "obstetrics": {
+        "title": "Obstetrics",
+        "name": "obstetrics",
+        "isObservation": true,
+        "displayOrder": 16,
+        "dashboardParams": {
+          "conceptNames": [
+            "Obstetrics"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Obstetrics"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "visits": {
+        "title": "Visits",
+        "name": "visits",
+        "displayOrder": 17,
+        "dashboardParams": {
+          "title": null,
+          "maximumNoOfVisits": 8,
+          "groupByVisits": true
+        }
+      },
+      "diabetes": {
+        "title": "Diabetes",
+        "templateName": "Diabetes Templates",
+        "name": "diseaseTemplate",
+        "displayOrder": 18,
+        "dashboardParams": {
+          "showOnly": []
+        },
+        "allDiseaseDetails": {
+          "showDetailsButton": true,
+          "pivotTable": {
+            "numberOfVisits": "15",
+            "groupBy": "encounters",
+            "obsConcepts": [
+              "Weight",
+              "Height",
+              "Systolic",
+              "Diastolic",
+              "Diabetes, Foot Exam",
+              "Diabetes, Eye Exam"
+            ],
+            "drugConcepts": [
+              "Ipratropium Pressurised",
+              "Garbhpal Rasa"
+            ],
+            "labConcepts": [
+              "RBS",
+              "FBS",
+              "PP2BS",
+              "Hb1AC",
+              "Creatinine",
+              "Albumin",
+              "Polymorph"
+            ]
+          }
+        }
+      },
+      "admissionDetails": {
+        "title": "Admission Details",
+        "name": "admissionDetails",
+        "displayOrder": 19
+      }
     }
+  },
+  "trends": {
+    "dashboardName": "Trends",
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+      "patientInformation": {
+        "title": "Patient Information",
+        "name": "patientInformation",
+        "patientAttributes": [
+          "caste",
+          "class",
+          "education",
+          "occupation",
+          "debt",
+          "distanceFromCenter",
+          "isUrban",
+          "cluster",
+          "RationCard",
+          "familyIncome"
+        ],
+        "addressFields": [
+          "address1",
+          "address2",
+          "cityVillage",
+          "countryDistrict"
+        ],
+        "displayOrder": 0
+      },
+      "growthChart": {
+        "type": "observationGraph",
+        "name": "observationGraph",
+        "title": "Growth Chart",
+        "config": {
+          "yAxisConcepts": [
+            "Weight"
+          ],
+          "referenceData": "growthChartReference.csv",
+          "numberOfVisits": 20
+        },
+        "displayOrder": 1
+      },
+      "BP": {
+        "type": "observationGraph",
+        "name": "observationGraph",
+        "title": "BP",
+        "config": {
+          "yAxisConcepts": [
+            "Systolic",
+            "Diastolic"
+          ],
+          "xAxisConcept": "observationDateTime",
+          "numberOfVisits": 10
+        },
+        "displayOrder": 2
+      },
+      "weight/BMI": {
+        "type": "observationGraph",
+        "name": "observationGraph",
+        "title": "Weight/BMI",
+        "config": {
+          "yAxisConcepts": [
+            "Weight",
+            "BMI"
+          ],
+          "xAxisConcept": "observationDateTime",
+          "numberOfVisits": 10
+        },
+        "displayOrder": 3
+      },
+      "diabetes/BloodSugar": {
+        "type": "observationGraph",
+        "name": "observationGraph",
+        "title": "Diabetes/Blood Sugar",
+        "config": {
+          "yAxisConcepts": [
+            "Blood Sugar Fasting",
+            "Blood Sugar P.P"
+          ],
+          "xAxisConcept": "observationDateTime",
+          "numberOfVisits": 10
+        },
+        "displayOrder": 4
+      },
+      "observationGraph": {
+        "type": "observationGraph",
+        "name": "observationGraph",
+        "title": "Pulse",
+        "config": {
+          "yAxisConcepts": [
+            "Pulse"
+          ],
+          "xAxisConcept": "observationDateTime",
+          "numberOfVisits": 10
+        },
+        "displayOrder": 5
+      },
+      "diabetes": {
+        "title": "Diabetes",
+        "templateName": "Diabetes, Progress",
+        "name": "diseaseTemplate",
+        "dashboardParams": {
+          "showOnly": []
+        },
+        "allDiseaseDetails": {
+          "showDetailsButton": true,
+          "pivotTable": {
+            "numberOfVisits": "10",
+            "groupBy": "visits",
+            "obsConcepts": [
+              "Diabetes, Blood Pressure",
+              "Diabetes, A1C",
+              "Diabetes, LDL",
+              "Diabetes, Ulcers on Feet",
+              "Blood Sugar Fasting",
+              "Blood Sugar PP"
+            ],
+            "labConcepts": [
+              "RBS",
+              "FBS",
+              "PP2BS",
+              "Hb1AC",
+              "Creatinine",
+              "Cholesterol"
+            ]
+          }
+        },
+        "displayOrder": 6
+      }
+    }
+  },
+  "patientSummary": {
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+      "Bacteriology Concept Set": {
+        "displayType": "Full-Page",
+        "name": "obsToObsFlowSheet",
+        "dashboardParams": {
+          "numberOfVisits": 1,
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "groupByConcept": "Specimen Collection Date",
+          "conceptNames": [
+            "Specimen Id"
+          ]
+        },
+        "allDetailsParams": {
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "groupByConcept": "Specimen Collection Date"
+        }
+      }
+    }
+  }
 }
