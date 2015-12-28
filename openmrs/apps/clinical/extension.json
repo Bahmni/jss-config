@@ -102,25 +102,12 @@
     "order": 3,
     "requiredPrivilege": "app:clinical"
   },
-  "activePatientsByLocation": {
-    "id": "bahmni.clinical.patients.search.activePatientsByLocation",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByLocation",
-      "title": "PatientByLocation",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-    },
-    "label": "Active",
-    "order": 4,
-    "requiredPrivilege": "app:clinical"
-  },
   "bahmniClinicalPatientsSearchAllPatients": {
     "id": "bahmni.clinical.patients.search.allPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "title": "All",
+      "display": "All",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
@@ -215,17 +202,6 @@
     "url": "orders",
     "icon": "icon-user-md",
     "order": 6,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
-  },
-  "bahmniClinicalConsultationBacteriology": {
-    "id": "bahmni.clinical.consultation.bacteriology",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Bacteriology",
-    "title":"Bacteriology",
-    "url": "bacteriology",
-    "icon": "icon-user-md",
-    "order": 7,
     "requiredPrivilege": "app:clinical:diagnosisTab"
   }
 }
