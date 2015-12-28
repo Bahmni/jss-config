@@ -4,7 +4,6 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Observations",
-    "translationKey":"OBSERVATIONS_BOARD_LABEL_KEY",
     "url": "concept-set-group/observations",
     "default": true,
     "icon": "fa-user-md",
@@ -16,7 +15,6 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Diagnosis",
-    "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
     "url": "diagnosis",
     "icon": "fa-user-md",
     "order": 2,
@@ -27,7 +25,6 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Disposition",
-    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
     "url": "disposition",
     "icon": "fa-user-md",
     "order": 3,
@@ -38,7 +35,6 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Consultation",
-    "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
     "url": "consultation",
     "icon": "fa-user-md",
     "order": 5,
@@ -60,7 +56,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
+      "display": "Active",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
@@ -73,7 +69,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+      "display": "Programs",
       "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
     },
     "label": "Active",
@@ -86,7 +82,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "translationKey": "MODULE_LABEL_MY_PATIENTS_KEY",
+      "display": "My Patients",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
@@ -99,7 +95,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "translationKey": "MODULE_LABEL_OPD_1_KEY",
+      "display": "OPD-1",
       "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
     },
     "label": "OPD-1",
@@ -112,7 +108,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByLocation",
-      "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION",
+      "title": "PatientByLocation",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
@@ -124,7 +120,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "translationKey": "MODULE_LABEL_ALL_KEY",
+      "title": "All",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
@@ -204,7 +200,7 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Medications",
-    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
+    "title":"Medication",
     "url": "treatment",
     "icon": "fa-user-md",
     "order": 7,
@@ -215,7 +211,7 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Orders",
-    "translationKey":"ORDERS_BOARD_LABEL_KEY",
+    "title":"Orders",
     "url": "orders",
     "icon": "icon-user-md",
     "order": 6,
@@ -226,7 +222,7 @@
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
     "label": "Bacteriology",
-    "translationKey":"BACTERIOLOGY_BOARD_LABEL_KEY",
+    "title":"Bacteriology",
     "url": "bacteriology",
     "icon": "icon-user-md",
     "order": 7,
