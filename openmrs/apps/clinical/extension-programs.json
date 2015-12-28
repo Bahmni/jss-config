@@ -5,7 +5,7 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+            "display": "Programs",
             "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
         },
         "label": "Active",
@@ -17,7 +17,7 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "translationKey": "MODULE_LABEL_ALL_KEY",
+            "display": "All",
             "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
         },
         "label": "All",
@@ -97,7 +97,6 @@
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Observations",
-        "translationKey": "OBSERVATIONS_BOARD_LABEL_KEY",
         "url": "concept-set-group/observations",
         "default": true,
         "icon": "fa-user-md",
@@ -109,7 +108,6 @@
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Diagnosis",
-        "translationKey": "DIAGNOSIS_BOARD_LABEL_KEY",
         "url": "diagnosis",
         "icon": "fa-user-md",
         "order": 2,
@@ -120,7 +118,6 @@
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Disposition",
-        "translationKey": "DISPOSITION_BOARD_LABEL_KEY",
         "url": "disposition",
         "icon": "fa-user-md",
         "order": 3,
