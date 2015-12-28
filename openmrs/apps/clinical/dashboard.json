@@ -1,6 +1,6 @@
 {
     "general": {
-        "title": "General",
+        "dashboardName": "General",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
@@ -45,7 +45,6 @@
                     "showDetailsButton": true
                 },
                 "allTreatmentDetails": {
-                    "title": "Treatments",
                     "showFlowSheet": true,
                     "showListView": true,
                     "showRoute": true,
@@ -71,31 +70,31 @@
                 "displayOrder": 6,
                 "links": [
                     {
-                        "translationKey":"HOME_DASHBOARD_KEY",
+                        "title":"Home",
                         "url": "../home/#/dashboard"
                     },
                     {
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
+                        "title":"PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "translationKey":"PATIENT_ADT_PAGE_KEY",
+                        "title":"Patient ADT Page",
                         "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                     },
                     {
-                        "translationKey":"PATIENT_DASHBOARD_KEY",
+                        "title":"Patient Dashboard",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
                     },
                     {
-                        "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
+                        "title":"Discharge Summary",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
-                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
+                        "title":"Program Management Page",
                         "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
                     },
                     {
-                        "translationKey":"CONSULTATION_PAGE_KEY",
+                        "title":"Consultation",
 
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
@@ -105,7 +104,6 @@
                 "orderType": "Radiology Order",
                 "title":"Radiology Orders",
                 "name": "ordersControl",
-                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
                 "dashboardParams": {
                     "conceptNames": [
@@ -366,12 +364,12 @@
         }
     },
     "trends": {
-        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
+        "dashboardName": "Trends",
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-               "name": "patientInformation",
+				 "name": "patientInformation",
                 "patientAttributes": [
                     "caste",
                     "class",
