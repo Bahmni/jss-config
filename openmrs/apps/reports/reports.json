@@ -172,6 +172,13 @@
     "config": {
       "conceptNames": ["Tuberculosis, Next Followup Visit"],
       "templateName": "Tuberculosis Followup Template"
+     }
+   },  
+ "abnormalityReport": {
+    "name": "Abnormality report for critical tests wt Tel",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
     }
   }
 }
