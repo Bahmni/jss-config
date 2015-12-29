@@ -68,7 +68,16 @@
        "name": "Diagnosis Count",
        "type": "diagnosisCount",
         "config": {
-           "concept": "Diagnosis Set of Sets"
+           "concept": "Diagnosis Set of Sets",
+           "ageGroupName": "All Ages",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender"
+      ]
+
        }
    },
   "ANCData": {
@@ -132,14 +141,6 @@
               "conceptNames": ["Height", "Weight"]
     }
   },
-  "visitAggregateCount": {
-    "name": "Visit Aggregate Count Report",
-    "type": "VisitAggregateCount",
-    "config": {
-               "type": "VisitAggregateCountReport",
-               "visitTypes": "'IPD','OPD','EMERGENCY'"
-    }
- },
  "ipdOPd": {
      "name": "OPD/IPD Visit Count",
      "type": "IpdOpdVisitCount"
