@@ -2,25 +2,80 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-print.css" media="print"/>
 
 
-<center><font size=5> जन स्वास्थ्य सहयोग </font></center><br>
-<center><font size=5> हेल्थ सेंटर  - ग्राम-पोस्ट - गनियारी, जिला - बिलासपुर (छ. ग.) </font></center><br>
-<center><font size=5> मृत्यु रिपोर्ट </font></center><br>
+<center><b>JAN SWASTHYA SAHYOG</b></center><br>
+
+<center><b>Health Centre - Ganiyari Village & P.O., Bilaspur District, Chhattisgarh</b></center><br>
+
+<center><b>DEATH REPORT</b></center>
+
+<br>
+<br>
+<br>
+
+
+
 <div class="placeholder-text">
 
-<font size=4><span class="fl columns-2">रजिस्ट्रेशन नंबर:{{patient.identifier}}</span></font><br><br>
-<font size=4><span class="fl columns-2">भर्ती होने की तारीख:</span></font><br><br>
-<font size=4><span class="fl columns-2">मृत्यु होने की तारीख:</span></font><font size=4><span class="fr columns-2">समय</span></font><br><br>
-<font size=4><span class="fl columns-2">रिपोर्ट देने की तारीख: </font></span><br><br>
-<font size=4><span class="fl columns-2">मरीज का नाम:{{patient.name}}</span></font><br><br>
-<font size=4><span class="fl columns-2">उम्र:{{patient.age}}</span><span class="fr columns-2"> स्त्री/पुरुष: {{patient.gender}}</span></font><br><br>
-<font size=4><span class="fl columns-2">जाति: {{patient.caste.value}}</span></font><br><br>
-<font size=4><span class="fl columns-2">पता: {{patient.address.address1}}{{patient.address.address2}}{{patient.address.address3}}
-										{{patient.address.cityVillage}}{{patient.address.cityVillage}} {{patient.address.stateProvince}}
-										</span></font><br><br>
-<font size=4><span class="fl columns-2">कितने दिन रहा: </span></font><br><br>
-<font size=4><span class="fl columns-2">मृत्यु का कारण: </span>
-             <span class="fr columns-2">डॉक्टर का हस्ताक्षर: </span></font><br><br>
-<font size=4><span class="fl columns-2">दिनांक: </span><span class="fr columns-2"> पंजीयन नं:</span><br><br>
+<div>
+		<span class="fl columns-2"><b>OP/IP No</b>:{{patient.identifier}} </span> 
+		<span class="fr columns-2"><b>Serial No</b></span>
+</div>
+<br>
+<div>
+		<span class="fr columns-2"><b>Taluk/Tahsil/Block</b>:{{patient.address.address3}}</span>
+		<span class="fl columns-2"><b>Registration/Unit/Village/Town/Muncipality</b>:{{patient.address.cityVillage}}</span>
+		
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Thana</b>:{{patient.address.cityVillage}}</span>
+		<span class="fr columns-2"><b>District</b>:{{patient.address.stateProvince}}</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Date and Time of Death</b>:</span>
+		<span class="fr columns-2"><b>Full name of the Deceased</b>:{{patient.name}}</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Name of Father/Spouse</b>:{{patient.primaryRelative.value}}</span>
+		<span class="fr columns-2"><b>Place of Death</b></span>
+</div>
+<br>
+<div>
+		 <span class="fl columns-2" ng-if="patient.age == 0" ng-bind-html="htmlLabel(patient.ageText)"><b>Age</b>:{{patient.age}}</span>
+ 		 <span class="fl columns-2" ng-if="patient.age !== 0"> <b>Age</b>:{{patient.age}}</span> 
+		 <span class="fr columns-2"> <b>Sex</b>:{{patient.genderText}}</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Marital Status</b>:</span>
+		<span class="fr columns-2"><b>Occupation</b>:{{patient.occupation.value.display}}</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Religion</b>:{{patient.caste.value}}</span>
+		<span class="fr columns-2"><b>Nationality</b>:</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Permanent residential address</b>:{{patient.address.address1}}{{patient.address.address2}}{{patient.address.address3}}
+																 {{patient.address.cityVillage}}{{patient.address.cityVillage}} {{patient.address.stateProvince}}</span>
+		<span class="fr columns-2"><b>Cause of death</b>:</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Received dead body</b>:</span>
+		<span class="fr columns-2"><b>(ii) Address</b>:</span>
+</div>
+<br>
+<div>
+		<span class="fl columns-2"><b>Signature/left thumb print</b></span>
+		<span class="fr columns-2"><b>Signature of Medical officer</b></span>
+</div>
+<br>
+
 </div>
 
 <br><br><br><br>
+
