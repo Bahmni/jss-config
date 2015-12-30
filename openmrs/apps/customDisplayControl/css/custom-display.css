@@ -21,9 +21,6 @@
 .half-width{
         width:50%;
 }
-.space{
- padding-left:20px;
-}
 /* styling for Death footer section*/
 .death-footer-container{
 
@@ -120,34 +117,6 @@
 
 }
 
-table.result{
-padding:0px 12px;
-border: 1px solid;
-width:100%;
-border-collapse: collapse;
-}
-table.result td {
-padding:10px 20px;
-}
-.unordered{
-list-style:disc;
-}
-.micrology{
-border:1px solid;
-float:right;
-width:auto;
-padding:10px;
-font-size:12px;
-}
-.micrology h2{
-color:black;
-font-weight:bold;
-}
-
-ol.micro{
-padding: 0px 10px 0px 17px;
-display:block;
-}
 /* line 65, print.scss */
 .print-table-right-header {
   text-align: center;
@@ -180,4 +149,75 @@ display:block;
 /* line 84, print.scss */
 .hindi-text {
   vertical-align: bottom;
+}
+.print-body{
+ 	/* font-family : "Times New Roman", Georgia, Serif;*/
+    color: #000;
+    font-size: 14px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+.print-body strong{
+    /* font-family : "Times New Roman", Georgia, Serif !important;*/
+    font-weight:bold !important;
+}
+
+.print-body div{
+	display:block;
+	
+}
+.print-body span{
+	display:block;
+}
+.print-body div.footer-pdhinduja{
+ border-top:2px solid;
+ border-bottom:2px solid;
+ padding:5px 0;
+}
+
+.header-pdhinduja{
+text-align:center;
+ border-bottom:2px solid;
+ padding:5px 0;
+}
+
+/* Clinical print */
+
+.print-body .header-page{
+	margin:0 0 10px;
+}
+
+.print-body h2{
+	color:#000;
+	font-size:16px;
+	line-height:1.5;
+	margin:0;
+    font-weight: bold;
+}
+.print-body .header-page h2{
+	text-align:center;
+}
+
+.print-body h2.title-case{
+	text-transform:uppercase;
+}
+.print-body span.space{
+	display:inline-block;
+	padding-left:50px;
+}
+.print-body .clinical-content-left h2.clinical-identification{
+	text-align:left;
+	padding:10px 0;
+	text-transform:uppercase;
+}
+.print-body .clinical-content div{
+	margin:0;
+}
+.print-body .clinical-content-below{
+	clear:both;
+	margin:0;
+}
+.print-body .clinical-footer span{
+ dispaly:inline-block;
 }

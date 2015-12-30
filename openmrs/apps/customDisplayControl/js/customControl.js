@@ -8,8 +8,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observations = response.data;
             }));
-            
-        };
+        }
 
         return {
             restrict: 'E',
@@ -23,7 +22,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             
             var conceptNames = ["Death Note"];
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                    $scope.observations = response.data[0];
+                    $scope.observations = response.data;
                     
 
                 }));

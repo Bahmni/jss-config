@@ -1,116 +1,117 @@
 
 {
-    "general":{
-        "title":"General",
+    "general": {
+        "title": "General",
         "displayByDefault": true,
         "printing": {
-            "title": "Bahmni",
+            "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/jss-icon.png"
         },
         "defaultSections": true,
         "sections": {
-            "pivotTable":{
+            "pivotTable": {
                 "type": "pivotTable",
-                "displayOrder": 0,
-                "title": "Vitals Flowsheet",
+                "title": "Pivot Table",
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
-                        "Vitals",
-                        "Pulse",
-                        "Diastolic",
-                        "Systolic",
-                        "Temperature",
-                        "RR",
-                        "SPO2",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
+                        "Weight",
+                        "Vitals"
                     ],
-                    "labConcepts": ""
-                }
-            },
-            "pacsOrders":{
-                "title":"Pacs",
-                "type":"pacsOrders",
-                "displayOrder": 1,
-                "config":{
-                    "orderType": "Radiology Order"
-                }
+                    "drugConcepts": [],
+                    "labConcepts": []
+                },
+                "displayOrder": 0
             }
         }
     },
-    "dischargeSummary":{
+    "dischargeSummary": {
         "title": "Discharge Summary",
         "printing": {
-            "title": "Bahmni",
+            "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Discharge Summary",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/jss-icon.png"
         },
         "sections": {
-            "PatientInformation":{
+            "patientInformation": {
                 "type": "patientInformation",
-                "displayOrder": 0,
                 "config": {
+                    "addressFields": [
+                        "cityVillage",
+                        "address2",
+                        "address3",
+                        "countyDistrict"
+                    ],
                     "title": "PatientInformation",
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-                }
+                    "patientAttributes": []
+                },
+                "displayOrder": 0
             },
-            "admissionDetails":{
+            "admissionDetails": {
                 "type": "admissionDetails",
-                "displayOrder": 1,
                 "config": {
-                    "showDetailsButton": true
-
-                }
+                    "showDetailsButton": true,
+                    "title" : "Admission Details"
+                },
+                "displayOrder": 1
             },
-            "weightInitial":{
+            "atAdmission": {
                 "type": "observation",
-                "displayOrder": 2,
+                "title": "At Admission",
                 "config": {
-                    "conceptNames": ["WEIGHT"],
+                    "conceptNames": [
+                        "Weight",
+                        "Height",
+                        "BMI"
+                    ],
                     "scope": "initial"
-                }
+                },
+                "displayOrder": 2
             },
-            "weightLatest": {
+            "lastRecordedWeight": {
                 "type": "observation",
-                "displayOrder": 3,
+                "title": "Last Recorded Weight",
                 "config": {
-                    "conceptNames": ["WEIGHT"],
+                    "conceptNames": [
+                        "Weight"
+                    ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 3
             },
-            "diagnoses":{
-                "title":"Diagnosis",
+            "diagnoses": {
                 "type": "diagnosis",
-                "displayOrder": 4,
                 "config": {
+                    "title": "Diagnoses",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 4
             },
-            "clinicalNotes":{
+            "clinicalNotes": {
                 "type": "observation",
-                "displayOrder": 5,
                 "title": "Clinical Notes",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
-                        "Discharge Summary",
+                        "Discharge Summary, Admission Indication",
+                        "Hospital Course",
+                        "Discharge Summary, Surgical Indication",
+                        "Date of Operation",
+                        "Operative Procedure",
                         "Lab Investigation Notes",
                         "Radiology Notes",
                         "Other Notes"
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"
-                }
+                },
+                "displayOrder": 5
             },
-            "labInvestigations":{
+            "labInvestigations": {
                 "type": "investigationResult",
-                "displayOrder": 6,
                 "config": {
                     "title": "Lab Investigations",
                     "showChart": true,
@@ -121,59 +122,42 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 1,
                     "latestAccessionCount": 1
-                }
+                },
+                "displayOrder": 6
             },
-            "treatments":{
+            "treatments": {
                 "type": "treatment",
-                "displayOrder": 7,
                 "config": {
-                    "title":"Treatment",
+                    "title": "Treatments",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
-                }
+                },
+                "displayOrder": 7
             },
-            "adviceOnDischarge":{
+            "adviceOnDischarge": {
                 "type": "observation",
-                "displayOrder": 8,
-                "title":"Additional Advice on Discharge",
+                "title": "Advice on Discharge",
                 "config": {
                     "conceptNames": [
-                        "Additional Advice on Discharge",
+                        "Advice on Discharge",
                         "Follow up Date",
                         "Discharge Summary, Plan for follow up"
                     ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 8
             }
         }
-    },
-    "orders":{
-      "title": "Orders",
-      "sections": {
-          "Radiology Orders": {
-              "type": "order",
-              "displayOrder": 0,
-              "title": "Radiology Orders",
-              "config": {
-                  "name": "ordersControl",
-                  "orderType": "Radiology Order",
-                  "conceptNames": [
-                      "Summary"
-                  ]
-              }
-          }
-      }
-
-    },
-    "deathCertificate": {
-    "title": "Death CERTIFICATE ",
+    },"birthCertificate":{
+     "title": "BIRTH CERTIFICATE ",
+    "translationKey": " BIRTH CERTIFICATE",
     "printing": {
       "title": "Bahmni",
-      "header": " Death Certificate",
+      "header": " Birth Certificate",
       "logo": "../images/bahmniLogo.png"
     },
     "sections": {
@@ -182,7 +166,7 @@
         "displayOrder": 1,
         "config": {
           "title": "Patient Death Certificate ",
-          "template": "<death-certificate></death-certificate>"
+          "template": "<birth-certificate></birth-certificate>"
         }
       }
     }
@@ -229,7 +213,7 @@
    "title": "People's Health Support Group ",
     "printing": {
       "title": "Bahmni",
-      "header": "Jan Swashya Sahyog ",
+      "header": " Death Certificate",
       "logo": "../images/bahmniLogo.png"
     },
     "sections": {
@@ -237,11 +221,26 @@
         "type": "custom",
         "displayOrder": 1,
         "config": {
-          "title": "People's Health Support Group",
-          "template": "<pplhlth-sptgrp></pplhlth-sptgrp>"
+          "title": "Patient Death Certificate ",
+          "template": "<death-certificate></death-certificate>"
         }
-      }
+      },
+      "DeathNotes": 
+    {
+                "type": "observation",
+                "title": "Death Notes",
+                "displayOrder": 2,
+                "config": {
+                    "conceptNames": ["Death Note" ],
+                    "translationKey":"Death Note",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
+                }
+            }
     }
-  
   }
 }
