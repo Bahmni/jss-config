@@ -35,6 +35,7 @@
                                   {{patient.address.cityVillage}} {{patient.address.cityVillage}} {{patient.address.stateProvince}} </span>
             <span>Gender : <input type="checkbox" ng-checked="patient.gender=='M'"> Male <input type="checkbox" ng-checked="patient.gender=='F'"> Female<span class="space">  Age : {{patient.age}} Years </span></span>
         </div>
+        <br>
         <h2 class="clinical-left">Results of First two smears at the MC :</h2>
         <table class="result">
             <tr>
@@ -78,6 +79,7 @@
                 <td></td>
             </tr>
         </table>
+        <br>
         <div>
             <h2 class="clinical-left"> B. HISTORY GIVEN BY THE PATIENT</h2>
             <span>Previously Treated for TB ? <input type="checkbox" ng-checked="observations.groupMembers[1].valueAsString=='No'"> No 

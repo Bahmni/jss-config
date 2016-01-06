@@ -1,3 +1,4 @@
+
 {
     "general": {
         "title": "General",
@@ -50,7 +51,7 @@
             "admissionDetails": {
                 "type": "admissionDetails",
                 "config": {
-                    "showDetailsButton": true,
+                    "showDetailsButton": false,
                     "title" : "Admission Details"
                 },
                 "displayOrder": 1
@@ -131,7 +132,7 @@
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
-                    "showDetailsButton": true,
+                    "showDetailsButton": false,
                     "showRoute": true,
                     "showDrugForm": true
                 },
@@ -152,15 +153,14 @@
             }
         }
     },"birthCertificate":{
-     "title": "BIRTH CERTIFICATE ",
-    "translationKey": " BIRTH CERTIFICATE",
+     "title": "Birth Certificate",
     "printing": {
       "title": "Bahmni",
       "header": " Birth Certificate",
       "logo": "../images/bahmniLogo.png"
     },
     "sections": {
-      "Death Certificate": {
+      "Birth Certificate": {
         "type": "custom",
         "displayOrder": 1,
         "config": {
@@ -171,18 +171,18 @@
     }
   },
   "rntcpform":{
-   "title": "RNTCP FORM ",
-    "printing": {
-      "title": "Bahmni",
-      "header": "RNTCP Request for Culture and Drug Sensitivity Test",
-      "logo": "../images/bahmniLogo.png"
+   "title": "RNTCP Form",
+   "printing": {
+      "title": "",
+      "header": "",
+      "logo": ""
     },
     "sections": {
-      "Death Certificate": {
+      "RNTCP Form": {
         "type": "custom",
         "displayOrder": 1,
         "config": {
-          "title": "RNTCP Request for Culture and Drug Sensitivity Test",
+          "title": "RNTCP Request for Culture and Drug Sensitivity Testing",
           "template": "<rntcp-form></rntcp-form>"
         }
       }
@@ -190,30 +190,30 @@
   
   },
   "clinicalinfotbform":{
-   "title": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
+   "title": "RMRCT Form",
     "printing": {
-      "title": "Bahmni",
-      "header": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
-      "logo": "../images/bahmniLogo.png"
+      "title": "",
+      "header": "",
+      "logo": ""
     },
     "sections": {
-      "Death Certificate": {
+      "RMRCT Form": {
         "type": "custom",
         "displayOrder": 1,
         "config": {
-          "title": "RMRCT CLINICAL INFORMATION FORM FOR TB PATIENTS",
+          "title": "RMRCT Clinical TB Information Form for TB Patient",
           "template": "<clinicalinfo-tb></clinicalinfo-tb>"
         }
       }
     }
   
   },
-    "hindujaCDSTForm":{
-   "title": "Hinduja CDST Form",
+      "Death Certificate":{
+     "title": "Death Certificate",
     "printing": {
-      "title": "Bahmni",
-      "header": " Death Certificate",
-      "logo": "../images/bahmniLogo.png"
+      "title": "",
+      "header": "Death Certificate",
+      "logo": ""
     },
     "sections": {
       "Death Certificate": {
@@ -223,23 +223,25 @@
           "title": "Patient Death Certificate ",
           "template": "<death-certificate></death-certificate>"
         }
-      },
-      "DeathNotes": 
-    {
-                "type": "observation",
-                "title": "Death Notes",
-                "displayOrder": 2,
-                "config": {
-                    "conceptNames": ["Death Note" ],
-                    "translationKey":"Death Note",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true
-                }
-            }
+      }
+    }
+  },
+  "pplhlthsptgrp":{
+   "title": "PD Hinduja Form",
+    "printing": {
+      "title": "",
+      "header": "",
+      "logo": "../images/jss-icon.png"
+    },
+    "sections": {
+      "PD Hinduja Form": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Jan Swasthya Sahyog",
+          "template":"<pplhlth-sptgrp></pplhlth-sptgrp>"
+        }
+      }
     }
   }
 }

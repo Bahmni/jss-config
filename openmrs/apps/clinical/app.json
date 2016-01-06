@@ -44,6 +44,9 @@
       "Psychiatry Followup Template": {
         "showPreviousButton": true
       },
+      "People Health Support Group Form, Drugs used in his treatment": {
+      "multiSelect": true
+      },
       "Discharge Summary": {
         "showPreviousButton": true,
         "numberOfVisits": 1
@@ -214,6 +217,9 @@
       "Tuberculosis, Under 5 Year Mantoux Screening": {
         "allowAddMore": true
       },
+      "Tuberculosis, Next Followup Visit": {
+        "allowFutureDates": true
+       },
       "Psychiatry, Mania Complaints": {
         "multiSelect": true
       },
