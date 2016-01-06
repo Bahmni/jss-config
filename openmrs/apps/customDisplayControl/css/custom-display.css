@@ -2,6 +2,16 @@
    text-align : center;
 }
 
+.clinical-left{
+color:#000;
+text-align:left;
+}
+
+.clinical-right{
+color:#000;
+text-align:right;
+}
+
 .custom-print-left{
    text-align : left;
 }
@@ -20,6 +30,9 @@
 
 .half-width{
         width:50%;
+}
+.space{
+ padding-left:20px;
 }
 /* styling for Death footer section*/
 .death-footer-container{
@@ -117,6 +130,34 @@
 
 }
 
+table.result{
+padding:0px 12px;
+border: 1px solid;
+width:100%;
+border-collapse: collapse;
+}
+table.result td {
+padding:10px 20px;
+}
+.unordered{
+list-style:disc;
+}
+.micrology{
+border:1px solid;
+float:right;
+width:auto;
+padding:10px;
+font-size:12px;
+}
+.micrology h2{
+color:black;
+font-weight:bold;
+}
+
+ol.micro{
+padding: 0px 10px 0px 17px;
+display:block;
+}
 /* line 65, print.scss */
 .print-table-right-header {
   text-align: center;

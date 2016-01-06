@@ -18,6 +18,7 @@
                     "debt",
                     "distanceFromCenter"
                 ],
+                "showDOB" : false,
                 "addressFields": [],
                 "displayOrder": 0
             },
@@ -125,7 +126,8 @@
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
-                    "maximumNoOfVisits": 10
+                    "maximumNoOfVisits": 10,
+                    "groupByVisits": true
                 },
                 "displayOrder": 7
             },

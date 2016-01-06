@@ -22,7 +22,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             
             var conceptNames = ["Death Note"];
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                    $scope.observations = response.data;
+                    $scope.observations = response.data[0];
                     
 
                 }));
