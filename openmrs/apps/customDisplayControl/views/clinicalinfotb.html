@@ -15,7 +15,7 @@
             <div class="fl clinical-content-left">
                 <span>Name of the Microscopy Center: Jan Swasthya Sahyog </span>
                 <h2 class="clinical-identification">A. IDENTIFICATION OF THE PATIENT</h2>
-                <span>Name : {{patient.name}} <span class="space">Tribes/Non Tribes : ............</span></span>
+                <span>Name : {{patient.name}} ({{patient.identifier}}) <span class="space">Tribes/Non Tribes : ............</span></span>
                 
             </div>
             <div class="micrology fr">
@@ -28,8 +28,8 @@
         </div>
         <div class="clinical-content-below">
         	
-            <span>Permanent address with land marks : {{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} 
-                                  {{patient.address.cityVillage}} {{patient.address.cityVillage}} {{patient.address.stateProvince}} </span>
+            <span>Permanent address with land marks : {{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} {{patient.address.countryDistrict}}
+                                  {{patient.address.cityVillage}} {{patient.address.stateProvince}} </span>
             <span>Gender : <input type="checkbox" ng-checked="patient.gender=='M'"> Male <input type="checkbox" ng-checked="patient.gender=='F'"> Female<span class="space">  Age : {{patient.age}} Years </span></span>
         </div>
         <br>
