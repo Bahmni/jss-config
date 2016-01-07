@@ -1,240 +1,281 @@
-
 <html>
+
 <head>
-	<title></title>
-	<link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/style.css" />
+    <title></title>
+    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/display/clinical-rntcp-display.css" />
+    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/print/clinical-rntcp-print.css" media="print" />
 </head>
+
 <body>
-<div class="culture-form-wrapper">
- 	<div class="page-title">
-		<span class="title">RNTCP Request for Culture and Drug Sensitivity Testing</span>
-		<span class="sub-title">(Required for Culture and DST laboratory to Conduct testing, please send copt to District TB Officer)</span>
-	</div>
-	
-
-	<div class="col-2">
-		<div class="container patient-info">
-			<div class="heading">Patient Information:{{patient.identifier}}</div>
-			
-			<div class="form-element-container clearfix">
-				<div class="form-label">Patient Name:</div>
-				<div class="form-value">{{patient.name}}</div>
-			</div>
-
-			<div class="form-element-container clearfix">
-				<div class="form-label">Patient Address with <br />Landmark:</div>
-				<div class="form-value">{{patient.address.address1}}{{patient.address.address2}}{{patient.address.address3}}
-										{{patient.address.cityVillage}}{{patient.address.cityVillage}} {{patient.address.stateProvince}}</div>
-			</div>
-
-			<div class="form-element-container clearfix">
-				<div class="form-label">Patient Mobile No. or <br /> other contact No. :</div>
-				<div class="form-value">{{patient.Telephone_Number.value}}</div>
-			</div>
-
-			<div class="form-element-container clearfix age-container">
-				<div class="form-label">
-					<div class="form-label">Age : </div>
-					<div class="form-value">{{patient.age}}</div>
-				</div>
-				<div class="form-value ng">
-					<div>Sex : Male<input type="checkbox" ng-checked="patient.gender=='M'"> Female <input type="checkbox" ng-checked="patient.gender=='F'"></div>
-				</div>
-			</div>
-
-			<div class="form-element-container clearfix">
-				<div class="form-label">Sputum: Date of Collection <br /> (DD/MM/YY)<br></div>
-				<div class="form-value">
-					Sample 1 : ___________________(DD/MM/YY)<br>
-					Sample 2 : ___________________(DD/MM/YY)
-				</div>
-			</div>
-
-			<div class="referDetails">
-			   <div>Name referring facility <br />	(PHI/DMC/DR-TB <br /> Center/other) : Jan Swasthya Sahyog</div> 
-			   <div> District : Bilaspur</div> 
-			   <div> Tuberculosis Unit(TU) : </div>
-		   </div>
-		</div>
-		<div class="container testing-container">
-			<div class="heading">Reason for testing</div>
-			<div class="form-element-container clearfix">
-				<div class="form-label"><input type="checkbox"/>DIAGNOSIS</div>
-				<div class="form-value"><input type="checkbox" />FOLLOW-UP</div>
-			</div>
-
-			<div class="form-element-container clearfix">
-				<div class="form-label">
-					MDR Suspect Criteria <br />
-					<input type="checkbox" ng-checked="observations.groupMembers[0].valueAsString=='Yes'">Failure<br>
-					<input type="checkbox" ng-checked="observations.groupMembers[1].valueAsString=='Yes'">re-treatment case S-at 4th month <br>
-					<input type="checkbox" ng-checked="observations.groupMembers[2].valueAsString=='Yes'">Contact for known MDR TB case<br>
-					<input type="checkbox" ng-checked="observations.groupMembers[3].valueAsString=='Yes'">S+at diagnosis.re-reatment case<br>
-					<input type="checkbox" ng-checked="observations.groupMembers[4].valueAsString=='Yes'">Any follow uo S+<br>
-					<input type="checkbox" ng-checked="observations.groupMembers[5].valueAsString=='Yes'">S-at diagnosis.re-reatment case<br>
-					<input type="checkbox" ng-checked="observations.groupMembers[6].valueAsString=='Yes'">HIV TB Case<br>
-				</div>
-				<div class="fl">
-					<div class="pmdt">PMDT Registration Number : {{patient.identifier}}</div>
-					<div>Treatment month of follow-up</div>
-				</div>
-			</div>
-
-
-			<div class="form-element-container clearfix">
-				<div class="form-label">
-						RNTCP TB Reg. No. and Type<br />
-						(or <input type="checkbox" />Not Applicable)
-
-				</div>
-				<div class="form-value">
-						DR-TB Center Name
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-2">
-	 	<div class="container tb-result">
-			<div class="heading">Molecular TB/DST result</div>
-			<table>
-				<tr>
-					<td>Test : </td>
-					<td colspan="2"><input type="checkbox" /> Line probe Assay (LPA)</td>
-					<td><input type="checkbox" /> CBNAAT</td>
-				</tr>
-
-				<tr>
-					<td>Test Validity :</td>
-					<td><input type="checkbox" /> Valid</td>
-					<td><input type="checkbox" /> Invalid</td>
-					<td></td>
-				</tr>
-
-				<tr>
-					<td>M. Tuberculosis :</td>
-					<td><input type="checkbox" /> Detected</td>
-					<td><input type="checkbox" /> Not Detected</td>
-					<td></td>
-				</tr>
-
-				<tr>
-					<td>Rifampicin :</td>
-					<td><input type="checkbox" /> Resistant</td>
-					<td><input type="checkbox" /> Sensitive</td>
-					<td><input type="checkbox" /> Not Available</td>
-				</tr>
-
-				<tr>
-					<td>Isoniazid :</td>
-					<td><input type="checkbox" /> Resistant</td>
-					<td><input type="checkbox" /> Sensitive</td>
-					<td><input type="checkbox" /> Not Available</td>
-				</tr>
-				<tr>
-					<td colspan="3">Notes:</td>
-				</tr>
-				<tr class="sign-section">
-					<td colspan="2">Date :</td>
-					<td colspan="2">Reported By (Name &amp; Signature)</td>
-				</tr>
-			
-
-				
-			</table>
-		</div>
-		
-		<div class="container lj-liquid-result">
-			<div class="heading">Lj/Liquid Culture results </div>
-			<table>
-				<tbody>
-					<tr class="border-bottom">
-						<td rowspan="2" class="dateRecived">Date Received :</td>
-						<td rowspan="2" class="rotate specimen">Specimen</td>
-						<td rowspan="2" class="rotate specimenNO">Specimen No:</td>
-						<td rowspan="2" class="text-center">Smear <br /> Result</td>
-						<td colspan="7" class="border-bottom no-border-right text-center">Culture result* (check one)</td>
-					</tr>
-					<tr class="border-bottom">
-						<td class="custom-width">Neg</td>
-						<td class="custom-width">Pos</td>
-						<td>1-19<br />Col</td>
-						<td class="custom-width">+</td>
-						<td class="custom-width">+ +</td>
-						<td class="custom-width">+ + +</td>
-						<td class="no-border-right">Contaminated<br /> / Other result</td>
-					</tr>
-					<tr class="border-bottom">
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td class="no-border-right">&nbsp;</td>
-					</tr>
-					<tr class="border-bottom">
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td class="no-border-right">&nbsp;</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="form-element-container clearfix">
-				<div class="form-label">Result Date</div>
-				<div class="form-value">Reported By (Name &amp; Signature)</div>
-			</div>
-		</div>
-		<div class="container lj-exception">
-			<div class="heading">Lj/Liquid Culture results :(NOt : 'S' if susceptible, 'R' if resistant)</div>
-			<table>
-				<tbody>
-					<tr>
-						<td class="custom-width">Date DST <br />Initiated</td>
-						<td class="custom-width">Specimen No</td>
-						<td>S</td>
-						<td>H</td>
-						<td>R</td>
-						<td>E</td>
-						<td>Z</td>
-						<td>K <br />m</td>
-						<td>Of <br />x</td>
-						<td>Eto</td>
-						<td class="no-border-right">Other</td>
-					</tr>
-					<tr>
-						<td class="custom-width">&nbsp;</td>
-						<td class="custom-width">&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td class="no-border-right">&nbsp;</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="form-element-container clearfix">
-				<div class="form-label">Result Date</div>
-				<div class="form-value">Reported By (Name &amp; Signature)</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="culture-form-wrapper clearfix">
+        <div class="page-title">
+            <span class="title text-center">RNTCP Request for Culture and Drug Sensitivity Testing</span>
+            <span class="sub-title text-center">(Required for Culture and DST laboratory to Conduct testing, please send copt to District TB Officer)</span>
+        </div>
+        <div class="col-2">
+            <div class="container patient-info ">
+                <table>
+                    <tbody>
+                        <tr class="bottom-padding">
+                            <td colspan="4" class="text-center">
+                                <span>Patient Information:{{patient.identifier}}</span>
+                            </td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td colspan="2">Patient Name:</td>
+                            <td colspan="2">{{patient.name}}</td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td colspan="2">Patient Address with
+                                <br />Landmark:</td>
+                            <td colspan="2">{{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} {{patient.address.cityVillage}} {{patient.address.cityVillage}} {{patient.address.stateProvince}}</td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td colspan="2">Patient Mobile No. or
+                                <br /> other contact No. :</td>
+                            <td colspan="2">{{patient.Telephone_Number.value}}</td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td>Age : </td>
+                            <td>{{patient.age}}</td>
+                            <td colspan="2">Sex :  Male<input type="checkbox" ng-checked="patient.gender=='M'"> Female
+                                <input type="checkbox" ng-checked="patient.gender=='F'"></td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td colspan="2">Sputum: Date of Collection
+                                <br /> (DD/MM/YY)
+                                <br>
+                            </td>
+                            <td colspan="2">
+                                Sample 1 : ___________________(DD/MM/YY)
+                                <br> Sample 2 : ___________________(DD/MM/YY)
+                            </td>
+                        </tr>
+                        <tr class="bottom-padding">
+                            <td colspan="4">
+                                Name referring facility
+                                <br /> (PHI/DMC/DR-TB
+                                <br /> Center/other) : Jan Swasthya Sahyog
+                                <br /> District : Bilaspur
+                                <br /> Tuberculosis Unit(TU) :
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container testing-info">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" class="text-center">Reason for testing</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-center"><input type="checkbox">DIAGNOSIS</td>
+                            <td colspan="4" class="text-center"><input type="checkbox">FOLLOW-UP</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="2">
+                                MDR Suspect Criteria
+                                <br />
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[0].valueAsString=='Yes'">Failure</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[1].valueAsString=='Yes'">re-treatment case S-at 4th month</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[2].valueAsString=='Yes'">Contact for known MDR TB case</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[3].valueAsString=='Yes'">S+at diagnosis.re-reatment case</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[4].valueAsString=='Yes'">Any follow uo S+</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[5].valueAsString=='Yes'">S-at diagnosis.re-reatment case</li>
+                                    <li>
+                                        <input type="checkbox" ng-checked="observations.groupMembers[6].valueAsString=='Yes'">HIV TB Case</li>
+                                </ul>
+                            </td>
+                            <td colspan="4" rowspan="0">PMDT Registration Number : {{patient.identifier}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="0">Treatment month of follow-up</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">RNTCP TB Reg. No. and Type
+                                <br /> (or
+                                <input type="checkbox" />Not Applicable)</td>
+                            <td colspan="4">DR-TB Center Name</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="container tb-result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="text-center">Molecular TB/DST result</td>
+                        </tr>
+                        <tr>
+                            <td>Test : </td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Line probe Assay (LPA)</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> CBNAAT</td>
+                        </tr>
+                        <tr>
+                            <td>Test Validity :</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Valid</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Invalid</td>
+                        </tr>
+                        <tr>
+                            <td>M. Tuberculosis :</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Detected</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Not Detected</td>
+                        </tr>
+                        <tr>
+                            <td>Rifampicin :</td>
+                            <td>
+                                <input type="checkbox" /> Resistant</td>
+                            <td>
+                                <input type="checkbox" /> Sensitive</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Not Available</td>
+                        </tr>
+                        <tr>
+                            <td>Isoniazid :</td>
+                            <td>
+                                <input type="checkbox" /> Resistant</td>
+                            <td>
+                                <input type="checkbox" /> Sensitive</td>
+                            <td colspan="2">
+                                <input type="checkbox" /> Not Available</td>
+                        </tr>
+                        <tr>
+                            <td>Notes:</td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td>Date :</td>
+                            <td></td>
+                            <td colspan="2">Reported By (Name &amp; Signature)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container lj-liquid-result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="11" class="text-center">Lj/Liquid Culture results</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="dateRecived">Date <br/> Received :</td>
+                            <td rowspan="2" class="rotate specimen">Specimen</td>
+                            <td rowspan="2" class="rotate specimenNO">Specimen No:</td>
+                            <td rowspan="2">Smear
+                                <br /> Result</td>
+                            <td colspan="7">Culture result* (check one)</td>
+                        </tr>
+                        <tr>
+                            <td class="custom-width">Neg</td>
+                            <td class="custom-width">Pos</td>
+                            <td class="custom-width">1-19
+                                <br />Col</td>
+                            <td class="custom-width">+</td>
+                            <td class="custom-width">+
+                                <br /> +</td>
+                            <td class="custom-width">+
+                                <br /> +
+                                <br /> +</td>
+                            <td class="custom-width">Contaminated
+                                <br /> / Other result</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>A</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>B</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="11">Notes : </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">Result Date : <br> <br> </td>
+                            <td colspan="6">Reported By (Name &amp; Signature) :  <br> <br></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container lj-exception">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="11" class="text-center">Lj/Liquid Culture results :(NOt : 'S' if susceptible, 'R' if resistant)</td>
+                        </tr>
+                        <tr>
+                            <td text-center>Date DST
+                                <br />Initiated</td>
+                            <td class="text-center specimen">Specimen No</td>
+                            <td class="custom-width">S</td>
+                            <td class="custom-width">H</td>
+                            <td class="custom-width">R</td>
+                            <td class="custom-width">E</td>
+                            <td class="custom-width">Z</td>
+                            <td class="custom-width">K <br />m</td>
+                            <td class="custom-width">Of <br />x</td>
+                            <td class="custom-width">Eto</td>
+                            <td class="custom-width">Other</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">Result Date <br> <br></td>
+                            <td colspan="10">Reported By (Name &amp; Signature) <br> <br></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 </body>
+
 </html>

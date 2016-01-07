@@ -1,0 +1,263 @@
+.custom-print-center{
+   text-align : center;
+}
+
+.clinical-left{
+color:#000;
+text-align:left;
+}
+
+.clinical-right{
+color:#000;
+text-align:right;
+}
+
+
+.clinical-tribe{
+
+}
+
+
+.custom-print-left{
+   text-align : left;
+}
+
+.custom-bold-text{
+  font-weight : bold;
+  font-family :openSansBold;
+}
+.custom-dischargePatient-print-table h2{
+        margin: 10px 0 10px 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.half-width{
+    width:50%;
+}
+.space{
+ padding-left:20px;
+}
+/* styling for Death footer section*/
+.death-footer-container{
+
+}
+
+.columns-2{
+  width:50%;
+}
+
+.columns-3{
+  width: 33.33%;
+}
+
+.columns-4{
+  width: 25%;
+}
+
+.registrationCard-print-table {
+  width: 150mm;
+  height: 83mm;
+  overflow: scroll;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+.dischargePatient-print-table {
+  width: 150mm;
+  height: 250mm;
+  overflow: scroll;
+  margin: 0 auto;
+  table-layout: fixed;
+  p {
+    text-indent: 50px;
+    }
+}
+
+/* line 24, print.scss */
+.registrationCard-print-table td.registrationCard-photo {
+  padding-top: 2px;
+}
+
+/* line 27, print.scss */
+.print-table-left {
+  width: 77mm;
+}
+
+/* line 30, print.scss */
+.print-table-header {
+  text-align: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* line 35, print.scss */
+.print-table-left-body {
+  font-size: 4mm;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+}
+
+/* line 41, print.scss */
+.print-table-left-body li {
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  line-height: 18px;
+}
+
+/* line 46, print.scss */
+.caution {
+  text-align: center;
+  line-height: 20px;
+}
+
+/* line 50, print.scss */
+.caution h3 {
+  line-height: 25px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+/* line 55, print.scss */
+.print-table-right {
+  width: 77mm;
+}
+
+/* line 58, print.scss */
+.print-table-right .logo {
+  text-align: center;
+  width: 12mm;
+  padding: 0px;
+  margin: 0px;
+  height: 12mm;
+
+}
+
+table.result{
+padding:0px 12px;
+border: 1px solid;
+width:100%;
+border-collapse: collapse;
+}
+table.result td {
+padding:10px 20px;
+}
+.unordered{
+list-style:disc;
+}
+.micrology{
+border:1px solid;
+float:right;
+width:auto;
+padding:10px;
+font-size:12px;
+}
+.micrology h2{
+color:black;
+font-weight:bold;
+}
+
+ol.micro{
+padding: 0px 10px 0px 17px;
+display:block;
+}
+/* line 65, print.scss */
+.print-table-right-header {
+  text-align: center;
+  width: 42mm;
+  text-align: left;
+  height: 12mm;
+}
+
+/* line 71, print.scss */
+.registrationCard-location {
+  padding: 5px 8px 8px 8px;
+}
+
+/* line 74, print.scss */
+.registrationCard-details {
+  padding: 0mm 5mm 0mm 5mm;
+}
+
+/* line 77, print.scss */
+.registrationCard-details-name {
+  width: 70px;
+}
+
+/* line 80, print.scss */
+.registrationCard-details-seperator {
+  width: 20px;
+  text-align: center;
+}
+
+/* line 84, print.scss */
+.hindi-text {
+  vertical-align: bottom;
+}
+.print-body{
+ 	/* font-family : "Times New Roman", Georgia, Serif;*/
+    color: #000;
+    font-size: 16px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+.print-body strong{
+    /* font-family : "Times New Roman", Georgia, Serif !important;*/
+    font-weight:bold !important;
+}
+
+.print-body div{
+	display:block;
+}
+.print-body span{
+	display:block;
+}
+.print-body div.footer-pdhinduja{
+ border-top:2px solid;
+ border-bottom:2px solid;
+ padding:5px 0;
+}
+
+/* Clinical print */
+
+.print-body .header-page{
+	margin:0 0 10px;
+}
+
+.print-body h2{
+	color:#000;
+	font-size:16px;
+	line-height:1.5;
+	margin:0;
+    font-weight: bold;
+}
+.print-body .header-page h2{
+	text-align:center;
+}
+
+.print-body h2.title-case{
+	text-transform:uppercase;
+}
+.print-body span.space{
+	display:inline-block;
+	padding-left:50px;
+}
+.print-body .clinical-content-left h2.clinical-identification{
+	text-align:left;
+	padding:10px 0;
+	text-transform:uppercase;
+}
+.print-body .clinical-content div{
+	margin:0;
+}
+.print-body .clinical-content-below{
+	clear:both;
+	margin:0;
+}
+.print-body .clinical-footer span{
+ dispaly:inline-block;
+}
