@@ -1727,4 +1727,14 @@
         </sql>
     </changeSet>
 
+    <changeSet id="JSS-201601131430" author="Shashi, Chethan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) FROM global_property WHERE property='emrapi.sqlGet.wardsListDetails';
+            </sqlCheck>
+        </preConditions>
+        <comment>Optimizing the ward list details query</comment>
+        <sqlFile path="V1_79_WardsListDetails.sql"/>
+    </changeSet>
+
 </databaseChangeLog>
