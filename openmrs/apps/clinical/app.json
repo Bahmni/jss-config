@@ -249,7 +249,34 @@
       },
       "Psychiatry, Sexual History": {
         "multiSelect": true
-      }
+      },
+      "Microbiology test requirement, Test": {
+	"required": true
+       },
+       "Microbiology test requirement, Type of Sample": {
+        "required": true
+       },
+      "RMRCT, Previsiosly treated with TB": {
+        "required": true
+       },
+       "Standardized History, Symptoms": {
+        "required": true
+       },
+      "Standardized History, How long have you been sick ?": {
+        "required": true
+       },
+       "Standardized History, Did you have other symptoms of lung diseases prior to this episode": {
+        "required": true
+       },              
+      "Standardized History, Did you have X-ray Examination Prior to this episode ?": {
+        "required": true
+       },
+       "Standardized History, Did you ever take tuberculosis drugs for more than one month ?": {
+        "required": true
+       },
+      "Standardized History, Did you have Sputum examinations prior to this episode ?": {
+        "required": true
+       }
     },
     "drugOrder": {
       "defaultDurationUnit": "Day(s)",
