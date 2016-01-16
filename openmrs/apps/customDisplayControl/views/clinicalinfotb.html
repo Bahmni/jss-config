@@ -24,8 +24,8 @@
             <div class="micrology fr">
                 <h2>Microbiology test requirement</h2>
                 <ol class="micro">
-                    <li>CBNAAT / LJ : {{observations.groupMembers[0].groupMembers[0].valueAsString}} </li>
-                    <li>Sample Type : {{observations.groupMembers[0].groupMembers[1].valueAsString}}</li>
+                    <li>CBNAAT / LJ : {{rmrctForm['Test']}} </li>
+                    <li>Sample Type : {{rmrctForm["Type of Sample"].replace('Other','')}}</li>
                 </ol>
             </div>
         </div>
@@ -82,31 +82,30 @@
         <br>
         <div>
             <h2 class="clinical-left"> B. HISTORY GIVEN BY THE PATIENT</h2>
-            <span>Previously Treated for TB ? <input type="checkbox" ng-checked="observations.groupMembers[1].valueAsString=='No'"> No 
-                                  <input type="checkbox" ng-checked="observations.groupMembers[1].valueAsString=='Yes'">Yes 
+            <span>Previously Treated for TB ? <input type="checkbox" ng-checked="rmrctForm['Previsiosly treated with TB']=='No'"> No 
+                                  <input type="checkbox" ng-checked="rmrctForm['Previsiosly treated with TB']=='Yes'">Yes 
  </span>
             <h2 class="clinical-left">Standardized History</h2>
             <br>
             <ul class="unordered">
-                <li>For how long have you been sick ? {{observations.groupMembers[2].groupMembers[0].valueAsString}}</li>
-                <li>Symptoms: {{observations.groupMembers[2].groupMembers[1].valueAsString}}</li>
+                <li>For how long have you been sick ? {{rmrctForm["How long have you been sick ?"]}}</li>
+                <li>Symptoms: {{rmrctForm["Symptoms"]}}</li>
                 <li>Did you have other symptoms of lung disease prior to this episode (
-                    <input type="checkbox" ng-checked="observations.groupMembers[2].groupMembers[2].valueAsString=='Haemoptysis'"> haemoptysis,
-                    <input type="checkbox" ng-checked="observations.groupMembers[2].groupMembers[2].valueAsString=='Chest Pain'"> chest pain ,
-                    <input type="checkbox" ng-checked="observations.groupMembers[2].groupMembers[2].valueAsString=='Cough'"> cough) ? {{observations.groupMembers[2].groupMembers[2].valueAsString}}
+                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Haemoptysis'"> haemoptysis,
+                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Chest Pain'"> chest pain ,
+                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Cough'"> cough) ? {{observations.groupMembers[2].groupMembers[2].valueAsString}}
                 </li> {{observations.groupMembers[2].groupMembers[2].comment}}
-                <br>
-                <li>Did you have x-ray examinations prior to this episode ? {{observations.groupMembers[2].groupMembers[3].valueAsString}} {{observations.groupMembers[2].groupMembers[3].comment}}</li>
-                <li>Did you have Sputum examinations prior to this episode ? {{observations.groupMembers[2].groupMembers[4].valueAsString}}</li>
-                <li>Did you ever take tuberculosis drugs for more than one month ? {{observations.groupMembers[2].groupMembers[5].valueAsString}}</li>
+                <li>Did you have x-ray examinations prior to this episode ? {{rmrctForm["Did you have X-ray Examination Prior to this episode ?"]}} {{observations.groupMembers[2].groupMembers[3].comment}}</li>
+                <li>Did you have Sputum examinations prior to this episode ? {{rmrctForm['Did you have Sputum examinations prior to this episode ?']}}</li>
+                <li>Did you ever take tuberculosis drugs for more than one month ? {{rmrctForm['Did you ever take tuberculosis drugs for more than one month ?']}}</li>
             </ul>
             <h2 class="clinical-left">If treatment taken</h2>
             <ul class="unordered">
-                <li>Where was the patient treated ? {{observations.groupMembers[3].groupMembers[0].valueAsString}}</li>
-                <li>When was the patient treated ? {{observations.groupMembers[3].groupMembers[1].valueAsString}}</li>
-                <li>How many times was the patient treated ? {{observations.groupMembers[3].groupMembers[2].valueAsString}}</li>
-                <li>If Dots taken : Category {{observations.groupMembers[3].groupMembers[3].valueAsString}}</li>
-                <li>What were the drugs taken by the patient ? {{observations.groupMembers[3].groupMembers[4].valueAsString}} </li>
+                <li>Where was the patient treated ? {{rmrctForm['Where was the patient treated ?']}}</li>
+                <li>When was the patient treated ? {{rmrctForm['When was the patient treated ?']}}</li>
+                <li>How many times was the patient treated ? {{rmrctForm['How many times was the patient treated ?']}}</li>
+                <li>If Dots taken : Category {{rmrct['If Dots taken : Category']}}</li>
+                <li>What were the drugs taken by the patient ? {{rmrctForm['Drugs used in his treatment']}} </li>
             </ul>
             <br>
             <br>
