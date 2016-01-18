@@ -17,7 +17,7 @@
                 "type": "config",
                 "extensionParams": {
                 "display": "All",
-                "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+                "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
                 },
                 "label": "All",
                 "order": 2
