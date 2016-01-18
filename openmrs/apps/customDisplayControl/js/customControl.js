@@ -102,7 +102,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         var link = function ($scope) 
         {
             
-            var conceptNames = ["Clinincal Information TB"];
+            var conceptNames = ["RMRCT Form"];
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                     $scope.observations = response.data[0];
                     $scope.rmrctForm = [];
@@ -142,6 +142,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         	$scope.htmlLabel = function(label){
         		return $sce.trustAsHtml(label)
         	}
+            $scope.date = new Date();
         }
         return {
             restrict: 'E',
