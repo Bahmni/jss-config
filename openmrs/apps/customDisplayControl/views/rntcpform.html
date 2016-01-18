@@ -10,7 +10,7 @@
     <div class="culture-form-wrapper clearfix">
         <div class="page-title">
             <span class="title text-center">RNTCP Request for Culture and Drug Sensitivity Testing</span>
-            <span class="sub-title text-center">(Required for Culture and DST laboratory to Conduct testing, please send copt to District TB Officer)</span>
+            <span class="sub-title text-center">(Required for Culture and DST laboratory to Conduct testing, please send copy to District TB Officer)</span>
         </div>
         <div class="col-2">
             <div class="container patient-info ">
@@ -18,12 +18,12 @@
                     <tbody>
                         <tr class="bottom-padding">
                             <td colspan="4" class="text-center">
-                                <span>Patient Information:{{patient.identifier}}</span>
+                                <span>Patient Information:<strong>{{patient.identifier}}</strong></span>
                             </td>
                         </tr>
                         <tr class="bottom-padding">
                             <td colspan="2">Patient Name:</td>
-                            <td colspan="2">{{patient.name}}</td>
+                            <td colspan="2"><strong>{{patient.name}}</strong></td>
                         </tr>
                         <tr class="bottom-padding">
                             <td colspan="2">Patient Address with
@@ -55,9 +55,9 @@
                             <td colspan="4">
                                 Name referring facility
                                 <br /> (PHI/DMC/DR-TB
-                                <br /> Center/other) : Jan Swasthya Sahyog
+                                <br /> Center/other) : <strong>Jan Swasthya Sahyog</strong>
                                 <br /> District : Bilaspur
-                                <br /> Tuberculosis Unit(TU) :
+                                <br /> Tuberculosis Unit(TU) : 
                             </td>
                         </tr>
                     </tbody>
@@ -94,7 +94,7 @@
                                         <input type="checkbox" ng-checked="rntcpform['HIV TB Case']=='Yes'">HIV TB Case</li>
                                 </ul>
                             </td>
-                            <td colspan="4" rowspan="0">PMDT Registration Number : {{patient.identifier}}</td>
+                            <td colspan="4" rowspan="0">PMDT Registration Number : </td>
                         </tr>
                         <tr>
                             <td colspan="4" rowspan="0">Treatment month of follow-up</td>

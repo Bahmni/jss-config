@@ -16,9 +16,9 @@
         </header>
         <div class="clinical-content clearfix">
             <div class="fl clinical-content-left">
-                <span>Name of the Microscopy Center: Jan Swasthya Sahyog </span>
+                <span>Name of the Microscopy Center: <strong>Jan Swasthya Sahyog</strong </span>
                 <h2 class="clinical-identification">A. IDENTIFICATION OF THE PATIENT</h2>
-                <span>Name : {{patient.name}} ({{patient.identifier}}) <span class="space">Tribes/Non Tribes : ............</span></span>
+                <span>Name : <strong>{{patient.name}} ({{patient.identifier}})</strong> <span class="space"><input type="checkbox" ng-checked="patient.class.value.display=='ST'">Tribes/<input type="checkbox" ng-checked="patient.class.value.display!='ST'">Non Tribes </span></span>
                 
             </div>
             <div class="micrology fr">
@@ -31,8 +31,7 @@
         </div>
         <div class="clinical-content-below">
         	
-            <span>Permanent address with land marks : {{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} {{patient.address.countryDistrict}}
-                                  {{patient.address.cityVillage}} {{patient.address.stateProvince}} </span>
+            <span>Permanent address with land marks : {{patient.address.address1}} {{patient.address.address2}}  {{patient.address.cityVillage}}, {{patient.address.address3}}, {{patient.address.countyDistrict}}, {{patient.address.stateProvince}} </span>
             <span>Gender : <input type="checkbox" ng-checked="patient.gender=='M'"> Male <input type="checkbox" ng-checked="patient.gender=='F'"> Female<span class="space">  Age : {{patient.age}} Years </span></span>
         </div>
         <br>
@@ -86,7 +85,6 @@
                                   <input type="checkbox" ng-checked="rmrctForm['Previsiosly treated with TB']=='Yes'">Yes 
  </span>
             <h2 class="clinical-left">Standardized History</h2>
-            <br>
             <ul class="unordered">
                 <li>For how long have you been sick ? {{rmrctForm["How long have you been sick ?"]}}</li>
                 <li>Symptoms: {{rmrctForm["Symptoms"]}}</li>
@@ -101,13 +99,13 @@
                 <li>Where was the patient treated ? {{rmrctForm['Where was the patient treated ?']}}</li>
                 <li>When was the patient treated ? {{rmrctForm['When was the patient treated ?']}}</li>
                 <li>How many times was the patient treated ? {{rmrctForm['How many times was the patient treated ?']}}</li>
-                <li>If Dots taken : Category {{rmrct['If Dots taken : Category']}}</li>
+                <li>If Dots taken : Category {{rmrctForm['If Dots taken : Category']}}</li>
                 <li>What were the drugs taken by the patient ? {{rmrctForm['Drugs used in his treatment']}} </li>
             </ul>
             <br>
             <br>
             <div class="clinical-footer">
-            	<span class"fl">Signature :{{observations.providers[0].name}} </span> <span class="fr">Date : {{curDate | bahmniDateTime}}</span>
+            	<span class"fl">Signature :{{observations.providers[0].name}} </span> <span class="fr">Date : {{date | date:'dd-MM-yyyy'}}</span>
         	</div>
         </div>
     </div>
