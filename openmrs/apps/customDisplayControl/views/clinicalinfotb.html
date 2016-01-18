@@ -90,12 +90,9 @@
             <ul class="unordered">
                 <li>For how long have you been sick ? {{rmrctForm["How long have you been sick ?"]}}</li>
                 <li>Symptoms: {{rmrctForm["Symptoms"]}}</li>
-                <li>Did you have other symptoms of lung disease prior to this episode (
-                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Haemoptysis'"> haemoptysis,
-                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Chest Pain'"> chest pain ,
-                    <input type="checkbox" ng-checked="rmrctForm['Did you have other symptoms of lung diseases prior to this episode']=='Cough'"> cough) ? {{observations.groupMembers[2].groupMembers[2].valueAsString}}
-                </li> {{observations.groupMembers[2].groupMembers[2].comment}}
-                <li>Did you have x-ray examinations prior to this episode ? {{rmrctForm["Did you have X-ray Examination Prior to this episode ?"]}} {{observations.groupMembers[2].groupMembers[3].comment}}</li>
+                <li>Did you have other symptoms of lung disease prior to this episode (haemoptysis,chest pain ,cough) ? {{rmrctForm["Did you have other symptoms of lung diseases prior to this episode"]}}
+                </li>
+                <li>Did you have x-ray examinations prior to this episode ? {{rmrctForm["Did you have X-ray Examination Prior to this episode ?"]}}</li>
                 <li>Did you have Sputum examinations prior to this episode ? {{rmrctForm['Did you have Sputum examinations prior to this episode ?']}}</li>
                 <li>Did you ever take tuberculosis drugs for more than one month ? {{rmrctForm['Did you ever take tuberculosis drugs for more than one month ?']}}</li>
             </ul>
