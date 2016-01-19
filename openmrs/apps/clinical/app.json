@@ -51,6 +51,9 @@
         "showPreviousButton": true,
         "numberOfVisits": 1
       },
+      "Follow up Date": {
+        "allowFutureDates": true
+      },
       "Tuberculosis Intake Template": {
         "computeDrugs": true,
         "showPreviousButton": true
