@@ -45,7 +45,7 @@
     "name": "Operation Notes Data",
     "type": "obsTemplate",
     "config": {
-      "templateName": "Operation Notes"
+      "templateName": "Operation Notes Template"
     }
   },
   "admittedPatients": {
