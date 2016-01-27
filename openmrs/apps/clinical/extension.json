@@ -40,25 +40,19 @@
     "order": 4,
     "requiredPrivilege": "app:clinical:consultationTab"
   },
-  "bahmniClinicalConsultationTreatment": {
-    "id": "bahmni.clinical.consultation.treatment",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Treatment",
-    "url": "treatment",
-    "icon": "fa-user-md",
-    "order": 5,
-    "requiredPrivilege": "app:clinical:treatment"
-  },
-  "treatment": {
+  "bahmniClinicalBillingTreatmentMedicationTab": {
     "id": "bahmni.clinical.billing.treatment",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "label": "Treatment",
+    "label": "Medications",
+    "translationKey": "Medications",
+    "extensionParams": {
+      "tabConfigName": "allMedicationTabConfig"
+    },
     "url": "treatment",
     "icon": "fa-user-md",
-    "order": 5,
-    "requiredPrivilege": "app:billing"
+    "order": 8,
+    "requiredPrivilege": "app:clinical:consultationTab"
   },
   "bahmniClinicalPatientsSearchActivePatients": {
     "id": "bahmni.clinical.patients.search.allPatients",

@@ -45,7 +45,7 @@
         "showPreviousButton": true
       },
       "CDST Form, Drugs used in his treatment": {
-      "multiSelect": true
+        "multiSelect": true
       },
       "Discharge Summary": {
         "showPreviousButton": true,
@@ -270,7 +270,7 @@
        },
        "RMRCT, Standardized History, Did you have other symptoms of lung diseases prior to this episode": {
         "required": true
-       },              
+       },
       "RMRCT, Standardized History, Did you have X-ray Examination Prior to this episode ?": {
         "required": true
        },
@@ -279,99 +279,8 @@
        },
       "RMRCT, Standardized History, Did you have Sputum examinations prior to this episode ?": {
         "required": true
-       }
-    },
-    "drugOrder": {
-      "defaultDurationUnit": "Day(s)",
-      "defaultInstructions": "As directed",
-      "frequencyDefaultDurationUnitsMap": [
-        {
-          "minFrequency": "1/7",
-          "maxFrequency": 5,
-          "defaultDurationUnit": "Day(s)"
-        },
-        {
-          "minFrequency": "1/30",
-          "maxFrequency": "1/7",
-          "defaultDurationUnit": "Week(s)"
-        },
-        {
-          "minFrequency": null,
-          "maxFrequency": "1/30",
-          "defaultDurationUnit": "Month(s)"
-        }
-      ],
-      "drugFormDefaults": {
-        "Ayurvedic": {
-          "doseUnits": "Teaspoon",
-          "route": "Oral"
-        },
-        "Capsule": {
-          "doseUnits": "Capsule(s)",
-          "route": "Oral"
-        },
-        "Cream": {
-          "route": "Topical"
-        },
-        "Drops": {
-          "doseUnits": "Drop",
-          "route": "Topical"
-        },
-        "Food Supplement": {
-          "route": "Oral"
-        },
-        "Gel": {
-          "route": "Topical"
-        },
-        "Granule": {
-          "doseUnits": "Unit(s)",
-          "route": "Oral"
-        },
-        "Inhaler": {
-          "doseUnits": "Puff(s)",
-          "route": "Inhalation"
-        },
-        "Injection": {
-          "doseUnits": "mg",
-          "route": "Intravenous"
-        },
-        "Jelly": {
-          "route": "Topical"
-        },
-        "Liquid": {
-          "doseUnits": "ml",
-          "route": "Oral"
-        },
-        "Lotion": {
-          "route": "Topical"
-        },
-        "Ointment": {
-          "route": "Topical"
-        },
-        "Pessary": {
-          "doseUnits": "Unit(s)",
-          "route": "Per Vaginal"
-        },
-        "Powder": {
-          "route": "Topical"
-        },
-        "Solution": {
-          "doseUnits": "ml",
-          "route": "Topical"
-        },
-        "Spray": {
-          "doseUnits": "Puff(s)",
-          "route": "Nasal"
-        },
-        "Syrup": {
-          "doseUnits": "ml (syrup)",
-          "route": "Oral"
-        },
-        "Tablet": {
-          "doseUnits": "Tablet(s)",
-          "route": "Oral"
-        }
       }
+
     }
   }
 }
