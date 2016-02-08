@@ -48,6 +48,20 @@
       "templateName": "Operation Notes Template"
     }
   },
+   "RMRCTData": {
+    "name": "RMRCT Form",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "RMRCT Form"
+     }
+   },
+   "RNTCPData": {
+    "name": "RNTCP Form",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "RNTCP Form"
+     }
+   },
   "admittedPatients": {
     "name": "Admitted patients",
     "type": "MRSGeneric",
