@@ -57,6 +57,20 @@
       "templateName": "Operation Notes Template"
     }
   },
+  "RMRCTData": {
+    "name": "RMRCT Form",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "RMRCT Form"
+     }
+  },
+  "RNTCPData": {
+    "name": "RNTCP Form",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "RNTCP Form"
+     }
+  },
   "nonCodedDiagnosesEntered": {
     "name": "Non coded Diagnoses entered",
     "type": "MRSGeneric",
@@ -182,5 +196,4 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
     }
   }
-
 }
