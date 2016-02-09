@@ -279,8 +279,14 @@
        },
       "RMRCT, Standardized History, Did you have Sputum examinations prior to this episode ?": {
         "required": true
+      },
+      "RNTCP, Testing centre": {
+        "multiSelect": true,
+        "required": true
+      },
+      "ANC, Estimated Date of Delivery": {
+         "allowFutureDates": true
       }
-
     }
   }
 }
