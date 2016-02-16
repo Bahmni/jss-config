@@ -189,6 +189,16 @@
       "testOutcome": ["abnormal"]
     }
   },
+"anctemplate": {
+    "name": "ANC Report",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "patientAttributes": [
+        "primaryRelative"
+      ]
+    }
+  },
 "testobsCannedReport": {
     "name": "TB Report For Newly Diagnosed Patient",
     "type": "obsCannedReport",
