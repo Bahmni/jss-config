@@ -189,6 +189,108 @@
       "testOutcome": ["abnormal"]
     }
   },
+"testobsCannedReport": {
+    "name": "TB Report For Newly Diagnosed Patient",
+    "type": "obsCannedReport",
+    "config": {
+      "patientAttributes": [
+        "caste","smoking","alcohol","landHolding",
+        "rationCard","familyIncome","foodSecurity",
+        "distanceFromCenter"
+      ],
+      "applyDateRangeFor": "encounterCreateDate",
+      "addressAttributes": [
+        "city_village","address3","county_District"
+      ],
+      "conceptNames": [
+      "Weight",
+      "Height",
+      "BMI",
+      "BMI Status",
+        "Tuberculosis, Symptoms",
+        "Tuberculosis, Symptoms Duration",
+        "Tuberculosis, Type",
+        "Tuberculosis, Patient Category",
+        "Tuberculosis, Comorbidity",
+        "Tuberculosis, History of TB Contact",
+        "Tuberculosis, Family member died of TB",
+        "Tuberculosis, Duration since last treatment",
+        "Tuberculosis, Duration of last treatment",
+        "Tuberculosis, Past Treatment Facility",
+        "Tuberculosis, Past Treatment Details",
+        "Tuberculosis, Lymph Node Size",
+        "Tuberculosis, Lymph Node Pain",
+        "Tuberculosis, Lymph Node Discharge, Sinus, Ulcer",
+        "Tuberculosis, Pleural TB Respiratory Rate",
+        "Tuberculosis, X-Ray Extent",
+        "Tuberculosis, X-Ray Cavity",
+        "Tuberculosis, Basis of Diagnosis",
+        "Tuberculosis, Treatment Plan",
+        "Tuberculosis, Next Followup Visit",
+        "Tuberculosis, Plan for next visit",
+        "Tuberculosis, Need of Admission",
+        "Haemoglobin",
+        "FBS",
+        "RBS",
+        "PP2BS",
+        "HIV ELISA (Blood)",
+        "HIV ELISA (Serum)",
+        "S. ALT",
+        "GGT"
+         ],
+      "visitIndependentConcept": ["Creatinine"],
+      "showObsOnlyForProgramDuration": false
+    }
+  },
+  "testTbFollowUpCannedReport": {
+    "name": "TB Report For Follow Up Patient",
+    "type": "obsCannedReport",
+    "config": {
+      "patientAttributes": [
+        "smoking","alcohol","landHolding",
+        "rationCard","familyIncome","foodSecurity",
+        "distanceFromCenter"
+      ],
+      "applyDateRangeFor": "encounterCreateDate",
+      "addressAttributes": [
+        "city_village"],
+      "conceptNames": [
+       "Tuberculosis, Treatment Compliance",
+      "Weight",
+      "BMI",
+      "BMI Status",
+        "Tuberculosis, Symptoms",
+        "Tuberculosis, Symptoms Duration",
+        "Tuberculosis, Followup Visit",
+        "Tuberculosis, Family Screened",
+        "Tuberculosis, Fever",
+        "Tuberculosis, Cough",
+        "Tuberculosis, Anorexia",
+        "Tuberculosis, Chest Pain",
+        "Tuberculosis, Breathlessness",
+        "Tuberculosis Followup, Lymph Node Size",
+        "Tuberculosis, Examination",
+        "Tuberculosis, Adverse Effects",
+        "Tuberculosis, Treatment for adverse effects",
+        "Tuberculosis, Visit Impression",
+        "Tuberculosis, Next Followup Visit",
+        "Tuberculosis, Need of Admission",
+        "Tuberculosis, Indication for Admission",
+        "Tuberculosis, Output of Treatment",
+        "Haemoglobin",
+        "FBS",
+        "RBS",
+        "PP2BS",
+        "HIV ELISA (Blood)",
+        "HIV ELISA (Serum)",
+        "S. ALT",
+        "GGT"
+         ],
+      "visitIndependentConcept": ["Creatinine"],
+      "showObsOnlyForProgramDuration": false
+    }
+  },
+  
  "abnormalityReport": {
     "name": "Abnormality report for critical tests wt Tel",
     "type": "MRSGeneric",
