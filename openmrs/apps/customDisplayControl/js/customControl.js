@@ -5,6 +5,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         var link = function ($scope) {
             var conceptNames = ["HEIGHT"];
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
+            $scope.curDate=new Date();
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observations = response.data;
             }));
@@ -27,6 +28,7 @@ angular.module('bahmni.common.displaycontrol.custom')
 
                 }));
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/deathCertificatehindi.html";
+            $scope.curDate=new Date();
             
             spinner.forPromise($q.all([bedService.getAssignedBedForPatient($scope.patient.uuid),visitService.getVisitSummary($scope.visitUuid)]).then(function(results){
                     $scope.bedDetails = results[0];
@@ -146,7 +148,6 @@ angular.module('bahmni.common.displaycontrol.custom')
         	}
             $scope.date = new Date();
         }
-        
         return {
             restrict: 'E',
             link: link,
@@ -201,6 +202,55 @@ angular.module('bahmni.common.displaycontrol.custom')
         	$scope.htmlLabel = function(label){
         		return $sce.trustAsHtml(label)
         	}
+        }
+        return {
+            restrict: 'E',
+            link: link,
+            controller : controller,
+            template: '<ng-include src="contentUrl"/>'
+        }
+    }]).directive('referralForm', ['$q','observationsService','visitService', 'bedService','appService', 'spinner','$sce', function ($q,observationsService, visitService, bedService,appService, spinner, $sce) 
+    {
+        var link = function ($scope) 
+        {
+            
+            var conceptNames = ["Referral Form"];
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                    $scope.observations = response.data[0];
+                    $scope.referralForm = [];
+                    function createForm(obs) {
+                           if (obs.groupMembers.length == 0){
+                              if ($scope.referralForm[obs.conceptNameToDisplay] == undefined){
+                                 $scope.referralForm[obs.conceptNameToDisplay] = obs.valueAsString;
+                              }
+                              else{
+                                 $scope.referralForm[obs.conceptNameToDisplay] = $scope.referralForm[obs.conceptNameToDisplay] + ' ' + obs.valueAsString;                                
+                              }
+
+                              if(obs.comment != null){
+                                $scope.referralForm[obs.conceptNameToDisplay] = $scope.referralForm[obs.conceptNameToDisplay] + ' ' + obs.comment;
+                              }   
+                           }
+                           else{
+                              for(var i = 0; i < obs.groupMembers.length; i++) { 
+                                   createForm(obs.groupMembers[i]);
+                              }
+                              
+                           }
+
+                    }
+                    createForm(response.data[0]);
+
+                }));
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralform.html";
+            
+                            
+        };
+        var controller = function($scope){
+        	$scope.htmlLabel = function(label){
+        		return $sce.trustAsHtml(label)
+        	}
+            $scope.date = new Date();
         }
         return {
             restrict: 'E',
