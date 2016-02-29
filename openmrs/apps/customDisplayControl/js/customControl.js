@@ -208,4 +208,112 @@ angular.module('bahmni.common.displaycontrol.custom')
             controller : controller,
             template: '<ng-include src="contentUrl"/>'
         }
+    }]).directive('referralForm', ['$q','observationsService','visitService','appService', 'spinner','$sce', function ($q,observationsService, visitService,appService, spinner, $sce)
+    {
+        var link = function ($scope)
+        {
+
+            var conceptNames = ["Referral Form"];
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                $scope.referralForm = [];
+
+            }));
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralform.html";
+
+
+        };
+        var controller = function($scope){
+            $scope.htmlLabel = function(label){
+                return $sce.trustAsHtml(label)
+            }
+            $scope.date = new Date();
+        }
+        return {
+            restrict: 'E',
+            link: link,
+            controller : controller,
+            template: '<ng-include src="contentUrl"/>'
+        }
+    }]).directive('referraltrForm', ['$q','observationsService','visitService','appService', 'spinner','$sce', function ($q,observationsService, visitService,appService, spinner, $sce)
+    {
+        var link = function ($scope)
+        {
+
+            var conceptNames = ["Referral Form"];
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                $scope.referralForm = [];
+
+            }));
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referraltrform.html";
+
+
+        };
+        var controller = function($scope){
+            $scope.htmlLabel = function(label){
+                return $sce.trustAsHtml(label)
+            }
+            $scope.date = new Date();
+        }
+        return {
+            restrict: 'E',
+            link: link,
+            controller : controller,
+            template: '<ng-include src="contentUrl"/>'
+        }
+    }]).directive('referralprForm', ['$q','observationsService','visitService','appService', 'spinner','$sce', function ($q,observationsService, visitService,appService, spinner, $sce)
+    {
+        var link = function ($scope)
+        {
+
+            var conceptNames = ["Referral Form"];
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                $scope.referralForm = [];
+
+            }));
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralprform.html";
+
+
+        };
+        var controller = function($scope){
+            $scope.htmlLabel = function(label){
+                return $sce.trustAsHtml(label)
+            }
+            $scope.date = new Date();
+        }
+        return {
+            restrict: 'E',
+            link: link,
+            controller : controller,
+            template: '<ng-include src="contentUrl"/>'
+        }
+    }]).directive('referralflForm', ['$q','observationsService','visitService','appService', 'spinner','$sce', function ($q,observationsService, visitService,appService, spinner, $sce)
+    {
+        var link = function ($scope)
+        {
+
+            var conceptNames = ["Referral Form"];
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                $scope.referralForm = [];
+
+            }));
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralflform.html";
+
+
+        };
+        var controller = function($scope){
+            $scope.htmlLabel = function(label){
+                return $sce.trustAsHtml(label)
+            }
+            $scope.date = new Date();
+        }
+        return {
+            restrict: 'E',
+            link: link,
+            controller : controller,
+            template: '<ng-include src="contentUrl"/>'
+        }
     }]);
