@@ -1,0 +1,36 @@
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+<span>S/he has been also informed about symptoms and management of hypoglycaemia.</span>
+<br><br>
+<span>The case is referred back for continuation of treatment from your centre, of course, the dosage may be adjusted as per reports.</span>
+<br><br>
+<span>S/he can be referred back after__________{{referralForm['follow up after']}} months </span> <span> {{referralForm['follow up on (date)']}}_____________ </span> on or if needed earlier, for review.</span>
+<br><br>
+<span>Please feel free to contact <strong>Dr.{{observations.providers[0].name}}</strong> : <strong>{{referralForm['Contact']}}</strong> / Email <strong>jss.referrals@gmail.com</strong> in case of any query.</span>
+<br><br>
+</div>
+<br><br>
+<div>
+    <span>Thanking you,</span>
+    <br><br>
+    <span>Yours sincerely</span>
+    <br><br>
+
+    <div class="referral-footer">
+        <span class"fl">Signature :{{observations.providers[0].name}} </span> <span class="fr">Date : {{date | date:'dd-MM-yyyy'}}</span>
+    </div>
+    <br><br>
+</div>
+<br><br>
+
+
+
+</div>
+</body>
+</html>
