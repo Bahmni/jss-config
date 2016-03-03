@@ -54,6 +54,18 @@
       "Follow up Date": {
         "allowFutureDates": true
       },
+      "Follow up on (date)": {
+       "allowFutureDates": true
+      },
+      "Advice": {
+       "multiSelect": true
+      },
+      "Complications": {
+       "multiSelect": true
+      },
+      "History and Chief Complaints": {
+       "multiSelect": true
+      },
       "Tuberculosis Intake Template": {
         "computeDrugs": true,
         "showPreviousButton": true

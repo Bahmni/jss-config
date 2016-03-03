@@ -242,6 +242,86 @@
           "template":"<pplhlth-sptgrp></pplhlth-sptgrp>"
         }
       }
+    }},
+  "referralform":{
+    "title": "Referral Form",
+    "printing": {
+      "title": "",
+      "header": "",
+      "logo": ""
+    },
+    "sections": {
+      "Referral Form": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Referral Form",
+          "template": "<referral-form></referral-form>"
+        }
+      },
+      "diagnoses":{
+        "type": "diagnosis",
+        "displayOrder": 2,
+        "config": {
+          "translationKey" : "Diagnosis",
+          "showCertainty": false,
+          "showOrder": false,
+          "showDetailsButton": true
+        }
+      },
+      "referralForm1": {
+        "type": "custom",
+        "displayOrder": 3,
+        "config": {
+          "title": "",
+          "template": "<referraltr-form></referraltr-form>"
+        }
+      },
+      "labInvestigations":{
+        "type": "investigationResult",
+        "displayOrder": 4,
+        "config": {
+          "title": "Lab Investigations",
+          "translationKey":"LAB_INVESTIGATION",
+          "showChart": true,
+          "showTable": false,
+          "showNormalLabResults": true,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true,
+          "numberOfVisits": 4,
+          "initialAccessionCount": 5,
+          "latestAccessionCount": 5
+        }
+      },
+      "referralForm2": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "title": "",
+          "template": "<referralpr-form></referralpr-form>"
+        }
+      },
+      "treatments": {
+        "type": "treatment",
+        "config": {
+          "title": "Treatment",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": false,
+          "showRoute": true,
+          "showDrugForm": true
+        },
+        "displayOrder": 6
+      },
+      "referralForm3": {
+        "type": "custom",
+        "displayOrder": 7,
+        "config": {
+          "title": "",
+          "template": "<referralfl-form></referralfl-form>"
+        }
+      }
     }
   }
 }

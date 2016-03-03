@@ -1,0 +1,25 @@
+.referral-form .print-body{
+ 	/* font-family : "Times New Roman", Georgia, Serif;*/
+    color: #000;
+    font-size: 12px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+.print-body strong{
+    /* font-family : "Times New Roman", Georgia, Serif !important;*/
+    font-weight:bold !important;
+}
+
+.print-body div{
+	display:block;
+	
+}
+.print-body span{
+	display:block;
+}
+.print-body div.footer-referral-form{
+ border-top:2px solid;
+ border-bottom:2px solid;
+ padding:5px 0;
+}

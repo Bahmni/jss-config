@@ -462,6 +462,16 @@
                     }
                 },
                 "displayOrder": 22
+            },
+            "allPACSOrders":{
+                "orderType": "Radiology Order",
+                "name": "pacsOrders",
+                "title": "Digital Radiology",
+                "dashboardParams":{
+                       "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
+                       "numberOfVisits":4
+                 },
+                 "displayOrder": 23
             }
         }
     },
