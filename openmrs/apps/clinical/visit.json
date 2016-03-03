@@ -264,7 +264,7 @@
         "type": "diagnosis",
         "displayOrder": 2,
         "config": {
-          "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
+          "translationKey" : "Diagnosis",
           "showCertainty": false,
           "showOrder": false,
           "showDetailsButton": true
@@ -289,9 +289,9 @@
           "showNormalLabResults": true,
           "showCommentsExpanded": true,
           "showAccessionNotes": true,
-          "numberOfVisits": 10,
-          "initialAccessionCount": 1,
-          "latestAccessionCount": 1
+          "numberOfVisits": 4,
+          "initialAccessionCount": 5,
+          "latestAccessionCount": 5
         }
       },
       "referralForm2": {
@@ -305,7 +305,7 @@
       "treatments": {
         "type": "treatment",
         "config": {
-          "title": "Treatments",
+          "title": "Treatment",
           "showFlowSheet": false,
           "showListView": true,
           "showOtherActive": true,

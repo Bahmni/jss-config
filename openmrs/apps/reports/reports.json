@@ -64,6 +64,20 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
     }
   },
+  "CodedAndnonCodedDiagnosesEntered": {
+    "name": "Coded And Non Coded Diagnoses Entered",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/coded_and_noncoded_diagnoses.sql"
+    }
+  },
+  "PatientsInformation": {
+    "name": "Patients Information",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/patients_information.sql"
+    }
+  },
   "diagnosisCount": {
        "name": "Diagnosis Count",
        "type": "diagnosisCount",
@@ -180,6 +194,20 @@
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
+    }
+  },
+   "referredOutTests": {
+    "name": "Referred Out Tests",
+    "type": "ElisGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/referred_out_tests_elis.sql"
+    }
+  },
+   "overdueTests": {
+    "name": "Overdue TB Referred out Tests",
+    "type": "ElisGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/overdue_TB_referred_out_tests.sql"
     }
   }
 

@@ -1,41 +1,32 @@
 <html>
-
 <head>
+		    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-display.css" />
+            <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/custom-print.css" media="print"/>
 
 </head>
-
 <body>
-<div class="referral-form-print-body">
-    <header class="header-page">
+<br><br>
         <div>
             <center><span class="custom-print-center"><h1><strong>Referral Letter </h1></strong><span><br>
-               <center><span class="custom-print-center"><h2><strong>Jan Swasthya Sahyog,Ganiyari,Bilaspur</h2></strong><span>
+            <center><span class="referral-form custom-print-center"><strong>Jan Swasthya Sahyog,Ganiyari,Bilaspur</strong><span>
+          
         </div>
         <br><br>
-    </header>
-    </h2>
-    <div>
-        <span><strong>To,</strong></span><br>
-        <ul class="unordered">
-            <li>{{referralForm['Authority']}} </li>
-            <li>{{referralForm['Facility Type']}} </li>
-            <li>{{referralForm['Location']}} </li>
-
-        </ul>
-
-    </div>
-    <br><br>
-    <div>
-        <span>Dear Doctor,</span>
-        <br><br>
+        <div class="print-body">
+        <div>
+         	<span><strong>To,</strong></span>
+       			 <span>{{referralForm['Authority']}}</span>
+           		 <span>{{referralForm['Facility Type']}}</span>
+          		 <span>{{referralForm['District']}}</span>
+          		 <span>{{referralForm['State']}}</span>
+	  </div><br>
+   	 <div>
+        	<span><strong>Dear Doctor,</strong></span>
            <span>Shri/ Smt.<strong> {{patient.name}} ({{patient.identifier}})</strong> age <strong>{{patient.age}} </strong>Years / <strong>{{patient.gender}}</strong> of village
            <strong>{{patient.address.cityVillage}}</strong>,district <strong>{{patient.address.countyDistrict}}</strong>,has attended Jan Swasthya Sahyog clinic on
-           <strong> {{date | date:'dd-MM-yyyy'}}</strong> and diagnosed as a case of  </span>
+           <strong> {{date | date:'dd-MM-yyyy'}}</strong>. The clinical details are as follows - </span>
     </div>
     <br><br>
-
-
-
 </div>
 </body>
 </html>
