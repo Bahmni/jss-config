@@ -78,6 +78,20 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/noncoded_diagnoses.sql"
     }
   },
+  "CodedAndnonCodedDiagnosesEntered": {
+    "name": "Coded And Non Coded Diagnoses Entered",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/coded_noncoded_diagnoses.sql"
+    }
+  },
+  "PatientsInformation": {
+    "name": "Patients Information",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/patients_information.sql"
+    }
+  },
   "diagnosisCount": {
        "name": "Diagnosis Count",
        "type": "diagnosisCount",
@@ -239,6 +253,7 @@
         "Tuberculosis, Next Followup Visit",
         "Tuberculosis, Plan for next visit",
         "Tuberculosis, Need of Admission",
+	"Tuberculosis, AFB (Zn Stain)",
         "Haemoglobin",
         "FBS",
         "RBS",
@@ -287,7 +302,8 @@
         "Tuberculosis, Need of Admission",
         "Tuberculosis, Indication for Admission",
         "Tuberculosis, Output of Treatment",
-        "Haemoglobin",
+       	"Tuberculosis, AFB (Zn Stain)",
+	"Haemoglobin",
         "FBS",
         "RBS",
         "PP2BS",
@@ -300,11 +316,26 @@
       "showObsOnlyForProgramDuration": false
     }
   },
+  
  "abnormalityReport": {
     "name": "Abnormality report for critical tests wt Tel",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
+    }
+  },
+   "referredOutTests": {
+    "name": "Referred Out Tests",
+    "type": "ElisGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/referred_out_tests_elis.sql"
+    }
+  },
+   "overdueTests": {
+    "name": "Overdue Referred out Tests(LPA, LJ, CBNAAT) As of Today",
+    "type": "ElisGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/overdue_referred_out_tests_LPA_LJ_CBNAAT.sql"
     }
   }
 }
