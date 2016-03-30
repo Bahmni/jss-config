@@ -36,13 +36,13 @@
                     "title": "Vitals",
                     "type": "vitals",
                     "isObservation": true,
-                    "dashboardParams": {
+                    "dashboardConfig": {
                         "conceptNames": [
                             "Vitals"
                         ],
                         "numberOfVisits": 1
                     },
-                    "allObservationDetails": {
+                    "expandedViewConfig": {
                         "conceptNames": [
                             "Vitals"
                         ],

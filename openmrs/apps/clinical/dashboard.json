@@ -26,7 +26,7 @@
                 "title": "Nutritional Values",
                 "type": "vitals",
                 "isObservation": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Height",
                         "Weight",
@@ -49,14 +49,14 @@
                 "title": "Vitals",
                 "type": "vitals",
                 "isObservation": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Vitals",
                         "Second Vitals"
                     ],
                     "scope": "latest"
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Vitals",
                         "Second Vitals"
@@ -78,7 +78,7 @@
             "labResults": {
                 "title": "Lab Results",
                 "type": "labOrders",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
@@ -87,7 +87,7 @@
                     "initialAccessionCount": 0,
                     "latestAccessionCount": 1
                 },
-                "allLabDetails": {
+                "expandedViewConfig": {
                     "numberOfVisits": 10
                 },
                 "displayOrder": 4
@@ -95,7 +95,7 @@
             "treatments": {
                 "title": "Treatments",
                 "type": "treatment",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showFlowSheet": false,
                     "showListView": true,
                     "showRoute": false,
@@ -104,7 +104,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 },
-                "allTreatmentDetails": {
+                "expandedViewConfig": {
                     "title": "Treatments",
                     "showFlowSheet": false,
                     "showListView": true,
@@ -124,7 +124,7 @@
             "visits": {
                 "title": "Visits",
                 "type": "visits",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10,
                     "groupByVisits": true
@@ -140,10 +140,10 @@
                 "title": "General Findings",
                 "templateName": "General Patient Template",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -159,10 +159,10 @@
                 "title": "Obs/Gynae Findings",
                 "templateName": "Obstetrics and Gynaecology Templates",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -178,10 +178,10 @@
                 "title": "Surgeries/Procedures",
                 "templateName": "Surgeries and Procedures",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -201,8 +201,8 @@
                     "Breast Cancer, Confirmed Disease Stage",
                     "Breast Cancer, Treatment Plan"
                 ],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -218,10 +218,10 @@
                 "title": "Diabetes",
                 "templateName": "Diabetes Templates",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -284,8 +284,8 @@
                     "Tuberculosis, Next Followup Visit",
                     "Tuberculosis Lab Template"
                 ],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -332,8 +332,8 @@
                 "showOnly": [
                     "Psychiatry, Patient Notes"
                 ],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -349,10 +349,10 @@
                 "title": "Cervical Cancer",
                 "templateName": "Cervical Cancer",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -368,10 +368,10 @@
                 "title": "Gastric Cancer",
                 "templateName": "Gastric Cancer",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -387,10 +387,10 @@
                 "title": "Colon Cancer",
                 "templateName": "Colon Cancer",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -406,10 +406,10 @@
                 "title": "Oral Cancer",
                 "templateName": "Oral Cancer",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -431,8 +431,8 @@
                 "templateName": "Smart Card Templates",
                 "type": "diseaseTemplate",
                 "showOnly": [],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -449,8 +449,8 @@
                 "templateName": "Cardiology templates",
                 "type": "diseaseTemplate",
                 "showOnly": [],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -466,7 +466,7 @@
                 "orderType": "Radiology Order",
                 "type": "pacsOrders",
                 "title": "Digital Radiology",
-                "dashboardParams":{
+                "dashboardConfig":{
                        "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
                        "numberOfVisits":4
                  },
@@ -559,8 +559,8 @@
                 "templateName": "Smart Card Templates",
                 "type": "diseaseTemplate",
                 "showOnly": [],
-                "dashboardParams": {},
-                "allDiseaseDetails": {
+                "dashboardConfig": {},
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
