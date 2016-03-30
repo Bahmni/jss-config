@@ -6,7 +6,7 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "ageLimit": 5,
                 "patientAttributes": [
                     "smoking",
@@ -24,7 +24,7 @@
             },
             "nutritionalValue": {
                 "title": "Nutritional Values",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
                     "conceptNames": [
@@ -39,7 +39,7 @@
             },
             "diagnosis": {
                 "title": "Diagnosis",
-                "name": "diagnosis",
+                "type": "diagnosis",
                 "showDetailsButton": false,
                 "showCertainty": true,
                 "showOrder": true,
@@ -47,7 +47,7 @@
             },
             "vitals": {
                 "title": "Vitals",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
                     "conceptNames": [
@@ -77,7 +77,7 @@
             },
             "labResults": {
                 "title": "Lab Results",
-                "name": "labOrders",
+                "type": "labOrders",
                 "dashboardParams": {
                     "title": null,
                     "numberOfVisits": 1,
@@ -94,7 +94,7 @@
             },
             "treatments": {
                 "title": "Treatments",
-                "name": "treatment",
+                "type": "treatment",
                 "dashboardParams": {
                     "showFlowSheet": false,
                     "showListView": true,
@@ -118,12 +118,12 @@
             },
             "radiology": {
                 "title": "Radiology",
-                "name": "radiology",
+                "type": "radiology",
                 "displayOrder": 6
             },
             "visits": {
                 "title": "Visits",
-                "name": "visits",
+                "type": "visits",
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 10,
@@ -133,13 +133,13 @@
             },
             "admissionDetails": {
                 "title": "Admission Details",
-                "name": "admissionDetails",
+                "type": "admissionDetails",
                 "displayOrder": 8
             },
             "generalFindings": {
                 "title": "General Findings",
                 "templateName": "General Patient Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -158,7 +158,7 @@
             "obsGynaeFindings": {
                 "title": "Obs/Gynae Findings",
                 "templateName": "Obstetrics and Gynaecology Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -177,7 +177,7 @@
             "surgeriesProcedures": {
                 "title": "Surgeries/Procedures",
                 "templateName": "Surgeries and Procedures",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -196,7 +196,7 @@
             "breastCancer": {
                 "title": "Breast Cancer",
                 "templateName": "Breast Cancer Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [
                     "Breast Cancer, Confirmed Disease Stage",
                     "Breast Cancer, Treatment Plan"
@@ -217,7 +217,7 @@
             "diabetes": {
                 "title": "Diabetes",
                 "templateName": "Diabetes Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -254,7 +254,6 @@
                     },
                     "observationGraph": {
                         "type": "observationGraph",
-                        "name": "observationGraph",
                         "title": "RBS/FBS/PP2BS",
                         "config": {
                             "yAxisConcepts": [
@@ -272,7 +271,7 @@
             "tuberculosis": {
                 "title": "Tuberculosis",
                 "templateName": "Tuberculosis Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [
                     "Tuberculosis, Type",
                     "Tuberculosis, Patient Category",
@@ -329,7 +328,7 @@
             "psychiatry": {
                 "title": "Psychiatry",
                 "templateName": "Psychiatry Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [
                     "Psychiatry, Patient Notes"
                 ],
@@ -349,7 +348,7 @@
             "cervicalCancer": {
                 "title": "Cervical Cancer",
                 "templateName": "Cervical Cancer",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -368,7 +367,7 @@
             "gastricCancer": {
                 "title": "Gastric Cancer",
                 "templateName": "Gastric Cancer",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -387,7 +386,7 @@
             "colonCancer": {
                 "title": "Colon Cancer",
                 "templateName": "Colon Cancer",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -406,7 +405,7 @@
             "oralCancer": {
                 "title": "Oral Cancer",
                 "templateName": "Oral Cancer",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -424,13 +423,13 @@
             },
             "programs": {
                 "title": "Programs",
-                "name": "programs",
+                "type": "programs",
                 "displayOrder": 20
              },
             "smartCard": {
                 "title": "Smart Card",
                 "templateName": "Smart Card Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "dashboardParams": {},
                 "allDiseaseDetails": {
@@ -448,7 +447,7 @@
             "Cardiology": {
                 "title": "Caridology",
                 "templateName": "Cardiology templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "dashboardParams": {},
                 "allDiseaseDetails": {
@@ -465,7 +464,7 @@
             },
             "allPACSOrders":{
                 "orderType": "Radiology Order",
-                "name": "pacsOrders",
+                "type": "pacsOrders",
                 "title": "Digital Radiology",
                 "dashboardParams":{
                        "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
@@ -481,14 +480,13 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [],
                 "displayOrder": 0
             },
             "bp": {
                 "type": "observationGraph",
-                "name": "observationGraph",
                 "title": "BP",
                 "config": {
                     "yAxisConcepts": [
@@ -502,7 +500,6 @@
             },
             "weight/Bmi": {
                 "type": "observationGraph",
-                "name": "observationGraph",
                 "title": "Weight/BMI",
                 "config": {
                     "yAxisConcepts": [
@@ -516,7 +513,6 @@
             },
             "pulse": {
                 "type": "observationGraph",
-                "name": "observationGraph",
                 "title": "Pulse",
                 "config": {
                     "yAxisConcepts": [
@@ -529,7 +525,6 @@
             },
             "growthChart": {
                 "type": "observationGraph",
-                "name": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
                     "referenceData": "growthChartReference.csv",
@@ -546,7 +541,7 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [
                     "Smart card holder",
                     "Smart card brought"
@@ -556,13 +551,13 @@
             },
             "programs": {
                 "title": "Programs",
-                "name": "programs",
+                "type": "programs",
                 "displayOrder": 20
              },
             "smartCard": {
                 "title": "Smart Card",
                 "templateName": "Smart Card Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "dashboardParams": {},
                 "allDiseaseDetails": {

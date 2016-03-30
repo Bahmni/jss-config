@@ -34,7 +34,7 @@
             "sections": {
                 "vitals": {
                     "title": "Vitals",
-                    "name": "vitals",
+                    "type": "vitals",
                     "isObservation": true,
                     "dashboardParams": {
                         "conceptNames": [
@@ -53,20 +53,20 @@
                 },
                 "disposition": {
                     "title": "Disposition",
-                    "name": "disposition",
+                    "type": "disposition",
                     "numberOfVisits": 1,
                     "displayOrder": 1
                 },
                 "admissionDetails": {
                     "title": "Admission Details",
-                    "name": "admissionDetails",
+                    "type": "admissionDetails",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,
                     "displayOrder": 2
                 },
                 "patientInformation": {
                     "title": "Patient Information",
-                    "name": "patientInformation",
+                    "type": "patientInformation",
                     "patientAttributes": [
                         "caste",
                         "class",
