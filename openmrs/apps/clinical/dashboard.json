@@ -572,5 +572,101 @@
                 }
             }
         }
+    },
+    "referralform": {
+        "translationKey": "Referral Form",
+        "displayType": "Full-Page",
+        "printing": {
+            "title": "Referral Form",
+            "header": "",
+            "logo": ""
+        },
+        "sections": {
+            "Referral Form": {
+                "name": "custom",
+                "displayType": "Full-Page",
+                "displayOrder": 1,
+                "config": {
+                    "title": "Referral form doctor",
+                    "template": "<referralfm-doctor></referralfm-doctor>"
+                }
+            },
+            "diagnosis": {
+                "title": "Diagnosis",
+                "displayType": "Full-Page",
+                "displayOrder": 2,
+                "showRuledOutDiagnoses": false,
+                "name": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "numberOfVisits": 4
+            },
+            "labResults": {
+                "title": "Lab Results",
+                "displayType": "Full-Page",
+                "name": "labOrders",
+                "displayOrder": 3,
+                "dashboardParams": {
+                    "title": null,
+                    "numberOfVisits": 4,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true
+                },
+                "allLabDetails": {
+                    "numberOfVisits": 4,
+                    "observationGraph": {
+                        "type": "observationGraph",
+                        "name": "observationGraph",
+                        "title": "Temperature",
+                        "config": {
+                            "yAxisConcepts": [
+                                "Temperature"
+                            ],
+                            "numberOfVisits": 4
+                        }
+                    }
+                }
+            },
+            "treatment": {
+                "title": "Treatments",
+                "displayType": "Full-Page",
+                "name": "treatment",
+                "displayOrder": 4,
+                "dashboardParams": {
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": false,
+                    "showDrugForm": false,
+                    "numberOfVisits": 4,
+                    "showOtherActive": true,
+                    "showDetailsButton": false
+                },
+                "allTreatmentDetails": {
+                    "title": "Treatments",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 4,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                }
+            },
+            "referralSummary": {
+                "name": "custom",
+                "displayType": "Full-Page",
+                "displayOrder": 5,
+                "config": {
+                    "title": "",
+                    "template": "<referral-summary></referral-summary>"
+                }
+            }
+
+        }
     }
 }

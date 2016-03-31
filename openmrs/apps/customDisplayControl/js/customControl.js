@@ -339,4 +339,46 @@ angular.module('bahmni.common.displaycontrol.custom')
             controller : controller,
             template: '<ng-include src="contentUrl"/>'
         }
+    }]).directive('referralfmDoctor', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
+        var link = function ($scope) {
+            var conceptNames = ["Referral Form, Doctor's Name"];
+            var conceptName=["Referral Form, Health Center"];
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referraldocname.html";
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                console.log($scope.observations);
+            }));
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observation = response.data[0];
+                console.log($scope.observation);
+            }));
+
+        };
+
+        return {
+            restrict: 'E',
+            link: link,
+            template: '<ng-include src="contentUrl"/>'
+        }
+    }]).directive('referralSummary', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
+        var link = function ($scope) {
+            var conceptNames = ["Referral form, Summary"];
+            var conceptName=["Referral Form, Referral Follow up"];
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data[0];
+                console.log($scope.observations);
+            }));
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observation = response.data[0];
+                console.log($scope.observation);
+            }));
+
+        };
+
+        return {
+            restrict: 'E',
+            link: link,
+            template: '<ng-include src="contentUrl"/>'
+        }
     }]);
