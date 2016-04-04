@@ -97,13 +97,9 @@
       },
       "Chief Complaint": {
         "answersConceptName": "Chief Complaint Answers",
-        "freeTextAutocomplete": true,
-        "durationRequired": false,
-        "allowAddMore": true
-      },
-      "Non-Coded Chief Complaint": {
-        "answersConceptName": "Chief Complaint Answers",
-        "freeTextAutocomplete": true,
+        "codedConceptName":"Chief Complaint",
+        "nonCodedConceptName":"Non-Coded Chief Complaint",
+        "autocomplete": true,
         "durationRequired": false,
         "allowAddMore": true
       },
@@ -113,12 +109,10 @@
         "durationRequired": false
       },
       "Surgical Procedure": {
+        "codedConceptName":"Surgical Procedure",
+        "nonCodedConceptName":"Surgical Procedure Non Coded",
         "answersConceptName": "Surgical Procedure Answers",
-        "freeTextAutocomplete": true
-      },
-      "Surgical Procedure Non Coded": {
-        "answersConceptName": "Surgical Procedure Answers",
-        "freeTextAutocomplete": true
+        "autocomplete": true
       },
       "Gynaecology, P/S (per speculum) - Cervix": {
         "grid": true

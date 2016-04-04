@@ -10,7 +10,7 @@
     "maxConceptSetLevels": 3,
     "conceptSetUI": {
       "Chief Complaint": {
-        "freeTextAutocomplete": true,
+        "autocomplete": true,
         "durationRequired": false
       }
     },
