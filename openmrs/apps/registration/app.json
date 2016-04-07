@@ -17,6 +17,10 @@
         "activeVisitUuid"
     ],
     "config": {
+        "mandatoryPersonAttributes" :[
+            "Smart card holder",
+            "Smart card brought"
+        ],
         "patientInformation": {
             "additionalPatientInformation": {
                 "title": "Additional Patient Information",
