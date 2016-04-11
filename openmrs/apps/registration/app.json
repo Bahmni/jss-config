@@ -69,6 +69,12 @@
             "REGISTRATION FEES": {
                 "required": true,
                 "label": "Fee"
+            },
+            "BMI Status Data":{
+                "abnormalIndicator": true
+            },
+            "BMI Data":{
+                "abnormalIndicator": true
             }
         }
     }

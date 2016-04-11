@@ -106,5 +106,14 @@
         "url": "../clinical/#/programs/patient/search",
         "icon": "fa-tasks",
         "order": 12
+    },
+    "appointments": {
+        "id": "bahmni.appointments",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Appointments",
+        "url": "../../openmrs/appointmentschedulingui/home.page",
+        "icon": "fa fa-calendar",
+        "order": 13
     }
 }
