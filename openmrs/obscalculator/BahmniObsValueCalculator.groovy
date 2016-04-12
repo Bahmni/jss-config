@@ -157,6 +157,29 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 voidObs(calculatedObs)
             }
         }
+
+
+
+        BahmniObservation ancObservation = find("ANC, Last menstrual period", observations, null)
+        def calculatedConceptNameanc = "ANC, Estimated Date of Delivery"
+        if (hasValue(ancObservation)) {
+            parent = obsParent(ancObservation, null)
+            def calculatedObs = find(calculatedConceptNameanc, observations, null)
+
+            Date obsDatetime = getDate(ancObservation)
+
+            LocalDate edd = new LocalDate(ancObservation.getValue()).plusMonths(9).plusWeeks(1)
+            if (calculatedObs == null)
+                calculatedObs = createObs(calculatedConceptNameanc, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            calculatedObs.setValue(edd)
+            return
+        } else {
+            def calculatedObs = find(calculatedConceptNameanc, observations, null)
+            if (hasValue(calculatedObs)) {
+                voidObs(calculatedObs)
+            }
+        }
+
     }
 
     private static BahmniObservation obsParent(BahmniObservation child, BahmniObservation parent) {
