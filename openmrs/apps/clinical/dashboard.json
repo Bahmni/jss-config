@@ -583,7 +583,7 @@
         },
         "sections": {
             "Referral Form": {
-                "name": "custom",
+                "type": "custom",
                 "displayType": "Full-Page",
                 "displayOrder": 1,
                 "config": {
@@ -605,7 +605,7 @@
             "labResults": {
                 "title": "Lab Results",
                 "displayType": "Full-Page",
-                "name": "labOrders",
+                "type": "labOrders",
                 "displayOrder": 3,
                 "dashboardParams": {
                     "title": null,
@@ -635,7 +635,7 @@
             "treatment": {
                 "title": "Treatments",
                 "displayType": "Full-Page",
-                "name": "treatment",
+                "type": "treatment",
                 "displayOrder": 4,
                 "dashboardParams": {
                     "showFlowSheet": false,
@@ -658,7 +658,7 @@
                 }
             },
             "referralSummary": {
-                "name": "custom",
+                "type": "custom",
                 "displayType": "Full-Page",
                 "displayOrder": 5,
                 "config": {
