@@ -1752,5 +1752,97 @@
             );
         </sql>
     </changeSet>
+    <changeSet id="JSS-2016050201" author="Dayaan">
+        <comment>Confirmed Diagnosis View for Coded and Non Coded Diagnosis</comment>
+        <sql>
+            CREATE OR REPLACE VIEW openmrs.confirmed_diagnosis_view_new AS
+            SELECT `diagnosis_obs`.`person_id` AS `person_id`,
+            CASE when `diagnosis_concept_name`.`name` = 'Coded Diagnosis' THEN `actual_diagnosis`.`name`
+            when `diagnosis_concept_name`.`name` = 'Non-coded Diagnosis' THEN `diagnosis_obs`.`value_text`
+            else ""
+            end
+            AS `name`,
+            `actual_diagnosis`.`concept_id` AS `concept_id`,
+            `diagnosis_obs`.`obs_datetime` AS `obs_datetime`,
+            `diagnosis_obs`.`encounter_id` AS `encounter_id`,
+            `e`.`encounter_datetime` AS `encounter_datetime`,
+            `v`.`visit_id` AS `visit_id`,
+            `v`.`date_started` AS `visit_date_started`,
+            `v`.`date_stopped` AS `visit_date_stopped`
 
+            FROM
+            (`openmrs`.`obs` `diagnosis_obs` JOIN `openmrs`.`concept_name` `diagnosis_concept_name`
+            ON ((
+            (`diagnosis_obs`.`concept_id` = `diagnosis_concept_name`.`concept_id`)
+            AND ((`diagnosis_concept_name`.`name` = 'Coded Diagnosis') OR
+            (`diagnosis_concept_name`.`name` = 'Non-coded Diagnosis'))
+            AND (`diagnosis_concept_name`.`voided` IS FALSE)
+            AND (`diagnosis_concept_name`.`concept_name_type` = 'FULLY_SPECIFIED')
+            ))
+            JOIN `openmrs`.`obs` `certainty`
+            ON ((
+            (`certainty`.`obs_group_id` = `diagnosis_obs`.`obs_group_id`)
+            AND (`certainty`.`voided` IS FALSE) AND
+            (`certainty`.`concept_id` =
+            (SELECT `cn`.`concept_id`
+            FROM `openmrs`.`concept_name` `cn`
+            WHERE ((`cn`.`name` = 'Diagnosis Certainty')
+            AND (`cn`.`concept_name_type` = 'FULLY_SPECIFIED'))))
+            AND (`certainty`.`value_coded` =
+            (SELECT `cn`.`concept_id`
+            FROM `openmrs`.`concept_name` `cn`
+            WHERE ((`cn`.`name` = 'Confirmed') AND
+            (`cn`.`concept_name_type` = 'FULLY_SPECIFIED')
+            )
+            )
+            )
+            ))
+            LEFT JOIN `openmrs`.`obs` `ruled_out` ON (
+            ((`ruled_out`.`obs_group_id` = `diagnosis_obs`.`obs_group_id`)
+            AND (`ruled_out`.`voided` IS FALSE)
+            AND (`ruled_out`.`concept_id` =
+            (SELECT `cn`.`concept_id`
+            FROM `openmrs`.`concept_name` `cn`
+            WHERE
+            ((`cn`.`name` = 'Ruled Out Diagnosis') AND
+            (`cn`.`concept_name_type` = 'FULLY_SPECIFIED')
+            )
+            )
+            )
+            )
+            )
+            LEFT JOIN `openmrs`.`obs` `revised` ON
+            (((`revised`.`obs_group_id` = `diagnosis_obs`.`obs_group_id`)
+            AND (`revised`.`voided` IS FALSE)
+            AND (`revised`.`concept_id` =
+            (SELECT `cn`.`concept_id`
+            FROM `openmrs`.`concept_name` `cn`
+            WHERE ((`cn`.`name` = 'Bahmni Diagnosis Revised')
+            AND (`cn`.`concept_name_type` = 'FULLY_SPECIFIED'))))
+            AND
+            (`revised`.`value_coded` =
+            (SELECT `openmrs`.`global_property`.`property_value`
+            FROM `openmrs`.`global_property`
+            WHERE (`openmrs`.`global_property`.`property` = 'concept.true')
+            )
+            )
+            ))
+
+
+            left join `openmrs`.`concept_name` `actual_diagnosis`
+            on((
+            (`diagnosis_obs`.`value_coded` = `actual_diagnosis`.`concept_id`)
+            and (`actual_diagnosis`.`voided` is false)
+            and (`actual_diagnosis`.`concept_name_type` = 'FULLY_SPECIFIED')
+            )
+
+            )
+
+            join `openmrs`.`encounter` `e` on
+            ((`diagnosis_obs`.`encounter_id` = `e`.`encounter_id`))
+            join `openmrs`.`visit` `v` on((`e`.`visit_id` = `v`.`visit_id`)))
+            where (isnull(`revised`.`obs_id`) and isnull(`ruled_out`.`obs_id`) and
+            (`diagnosis_obs`.`voided` is false));
+        </sql>
+    </changeSet>
 </databaseChangeLog>
