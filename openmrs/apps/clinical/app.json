@@ -76,6 +76,15 @@
       "Breast Cancer, TNM Pathologic Staging": {
         "grid": true
       },
+      "Breast Cancer, Axillary": {
+        "multiSelect": true
+      },
+      "Breast Cancer, Supra Clavicular": {
+        "multiSelect": true
+      },
+      "Breast Cancer, Infra Clavicular": {
+        "multiSelect": true
+      },
       "Breast Cancer, Imaging Studies": {
         "allowAddMore": true
       },
@@ -126,6 +135,15 @@
       "Diabetes, Current Status": {
         "conciseText": true
       },
+      "cervical, Investigations Done": {
+        "multiSelect": true
+      },
+      "Cervical, Complications": {
+        "multiSelect": true
+      },
+      "Cervical Cancer, Chemo": {
+        "multiSelect": true
+      },
       "Image": {
         "allowAddMore": true
       },
@@ -167,6 +185,9 @@
       },
       "Gynaecology, Gravida": {
         "stepper": true
+      },
+      "Cancer, Regimen Type": {
+        "multiSelect": true
       },
       "Gynaecology, Parity": {
         "stepper": true

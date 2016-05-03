@@ -42,6 +42,13 @@
       "applyDateRangeFor": "encounterCreateDate"
     }
   },
+  "BreastCancerData": {
+    "name": "Breast Cancer Template Report",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Breast Cancer Intake Template"
+    }
+  },
   "patientsWithTuberculosisFollowups": {
     "name": "TB - Patients with appointed Followups",
     "type": "DateConceptValuesPatientsList",
