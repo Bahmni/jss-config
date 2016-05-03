@@ -56,7 +56,7 @@
         "patientSearch": {
             "address": {
                 "label": "Village",
-                "placeholder": "Enter Ward/Union",
+                "placeholder": "Enter Village",
                 "field": "cityVillage"
             }
         },
