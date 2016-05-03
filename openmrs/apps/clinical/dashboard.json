@@ -123,6 +123,16 @@
                 "type": "radiology",
                 "displayOrder": 6
             },
+            "allPACSOrders":{
+                "orderType": "Radiology Order",
+                "type": "pacsOrders",
+                "title": "Digital Radiology",
+                "dashboardConfig":{
+                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
+                    "numberOfVisits":4
+                },
+                "displayOrder": 7
+            },
             "visits": {
                 "title": "Visits",
                 "type": "visits",
@@ -131,12 +141,12 @@
                     "maximumNoOfVisits": 10,
                     "groupByVisits": true
                 },
-                "displayOrder": 7
+                "displayOrder": 8
             },
             "admissionDetails": {
                 "title": "Admission Details",
                 "type": "admissionDetails",
-                "displayOrder": 8
+                "displayOrder": 9
             },
             "generalFindings": {
                 "title": "General Findings",
@@ -155,7 +165,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 9
+                "displayOrder": 10
             },
             "obsGynaeFindings": {
                 "title": "Obs/Gynae Findings",
@@ -174,7 +184,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 10
+                "displayOrder": 11
             },
             "surgeriesProcedures": {
                 "title": "Surgeries/Procedures",
@@ -193,7 +203,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 11
+                "displayOrder": 12
             },
             "breastCancer": {
                 "title": "Breast Cancer",
@@ -214,7 +224,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 12
+                "displayOrder": 13
             },
             "diabetes": {
                 "title": "Diabetes",
@@ -268,7 +278,7 @@
                         }
                     }
                 },
-                "displayOrder": 13
+                "displayOrder": 14
             },
             "tuberculosis": {
                 "title": "Tuberculosis",
@@ -325,7 +335,7 @@
                         ]
                     }
                 },
-                "displayOrder": 14
+                "displayOrder": 15
             },
             "psychiatry": {
                 "title": "Psychiatry",
@@ -345,7 +355,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 15
+                "displayOrder": 16
             },
             "cervicalCancer": {
                 "title": "Cervical Cancer",
@@ -364,7 +374,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 16
+                "displayOrder": 17
             },
             "gastricCancer": {
                 "title": "Gastric Cancer",
@@ -383,7 +393,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 17
+                "displayOrder": 18
             },
             "colonCancer": {
                 "title": "Colon Cancer",
@@ -402,7 +412,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 18
+                "displayOrder": 19
             },
             "oralCancer": {
                 "title": "Oral Cancer",
@@ -421,12 +431,12 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 19
+                "displayOrder": 20
             },
             "programs": {
                 "title": "Programs",
                 "type": "programs",
-                "displayOrder": 20
+                "displayOrder": 21
              },
             "smartCard": {
                 "title": "Smart Card",
@@ -444,7 +454,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 21
+                "displayOrder": 22
             },
             "Cardiology": {
                 "title": "Caridology",
@@ -462,17 +472,7 @@
                         "labConcepts": []
                     }
                 },
-                "displayOrder": 22
-            },
-            "allPACSOrders":{
-                "orderType": "Radiology Order",
-                "type": "pacsOrders",
-                "title": "Digital Radiology",
-                "dashboardConfig":{
-                       "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
-                       "numberOfVisits":4
-                 },
-                 "displayOrder": 23
+                "displayOrder": 23
             }
         }
     },
