@@ -53,7 +53,14 @@
         "showMiddleName": false,
         "showCasteSameAsLastNameCheckbox": true,
         "localNameSearch": false,
-        "printOptions": [
+        "patientSearch": {
+            "address": {
+                "label": "Ward/Union",
+                "placeholder": "Enter Ward/Union",
+                "field": "address3"
+            }
+        },
+            "printOptions": [
             {
                 "label": "<u>P</u>rint Registration Card",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
