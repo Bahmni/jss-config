@@ -55,9 +55,9 @@
         "localNameSearch": false,
         "patientSearch": {
             "address": {
-                "label": "Ward/Union",
+                "label": "Village",
                 "placeholder": "Enter Ward/Union",
-                "field": "address3"
+                "field": "cityVillage"
             }
         },
             "printOptions": [
