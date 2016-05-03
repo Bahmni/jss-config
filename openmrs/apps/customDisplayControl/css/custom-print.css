@@ -48,3 +48,6 @@ body{
 .columns-4{
   width: 25%;
 }
+.patient-info-fixed-postion-container{
+     display:none;
+ }

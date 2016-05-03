@@ -16,7 +16,9 @@
                     "familyIncome",
                     "foodSecurity",
                     "debt",
-                    "distanceFromCenter"
+                    "distanceFromCenter",
+                    "Smart card holder",
+                    "Smart card brought"
                 ],
                 "showDOB" : false,
                 "addressFields": [],
@@ -80,12 +82,12 @@
                 "type": "labOrders",
                 "dashboardConfig": {
                     "title": null,
-                    "numberOfVisits": 1,
+                    "numberOfVisits": 2,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false,
-                    "initialAccessionCount": 0,
-                    "latestAccessionCount": 1
+                    "initialAccessionCount": 3,
+                    "latestAccessionCount": 3
                 },
                 "expandedViewConfig": {
                     "numberOfVisits": 10
@@ -577,7 +579,7 @@
         "translationKey": "Referral Form",
         "displayType": "Full-Page",
         "printing": {
-            "title": "Referral Form",
+            "title": "",
             "header": "",
             "logo": ""
         },
