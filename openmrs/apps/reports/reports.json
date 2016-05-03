@@ -338,6 +338,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/referred_out_tests_elis.sql"
     }
   },
+  "referraltemp": {
+    "name": "Referral Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/referraltemplate.sql"
+    }
+  },
    "overdueTests": {
     "name": "Overdue Referred out Tests(LPA, LJ, CBNAAT) As of Today",
     "type": "ElisGeneric",
