@@ -473,6 +473,16 @@
                     }
                 },
                 "displayOrder": 23
+            },
+            "dischargeSummary":{
+                "title": "Discharge Summary",
+                "type": "forms",
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                },
+                "formGroup":["Discharge Summary"],
+                "displayOrder": 24
             }
         }
     },
