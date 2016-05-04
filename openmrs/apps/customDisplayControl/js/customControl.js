@@ -341,7 +341,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         }
     }]).directive('referralfmDoctor', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
-            var conceptNames = ["Referral Form, Doctor's Name"];
+            var conceptNames = ["Referral Form, Doctors Name"];
             var conceptName=["Referral Form, Health Center"];
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referraldocname.html";
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
@@ -365,6 +365,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             var conceptNames = ["Referral form, Summary"];
             var conceptName=["Referral Form, Referral Follow up"];
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
+            $scope.curDate=new Date();
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observations = response.data[0];
                 console.log($scope.observations);
