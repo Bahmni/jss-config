@@ -71,9 +71,9 @@ public class CreatinineUpdate implements ElisFeedInterceptor {
         double CreatinineClearanceRate = 0.0;
 
         if (gender.equals('M')) {
-            CreatinineClearanceRate = (((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric())));
+            CreatinineClearanceRate = math.round(((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric())));
         } else if (gender.equals('F')) {
-            CreatinineClearanceRate = (((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric()))) * 0.85;
+            CreatinineClearanceRate = math.round(((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric()))) * 0.85;
         }
 
 

@@ -608,7 +608,7 @@
                 "displayType": "Full-Page",
                 "displayOrder": 2,
                 "showRuledOutDiagnoses": false,
-                "name": "diagnosis",
+                "type": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "showDetailsButton": true,
