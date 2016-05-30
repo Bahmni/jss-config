@@ -21,8 +21,6 @@ public class CreatinineUpdate implements ElisFeedInterceptor {
 
     private Obs getCreatinineObs(Set<Encounter> encounters) {
         for (Encounter encounter : encounters) {
-
-            println("IN the first for loop");
             for (Obs obs : encounter.getObs()) {
                 if (obs.getOrder() != null && obs.getConcept().getFullySpecifiedName(Locale.ENGLISH).getName().equals(CREATININE_TEST_NAME)
                         && obs.getOrder().getConcept().getUuid().equals(obs.getConcept().getUuid())) {
@@ -71,9 +69,9 @@ public class CreatinineUpdate implements ElisFeedInterceptor {
         double CreatinineClearanceRate = 0.0;
 
         if (gender.equals('M')) {
-            CreatinineClearanceRate = math.round((((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric())))* 100.0) / 100.0;
+            CreatinineClearanceRate = (double)Math.round((((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric())))* 100.0) / 100.0;
         } else if (gender.equals('F')) {
-            CreatinineClearanceRate = math.round((((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric()))) * 0.85* 100.0) / 100.0;
+            CreatinineClearanceRate = (double)Math.round((((140 - personage) * weighttval.getValueNumeric()) / (72 * (obs.getValueNumeric()))) * 0.85* 100.0) / 100.0;
         }
 
 

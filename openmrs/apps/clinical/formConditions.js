@@ -16,15 +16,5 @@ Bahmni.ConceptSet.FormConditions.rules = {
 		conditions.disable.push(previousTreatmentWhere,previousTreamentWhen,previousTreatmentCount,previousTreatmentDots,previousTreatmentDrugs);
 	}
 	return conditions;
-  },
-	'High Risk Mother Coded' : function (formName, formFieldValues) {
-		var enReason = "ANC, High Risk Mother";
-		var conditionConcept = formFieldValues['High Risk Mother Coded'];
-		if(conditionConcept == true) {
-			return {enable: [enReason]}
-		}
-		else {
-			return {disable: [enReason]}
-		}
-	}
+  }
 };
