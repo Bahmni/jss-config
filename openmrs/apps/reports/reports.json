@@ -96,7 +96,7 @@
     "name": "Patients Information",
     "type": "MRSGeneric",
     "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/reports/patients_information.sql"
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/PatientInformation.sql"
     }
   },
   "diagnosisCount": {
@@ -129,13 +129,6 @@
     "config": {
       "conceptNames": ["ANC, Estimated Date of Delivery"],
       "templateName": "ANC Template"
-    }
-  },
-  "patientWithANCVisits": {
-    "name": "ANC - EMR IDs",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/reports/patient_with_anc_visit.sql"
     }
   },
   "smartCardData": {
