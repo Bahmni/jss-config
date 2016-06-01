@@ -1,6 +1,5 @@
 {
-  "commonConfig": {
-  },
+  "commonConfig": {},
   "tabConfig": {
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
@@ -23,7 +22,25 @@
             "defaultDurationUnit": "Month(s)"
           }
         ],
-
+        "routes": [
+          "Oral",
+          "Topical",
+          "Inhalation",
+          "Intravenous",
+          "Per Vaginal",
+          "Nasal"
+        ],
+        "doseUnits": [
+          "Teaspoon",
+          "Capsule(s)",
+          "Drop",
+          "Unit(s)",
+          "Puff(s)",
+          "mg",
+          "ml",
+          "Tablet(s)",
+          "ml (syrup)"
+        ],
         "drugFormDefaults": {
           "Ayurvedic": {
             "doseUnits": "Teaspoon",
