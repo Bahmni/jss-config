@@ -9,3 +9,7 @@
 .patient-info-fixed-postion-container{
     display:none;
 }
+
+.hidden-print{
+ display:none;
+}
