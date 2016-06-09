@@ -304,6 +304,9 @@
       },
       "ANC, Estimated Date of Delivery": {
          "allowFutureDates": true
+      },
+      "Summary, Advice": {
+        "multiSelect": true
       }
     }
   }
