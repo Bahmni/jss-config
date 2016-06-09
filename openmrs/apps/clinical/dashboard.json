@@ -620,14 +620,17 @@
                 "type": "labOrders",
                 "displayOrder": 3,
                 "dashboardParams": {
-                    "title": null,
-                    "numberOfVisits": 4,
+                    "title": "Lab Investigations",
                     "showChart": true,
-                    "showTable": true,
-                    "showDetailsButton": false,
+                    "showTable": false,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
-                    "showAccessionNotes": true
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1,
+                    "numberOfVisits": 4,
+                    "showDetailsButton": false
                 }
             },
             "treatment": {
