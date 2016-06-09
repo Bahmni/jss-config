@@ -3,8 +3,10 @@
 </head>
 <body>
 <br><br><br><br>
-<span><strong>{{observations.groupMembers[0].conceptNameToDisplay}}</strong>:{{observations.groupMembers[0].valueAsString}}</span><br><br>
-<span><strong>{{observations.groupMembers[1].conceptNameToDisplay}}</strong><span ng-if="observations.groupMembers[1].valueAsString != undefined">:</span>{{observations.groupMembers[1].valueAsString}}</span><br><br><br>
+
+<span><strong>{{observations.groupMembers[0].conceptNameToDisplay}}</strong></span>:<span ng-repeat="x in observations.groupMembers" ng-if="x.conceptNameToDisplay=='Advice'">{{ x.valueAsString }}, </span><br><br>
+<span ng-if="refsummryForm['Summary Notes']!= null"><strong> Summary </strong> : {{refsummryForm["Summary Notes"]}} </span>
+
 
 <div>
     <span>The case is referred back for continuation of treatment from your centre, of course, the dosage may be adjusted as per reports.</span>

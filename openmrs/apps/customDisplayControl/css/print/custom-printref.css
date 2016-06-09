@@ -14,6 +14,9 @@
  display:none;
 }
 
-.footer-note{
+.footer-note{display:none;}
+
+
+.referral-letter #Lab-Results > div > investigation-results > investigation-table{
 display:none;
 }

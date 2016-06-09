@@ -360,26 +360,60 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             template: '<ng-include src="contentUrl"/>'
         }
-    }]).directive('referralSummary', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
-        var link = function ($scope) {
-            var conceptNames = ["Referral form, Summary"];
-            var conceptName=["Referral Form, Referral Follow up"];
-            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
-            $scope.curDate=new Date();
-            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                $scope.observations = response.data[0];
-                console.log($scope.observations);
-            }));
-            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                $scope.observation = response.data[0];
-                console.log($scope.observation);
-            }));
+    }]).directive('referralSummary', ['$q','observationsService','appService', 'spinner','$sce', function ($q,observationsService,appService, spinner, $sce)
+           {
+               var link = function ($scope)
+               {
 
-        };
+                   var conceptNames = ["Referral form, Summary"];
+                    var conceptName=["Referral Form, Referral Follow up"];
+                   spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                           $scope.observations = response.data[0];
+                           $scope.refsummryForm = []
+                           function createForm(obs) {
+                                  if (obs.groupMembers.length == 0){
+                                     if ($scope.refsummryForm[obs.conceptNameToDisplay] == undefined){
+                                        $scope.refsummryForm[obs.conceptNameToDisplay] = obs.valueAsString;
+                                     }
+                                     else{
+                                        $scope.refsummryForm[obs.conceptNameToDisplay] = $scope.refsummryForm[obs.conceptNameToDisplay] + ' ' + obs.valueAsString;
+                                     }
 
-        return {
-            restrict: 'E',
-            link: link,
-            template: '<ng-include src="contentUrl"/>'
-        }
-    }]);
+                                     if(obs.comment != null){
+                                       $scope.refsummryForm[obs.conceptNameToDisplay] = $scope.refsummryForm[obs.conceptNameToDisplay] + ' ' + obs.comment;
+                                     }
+                                  }
+                                  else{
+                                     for(var i = 0; i < obs.groupMembers.length; i++) {
+                                          createForm(obs.groupMembers[i]);
+                                     }
+
+                                  }
+
+                           }
+                           createForm(response.data[0]);
+
+
+
+                       }));
+                     spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                                   $scope.observation = response.data[0];
+                                   console.log($scope.observation);
+                               }));
+
+                   $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
+                   $scope.curDate=new Date();
+
+               };
+               var controller = function($scope){
+               	$scope.htmlLabel = function(label){
+               		return $sce.trustAsHtml(label)
+               	}
+               }
+               return {
+                   restrict: 'E',
+                   link: link,
+                   controller : controller,
+                   template: '<ng-include src="contentUrl"/>'
+               }
+           }]);
