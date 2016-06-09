@@ -622,7 +622,7 @@
                 "dashboardParams": {
                     "title": null,
                     "numberOfVisits": 4,
-                    "showChart": false,
+                    "showChart": true,
                     "showTable": true,
                     "showDetailsButton": false,
                     "showNormalLabResults": true,
