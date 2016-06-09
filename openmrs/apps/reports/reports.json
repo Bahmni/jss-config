@@ -344,5 +344,9 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/overdue_referred_out_tests_LPA_LJ_CBNAAT.sql"
     }
+  },
+  "programEnrollmentTemplateReport": {
+    "name": "Program Enrollments",
+    "type": "ProgramEnrollmentReport"
   }
 }

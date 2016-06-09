@@ -609,7 +609,7 @@
                 "displayOrder": 2,
                 "showRuledOutDiagnoses": false,
                 "type": "diagnosis",
-                "showCertainty": true,
+                "showCertainty": false,
                 "showOrder": true,
                 "showDetailsButton": true,
                 "numberOfVisits": 4
@@ -628,20 +628,6 @@
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true
-                },
-                "allLabDetails": {
-                    "numberOfVisits": 4,
-                    "observationGraph": {
-                        "type": "observationGraph",
-                        "name": "observationGraph",
-                        "title": "Temperature",
-                        "config": {
-                            "yAxisConcepts": [
-                                "Temperature"
-                            ],
-                            "numberOfVisits": 4
-                        }
-                    }
                 }
             },
             "treatment": {
