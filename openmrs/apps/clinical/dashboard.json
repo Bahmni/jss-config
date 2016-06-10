@@ -615,11 +615,11 @@
                 "numberOfVisits": 4
             },
             "labResults": {
-                "title": "Lab Results",
-                "displayType": "Full-Page",
-                "type": "labOrders",
-                "displayOrder": 3,
-                "dashboardParams": {
+                     "title": "Lab Results",
+                     "displayType": "Full-Page",
+                     "type": "labOrders",
+                     "displayOrder": 3,
+                     "dashboardParams": {
                     "title": "Lab Investigations",
                     "showChart": true,
                     "showTable": false,
@@ -634,11 +634,11 @@
                 }
             },
             "treatment": {
-                "title": "Treatments",
-                "displayType": "Full-Page",
-                "type": "treatment",
-                "displayOrder": 4,
-                "dashboardParams": {
+                    "title": "Treatments",
+                    "displayType": "Full-Page",
+                    "type": "treatment",
+                    "displayOrder": 4,
+                    "dashboardParams": {
                     "showFlowSheet": false,
                     "showListView": true,
                     "showRoute": false,
