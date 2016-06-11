@@ -74,7 +74,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "display": "Active",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard/treatment"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard/treatment?tabConfigName=allMedicationTabConfig"
     },
     "label": "Active",
     "order": 1,
