@@ -44,7 +44,7 @@
       "Psychiatry Followup Template": {
         "showPreviousButton": true
       },
-      "Referral Follow up, Follow up Date":{
+      "Follow up on (date)":{
         "allowFutureDates": true
       },
       "CDST Form, Drugs used in his treatment": {
