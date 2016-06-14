@@ -475,7 +475,7 @@
                 "displayOrder": 23
             },
             "formDisplaySummary":{
-                "title": "Form Display Control",
+                "title": "Templates Filled",
                 "type": "forms",
                 "dashboardConfig": {
                     "title": null,
@@ -615,11 +615,11 @@
                 "numberOfVisits": 4
             },
             "labResults": {
-                     "title": "Lab Results",
-                     "displayType": "Full-Page",
-                     "type": "labOrders",
-                     "displayOrder": 3,
-                     "dashboardParams": {
+                "title": "Lab Results",
+                "displayType": "Full-Page",
+                "type": "labOrders",
+                "displayOrder": 3,
+                "dashboardConfig": {
                     "title": "Lab Investigations",
                     "showChart": true,
                     "showTable": false,
@@ -629,7 +629,6 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 1,
                     "latestAccessionCount": 1,
-                    "numberOfVisits": 4,
                     "showDetailsButton": false
                 }
             },
