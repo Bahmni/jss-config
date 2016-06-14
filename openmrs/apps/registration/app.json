@@ -53,7 +53,7 @@
     "showMiddleName": false,
     "showCasteSameAsLastNameCheckbox": true,
     "localNameSearch": false,
-     "printOptions": [
+    "printOptions": [
       {
         "label": "<u>P</u>rint Registration Card",
         "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
@@ -78,16 +78,16 @@
       }
     },
     "patientSearch": {
-            "address": {
-                "label": "Village",
-                "placeholder": "Enter Village",
-                "field": "city_village"
-            },
-	           "programAttributes": {
-                "label": "Registration Number",
-                "placeholder": "Enter Reg Number",
-                "field": "Registration ID"
-            }
-        }
+      "address": {
+        "label": "Village",
+        "placeholder": "Enter Village",
+        "field": "city_village"
+      },
+      "programAttributes": {
+        "label": "Program ID",
+        "placeholder": "Program ID",
+        "field": "Program ID"
+      }
+    }
   }
 }
