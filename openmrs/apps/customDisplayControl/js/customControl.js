@@ -1,22 +1,7 @@
 'use strict';
 
 angular.module('bahmni.common.displaycontrol.custom')
-    .directive('birthCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
-        var link = function ($scope) {
-            var conceptNames = ["HEIGHT"];
-            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
-            $scope.curDate=new Date();
-            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                $scope.observations = response.data;
-            }));
-        }
-
-        return {
-            restrict: 'E',
-            template: '<ng-include src="contentUrl"/>',
-            link: link
-        }
-    }]).directive('deathCertificate', ['$q','observationsService','visitService', 'bedService','appService', 'spinner','$sce', function ($q,observationsService, visitService, bedService,appService, spinner, $sce) 
+   .directive('deathCertificate', ['$q','observationsService','visitService', 'bedService','appService', 'spinner','$sce', function ($q,observationsService, visitService, bedService,appService, spinner, $sce)
     {
         var link = function ($scope) 
         {
