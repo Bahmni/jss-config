@@ -42,6 +42,12 @@ angular.module('bahmni.common.displaycontrol.custom')
                     $scope.observations = response.data[0];   
                     $scope.rntcpform = []
                     function createForm(obs) {
+                        if ($scope.observations==undefined)
+                        { 
+                            console.log("template not filled");
+                        }
+                         else
+                        {
                            if (obs.groupMembers.length == 0){
                               if ($scope.rntcpform[obs.conceptNameToDisplay] == undefined){
                                  $scope.rntcpform[obs.conceptNameToDisplay] = obs.valueAsString;
@@ -61,6 +67,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                               
                            }
 
+                        }
                     }
                     createForm(response.data[0]);
 
@@ -95,6 +102,12 @@ angular.module('bahmni.common.displaycontrol.custom')
                     $scope.observations = response.data[0];
                     $scope.rmrctForm = [];
                     function createForm(obs) {
+                    if ($scope.observations==undefined)
+                      { 
+                            console.log("template not filled");
+                       }
+                       else
+                      {
                            if (obs.groupMembers.length == 0){
                               if ($scope.rmrctForm[obs.conceptNameToDisplay] == undefined){
                                  $scope.rmrctForm[obs.conceptNameToDisplay] = obs.valueAsString;
@@ -113,8 +126,9 @@ angular.module('bahmni.common.displaycontrol.custom')
                               }
                               
                            }
-
+                       }
                     }
+
                     createForm(response.data[0]);
 
                 }));
@@ -149,6 +163,12 @@ angular.module('bahmni.common.displaycontrol.custom')
                     $scope.observations = response.data[0];
                     $scope.hindujaform = []
                     function createForm(obs) {
+                    if ($scope.observations==undefined)
+                     { 
+                        console.log("template not filled");
+                     }
+                     else
+                     {
                            if (obs.groupMembers.length == 0){
                               if ($scope.hindujaform[obs.conceptNameToDisplay] == undefined){
                                  $scope.hindujaform[obs.conceptNameToDisplay] = obs.valueAsString;
@@ -167,7 +187,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                               }
                               
                            }
-
+                        }
                     }
                     createForm(response.data[0]);
 
@@ -356,6 +376,12 @@ angular.module('bahmni.common.displaycontrol.custom')
                            $scope.observations = response.data[0];
                            $scope.refsummryForm = []
                            function createForm(obs) {
+                           if ($scope.observations==undefined)
+                              { 
+                                   console.log("template not filled");
+                               }
+                            else
+                               {
                                   if (obs.groupMembers.length == 0){
                                      if ($scope.refsummryForm[obs.conceptNameToDisplay] == undefined){
                                         $scope.refsummryForm[obs.conceptNameToDisplay] = obs.valueAsString;
@@ -374,7 +400,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                                      }
 
                                   }
-
+                                }
                            }
                            createForm(response.data[0]);
 
