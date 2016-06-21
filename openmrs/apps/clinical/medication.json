@@ -28,7 +28,9 @@
           "Inhalation",
           "Intravenous",
           "Per Vaginal",
-          "Nasal"
+          "Nasal",
+          "Intramuscular",
+          "Sub Cutaneous"
         ],
         "doseUnits": [
           "Teaspoon",
@@ -40,7 +42,7 @@
           "ml",
           "Tablet(s)",
           "ml (syrup)",
-          "Kg",
+          "kg",
           "IU",
           "Ampule",
           "Vial",
