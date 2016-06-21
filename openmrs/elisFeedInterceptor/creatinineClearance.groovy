@@ -40,20 +40,17 @@ public class CreatinineUpdate implements ElisFeedInterceptor {
                     Context.getOrderService().saveOrder(order,orderCtx);
                     encounter.addOrder(order);
                     Obs creatinineClearanceObs = getObs(obs, creatinineClearanceRateConcept,order);
-                    Obs creatinineClearanceObsOne = getObs(obs, creatinineClearanceRateConcept,order);
-                    creatinineClearanceObsOne.setObsGroup(creatinineClearanceObs);
-                    Obs creatinineClearanceObsTwo = getObs(obs, creatinineClearanceRateConcept,order);
-
-
-                    creatinineClearanceObsTwo.setObsGroup(creatinineClearanceObsOne);
-
-                    encounter.addObs(creatinineClearanceObs);
-                    encounter.addObs(creatinineClearanceObsOne);
-                    encounter.addObs(creatinineClearanceObsTwo);
-                    Context.getEncounterService().saveEncounter(encounter);
-                    return creatinineClearanceObs;
-
-
+                    if(creatinineClearanceObs != null){
+		   	Obs creatinineClearanceObsOne = getObs(obs, creatinineClearanceRateConcept,order);
+                    	creatinineClearanceObsOne.setObsGroup(creatinineClearanceObs);
+                    	Obs creatinineClearanceObsTwo = getObs(obs, creatinineClearanceRateConcept,order);
+                    	creatinineClearanceObsTwo.setObsGroup(creatinineClearanceObsOne);
+                    	encounter.addObs(creatinineClearanceObs);
+                    	encounter.addObs(creatinineClearanceObsOne);
+                    	encounter.addObs(creatinineClearanceObsTwo);
+                    	Context.getEncounterService().saveEncounter(encounter);
+		    }
+                    	return creatinineClearanceObs;
                 }
             }
         }
@@ -64,6 +61,8 @@ public class CreatinineUpdate implements ElisFeedInterceptor {
 
         this.bahmniBridge = BahmniBridge.create().forPatient(obs.getPerson().getUuid());
         Obs weighttval=bahmniBridge.latestObs(WEIGHT_CONCEPT_NAME);
+	if (weighttval == null)
+		return null;
         Integer personage = obs.getPerson().getAge();
         String gender = obs.getPerson().getGender();
         double CreatinineClearanceRate = 0.0;
