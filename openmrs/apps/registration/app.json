@@ -18,8 +18,7 @@
   ],
   "config": {
     "mandatoryPersonAttributes": [
-      "Smart card holder",
-      "Smart card brought"
+      "Smart card holder"
     ],
     "patientInformation": {
       "additionalPatientInformation": {
