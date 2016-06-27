@@ -348,5 +348,67 @@
   "programEnrollmentTemplateReport": {
     "name": "Program Enrollments",
     "type": "ProgramEnrollmentReport"
+  },
+  "obspatientwithEDD": {
+    "name": "ANC - Patients with EDD Report",
+    "type": "obsCannedReport",
+    "config": {
+      "applyDateRangeFor": "ProgramEnrollment",
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ],
+      "conceptNames": [
+        "ANC, Last menstrual period"
+      ],
+      "visitIndependentConcept": [
+        "HEIGHT"
+      ],
+      "enrolledProgram": "Ante Natal Care Program",
+      "showObsOnlyForProgramDuration": false
+    }
+  },
+  "ancdata1": {
+    "name": "ANC Data Report",
+    "type": "programObsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "patientAttributes": [
+        "primaryRelative"
+      ],
+      "programAttributes": [
+        "Program ID",
+        "High Risk",
+        "Reason For High Risk",
+        "High Risk Reasons"
+      ],
+      "programNames": [
+        "Ante Natal Care Program"
+      ],
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ]
+    }
+  },
+  "ancTemplate1": {
+    "name": "ANC Template Report",
+    "type": "programObsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "programAttributes": [
+        "Program ID",
+        "High Risk",
+        "Reason For High Risk",
+        "High Risk Reasons"
+      ],
+      "programNames": [
+        "Ante Natal Care Program"
+      ],
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ]
+    }
   }
 }
