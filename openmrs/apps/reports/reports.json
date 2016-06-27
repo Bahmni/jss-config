@@ -53,7 +53,9 @@
     "name": "TB - Patients with appointed Followups",
     "type": "DateConceptValuesPatientsList",
     "config": {
-      "conceptNames": ["Tuberculosis, Next Followup Visit"],
+      "conceptNames": [
+        "Tuberculosis, Next Followup Visit"
+      ],
       "templateName": "Tuberculosis Followup Template"
     }
   },
@@ -69,14 +71,14 @@
     "type": "obsTemplate",
     "config": {
       "templateName": "RMRCT Form"
-     }
+    }
   },
   "RNTCPData": {
     "name": "RNTCP Form",
     "type": "obsTemplate",
     "config": {
       "templateName": "RNTCP Form"
-     }
+    }
   },
   "nonCodedDiagnosesEntered": {
     "name": "Non coded Diagnoses entered",
@@ -100,11 +102,11 @@
     }
   },
   "diagnosisCount": {
-       "name": "Diagnosis Count",
-       "type": "diagnosisCount",
-        "config": {
-           "concept": "Diagnosis Set of Sets",
-           "ageGroupName": "All Ages",
+    "name": "Diagnosis Count",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Diagnosis Set of Sets",
+      "ageGroupName": "All Ages",
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -112,23 +114,6 @@
       "columnsGroupBy": [
         "gender"
       ]
-
-       }
-   },
-  "ANCData": {
-    "name": "ANC Data",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "ANC Template",
-      "applyDateRangeFor": "encounterCreateDate"
-    }
-  },
-  "patientsWithEDD": {
-    "name": "ANC - Patients with EDD",
-    "type": "DateConceptValuesPatientsList",
-    "config": {
-      "conceptNames": ["ANC, Estimated Date of Delivery"],
-      "templateName": "ANC Template"
     }
   },
   "smartCardData": {
@@ -138,11 +123,13 @@
       "templateName": "Smart card Template"
     }
   },
-    "smartCardTransactionDate": {
+  "smartCardTransactionDate": {
     "name": "Smart Card - Patients with Transaction Date",
     "type": "DateConceptValuesPatientsList",
     "config": {
-      "conceptNames": ["Smart card, amount to be transacted on"],
+      "conceptNames": [
+        "Smart card, amount to be transacted on"
+      ],
       "templateName": "Smart card Template"
     }
   },
@@ -150,39 +137,50 @@
     "name": "Smart card - Program Report",
     "type": "PatientProgramReport",
     "config": {
-               "programName": "Smart Card"
+      "programName": "Smart Card"
     }
   },
   "smartCardStateCount": {
     "name": "Smart card - State count",
     "type": "programStateCount",
     "config": {
-               "programName": "Smart Card"
+      "programName": "Smart Card"
     }
   },
   "ipdPatients": {
-     "name": "IPD Patients Report",
-     "type": "ipdPatients",
-     "config": {
-              "addressAttributes": ["address1", "city_village"],
-              "patientAttributes": ["caste", "education"],
-              "conceptNames": ["Height", "Weight"]
+    "name": "IPD Patients Report",
+    "type": "ipdPatients",
+    "config": {
+      "addressAttributes": [
+        "address1",
+        "city_village"
+      ],
+      "patientAttributes": [
+        "caste",
+        "education"
+      ],
+      "conceptNames": [
+        "Height",
+        "Weight"
+      ]
     }
   },
- "ipdOPd": {
-     "name": "OPD/IPD Visit Count",
-     "type": "IpdOpdVisitCount"
+  "ipdOPd": {
+    "name": "OPD/IPD Visit Count",
+    "type": "IpdOpdVisitCount"
   },
   "testCount": {
     "name": "Tests count",
     "type": "TestCount"
- },
- "radiologyCount": {
-       "name": "Radiology(X-Ray) Count",
-       "type": "ObsCountByConceptClass",
-        "config": {
-            "conceptClassNames": ["Radiology"]
-        }
+  },
+  "radiologyCount": {
+    "name": "Radiology(X-Ray) Count",
+    "type": "ObsCountByConceptClass",
+    "config": {
+      "conceptClassNames": [
+        "Radiology"
+      ]
+    }
   },
   "abnormalityReportForCriticalTests": {
     "name": "Abnormality report for critical tests",
@@ -200,37 +198,36 @@
         "HIV ELISA (Serum)",
         "VDRL ELISA"
       ],
-      "testOutcome": ["abnormal"]
-    }
-  },
-"anctemplate": {
-    "name": "ANC Report",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "ANC Template",
-      "patientAttributes": [
-        "primaryRelative"
+      "testOutcome": [
+        "abnormal"
       ]
     }
   },
-"testobsCannedReport": {
+  "testobsCannedReport": {
     "name": "TB Report For Newly Diagnosed Patient",
     "type": "obsCannedReport",
     "config": {
       "patientAttributes": [
-        "caste","smoking","alcohol","landHolding",
-        "rationCard","familyIncome","foodSecurity",
+        "caste",
+        "smoking",
+        "alcohol",
+        "landHolding",
+        "rationCard",
+        "familyIncome",
+        "foodSecurity",
         "distanceFromCenter"
       ],
       "applyDateRangeFor": "encounterCreateDate",
       "addressAttributes": [
-        "city_village","address3","county_District"
+        "city_village",
+        "address3",
+        "county_District"
       ],
       "conceptNames": [
-      "Weight",
-      "Height",
-      "BMI",
-      "BMI Status",
+        "Weight",
+        "Height",
+        "BMI",
+        "BMI Status",
         "Tuberculosis, Symptoms",
         "Tuberculosis, Symptoms Duration",
         "Tuberculosis, Type",
@@ -253,7 +250,7 @@
         "Tuberculosis, Next Followup Visit",
         "Tuberculosis, Plan for next visit",
         "Tuberculosis, Need of Admission",
-	"Tuberculosis, AFB (Zn Stain)",
+        "Tuberculosis, AFB (Zn Stain)",
         "Haemoglobin",
         "FBS",
         "RBS",
@@ -262,8 +259,10 @@
         "HIV ELISA (Serum)",
         "S. ALT",
         "GGT"
-         ],
-      "visitIndependentConcept": ["Creatinine"],
+      ],
+      "visitIndependentConcept": [
+        "Creatinine"
+      ],
       "showObsOnlyForProgramDuration": false
     }
   },
@@ -272,18 +271,23 @@
     "type": "obsCannedReport",
     "config": {
       "patientAttributes": [
-        "smoking","alcohol","landHolding",
-        "rationCard","familyIncome","foodSecurity",
+        "smoking",
+        "alcohol",
+        "landHolding",
+        "rationCard",
+        "familyIncome",
+        "foodSecurity",
         "distanceFromCenter"
       ],
       "applyDateRangeFor": "encounterCreateDate",
       "addressAttributes": [
-        "city_village"],
+        "city_village"
+      ],
       "conceptNames": [
-       "Tuberculosis, Treatment Compliance",
-      "Weight",
-      "BMI",
-      "BMI Status",
+        "Tuberculosis, Treatment Compliance",
+        "Weight",
+        "BMI",
+        "BMI Status",
         "Tuberculosis, Symptoms",
         "Tuberculosis, Symptoms Duration",
         "Tuberculosis, Followup Visit",
@@ -302,8 +306,8 @@
         "Tuberculosis, Need of Admission",
         "Tuberculosis, Indication for Admission",
         "Tuberculosis, Output of Treatment",
-       	"Tuberculosis, AFB (Zn Stain)",
-	"Haemoglobin",
+        "Tuberculosis, AFB (Zn Stain)",
+        "Haemoglobin",
         "FBS",
         "RBS",
         "PP2BS",
@@ -311,20 +315,21 @@
         "HIV ELISA (Serum)",
         "S. ALT",
         "GGT"
-         ],
-      "visitIndependentConcept": ["Creatinine"],
+      ],
+      "visitIndependentConcept": [
+        "Creatinine"
+      ],
       "showObsOnlyForProgramDuration": false
     }
   },
-  
- "abnormalityReport": {
+  "abnormalityReport": {
     "name": "Abnormality report for critical tests wt Tel",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
     }
   },
-   "referredOutTests": {
+  "referredOutTests": {
     "name": "Referred Out Tests",
     "type": "ElisGeneric",
     "config": {
@@ -338,11 +343,73 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/referraltemplate.sql"
     }
   },
-   "overdueTests": {
+  "overdueTests": {
     "name": "Overdue Referred out Tests(LPA, LJ, CBNAAT) As of Today",
     "type": "ElisGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/overdue_referred_out_tests_LPA_LJ_CBNAAT.sql"
+    }
+  },
+  "obspatientwithEDD": {
+    "name": "ANC - Patients with EDD Report",
+    "type": "obsCannedReport",
+    "config": {
+      "applyDateRangeFor": "ProgramEnrollment",
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ],
+      "conceptNames": [
+        "ANC, Last menstrual period"
+      ],
+      "visitIndependentConcept": [
+        "HEIGHT"
+      ],
+      "enrolledProgram": "Ante Natal Care Program",
+      "showObsOnlyForProgramDuration": false
+    }
+  },
+  "ancdata1": {
+    "name": "ANC Data Report",
+    "type": "programObsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "patientAttributes": [
+        "primaryRelative"
+      ],
+      "programAttributes": [
+        "Program ID",
+        "High Risk",
+        "Reason For High Risk",
+        "High Risk Reasons"
+      ],
+      "programNames": [
+        "Ante Natal Care Program"
+      ],
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ]
+    }
+  },
+  "ancTemplate1": {
+    "name": "ANC Template Report",
+    "type": "programObsTemplate",
+    "config": {
+      "templateName": "ANC Template",
+      "programAttributes": [
+        "Program ID",
+        "High Risk",
+        "Reason For High Risk",
+        "High Risk Reasons"
+      ],
+      "programNames": [
+        "Ante Natal Care Program"
+      ],
+      "addressAttributes": [
+        "city_village",
+        "state_province"
+      ]
     }
   }
 }
