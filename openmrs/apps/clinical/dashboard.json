@@ -129,7 +129,7 @@
                 "title": "Digital Radiology",
                 "dashboardConfig":{
                     "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&studyUID=1.2.826.0.1.3680043.9.6039.{{orderNumber}}.1",
-                    "numberOfVisits":4
+                    "numberOfVisits":20
                 },
                 "displayOrder": 8
             },
