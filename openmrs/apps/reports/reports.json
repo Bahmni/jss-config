@@ -353,13 +353,17 @@
     "name": "ANC - Patients with EDD Report",
     "type": "obsCannedReport",
     "config": {
+      "patientAttributes": [
+        "primaryRelative"
+      ],
       "applyDateRangeFor": "ProgramEnrollment",
       "addressAttributes": [
         "city_village",
+         "county_district",
         "state_province"
       ],
       "conceptNames": [
-        "ANC, Last menstrual period"
+        "ANC, Estimated Date of Delivery "
       ],
       "visitIndependentConcept": [
         "HEIGHT"
@@ -377,16 +381,17 @@
         "primaryRelative"
       ],
       "programAttributes": [
-        "Program ID",
+        "Program ID", 
         "High Risk",
-        "Reason For High Risk",
-        "High Risk Reasons"
+         "High Risk Reason",
+         "High Risk Reason Text"
       ],
       "programNames": [
         "Ante Natal Care Program"
       ],
       "addressAttributes": [
         "city_village",
+         "county_district",
         "state_province"
       ]
     }
@@ -397,16 +402,17 @@
     "config": {
       "templateName": "ANC Template",
       "programAttributes": [
-        "Program ID",
+        "Program ID", 
         "High Risk",
-        "Reason For High Risk",
-        "High Risk Reasons"
+         "High Risk Reason",
+         "High Risk Reason Text"
       ],
       "programNames": [
         "Ante Natal Care Program"
       ],
       "addressAttributes": [
         "city_village",
+         "county_district",
         "state_province"
       ]
     }
