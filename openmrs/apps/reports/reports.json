@@ -69,14 +69,14 @@
     "type": "obsTemplate",
     "config": {
       "templateName": "RMRCT Form"
-     }
+    }
   },
   "RNTCPData": {
     "name": "RNTCP Form",
     "type": "obsTemplate",
     "config": {
       "templateName": "RNTCP Form"
-     }
+    }
   },
   "nonCodedDiagnosesEntered": {
     "name": "Non coded Diagnoses entered",
@@ -100,11 +100,11 @@
     }
   },
   "diagnosisCount": {
-       "name": "Diagnosis Count",
-       "type": "diagnosisCount",
-        "config": {
-           "concept": "Diagnosis Set of Sets",
-           "ageGroupName": "All Ages",
+    "name": "Diagnosis Count",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Diagnosis Set of Sets",
+      "ageGroupName": "All Ages",
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -113,8 +113,8 @@
         "gender"
       ]
 
-       }
-   },
+    }
+  },
   "ANCData": {
     "name": "ANC Data",
     "type": "obsTemplate",
@@ -138,7 +138,7 @@
       "templateName": "Smart card Template"
     }
   },
-    "smartCardTransactionDate": {
+  "smartCardTransactionDate": {
     "name": "Smart Card - Patients with Transaction Date",
     "type": "DateConceptValuesPatientsList",
     "config": {
@@ -150,39 +150,39 @@
     "name": "Smart card - Program Report",
     "type": "PatientProgramReport",
     "config": {
-               "programName": "Smart Card"
+      "programName": "Smart Card"
     }
   },
   "smartCardStateCount": {
     "name": "Smart card - State count",
     "type": "programStateCount",
     "config": {
-               "programName": "Smart Card"
+      "programName": "Smart Card"
     }
   },
   "ipdPatients": {
-     "name": "IPD Patients Report",
-     "type": "ipdPatients",
-     "config": {
-              "addressAttributes": ["address1", "city_village"],
-              "patientAttributes": ["caste", "education"],
-              "conceptNames": ["Height", "Weight"]
+    "name": "IPD Patients Report",
+    "type": "ipdPatients",
+    "config": {
+      "addressAttributes": ["address1", "city_village"],
+      "patientAttributes": ["caste", "education"],
+      "conceptNames": ["Height", "Weight"]
     }
   },
- "ipdOPd": {
-     "name": "OPD/IPD Visit Count",
-     "type": "IpdOpdVisitCount"
+  "ipdOPd": {
+    "name": "OPD/IPD Visit Count",
+    "type": "IpdOpdVisitCount"
   },
   "testCount": {
     "name": "Tests count",
     "type": "TestCount"
- },
- "radiologyCount": {
-       "name": "Radiology(X-Ray) Count",
-       "type": "ObsCountByConceptClass",
-        "config": {
-            "conceptClassNames": ["Radiology"]
-        }
+  },
+  "radiologyCount": {
+    "name": "Radiology(X-Ray) Count",
+    "type": "ObsCountByConceptClass",
+    "config": {
+      "conceptClassNames": ["Radiology"]
+    }
   },
   "abnormalityReportForCriticalTests": {
     "name": "Abnormality report for critical tests",
@@ -203,7 +203,7 @@
       "testOutcome": ["abnormal"]
     }
   },
-"anctemplate": {
+  "anctemplate": {
     "name": "ANC Report",
     "type": "obsTemplate",
     "config": {
@@ -213,7 +213,7 @@
       ]
     }
   },
-"testobsCannedReport": {
+  "testobsCannedReport": {
     "name": "TB Report For Newly Diagnosed Patient",
     "type": "obsCannedReport",
     "config": {
@@ -227,10 +227,10 @@
         "city_village","address3","county_District"
       ],
       "conceptNames": [
-      "Weight",
-      "Height",
-      "BMI",
-      "BMI Status",
+        "Weight",
+        "Height",
+        "BMI",
+        "BMI Status",
         "Tuberculosis, Symptoms",
         "Tuberculosis, Symptoms Duration",
         "Tuberculosis, Type",
@@ -253,7 +253,7 @@
         "Tuberculosis, Next Followup Visit",
         "Tuberculosis, Plan for next visit",
         "Tuberculosis, Need of Admission",
-	"Tuberculosis, AFB (Zn Stain)",
+        "Tuberculosis, AFB (Zn Stain)",
         "Haemoglobin",
         "FBS",
         "RBS",
@@ -262,7 +262,7 @@
         "HIV ELISA (Serum)",
         "S. ALT",
         "GGT"
-         ],
+      ],
       "visitIndependentConcept": ["Creatinine"],
       "showObsOnlyForProgramDuration": false
     }
@@ -280,10 +280,10 @@
       "addressAttributes": [
         "city_village"],
       "conceptNames": [
-       "Tuberculosis, Treatment Compliance",
-      "Weight",
-      "BMI",
-      "BMI Status",
+        "Tuberculosis, Treatment Compliance",
+        "Weight",
+        "BMI",
+        "BMI Status",
         "Tuberculosis, Symptoms",
         "Tuberculosis, Symptoms Duration",
         "Tuberculosis, Followup Visit",
@@ -302,8 +302,8 @@
         "Tuberculosis, Need of Admission",
         "Tuberculosis, Indication for Admission",
         "Tuberculosis, Output of Treatment",
-       	"Tuberculosis, AFB (Zn Stain)",
-	"Haemoglobin",
+        "Tuberculosis, AFB (Zn Stain)",
+        "Haemoglobin",
         "FBS",
         "RBS",
         "PP2BS",
@@ -311,20 +311,20 @@
         "HIV ELISA (Serum)",
         "S. ALT",
         "GGT"
-         ],
+      ],
       "visitIndependentConcept": ["Creatinine"],
       "showObsOnlyForProgramDuration": false
     }
   },
-  
- "abnormalityReport": {
+
+  "abnormalityReport": {
     "name": "Abnormality report for critical tests wt Tel",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/abnormal_criticality_with_village_telephone.sql"
     }
   },
-   "referredOutTests": {
+  "referredOutTests": {
     "name": "Referred Out Tests",
     "type": "ElisGeneric",
     "config": {
@@ -338,7 +338,7 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/referraltemplate.sql"
     }
   },
-   "overdueTests": {
+  "overdueTests": {
     "name": "Overdue Referred out Tests(LPA, LJ, CBNAAT) As of Today",
     "type": "ElisGeneric",
     "config": {
@@ -359,7 +359,7 @@
       "applyDateRangeFor": "ProgramEnrollment",
       "addressAttributes": [
         "city_village",
-         "county_district",
+        "county_district",
         "state_province"
       ],
       "conceptNames": [
@@ -381,17 +381,17 @@
         "primaryRelative"
       ],
       "programAttributes": [
-        "Program ID", 
+        "Program ID",
         "High Risk",
-         "High Risk Reason",
-         "High Risk Reason Text"
+        "High Risk Reason",
+        "High Risk Reason Text"
       ],
       "programNames": [
         "Ante Natal Care Program"
       ],
       "addressAttributes": [
         "city_village",
-         "county_district",
+        "county_district",
         "state_province"
       ]
     }
@@ -402,17 +402,17 @@
     "config": {
       "templateName": "ANC Template",
       "programAttributes": [
-        "Program ID", 
+        "Program ID",
         "High Risk",
-         "High Risk Reason",
-         "High Risk Reason Text"
+        "High Risk Reason",
+        "High Risk Reason Text"
       ],
       "programNames": [
         "Ante Natal Care Program"
       ],
       "addressAttributes": [
         "city_village",
-         "county_district",
+        "county_district",
         "state_province"
       ]
     }
