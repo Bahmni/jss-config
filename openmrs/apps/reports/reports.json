@@ -115,22 +115,6 @@
 
     }
   },
-  "ANCData": {
-    "name": "ANC Data",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "ANC Template",
-      "applyDateRangeFor": "encounterCreateDate"
-    }
-  },
-  "patientsWithEDD": {
-    "name": "ANC - Patients with EDD",
-    "type": "DateConceptValuesPatientsList",
-    "config": {
-      "conceptNames": ["ANC, Estimated Date of Delivery"],
-      "templateName": "ANC Template"
-    }
-  },
   "smartCardData": {
     "name": "Smart Card Data",
     "type": "obsTemplate",
@@ -201,16 +185,6 @@
         "VDRL ELISA"
       ],
       "testOutcome": ["abnormal"]
-    }
-  },
-  "anctemplate": {
-    "name": "ANC Report",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "ANC Template",
-      "patientAttributes": [
-        "primaryRelative"
-      ]
     }
   },
   "testobsCannedReport": {
