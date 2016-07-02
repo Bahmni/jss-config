@@ -1,4 +1,4 @@
-SELECT DISTINCT
+SELECT
   pi.identifier as 'Identifier',
   t.given_name   AS 'Given Name',
   t.family_name as 'Family Name',
@@ -7,22 +7,22 @@ SELECT DISTINCT
   MAX(CASE WHEN t.concept_full_name = 'Doctor\'s Name'
     THEN t.value
       ELSE NULL END) AS 'Doctor\'s Name',
-  MAX(CASE WHEN t.concept_full_name = 'Referral Form, Authority '
+  MAX(CASE WHEN t.concept_full_name = 'Referral Form, Authority'
     THEN t.value
       ELSE NULL END) AS 'Authority',
 
   MAX(CASE WHEN t.concept_full_name = 'Referral Form, Facility Type '
     THEN t.value
       ELSE NULL END) AS 'Facility Type',
-  MAX(CASE WHEN t.concept_full_name = 'Referral Form, District '
-    THEN t.value
+  MAX(CASE WHEN t.concept_full_name = 'Referral Form, District'
+    THEN t.name
       ELSE NULL END) AS 'District',
-  MAX(CASE WHEN t.concept_full_name = 'Referral Form, State '
-    THEN t.value
+  MAX(CASE WHEN t.concept_full_name = 'Referral Form, State'
+    THEN t.name
       ELSE NULL END) AS 'State',
 
-  MAX(CASE WHEN t.concept_full_name = 'Summary, Advice '
-    THEN t.value
+  MAX(CASE WHEN t.concept_full_name = 'Summary, Advice'
+    THEN (t.name)
       ELSE NULL END) AS 'Advice',
   MAX(CASE WHEN t.concept_full_name = 'Summary, Summary Notes '
       THEN t.value
@@ -30,7 +30,7 @@ SELECT DISTINCT
   MAX(CASE WHEN t.concept_full_name = 'Contact '
     THEN t.value
       ELSE NULL END) AS 'Contact',
-  MAX(CASE WHEN t.concept_full_name = 'Follow up after '
+  MAX(CASE WHEN t.concept_full_name = 'Follow up after (months)'
     THEN t.value
       ELSE NULL END) AS 'Follow up after',
   MAX(CASE WHEN t.concept_full_name = 'Follow up on (date)'
@@ -49,7 +49,7 @@ FROM obs o
      vt.name                                          AS visit_type,
      vt.date_created                                   as visit_start,
      cv.concept_full_name,
-     ifnull(o.value_text, ifnull(cv2.concept_short_name, o.value_datetime)) AS value,
+     ifnull(o.value_text, ifnull(cv2.concept_short_name, ifnull(o.value_datetime,o.value_numeric))) AS value,
      o.obs_group_id,
      o.concept_id,
      cv2.concept_full_name                            AS name,
