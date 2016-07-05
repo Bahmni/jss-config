@@ -627,21 +627,9 @@
                     "showDetailsButton": false,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
-                    "showAccessionNotes": true
-                },
-                "allLabDetails": {
-                    "numberOfVisits": 4,
-                    "observationGraph": {
-                        "type": "observationGraph",
-                        "name": "observationGraph",
-                        "title": "Temperature",
-                        "config": {
-                            "yAxisConcepts": [
-                                "Temperature"
-                            ],
-                            "numberOfVisits": 4
-                        }
-                    }
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 6,
+                    "showDetailsButton": false
                 }
             },
             "treatment": {
