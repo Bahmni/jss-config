@@ -629,9 +629,7 @@
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "numberOfVisits": 10,
-                    "initialAccessionCount": 1,
-                    "latestAccessionCount": 1,
+                    "numberOfVisits": 6,
                     "showDetailsButton": false
                 }
             },
