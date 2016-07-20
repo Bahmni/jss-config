@@ -55,7 +55,7 @@
     "requiredPrivilege": "app:clinical:consultationTab"
   },
   "bahmniClinicalPatientsSearchActivePatients": {
-    "id": "bahmni.clinical.patients.search.allPatients",
+    "id": "bahmni.clinical.patients.search.allactivePatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -81,7 +81,7 @@
     "requiredPrivilege": "app:billing"
   },
   "bahmniClinicalPatientsSearchTodaysPatientsByProvider": {
-    "id": "bahmni.clinical.patients.search.allPatients",
+    "id": "bahmni.clinical.patients.search.allPatientsbyProvider",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -95,7 +95,7 @@
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchHighRiskPatients": {
-    "id": "bahmni.clinical.patients.search.allPatients",
+    "id": "bahmni.clinical.patients.search.allPatientshighrisk",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {

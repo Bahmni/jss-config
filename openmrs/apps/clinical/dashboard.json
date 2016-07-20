@@ -475,7 +475,7 @@
                 "displayOrder": 23
             },
             "formDisplaySummary":{
-                "title": "Form Display Control",
+                "title": "Templates Filled",
                 "type": "forms",
                 "dashboardConfig": {
                     "title": null,
