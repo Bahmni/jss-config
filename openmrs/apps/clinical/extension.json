@@ -68,7 +68,7 @@
     "requiredPrivilege": "app:clinical"
   },
   "bahmniBillingPatientsSearchActivePatients": {
-    "id": "bahmni.billing.patients.search.allPatients",
+    "id": "bahmni.billing.patients.search.activePatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -111,7 +111,7 @@
     "requiredPrivilege": "app:clinical"
   },
   "bahmniBillingPatientsSearchTodaysPatientsByProvider": {
-    "id": "bahmni.billing.patients.search.allPatients",
+    "id": "bahmni.billing.patients.search.myPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
