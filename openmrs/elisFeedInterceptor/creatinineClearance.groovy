@@ -1,14 +1,13 @@
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
 import org.openmrs.*
-import org.openmrs.module.bahmniemrapi.elisFeedInterceptor.ElisFeedInterceptor
-import java.util.Locale
+import org.bahmni.module.elisatomfeedclient.api.elisFeedInterceptor.ElisFeedEncounterInterceptor;import java.util.Locale
 import java.util.Set
 import org.openmrs.api.OrderContext;
 import org.openmrs.api.context.Context;
 
 
 
-public class CreatinineUpdate implements ElisFeedInterceptor {
+public class CreatinineUpdate implements ElisFeedEncounterInterceptor {
     public static final String CREATININE_TEST_NAME = "Creatinine";
     public static final String CREATINIE_CLEARANCE_TEST_NAME = "Creatinine Clearance";
     public static final String HEIGHT_CONCEPT_NAME = "HEIGHT";

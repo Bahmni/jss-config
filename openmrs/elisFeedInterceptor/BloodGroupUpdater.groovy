@@ -1,11 +1,10 @@
 import org.bahmni.module.bahmnicore.service.impl.BahmniBridge
 import org.openmrs.*
-import org.openmrs.module.bahmniemrapi.elisFeedInterceptor.ElisFeedInterceptor
-
+import org.bahmni.module.elisatomfeedclient.api.elisFeedInterceptor.ElisFeedEncounterInterceptor;
 import java.util.Locale
 import java.util.Set
 
-public class BloodGroupUpdater implements ElisFeedInterceptor {
+public class BloodGroupUpdater implements ElisFeedEncounterInterceptor {
     public static final String BLOOD_GROUP_TEST_NAME = "Patient Blood Group";
     public static final String BLOOD_GROUP_PATIENT_ATTRIBUTE_TYPE = "bloodGroup";
     public BahmniBridge bahmniBridge;
@@ -13,6 +12,7 @@ public class BloodGroupUpdater implements ElisFeedInterceptor {
     @Override
     public void run(Set<Encounter> encounters) {
         Obs bloodGroupObs = getBloodGroupObs(encounters);
+        System.out.println(bloodGroupObs);
         if (bloodGroupObs == null) {
             return;
         }

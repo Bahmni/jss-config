@@ -76,6 +76,7 @@
         "abnormalIndicator": true
       }
     },
+
     "patientSearch": {
       "address": {
         "label": "Village",
