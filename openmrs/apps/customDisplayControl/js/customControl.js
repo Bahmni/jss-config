@@ -351,11 +351,9 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referraldocname.html";
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observations = response.data[0];
-                console.log($scope.observations);
             }));
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                 $scope.observation = response.data[0];
-                console.log($scope.observation);
             }));
 
         };
@@ -409,7 +407,6 @@ angular.module('bahmni.common.displaycontrol.custom')
                        }));
                      spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptName, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
                                    $scope.observation = response.data[0];
-                                   console.log($scope.observation);
                                }));
 
                    $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
