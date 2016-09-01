@@ -390,5 +390,33 @@
         "state_province"
       ]
     }
+  },
+  "obsCannedReport": {
+    "name": "Diabetes Study Report",
+    "type": "obsCannedReport",
+    "config": {
+      "patientAttributes": ["caste","class","bloodGroup","occupation","education","smoking","alcohol","landHolding","rationCard","familyIncome","foodSecurity","primaryContact","Telephone Number"],
+      "applyDateRangeFor": "ProgramEnrollment",
+      "addressAttributes": ["postal_code", "city_village","address3","county_District"],
+      "conceptNames": [
+        "WEIGHT",
+        "Height",
+        "Pulse",
+        "Systolic",
+        "BMI",
+        "BMI Status",
+        "Diabetes, Skin fold Thickness",
+        "Haemoglobin",
+        "Creatinine",
+        "Fasting Blood Sugar",
+        "RBS",
+        "FBS",
+        "PP2BS",
+        "Serum"
+      ],
+      "visitIndependentConcept": ["Hb1AC"],
+      "enrolledProgram" :"JSS Diabetes Program",
+      "showObsOnlyForProgramDuration": false
+    }
   }
 }
