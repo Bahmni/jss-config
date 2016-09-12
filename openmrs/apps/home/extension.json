@@ -4,7 +4,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Registration",
-        "url": "../registration/",
+        "url": "../registration/index.html",
         "icon": "fa-user",
         "order": 1,
         "requiredPrivilege": "app:registration"
@@ -14,7 +14,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "../clinical/#/default/patient/search",
+        "url": "../clinical/index.html#/default/patient/search",
         "icon": "fa-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
