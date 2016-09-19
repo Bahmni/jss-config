@@ -391,32 +391,124 @@
       ]
     }
   },
-  "obsCannedReport": {
-    "name": "Diabetes Study Report",
-    "type": "obsCannedReport",
-    "config": {
+ "obsCannedReport": {
+ "name": "Diabetes Study Report",
+ "type": "obsCannedReport",
+ "config": {
       "patientAttributes": ["caste","class","bloodGroup","occupation","education","smoking","alcohol","landHolding","rationCard","familyIncome","foodSecurity","primaryContact","Telephone Number"],
-      "applyDateRangeFor": "ProgramEnrollment",
-      "addressAttributes": ["postal_code", "city_village","address3","county_District"],
-      "conceptNames": [
+ "applyDateRangeFor": "ProgramEnrollment",
+ "addressAttributes": ["postal_code", "city_village","address3","county_District"],
+ "conceptNames": [
         "WEIGHT",
-        "Height",
-        "Pulse",
-        "Systolic",
-        "BMI",
-        "BMI Status",
+ 	"Height",
+	"Pulse",
+	"Systolic",
+	"BMI",
+	"BMI Status",
         "Diabetes, Skin fold Thickness",
         "Haemoglobin",
         "Creatinine",
         "Fasting Blood Sugar",
         "RBS",
-        "FBS",
-        "PP2BS",
-        "Serum"
+	"FBS",
+	"PP2BS",
+	"Serum"
       ],
-      "visitIndependentConcept": ["Hb1AC"],
-      "enrolledProgram" :"JSS Diabetes Program",
-      "showObsOnlyForProgramDuration": false
+    "visitIndependentConcept": ["Hb1AC"], 
+    "enrolledProgram" :"JSS Diabetes Program",
+    "showObsOnlyForProgramDuration": false
+   }
+ },
+ "jssrhdprogram": {
+    "name": "JSS RHD Program Enrollment Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/jssrhdprogram.sql"
     }
-  }
+ },
+ "jssdiabetesprogram": {
+    "name": "JSS Diabetes Program Enrollment Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/jssdiabetesprogram.sql"
+    }
+ },
+ "rhdobsCannedReport": {
+ "name": "JSS RHD Program Patient Visits",
+ "type": "obsCannedReport",
+ "config": {
+      "patientAttributes": ["caste","primaryContact","Telephone Number"],
+ "applyDateRangeFor": "ProgramEnrollment",
+ "addressAttributes": ["postal_code","city_village","address3","county_District"],
+ "conceptNames": [
+        "Weight",
+        "Height",
+        "BMI",
+        "BMI Status",
+	"Cardiology, Surgery",
+	"Cardiology, Type of Surgery",
+	"Cardiology, Which Surgery",
+	"Cardiology, Surgery Center",
+        "Haemoglobin",
+        "Prothrombin Time (Control) (Serum)",
+	"Prothrombin Time (Test) (Serum)",
+	"Prothrombin Time (Control) (Blood)",
+	"Prothrombin Time (Test) (Blood)",
+	"INR Ratio (Serum)"
+      ],
+ "visitIndependentConcept": ["INR Ratio (Blood)"],
+ "enrolledProgram" :"JSS RHD Program",
+ "showObsOnlyForProgramDuration": false
+   }
+ },
+ "tbobsCannedReport": {
+ "name": "JSS TB Program Enrollment Report",
+ "type": "obsCannedReport",
+ "config": {
+    "patientAttributes": ["caste","class","primaryRelative","primaryContact","Telephone Number","bloodGroup","occupation","education",
+         "smoking","alcohol","landHolding","rationCard","familyIncome","foodSecurity","distanceFromCenter"],
+ "applyDateRangeFor": "ProgramEnrollment",
+ "addressAttributes": ["postal_code","city_village","address3","county_District"],
+ "conceptNames": [
+        "Weight",
+        "Height",
+        "BMI",
+        "BMI Status",
+        "Tuberculosis, History of TB Contact",
+        "Tuberculosis, Family member died of TB",
+	"Tuberculosis, Duration since last treatment",
+        "Tuberculosis, Duration of last treatment",
+        "Tuberculosis, Past Treatment Facility",
+        "Tuberculosis, Past Treatment Details",
+	"Tuberculosis, Type",
+        "Tuberculosis, Patient Category",
+        "Tuberculosis, Extrapulmonary Site",
+	"Tuberculosis, X-Ray Extent",
+        "Tuberculosis, X-Ray Cavity",
+        "Tuberculosis, Basis of Diagnosis",
+	"Tuberculosis, Comorbidity",
+        "Tuberculosis, Treatment Plan",
+	"Tuberculosis, Adverse Effects",
+	"Tuberculosis, Output of Treatment",
+	"Tuberculosis, Next Followup Visit",
+        "Tuberculosis, Need of Admission",
+	"Discharge Summary, Admission Indication",
+	"Tuberculosis, AFB (Zn Stain)",
+	"Haemoglobin",
+        "FBS",
+        "RBS",
+        "PP2BS",
+        "HIV ELISA (Blood)",
+        "HIV ELISA (Serum)",
+        "S. Albumin",
+        "GGT",
+	"ESR",
+	"S. AST",
+	"S. ALT"
+      ],
+ "visitIndependentConcept": ["Creatinine"],
+ "enrolledProgram" :"JSS TB Program",
+ "showObsOnlyForProgramDuration": false
+   }
+ }
 }

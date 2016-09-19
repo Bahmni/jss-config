@@ -307,6 +307,9 @@
       },
       "Summary, Advice": {
         "multiSelect": true
+      },
+      "Sickle Cell Disease, Complications": {
+        "multiSelect": true
       }
     }
   }
