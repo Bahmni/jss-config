@@ -127,7 +127,7 @@
       "treatments": {
         "type": "treatment",
         "config": {
-          "title": "Treatments",
+          "translationKey": "Treatments",
           "showFlowSheet": false,
           "showListView": true,
           "showOtherActive": true,

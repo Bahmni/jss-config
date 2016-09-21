@@ -622,7 +622,7 @@
                      "displayType": "Full-Page",
                      "type": "labOrders",
                      "displayOrder": 3,
-                     "dashboardParams": {
+                     "dashboardConfig": {
                     "title": "Lab Investigations",
                     "showChart": true,
                     "showTable": false,
