@@ -391,6 +391,21 @@
       ]
     }
   },
+  "ancreport1":{
+    "name": "ANC Template Report data",
+    "type": "observations",
+    "config": {
+      "templateName": "ANC Template",
+      "patientAttributes":["Program ID", "High Risk","High Risk Reason", "High Risk Reason Text"],
+      "patientAddresses": ["city_village","county_district","state_province"],
+      "applyDateRangeFor": "visitStartDate",
+      "ignoreEmptyValues":true,
+      "conceptNamesToFilter": ["ANC Template","Albumin (Routine Urine)"],
+      "programsToFilter":["Ante Natal Care Program"],
+      "excludeColumns": ["Haemoglobin Range Abnormal","Systolic Abnormal","Diastolic Abnormal","Birthdate","Location Name"],
+      "encounterPerRow": true
+    }
+  },
  "obsCannedReport": {
  "name": "Diabetes Study Report",
  "type": "obsCannedReport",
